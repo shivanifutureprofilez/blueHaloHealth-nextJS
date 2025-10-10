@@ -1,0 +1,18 @@
+import React from 'react'
+
+function Heading({ heading1, heading2, content, className }) {
+  return (
+    <div className='container m-auto'>
+      <div className='flex justify-center'>
+        <h2 className={`heading ${className}`} >{heading1} <span className='text-[#009C4A]'>{heading2}</span></h2>
+      </div>
+      <div>
+        {content && (
+          <p className={` text-[18px] `}>{content}</p>
+        )}
+      </div>
+    </div>
+  )
+}
+
+export default Heading;

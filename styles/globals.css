@@ -1,26 +1,50 @@
 @import "tailwindcss";
+@tailwind components;
+@tailwind base;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Poppins:wght@400;500;600;700&display=swap');
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --primary: #00D967;
+  --secondary: #009C4A;
+  --font: "Poppins", sans-serif;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+body { font-family: "Poppins", sans-serif; } 
+.font-inter { font-family: "Inter", sans-serif; }
+
+
+
+
+.bg-green-dark {
+  background: var(--secondary);
+}
+.bg-green {
+  background: var(--primary);
+}
+.text-green {
+  color: var(--primary);
+}
+.text-green-dark {
+  color: var(--secondary);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@layer components {
+  .button {
+    @apply text-white px-4 py-2 rounded-lg font-bold bg-[var(--secondary)] hover:border-[var(--secondary)] transition-[1s];
   }
-}
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  .button-white {
+    @apply bg-white text-black border-2 border-black px-4 py-2 rounded-lg font-bold hover:bg-[var(--primary)] hover:border-[var(--secondary)] hover:text-white transition-[1s];
+  }
+
+  .button-transparent {
+    @apply bg-transparent border-[var(--primary)] border-2 text-[var(--primary)] px-4 py-2 rounded-lg font-bold transition-[1s];
+  }
+
+  .heading {
+    @apply font-[600] text-[#1E1E1E] text-[20px] md:text-[35px] lg:text-[42px];
+    font-family: "Poppins", sans-serif;;
+  }
 }
