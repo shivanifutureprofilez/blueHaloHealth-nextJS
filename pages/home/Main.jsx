@@ -7,6 +7,7 @@ import Feedback from './Feedback'
 import Resource from '@/components/Resource'
 import Event from '@/components/Event'
 import BookingTab from '@/components/BookingTab'
+import AgeMatrix from './AgeMatrix'
 // import About from './About'
 
 export default function Main() {
@@ -18,6 +19,7 @@ export default function Main() {
         xl:max-w-[1230px]  px-4">
             </div>
             </div> */}
+        <AgeMatrix/>
         <About/>
         <Importance/>
         <Feedback/>
