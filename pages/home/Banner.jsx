@@ -4,21 +4,28 @@ import React from 'react'
 
 export default function Banner() {
   return (
-    <div className=" container mx-auto   ">
-      <section className="rounded-[30px] overflow-hidden relative  flex items-center justify-center pt-6 ">
-        {/* mt-24 remove */}
-        <div className=" px-4 text-white flex  items-center justify-between gap-12">
-          <img
-            src='/homeBanner.png'
-            alt="banner" className="absolute inset-0 w-full max-h-[700px]  h-full object-cover z-[-1]"
+    <div className="container mx-auto">
+      <section className="bg-[#F5F5F5] rounded-2xl flex flex-col lg:flex-row items-center justify-between px-8 py-12 mt-8 shadow">
+        {/* Left Side: Text & Buttons */}
+        <div className="flex-1 flex flex-col justify-center">
+          <Heading
+            className="text-black font-bold text-4xl md:text-5xl lg:text-6xl mb-4"
+            heading1={"Empowering Families Through"}
+            heading2={<span className="text-green-600">Expert Therapy</span>}
+            content={"Individualized programs for children, teens, and adults with developmental or behavioral challenges."}
           />
-          <div className="w-full py-[160px] px-12">
-            <Heading className="!text-white !font-[700] !text-6xl pb-2" heading1={"Empowering Families Through"} heading2={" Expert Therapy  & Support  "} content={"Individualized programs for children, teens, and adults with developmental or behavioral challenges. "} />
-            <div className="flex items-center space-x-4 mt-4 pt-4">
-              <Button title={"Book Free Consultation"} className={`button`} />
-              <Button title={"Explore Our Services"} className={`button-white`} />
-            </div>
+          <div className="flex gap-4 mt-6">
+            <Button title={"Book Free Consultation"} className="bg-green-600 text-white font-semibold px-6 py-3 rounded hover:bg-green-700 transition" />
+            <Button title={"Explore Our Services"} className="bg-white text-black font-semibold px-6 py-3 rounded border border-gray-300 hover:bg-gray-100 transition" />
           </div>
+        </div>
+        {/* Right Side: Illustration */}
+        <div className="flex-1 flex justify-center items-center mt-8 lg:mt-0">
+          <img
+            src="/homeBanner2.png"
+            alt="Therapy Illustration"
+            className="w-full max-w-md rounded-xl object-contain"
+          />
         </div>
       </section>
     </div>

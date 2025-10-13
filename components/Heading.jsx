@@ -8,7 +8,7 @@ function Heading({ heading1, heading2, content, className }) {
       </div>
       <div>
         {content && (
-          <p className={` text-[18px] `}>{content}</p>
+          <p className={`text-[18px] `}>{content}</p>
         )}
       </div>
     </div>

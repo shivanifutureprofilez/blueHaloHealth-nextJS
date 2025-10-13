@@ -1,57 +1,63 @@
 import React from 'react'
-
 import { GrCertificate } from "react-icons/gr";
 import { TiSpiral } from "react-icons/ti";
 import { FaRegHandshake } from "react-icons/fa";
 import { TbBadge } from "react-icons/tb";
-import { FaBeer } from 'react-icons/fa'; // 1. Import the icon
 import Heading from '@/components/Heading';
-import Card from '@/components/Card';
 
 function Importance() {
-
-   const features = [ 
+  const features = [
     {
-      "title": "Experienced Certified Therapists",
-      "description": "Evidence-based behavioral interventions for skill development",
-      "icon": <GrCertificate className=" bg-[#4B9B711A]  text-5xl min-h-[55px] rounded-full min-w-[55px]  mb-2 border border-primary round-[10px]  p-2"/>
+      title: "Experience certified Therapists",
+      description: "Evidence-based behavioral interventions for skill development",
+      icon: <GrCertificate className="text-green-600 text-4xl mb-4" />
     },
     {
-      "title": "Age Specific, Individualized Care",
-      "description": "Evidence-based behavioral interventions for skill development",
-      "icon": <TiSpiral className=" bg-[#4B9B711A]  text-5xl min-h-[55px] rounded-full min-w-[55px]  mb-2 border border-primary round-[10px]  p-2"/>
+      title: "Age specific, individualized Care",
+      description: "Evidence-based behavioral interventions for skill development",
+      icon: <TiSpiral className="text-green-600 text-4xl mb-4" />
     },
     {
-      "title": "School & Healthcare Partnerships",
-      "description": "Evidence-based behavioral interventions for skill development",
-      "icon": <FaRegHandshake className=" bg-[#4B9B711A]  text-5xl min-h-[55px] rounded-full min-w-[55px]  mb-2 border border-primary round-[10px]  p-2"/>
+      title: "School & Healthcare Partnerships",
+      description: "Evidence-based behavioral interventions for skill development",
+      icon: <FaRegHandshake className="text-green-600 text-4xl mb-4" />
     },
     {
-      "title": "HIPAA-Compliant Privacy",
-      "description": "Evidence-based behavioral interventions for skill development",
-      "icon": <TbBadge className=" bg-[#4B9B711A]  text-5xl min-h-[55px] rounded-full min-w-[55px]  mb-2 border border-primary round-[10px]  p-2"/>
+      title: "PHIP-Compliant Privacy",
+      description: "Evidence-based behavioral interventions for skill development",
+      icon: <TbBadge className="text-green-600 text-4xl mb-4" />
     }
-  ]
-console.log("features" ,features)
+  ];
 
   return (
-    <div className='bg-[#4B9B711A] p-4'>
-    <div className='container mx-auto '>
-        <div className=''>
-            <Heading className="text-black text-center" heading1={"Why Families Choose"} heading2={" BlueHaloHealth"} content={"Trusted expertise, personalized care, and proven results for every stage of development."}/>
+    <section className="bg-[#F7F4F0] py-12">
+      <div className="container mx-auto">
+        <Heading
+          className="text-black text-center"
+          heading1={"Why Families Choose"}
+          heading2={" BlueHaloHealth"}
+          //content={"Trusted expertise, personalized care, and proven results for every stage of development."}
+        />
+        <p className="text-center mb-8 text-gray-700">
+          Trusted expertise, personalized care, and proven results for every stage of development.
+        </p>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mt-8">
+          {features.map((feature, idx) => (
+            <div
+              key={idx}
+              className="bg-white rounded-2xl shadow flex flex-col items-center px-8 py-10 text-center"
+            >
+              <div className="flex items-center justify-center w-16 h-16 rounded-full bg-[#E6F4EA] mb-4">
+                {feature.icon}
+              </div>
+              <h3 className="font-semibold text-lg mb-2">{feature.title}</h3>
+              <p className="text-gray-600 text-sm">{feature.description}</p>
+            </div>
+          ))}
         </div>
-      {/* <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-4 ">
-        {features?.map((feature) => className={`bg-white rounded-xl`} feature={feature} />
-        ))} 
-      </div> */}
-      <div className='grid grid-cols-1 md:grid-cols-4 gap-4 mb-4 mt-3'>
-        {features?.map((item,indx)=>(
-         <Card data={item} indx={indx}/>
-        ))}
       </div>
-    </div>
-    </div>
-  )
+    </section>
+  );
 }
 
 export default Importance;

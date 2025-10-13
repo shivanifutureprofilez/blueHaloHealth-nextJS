@@ -1,52 +1,68 @@
 import React from 'react'
 import Heading from './Heading';
-import Card from './Card';
 import Image from 'next/image';
 
 function Resource() {
     const features = [
         {
             "image": "/resourceImg.png",
-            "title": "Experienced Certified Therapists",
-            "description": "Evidence-based behavioral interventions for skill development",
-            //"icon": <GrCertificate className=" bg-[#4B9B711A]  text-5xl min-h-[55px] rounded-full min-w-[55px]  mb-2 border border-primary round-[10px]  p-2" />
+            "category": "Parenting",
+            "title": "5 Simple Ways to Strengthen",
+            "description": "Discover easy, everyday strategies to build trust, improve listening, and create stronger bonds with your child."
         },
         {
             "image": "/resourceImg.png",
-            "title": "Age Specific, Individualized Care",
-            "description": "Evidence-based behavioral interventions for skill development",
-            //"icon": <TiSpiral className=" bg-[#4B9B711A]  text-5xl min-h-[55px] rounded-full min-w-[55px]  mb-2 border border-primary round-[10px]  p-2" />
+            "category": "Parenting",
+            "title": "5 Simple Ways to Strengthen",
+            "description": "Discover easy, everyday strategies to build trust, improve listening, and create stronger bonds with your child."
         },
         {
             "image": "/resourceImg.png",
-            "title": "School & Healthcare Partnerships",
-            "description": "Evidence-based behavioral interventions for skill development",
-            //"icon": <FaRegHandshake className=" bg-[#4B9B711A]  text-5xl min-h-[55px] rounded-full min-w-[55px]  mb-2 border border-primary round-[10px]  p-2" />
+            "category": "Parenting",
+            "title": "5 Simple Ways to Strengthen",
+            "description": "Discover easy, everyday strategies to build trust, improve listening, and create stronger bonds with your child."
         },
     ]
     return (
-        <div className='bg-[#F7F4F0] p-4'>
-            <div className='container mx-auto '>
-                <div className=''>
-                    <Heading className="text-black " heading1={"Insights &"} heading2={" Resources for Families"} content={"Stay informed with expert articles, practical tips, and inspiring stories to help families at every stage of life. Our blogs cover child development, parenting strategies, mental health, therapy guidance, and more."} />
-                </div>
-
-                <div className='grid grid-cols-1 md:grid-cols-3 gap-4 mb-4 mt-3'>
+        <div className='bg-[#F7F4F0] py-12'>
+            <div className='container mx-auto'>
+                <Heading
+                    className="text-black"
+                    heading1={"Insights &"}
+                    heading2={" Resources for Families"}
+                    //content={"Stay informed with expert articles, practical tips, and inspiring stories to help families at every stage of life. Our blogs cover child development, parenting strategies, mental health, therapy guidance, and more."}
+                />
+                <p className="text-center mb-8 text-gray-700">
+                    Stay informed with expert articles, practical tips, and inspiring stories to help families at every stage of life. Our blogs cover child development, parenting strategies, mental health, therapy guidance, and more.
+                </p>
+                <div className='grid grid-cols-1 md:grid-cols-3 gap-8 mt-8'>
                     {features?.map((item, indx) => (
-                        <div>
-                            <Image src={item?.image} className="w-full object-cover pb-3 " width={400} height={300}/>
-                            <h2 className='font-semibold text-black align-left pt-4.'>
-                                 {item?.title}
-                            </h2>
-                            <p className='text-black space-x-4'>
-                                {item?.description}
-                            </p>
-                            
+                        <div key={indx} className="bg-white rounded-2xl shadow p-0 flex flex-col overflow-hidden">
+                            <div className="relative">
+                                <Image
+                                    src={item?.image}
+                                    alt={item?.title}
+                                    width={400}
+                                    height={250}
+                                    className="w-full h-[250px] object-cover rounded-t-2xl"
+                                />
+                                <span className="absolute left-6 bottom-4 bg-green-600 text-white px-4 py-1 rounded font-semibold text-sm shadow">
+                                    {item?.category}
+                                </span>
+                            </div>
+                            <div className="p-6">
+                                <h2 className='font-bold text-lg text-black mb-2'>
+                                    {item?.title}
+                                </h2>
+                                <p className='text-gray-700'>
+                                    {item?.description}
+                                </p>
+                            </div>
                         </div>
                     ))}
                 </div>
             </div>
-        </div >
+        </div>
     )
 }
 

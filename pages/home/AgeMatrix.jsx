@@ -3,7 +3,7 @@ import React from "react";
 const ageGroups = [
   {
     title: "0-6 Early Years",
-    image: '/AgeMatrix1.png', // Replace with your actual image path
+    image: '/AgeMatrix1.png', 
     services: [
       "Autism & Developmental Screening",
       "Occupational Therapy",
@@ -76,7 +76,7 @@ export default function AgeMatrix() {
               <ul className="text-gray-800 space-y-2">
                 {group.services.map((service, i) => (
                   <li key={i} className="flex items-center">
-                    <span className="text-green-500 mr-2">●</span>
+                    <span className="text-green-500 mr-2 text-2xl font-bold">&#x2022;</span>
                     {service}
                   </li>
                 ))}
