@@ -11,18 +11,16 @@ export default function Feedback() {
     
     return (
         <>
-            <div className='bg-[#F7F4F0] p-4'>
+            <div className='  py-10'>
                 <div className='container mx-auto '>
-                    <div className=''>
+                    <div className='pt-3'>
                         <Heading className="text-black text-center" heading1={"What"} heading2={" Families Say"} />
-
                     </div>
-                    <p className="text-center mb-8 text-gray-700">
-          Trusted expertise, personalized care, and proven results for every stage of development.
-                    </p>
-                     <div className='p-[40px] bg-[#F7F8F9] mt-10 text-black items-center  flex  justify-center'>
+                    <p className="text-center mb-8 text-[18px] text-gray-700">
+Real stories from families who’ve experienced the care, guidance, and support of BlueHaloHealth.                    </p>
+                     <div className='py-[40px]  text-black items-center  flex  justify-center'>
                 <Swiper
-                    spaceBetween={30}
+                    spaceBetween={20}
                     //  slidesPerView={8}
                     loop={true}
                     autoplay={{
@@ -41,7 +39,7 @@ export default function Feedback() {
                                 slidesPerView: 1,
                             },
                             767: {
-                                slidesPerView: 4,
+                                slidesPerView: 2,
                             },
                             1024: {
                                 slidesPerView: 4,

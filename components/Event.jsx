@@ -7,7 +7,7 @@ import Link from 'next/link';
 
 function Event() {
     return (
-        <section className="bg-[#F7F4F0] py-12">
+        <section className="bg-[#F7F8F9] py-12">
             <div className="container mx-auto">
                 <Heading
                     className="text-black text-center"
@@ -15,14 +15,14 @@ function Event() {
                     heading2={" Community Events"}
                     //content={"Join our community events designed to support families and build connections"}
                 />
-                <p className="text-center mb-8 text-gray-700">
+                <p className="text-center mb-8 text-[18px] text-gray-700">
                     Join our community events designed to support families and build connections
                 </p>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-8 mb-8">
                     {features?.map((item, indx) => (
                         <div
                             key={indx}
-                            className="bg-white rounded-2xl border border-gray-200 shadow flex flex-col p-8 items-start"
+                            className="m-3 md:m-0 bg-white rounded-2xl border border-gray-200 shadow flex flex-col p-8 items-start"
                         >
                             <div className="flex items-center justify-center w-12 h-12 rounded-lg bg-[#E6F4EA] mb-4">
                                 {item?.tag === 'event'

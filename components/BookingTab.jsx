@@ -8,23 +8,24 @@ import { IoMailOpenOutline } from "react-icons/io5";
 
 function BookingTab() {
     return (
-        <div className='bg-[#F7F4F0]'>
+        <div className='bg-[#F7F4F0] pb-10'>
             <div className='container mx-auto'>
-                <section className=" overflow-hidden relative  flex items-center justify-center pt-14">
+                <section className=" p-3  md:p-0 m-3 md:m-0 overflow-hidden w-full relative  flex items-center justify-center ">
                     {/* mt-24 remove */}
-                    <div className="px-4 relative text-white flex items-center justify-center gap-12">
+                    <div className="!max-h-[600px] relative text-white w-full flex items-center justify-center gap-12 py-[100px] px-[30px] rounded-2xl overflow-hidden">
                         <Image
                             src='/BookingImage.png'
-                            alt="banner" className="absolute rounded-xl inset-0 object-cover z-[0] !max-h-[400px]"
+                            alt="banner" className="w-full h-full absolute rounded-xl inset-0 object-cover z-[0] "
                             width={1500} height={500}
-                            
                         />
+                        <div className='w-full h-full opacity-[0.5] absolute top-0 left-0  bg-gradient-to-b from-black via-emerald-600 to-green-600'></div>
                         
-                        <div className=" w-full py-[110px] px-12 z-[1]" >
-                            <Heading className="!text-white !font-[700] !text-6xl " heading1={"Ready To Get Started"} content={"Take the first step towards personalized therapy and support. Our team is here to help you navigate your journey"} />
-                            <div className="flex justify-center items-center space-x-6 mt-4 pt-4">
-                                <div className="flex items-center gap-2 font-bold"><CiPhone size={24} /> 9876543218</div>
-                                <div className="flex items-center gap-2 font-bold"><IoMailOpenOutline size={24} /> hello@blueHaloHealth.com</div>
+                        <div className="w-full z-[1]" >
+                           <Heading className="!text-white text-center !font-[700]   text-4xl md:text-5xl lg:text-6xl mb-4 " heading1={"Ready To Get Started"} /> 
+                           <p className="text-center mb-8 text-[16px] text-white ">Take the first step towards personalized therapy and support. Our team is here to help you navigate your journey</p>
+                            <div className="flex justify-center items-center space-x-2 ">
+                                <div className="flex items-center gap-2 font-semibold md:font-bold"><CiPhone size={24} /> 9876543218</div>
+                                <div className="flex items-center gap-2 font-semibold md:font-bold"><IoMailOpenOutline size={24} /> hello@blueHaloHealth.com</div>
                             </div>
                             <div className='flex justify-center items-center pb-8'>
                                 <Button title={"Book Free Consultation"} className={`button-transparent mt-4 !border-white !text-white`} />

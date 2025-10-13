@@ -32,12 +32,12 @@ function Resource() {
                     heading2={" Resources for Families"}
                     //content={"Stay informed with expert articles, practical tips, and inspiring stories to help families at every stage of life. Our blogs cover child development, parenting strategies, mental health, therapy guidance, and more."}
                 />
-                <p className="text-center mb-8 text-gray-700">
+                 <p className="text-center mb-8 text-[18px] text-gray-700 p-8 md:p-0">
                     Stay informed with expert articles, practical tips, and inspiring stories to help families at every stage of life. Our blogs cover child development, parenting strategies, mental health, therapy guidance, and more.
                 </p>
                 <div className='grid grid-cols-1 md:grid-cols-3 gap-8 mt-8'>
                     {features?.map((item, indx) => (
-                        <div key={indx} className="bg-white rounded-2xl shadow p-0 flex flex-col overflow-hidden">
+                        <div key={indx} className="bg-white rounded-2xl shadow p-3 m-3 md:m-0 md:p-0 flex flex-col overflow-hidden">
                             <div className="relative">
                                 <Image
                                     src={item?.image}
@@ -54,7 +54,7 @@ function Resource() {
                                 <h2 className='font-bold text-lg text-black mb-2'>
                                     {item?.title}
                                 </h2>
-                                <p className='text-gray-700'>
+                                <p className=' mb-8 text-[18px] text-gray-700'>
                                     {item?.description}
                                 </p>
                             </div>

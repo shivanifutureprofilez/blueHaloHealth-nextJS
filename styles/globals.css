@@ -3,16 +3,21 @@
 @tailwind base;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Poppins:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 :root {
   --primary: #00D967;
   --secondary: #009C4A;
   --font: "Poppins", sans-serif;
+
 }
 
-body { font-family: "Poppins", sans-serif; } 
-.font-inter { font-family: "Inter", sans-serif; }
+.poppins  {  
+   font-family: 'Poppins', sans-serif;
+} 
+.font-inter {
+   font-family: "Inter", sans-serif; 
+}
 
 
 
@@ -32,7 +37,7 @@ body { font-family: "Poppins", sans-serif; }
 
 @layer components {
   .button {
-    @apply text-white px-4 py-2 rounded-lg font-bold bg-[var(--secondary)] hover:border-[var(--secondary)] transition-[1s];
+    @apply text-white px-[20px] py-[12px] font-semibold rounded-lg  bg-[var(--secondary)] hover:border-[var(--secondary)] transition-[1s];
   }
 
   .button-white {
@@ -45,6 +50,5 @@ body { font-family: "Poppins", sans-serif; }
 
   .heading {
     @apply font-[600] text-[#1E1E1E] text-[20px] md:text-[35px] lg:text-[42px];
-    font-family: "Poppins", sans-serif;;
   }
 }
