@@ -41,8 +41,8 @@ const teams = [
 
 const Team = () => {
     return (
-        <div className="">
-            <div className='mb-3 mt-3'>
+        <div className="container mx-auto">
+            <div className='mb-3 mt-6'>
                 <Heading
                     className="text-black "
                     heading1={"Meet "}
@@ -66,10 +66,8 @@ const Team = () => {
             >
                 {teams && teams?.map((team, idx) => (
                     <SwiperSlide key={idx}>
-                        <div className="flex p-1 flex-col items-start justify-start min-h-[600px]">
-                            {/* Image Box */}
-                            <div className="relative w-full h-[390px] rounded-2xl overflow-hidden group">
-                                {/* Image */}
+                        <div className="flex p-1 flex-col items-start justify-start min-h-[450px]">
+                            <div className="relative w-full h-[400px] rounded-2xl overflow-hidden group">
                                 <Image
                                     src={team?.img}
                                     width={500}
@@ -78,7 +76,6 @@ const Team = () => {
                                     className="object-cover w-full h-full rounded-2xl transform transition-transform duration-500 group-hover:-translate-y-4"
                                 />
 
-                                {/* Overlay Text */}
                                 <div className="absolute inset-0  flex items-center text-center justify-center hover:bg-[#009C4A]">
                                     <div className=" text-white p-4 rounded-md opacity-0 translate-y-full transition-all duration-500 group-hover:opacity-100 group-hover:translate-y-0">
                                         <h2 className="text-[20px] font-bold">

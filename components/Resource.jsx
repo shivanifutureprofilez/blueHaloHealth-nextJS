@@ -40,7 +40,7 @@ function Resource() {
                         <div key={indx} className="bg-white rounded-2xl shadow p-3 m-3 md:m-0 md:p-0 flex flex-col overflow-hidden">
                             <div className="relative">
                                 <Image
-                                    src={item?.image}
+                                    src={`${item?.image}?8787`}
                                     alt={item?.title}
                                     width={400}
                                     height={250}

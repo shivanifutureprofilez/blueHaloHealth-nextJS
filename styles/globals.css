@@ -3,12 +3,20 @@
 @tailwind base;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@font-face{font-family:'Poppins';src:url('/fonts/Poppins-Light.woff2') format('woff2'),url('/fonts/Poppins-Light.woff') format('woff');font-weight:300;font-style:normal;font-display:swap;}
+@font-face{font-family:'Poppins';src:url('/fonts/Poppins-ExtraBold.woff2') format('woff2'),url('/fonts/Poppins-ExtraBold.woff') format('woff');font-weight:bold;font-style:normal;font-display:swap;}
+@font-face{font-family:'Poppins';src:url('/fonts/Poppins-ExtraLight.woff2') format('woff2'),url('/fonts/Poppins-ExtraLight.woff') format('woff');font-weight:200;font-style:normal;font-display:swap;}
+@font-face{font-family:'Poppins';src:url('/fonts/Poppins-Regular.woff2') format('woff2'),url('/fonts/Poppins-Regular.woff') format('woff');font-weight:normal;font-style:normal;font-display:swap;}
+@font-face{font-family:'Poppins';src:url('/fonts/Poppins-Black.woff2') format('woff2'),url('/fonts/Poppins-Black.woff') format('woff');font-weight:900;font-style:normal;font-display:swap;}
+@font-face{font-family:'Poppins';src:url('/fonts/Poppins-SemiBold.woff2') format('woff2'),url('/fonts/Poppins-SemiBold.woff') format('woff');font-weight:600;font-style:normal;font-display:swap;}
+@font-face{font-family:'Poppins';src:url('/fonts/Poppins-Medium.woff2') format('woff2'),url('/fonts/Poppins-Medium.woff') format('woff');font-weight:500;font-style:normal;font-display:swap;}
+@font-face{font-family:'Poppins';src:url('/fonts/Poppins-Bold.woff2') format('woff2'),url('/fonts/Poppins-Bold.woff') format('woff');font-weight:bold;font-style:normal;font-display:swap;}
+@font-face{font-family:'Poppins';src:url('/fonts/Poppins-Thin.woff2') format('woff2'),url('/fonts/Poppins-Thin.woff') format('woff');font-weight:100;font-style:normal;font-display:swap;}
 
 :root {
   --primary: #00D967;
   --secondary: #009C4A;
-  --font: "Poppins", sans-serif;
+  --font:'Poppins';
 
 }
 /* .team .teamactions {
@@ -20,6 +28,9 @@
   opacity: 1;
 } */
 .poppins  {  
+   font-family: 'Poppins', sans-serif;
+} 
+body  {  
    font-family: 'Poppins', sans-serif;
 } 
 .font-inter {
@@ -44,7 +55,7 @@
 
 @layer components {
   .button {
-    @apply text-white px-[20px] py-[12px] font-semibold rounded-lg  bg-[var(--secondary)] hover:border-[var(--secondary)] transition-[1s];
+    @apply text-white px-[20px] py-[12px] rounded-lg  bg-[var(--secondary)] hover:border-[var(--secondary)] transition-[1s];
   }
 
   .button-white {
@@ -56,6 +67,6 @@
   }
 
   .heading {
-    @apply font-[600] text-[#1E1E1E] text-[20px] md:text-[35px] lg:text-[42px];
+    @apply font-bold text-[#1E1E1E] text-[20px] md:text-[35px] lg:text-[42px];
   }
 }

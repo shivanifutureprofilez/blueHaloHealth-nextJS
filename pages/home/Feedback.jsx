@@ -11,7 +11,7 @@ export default function Feedback() {
     
     return (
         <>
-            <div className='  py-10'>
+            <div className='  py-10 bg-[#f7f8fa]'>
                 <div className='container mx-auto '>
                     <div className='pt-3'>
                         <Heading className="text-black text-center" heading1={"What"} heading2={" Families Say"} />

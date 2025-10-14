@@ -38,8 +38,8 @@ function Importance() {
           heading2={" BlueHaloHealth"}
           //content={"Trusted expertise, personalized care, and proven results for every stage of development."}
         />
-        <p className="text-center mb-8 text-[18px] text-gray-700 p-8 md:p-0">
-          Trusted expertise, personalized care, and proven results for every stage of development.
+        <p className="text-center mb-8 text-[18px] text-gray-700 p-8 md:p-0 max-w-[600px] mx-auto">
+          Trusted expertise, personalized care, and proven results  for every stage of development.
         </p>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mt-8 m-3 md:m-0">
           {features.map((feature, idx) => (

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import Heading from './Heading';
 
 import features from "../public/events.json";
@@ -6,9 +6,17 @@ import Link from 'next/link';
 import EventCard from './EventCard';
 
 function Event() {
+
+    const [f, setF] = useState(features || []);
+    useEffect(()=>{ 
+        setF(features && features.slice(0,3))
+    },[]);
+
+
     return (
         <section className="bg-[#F7F8F9] py-12">
             <div className="container mx-auto">
+                
                 <Heading
                     className="text-black text-center"
                     heading1={"Workshops &"}
@@ -18,8 +26,8 @@ function Event() {
                 <p className="text-center mb-8 text-[18px] text-gray-700">
                     Join our community events designed to support families and build connections
                 </p>
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-8 mb-8">
-                    {features?.map((item, index) => (
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-5 mt-8 mb-8">
+                    {f?.map((item, index) => (
                         <EventCard item={item} index={index} />
                     ))}
                 </div>

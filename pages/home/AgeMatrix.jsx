@@ -71,19 +71,24 @@ export default function AgeMatrix() {
         </p>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {ageGroups.map((group, idx) => (
-            <div key={idx} className="bg-white rounded-xl shadow p-6 flex flex-col items-center">
-              <div className="w-full h-40 rounded-lg overflow-hidden mb-4">
+            <div key={idx} className="bg-white rounded-[25px] shadow overflow-hidden flex flex-col items-center">
+              <div className="w-full h-40 rounded-lg overflow-hidden mb-4 relative">
                 <img
                   src={group.image}
                   alt={group.title}
                   className="object-cover w-full h-full"
                 />
+              <h3 className="  mb-3 text-start py-[20px] px-[30px] text-white text-xl font-semibold absolute top-0 left-0 w-full">{group.title}</h3>
               </div>
-              <h3 className="font-semibold text-lg mb-3 text-center">{group.title}</h3>
-              <ul className="text-gray-800 space-y-2">
+              <ul className="text-gray-800 p-4 ">
                 {group.services.map((service, i) => (
-                  <li key={i} className="flex items-center text-[16px]">
-                    <span className="text-green-500 mr-2 text-2xl font-bold">&#x2022;</span>
+                  <li key={i} className="mb-2 text-[#626262] flex items-start font-semibold text-[15px] ">
+                    <span className="me-2 mt-1">
+                      <svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <rect width="13" height="13" rx="6.5" fill="#009C4A"/>
+                      </svg>
+                    </span>
+
                     {service}
                   </li>
                 ))}

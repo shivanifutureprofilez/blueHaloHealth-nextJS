@@ -28,7 +28,7 @@ function Mission() {
         
       ];
   return (
-    <div className="bg-[#E6EBE3] py-12 ">
+    <div className="bg-[#E6EBE3] py-8 ">
       <div className="container mx-auto">
         <div className='mb-3'>
         <Heading
