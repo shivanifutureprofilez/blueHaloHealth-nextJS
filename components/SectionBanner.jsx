@@ -1,31 +1,36 @@
-import React from 'react'
-import Image from 'next/image';
-import Heading from './Heading';
+import React from "react";
+import Image from "next/image";
+import Link from "next/link";
 
-function SectionBanner({title="Shop"}) {
+export default function SectionBanner({ title = "Shop" }) {
   return (
-    <div className='flex flex-wrap items-center relative   '>
-        <Image src='/contactBanner.png'  className=' h-[300px] object-cover w-full ' width={1500} height={700}></Image>    
-        
-        <div className='w-full h-full  opacity-[0.4] absolute'></div>
-        <div className='absolute w-full left-[0px] top-[50%] text-center z-[9px] '>
-          <Heading
-            className="text-black tracking-tighter font-bold text-4xl md:text-5xl lg:text-6xl mb-4"
-            heading2={title}
-           
-          />
-            
-          <a href="/" className=" text-white text-center pl-0 font-normal underline hover:text-yellow-700">
-            home &gt;
-          </a>
-          <a href="" className=" text-white text-center pl-0 font-normal underline hover:text-yellow-700">
-            { title}
-          </a>
-        </div>
-         {/* <div className="absolute top-1/3 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center pt-[85px]">
-      </div> */}
-    </div>
-  )
-}
+    <section className="relative w-full h-[260px] md:h-[300px] lg:h-[340px] flex items-center justify-center overflow-hidden bg-[#F7F4F0]">
+      <Image
+        src="/contactBanner.png"
+        alt={`${title} banner`}
+        fill
+        className="object-cover opacity-90"
+        priority
+      />
 
-export default SectionBanner;
+      <div className="absolute inset-0 bg-[#F7F4F0]/60 mix-blend-multiply"></div>
+
+      <div className="relative text-center z-10 px-4">
+        <h1 className="text-[#00A859] font-bold text-4xl md:text-5xl lg:text-6xl tracking-tight mb-3">
+          {title}
+        </h1>
+
+        <div className="flex justify-center items-center space-x-2 text-[15px] md:text-[16px] font-medium">
+          <Link
+            href="/"
+            className="text-gray-700 hover:text-[#00A859] transition-colors"
+          >
+            Home
+          </Link>
+          <span className="text-gray-500">{">"}</span>
+          <span className="text-[#00A859]">{title}</span>
+        </div>
+      </div>
+    </section>
+  );
+}

@@ -1,72 +1,12 @@
 import Layout from '@/components/Layout'
 import React from 'react'
+import Founder from './Founder'
+import SectionBanner from '@/components/SectionBanner'
 export default function AboutPageIndex() {
   return (
     <Layout>
-        sddsfsdf
-        sddsfsdf
-        sddsfsdf
-        sddsfsdf
-        sddsfsdf
-        sddsfsdf
-        sddsfsdf
-        sddsfsdf
-        sddsfsdf
-        sddsfsdf
-        sddsfsdf
-        sddsfsdf
-        sddsfsdf
-        sddsfsdf
-        sddsfsdf
-        sddsfsdf
-        sddsfsdf
-        sddsfsdf
-        sddsfsdf
-        sddsfsdf
-        sddsfsdf
-        sddsfsdf
-        sddsfsdf
-        sddsfsdf
-        sddsfsdf
-        sddsfsdf
-        sddsfsdf
-        sddsfsdf
-        sddsfsdf
-        sddsfsdf
-        sddsfsdf
-        sddsfsdf
-        sddsfsdf
-        sddsfsdf
-        sddsfsdf
-        sddsfsdf
-        sddsfsdf
-        sddsfsdf
-        sddsfsdf
-        sddsfsdf
-        sddsfsdf
-        sddsfsdf
-        sddsfsdf
-        sddsfsdf
-        sddsfsdf
-        sddsfsdf
-        sddsfsdf
-        sddsfsdf
-        sddsfsdf
-        sddsfsdf
-        sddsfsdf
-        sddsfsdf
-        sddsfsdf
-        sddsfsdf
-        sddsfsdf
-        sddsfsdf
-        sddsfsdf
-        sddsfsdf
-        sddsfsdf
-        sddsfsdf
-        sddsfsdf
-        sddsfsdf
-        sddsfsdf
-        sddsfsdf
+        <SectionBanner title={"About"}/>
+        <Founder/>
    </Layout>
   )
 }

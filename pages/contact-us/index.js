@@ -4,12 +4,14 @@ import SectionBanner from '@/components/SectionBanner';
 import React from 'react'
 import ContactForm from './contactform';
 import Banner from '../home/Banner';
+import Faq from '@/components/Faq';
 
 function index() {
   return (
     <Layout>
         <SectionBanner title={"Contact Us"}/>
         <ContactForm/>
+        <Faq/>
         <BookingTab/>
     </Layout>
   )
