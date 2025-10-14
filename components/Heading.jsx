@@ -1,6 +1,6 @@
 import React from 'react'
 
-function Heading({ heading1, heading2, content, className }) {
+function Heading({ heading1, heading2, content, className, pClass }) {
   return (
     <div className='container m-auto'>
       <div className='flex justify-center'>
@@ -8,7 +8,7 @@ function Heading({ heading1, heading2, content, className }) {
       </div>
       <div>
         {content && (
-          <p className={`text-[18px] `}>{content}</p>
+          <p className={`${pClass} text-[18px]`}>{content}</p>
         )}
       </div>
     </div>

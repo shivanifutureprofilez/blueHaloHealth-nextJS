@@ -4,9 +4,9 @@ import Link from "next/link";
 
 export default function SectionBanner({ title = "Shop" }) {
   return (
-    <section className="relative w-full h-[260px] md:h-[300px] lg:h-[340px] flex items-center justify-center overflow-hidden bg-[#F7F4F0]">
+    <section className="relative w-full h-[200px] md:h-[280px] lg:h-[300px] flex items-center justify-center overflow-hidden bg-[#F7F4F0]">
       <Image
-        src="/contactBanner.png"
+        src="/sectionBanner.png"
         alt={`${title} banner`}
         fill
         className="object-cover opacity-90"

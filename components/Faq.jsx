@@ -62,7 +62,7 @@ function Faq() {
           {faqs.map((faq, index) => (
             <div
               key={index}
-              className="bg-white rounded-lg shadow-sm border border-gray-100 p-5 transition-all duration-300"
+              className="bg-white rounded-lg shadow-sm border border-gray-100 p-5 "
             >
               <button
                 className="flex justify-between items-center w-full text-left"
@@ -72,9 +72,9 @@ function Faq() {
                   {faq.question}
                 </h3>
                 {openIndex === index ? (
-                  <FiMinus className="text-[#00D967] text-xl flex-shrink-0" />
+                  <FiMinus className="text-[#00D967] text-xl " />
                 ) : (
-                  <FiPlus className="text-[#00D967] text-xl flex-shrink-0" />
+                  <FiPlus className="text-[#00D967] text-xl " />
                 )}
               </button>
 

@@ -11,7 +11,14 @@
   --font: "Poppins", sans-serif;
 
 }
+/* .team .teamactions {
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
 
+.team:hover .teamactions {
+  opacity: 1;
+} */
 .poppins  {  
    font-family: 'Poppins', sans-serif;
 } 
