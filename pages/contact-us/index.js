@@ -2,7 +2,7 @@ import BookingTab from '@/components/BookingTab';
 import Layout from '@/components/Layout';
 import SectionBanner from '@/components/SectionBanner';
 import React from 'react'
-import ContactForm from './contactform';
+import ContactForm from './ContactForm';
 import Banner from '../home/Banner';
 import Faq from '@/components/Faq';
 
