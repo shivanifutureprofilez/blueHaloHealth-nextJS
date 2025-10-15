@@ -24,20 +24,20 @@ function Resource() {
         },
     ]
     return (
-        <div className='bg-[#F7F4F0] py-12'>
+        <div className='bg-[#F7F4F0] py-12 md:pt-16 md:pb-24'>
             <div className='container mx-auto'>
                 <Heading
-                    className="text-black"
+                    className="text-black text-center"
                     heading1={"Insights &"}
                     heading2={" Resources for Families"}
                     //content={"Stay informed with expert articles, practical tips, and inspiring stories to help families at every stage of life. Our blogs cover child development, parenting strategies, mental health, therapy guidance, and more."}
                 />
-                 <p className="text-center mb-8 text-[18px] text-gray-700 p-8 md:p-0">
+                 <p className="font-medium text-[15px] text-center mb-16 text-gray-700 p-8 md:p-0 max-w-[600px] mx-auto">
                     Stay informed with expert articles, practical tips, and inspiring stories to help families at every stage of life. Our blogs cover child development, parenting strategies, mental health, therapy guidance, and more.
                 </p>
-                <div className='grid grid-cols-1 md:grid-cols-3 gap-8 mt-8'>
+                <div className='grid grid-cols-1 md:grid-cols-3 gap-6 mt-8'>
                     {features?.map((item, indx) => (
-                        <div key={indx} className="bg-white rounded-2xl shadow p-3 m-3 md:m-0 md:p-0 flex flex-col overflow-hidden">
+                        <div key={indx} className="bg-white rounded-3xl shadow  m-3 md:m-0 md:p-0 flex flex-col overflow-hidden">
                             <div className="relative">
                                 <Image
                                     src={`${item?.image}?8787`}
@@ -51,10 +51,10 @@ function Resource() {
                                 </span>
                             </div>
                             <div className="p-6">
-                                <h2 className='font-bold text-lg text-black mb-2'>
+                                <h2 className='font-bold text-xl text-black mb-2'>
                                     {item?.title}
                                 </h2>
-                                <p className=' mb-8 text-[18px] text-gray-700'>
+                                <p className=' mb-8 text-[15px] font-medium text-gray-600'>
                                     {item?.description}
                                 </p>
                             </div>

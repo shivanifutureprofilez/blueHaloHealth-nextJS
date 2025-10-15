@@ -28,9 +28,9 @@ function Mission() {
         
       ];
   return (
-    <div className="bg-[#E6EBE3] py-8 ">
+    <div className="bg-[#E6EBE3] py-10 ">
       <div className="container mx-auto">
-        <div className='mb-3'>
+        <div className='mb-5 mt-3 p-3'>
         <Heading
           className="text-black "
           pClass="text-center"
@@ -39,7 +39,7 @@ function Mission() {
           content={"At BlueHaloHealth, we envision a world where every child, adolescent, and adult can reach their full potential — supported by compassionate care, expert guidance, and a community that understands their unique journey. We aim to create brighter futures by making therapy and assessment services accessible, empowering, and meaningful for every family we serve."}
         />
         </div>
-        <div className='mb-3'>
+        <div className='mb-5 mt-3 p-3'>
         <Heading
           className="text-black "
           pClass="text-center"
@@ -48,13 +48,16 @@ function Mission() {
           content={"Our mission is to provide comprehensive, evidence-based therapy and assessment services that nurture growth, independence, and well-being across all ages. We are committed to supporting individuals and families through personalized care, collaborative teamwork, and a warm, inclusive environment — helping every client achieve progress that lasts a lifetime."}
         />
         </div>
+        <div className='mb-5 mt-3 p-3'>
         <Heading
           className="text-black text-center"
-          //heading1={"Our"}
+          heading1={"Our"}
           heading2={"Values"}
-          //content={"Our mission is to provide comprehensive, evidence-based therapy and assessment services that nurture growth, independence, and well-being across all ages. We are committed to supporting individuals and families through personalized care, collaborative teamwork, and a warm, inclusive environment — helping every client achieve progress that lasts a lifetime."}
+          pClass="text-center"
+          content={"Blue Halo Health’s core values are at the heart of its mission: Passion fuels efforts to help children with autism and their families, quality is reflected in every standard they uphold, and transparency is shown through honest, open communication with clients, caregivers, and the team."}
         />
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-8 m-3 md:m-0">
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-8 m-3 md:m-0 pb-10">
           {features.map((feature, idx) => (
             <div
               key={idx}

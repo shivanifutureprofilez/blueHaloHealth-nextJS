@@ -19,6 +19,11 @@
   --font:'Poppins';
 
 }
+
+.container { 
+  padding-right: 20px;
+  padding-left: 20px;
+}
 /* .team .teamactions {
   opacity: 0;
   transition: opacity 0.5s ease;
@@ -59,14 +64,14 @@ body  {
   }
 
   .button-white {
-    @apply bg-white text-black border-2 border-black px-4 py-2 rounded-lg font-bold hover:bg-[var(--primary)] hover:border-[var(--secondary)] hover:text-white transition-[1s];
+    @apply bg-white text-black border-2 border-black px-4 py-2 rounded-lg font-bold hover:bg-[var(--secondary)] hover:border-[var(--secondary)] hover:text-white transition-[1s];
   }
 
   .button-transparent {
-    @apply bg-transparent border-[var(--primary)] border-2 text-[var(--primary)] px-4 py-2 rounded-lg font-bold transition-[1s];
+    @apply bg-transparent border-[var(--secondary)] border-2 text-[var(--secondary)] px-4 py-2 rounded-lg font-bold transition-[1s];
   }
 
   .heading {
-    @apply font-bold text-[#1E1E1E] text-[20px] md:text-[35px] lg:text-[42px];
+    @apply font-bold text-[#1E1E1E] text-[26px] md:text-[35px] lg:text-[42px];
   }
 }

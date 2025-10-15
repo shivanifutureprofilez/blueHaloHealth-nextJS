@@ -15,16 +15,17 @@ function Header() {
     { name: "Resources", href: "/resources" },
     { name: "Events", href: "/events" },
     { name: "Contact", href: '/contact-us' },
+    { name: "AgeGroups", href: '/agegroups'}
     //{ name: "Register", href: '/register' },
   ];
 
   return (
     <div className="bg-[#F7F4F0] ">
-      <div className="container mx-auto ">
+      <div className="container mx-auto">
         <div className="flex !z-[99] rounded-tr-xl rounded-tl-xl  justify-center sticky top-0  w-full">
           <div className="w-full flex items-center   py-4  justify-between">
             {/* Logo */}
-            <div className="flex items-center space-x-38 md:space-x-10">
+            <div className="w-full flex items-center  justify-between">
               {/* <span className="block text-2xl font-bold text-gray-800"> */}
               <Link href='/' className="text-green-dark text-[24px] font-bold ">
                 {/* <img className="max-w-[230px] w-[230px]" src='/logo.png'/> */}
@@ -32,7 +33,7 @@ function Header() {
               </Link>
 
 
-              <div className="md:hidden">
+              <div className="lg:hidden">
               {isMobileMenuOpen ? (
                 <FiX
                   className="text-2xl cursor-pointer"
@@ -48,7 +49,7 @@ function Header() {
               {/* </span> */}
             </div>
 
-              <ul className="hidden md:flex space-x-13 text-gray-700 font-semibold">
+              <ul className="hidden lg:flex space-x-13 text-gray-700 font-semibold">
                 {navLinks && navLinks?.map((link) => (
                   <li key={link.name}>
                     <Link href={link?.href} className="text-black hover:text-[#00D967]">
@@ -58,13 +59,9 @@ function Header() {
                 ))}
                 
               </ul>
-              <div className="hidden md:flex items-center">
+              <div className="hidden lg:flex items-center">
               <Button title={"Book Free Consultation"} className={`button bg-green-dark text-[14px] md:text-[16px]`} />
             </div> 
-            
-
-
-            
           </div>
         </div>
       </div>

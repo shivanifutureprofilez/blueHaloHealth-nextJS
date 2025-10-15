@@ -7,17 +7,17 @@ export default function Founder() {
       <div className='container mx-auto rounded-xl  bg-white mt-10 mb-10'>
         <div className=' md:flex'>
           <div className="w-full md:w-2/3 text-center md:m-8 md:text-left">
-            <h3 className="text-black font-semibold text-2xl mt-2 ">
+            <h3 className="text-black font-semibold text-2xl p-6 md:p-0 mt-2 ">
               Sanya Modi
             </h3>
             <p className=" text-black text-[14px] mb-2 md:text-[16px]">Founder, Speech Therapist</p>
             <p className=" text-green-dark text-[14px] md:text-[16px] mb-2">Empowering voices and connections!</p>
-            <p className="text-black text-[14px] md:text-[16px] leading-relaxed mb-4">
+            <p className="text-black text-[14px] md:text-[16px] p-6 md:p-0 leading-relaxed md:mb-4">
              Sanya has completed her Bachelors & Masters in Audiology and Speech Language Pathology from AYJNISHD(D), Mumbai. She is certified in tele-therapy, specialising in Dysphagia, Autism communication, and bedside speech therapy for Neurological speech disorders
  Extensive experience with children in special education settings for Autism, Cerebral Palsy, and Learning disabilities. Also, a seasoned professional in private practice, specialising in diverse speech & hearing disorders among adults. She has a keen interest in research & has presented papers at national conferences.
             </p>
 
-            <p className=" text-black text-[14px] md:text-[16px]">
+            <p className=" text-black p-6 md:p-0 text-[14px] md:text-[16px]">
              "Nothing was my heart more than seeing a family enjoy conversations at the der table seeing a mother bonding with her baby, helping a parent cope and cove forward when they get to know about the child's diagnosis."
             </p>
           </div>
@@ -27,7 +27,7 @@ export default function Founder() {
               alt="Founder"
               width={350}
               height={350}
-              className="rounded-2xl shadow-md object-cover "
+              className="rounded-xl shadow-md object-cover "
             />
           </div>
         </div>

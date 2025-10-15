@@ -8,8 +8,8 @@ function ContactForm() {
     <div className="container mx-auto py-12">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
         {/* Contact Info Card */}
-        <div className="bg-white rounded-2xl shadow p-8 flex flex-col justify-center">
-          <h2 className="font-bold text-2xl mb-6 text-black">Contact us</h2>
+        <div className="bg-white  p-8 flex flex-col justify-start">
+          <h2 className="font-bold text-2xl mb-4 text-black">Contact us</h2>
           <ul className="space-y-6 text-base">
             <li className="flex items-center gap-3 text-gray-700">
               <span className="bg-green-100 rounded-full p-2">
@@ -34,7 +34,7 @@ function ContactForm() {
           </ul>
         </div>
         {/* Message Form */}
-        <div className="bg-[#F5F5F5] rounded-2xl shadow p-8">
+        <div className="bg-[#F5F5F5] m-4  rounded-2xl shadow p-8">
           <h2 className="font-bold text-2xl mb-6 text-black flex items-center gap-2">
             <FaPaperPlane className="text-green-600" /> Send Us a Message
           </h2>

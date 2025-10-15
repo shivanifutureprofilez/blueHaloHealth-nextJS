@@ -50,41 +50,44 @@ function Faq() {
 
   return (
     <section className="bg-[#F7F4F0] py-16 px-4 md:px-8 lg:px-16">
-      <div className="max-w-5xl mx-auto">
-         <Heading
-                    className="text-black"
-                    heading1={"Frequently asked "}
-                    heading2={" questions"}
-                    //content={"Stay informed with expert articles, practical tips, and inspiring stories to help families at every stage of life. Our blogs cover child development, parenting strategies, mental health, therapy guidance, and more."}
-                />
-
-        <div className="space-y-4 mt-4">
-          {faqs.map((faq, index) => (
-            <div
-              key={index}
-              className="bg-white rounded-lg shadow-sm border border-gray-100 p-5 "
-            >
-              <button
-                className="flex justify-between items-center w-full text-left"
-                onClick={() => toggleFAQ(index)}
+      <div className="container mx-auto">
+        <div className="flex">
+          <div className="mt-6 p-3">
+            <Heading
+              className="text-black"
+              heading1={"Frequently asked "}
+              heading2={" questions"}
+            //content={"Stay informed with expert articles, practical tips, and inspiring stories to help families at every stage of life. Our blogs cover child development, parenting strategies, mental health, therapy guidance, and more."}
+            />
+          </div>
+          <div className="space-y-4 mt-4">
+            {faqs.map((faq, index) => (
+              <div
+                key={index}
+                className="bg-white rounded-lg shadow-sm border border-gray-100 p-5 "
               >
-                <h3 className="font-semibold text-gray-800 text-[17px] md:text-[18px]">
-                  {faq.question}
-                </h3>
-                {openIndex === index ? (
-                  <FiMinus className="text-[#00D967] text-xl " />
-                ) : (
-                  <FiPlus className="text-[#00D967] text-xl " />
-                )}
-              </button>
+                <button
+                  className="flex justify-between items-center w-full text-left"
+                  onClick={() => toggleFAQ(index)}
+                >
+                  <h3 className="font-semibold text-gray-800 text-[17px] md:text-[18px]">
+                    {faq.question}
+                  </h3>
+                  {openIndex === index ? (
+                    <FiMinus className="text-[#00D967] text-xl " />
+                  ) : (
+                    <FiPlus className="text-[#00D967] text-xl " />
+                  )}
+                </button>
 
-              {openIndex === index && (
-                <p className="text-gray-600 mt-3 leading-relaxed text-[15px] md:text-[16px]">
-                  {faq.answer}
-                </p>
-              )}
-            </div>
-          ))}
+                {openIndex === index && (
+                  <p className="text-gray-600 mt-3 leading-relaxed text-[15px] md:text-[16px]">
+                    {faq.answer}
+                  </p>
+                )}
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </section>

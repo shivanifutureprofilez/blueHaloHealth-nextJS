@@ -41,16 +41,20 @@ const teams = [
 
 const Team = () => {
     return (
-        <div className="container mx-auto">
-            <div className='mb-3 mt-6'>
-                <Heading
-                    className="text-black "
-                    heading1={"Meet "}
-                    heading2={"Our Team"}
-                />
+        <div className="mx-auto pb-18">
+            <div className="container mx-auto py-12">
+                <div className='mb-3 mt-6'>
+                    <Heading
+                        className="text-black "
+                        heading1={"Meet "}
+                        heading2={"Our Team"}
+                        pClass="text-center"
+                        content={"Below are some of our 250+ therapists"}
+                    />
+                </div>
             </div>
             <Swiper
-                spaceBetween={2}
+                spaceBetween={2} centeredSlides={true}
                 slidesPerView={3}
                 loop={true}
                 autoplay={{ delay: 3000 }}
