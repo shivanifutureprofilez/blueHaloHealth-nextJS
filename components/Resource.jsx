@@ -25,7 +25,7 @@ function Resource() {
     ]
     return (
         <div className='bg-[#F7F4F0] py-12 md:pt-16 md:pb-24'>
-            <div className='container mx-auto'>
+            <div className=''>
                 <Heading
                     className="text-black text-center"
                     heading1={"Insights &"}
@@ -40,7 +40,7 @@ function Resource() {
                         <div key={indx} className="bg-white rounded-3xl shadow  m-3 md:m-0 md:p-0 flex flex-col overflow-hidden">
                             <div className="relative">
                                 <Image
-                                    src={`${item?.image}?8787`}
+                                    src={`${item?.image}`}
                                     alt={item?.title}
                                     width={400}
                                     height={250}

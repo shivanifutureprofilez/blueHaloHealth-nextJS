@@ -2,9 +2,11 @@ import { FaFacebookF, FaTwitter, FaInstagram, FaLinkedinIn, FaHeart } from "reac
 import { IoLocationOutline } from "react-icons/io5";
 import { CiPhone } from "react-icons/ci";
 import { IoMailOpenOutline } from "react-icons/io5";
+import { Toaster } from "react-hot-toast";
 
 function Footer({bg,text}) {
   return (
+    <div>
     <footer className={`py-8 px-4 ${bg} `}>
       <div className="max-w-6xl mx-auto flex flex-col md:flex-row md:items-start justify-between gap-8">
         {/* Logo & Description */}
@@ -53,6 +55,11 @@ function Footer({bg,text}) {
         © 2025 BlueHaloHealth Develop with <FaHeart className="inline text-red-500 mx-1" /> By FutureProfilez Pvt. Ltd.
       </div>
     </footer>
+    <Toaster
+          position="top-right"
+          reverseOrder={false}
+        />
+      </div>
   )
 }
 

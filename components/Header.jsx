@@ -10,12 +10,12 @@ function Header() {
   const navLinks = [
     { name: "Home", href: "/" },
     // { name: "Pages", href: "/pages" },
-    { name: "Services", href: "/services" },
+    { name: "Services", href: "/service" },
     { name: "About", href: "/about" },
     { name: "Resources", href: "/resources" },
     { name: "Events", href: "/events" },
     { name: "Contact", href: '/contact-us' },
-    { name: "AgeGroups", href: '/agegroups'}
+    // { name: "AgeGroups", href: '/agegroups'}
     //{ name: "Register", href: '/register' },
   ];
 
@@ -25,7 +25,7 @@ function Header() {
         <div className="flex !z-[99] rounded-tr-xl rounded-tl-xl  justify-center sticky top-0  w-full">
           <div className="w-full flex items-center   py-4  justify-between">
             {/* Logo */}
-            <div className="w-full flex items-center  justify-between">
+            <div className=" flex items-center  justify-between">
               {/* <span className="block text-2xl font-bold text-gray-800"> */}
               <Link href='/' className="text-green-dark text-[24px] font-bold ">
                 {/* <img className="max-w-[230px] w-[230px]" src='/logo.png'/> */}

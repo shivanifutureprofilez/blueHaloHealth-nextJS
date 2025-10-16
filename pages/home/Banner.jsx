@@ -5,8 +5,8 @@ import React from 'react'
 export default function Banner() {
   return (
     <div className="container mx-auto pb-3">
-      <section className=" md:!bg-[#edeee8]   rounded-2xl md:rounded-4xl flex flex-col lg:flex-row items-center justify-between  py-2 md:py-[150px] md:shadow">
-        <div className="order-2 md:order-1 flex-1 flex flex-col justify-center">
+      <section className=" md:!bg-[#edeee8] md:px-8   rounded-2xl md:rounded-4xl flex flex-col lg:flex-row items-center justify-between  py-2 md:py-[150px] md:shadow">
+        <div className="order-2 md:order-1 md:m-3 flex-1 flex flex-col justify-center">
           <div className='leading-snug'>
             <h2 className={`heading text-center md:text-left pt-12 md:pt-0 poppins text-black tracking-tighter leading-tight font-bold text-4xl md:text-5xl lg:text-5xl mb-3`} >Empowering Families Through <span className='text-[#009C4A]'>Expert Therapy </span><br/>& Support</h2>
             <p className={` text-gray-500 text-center md:text-left font-medium text-[15px]`}>Individualized programs for children, teens, and adults with developmental or behavioral challenges.</p>
