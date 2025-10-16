@@ -18,6 +18,12 @@ class RoutesLists extends Component {
     async getServicesByAge({pid}) {
         return Api.get(`/service/list/${pid}`);
     }
+
+    async getGroupData({pid}) {
+        return Api.get(`/agegroup/${pid}`);
+    }
+
+
     render() {
         return (
             <div>

@@ -3,6 +3,7 @@ import Faq from '@/components/Faq'
 import Layout from '@/components/Layout'
 import Loading from '@/components/Loading'
 import SectionBanner from '@/components/SectionBanner'
+import ServiceCard from '@/components/ServiceCard'
 import RoutesLists from '@/pages/api/RoutesLists'
 import { useParams } from 'next/navigation'
 import React, { useEffect, useState } from 'react'
@@ -13,7 +14,9 @@ export default function ageGroupDetail() {
 
    const [loading, setLoading ] = useState(true);
     const pid = useParams();
+    const [data, setData] = useState(null);
     const [services, setServices] = useState([]);
+
     const ShowAgeGroupDetails = () => {
         const lists = new RoutesLists();
         const data = lists.getServicesByAge(pid);
@@ -30,9 +33,26 @@ export default function ageGroupDetail() {
             },1000);
         });
     };
+
+
+    const getAgeData = () => {
+        const lists = new RoutesLists();
+        const data = lists.getGroupData(pid);
+        data.then((res)=>{
+            console.log("res ",res);
+            setData(res?.data?.ageGroupData || null);
+                setLoading(false);
+                ShowAgeGroupDetails();
+        }).catch((error)=>{
+              console.log("error",error);
+              setLoading(false);
+        });
+    };
+
+
     useEffect(() => {
         if(pid){
-            ShowAgeGroupDetails(pid);
+            getAgeData(pid);
         }
     }, [pid]);
   return (
@@ -41,10 +61,20 @@ export default function ageGroupDetail() {
         {loading ? <Loading /> 
         : 
         <>
-        <SectionBanner title={services?.allServices?.agegroup?.title || 'Service Detail'} />
+        <SectionBanner title={data.title || 'Service Detail'} />
+        <div className='container mx-auto'>
+          <div className='grid grid-cols-3 gap-3 py-12'>
+              {services && services.map((s,i)=>{
+                return <>
+                    <ServiceCard item={s}  idx={i}  />
+                </>
+              })}
+          </div>
         <Faq/>
         <BookingTab/>
-        </>}
+        </div>
+        </>
+        }
         
       </div>
     </Layout>
