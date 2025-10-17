@@ -67,7 +67,7 @@ import Link from "next/link";
   //   },
   // ];
 
-export default function AgeMatrix() {
+export default function AgeMatrix({admin}) {
 
   const [ageGroupsLists, setAgeGroupsLists] = useState([]);
 
@@ -92,6 +92,8 @@ export default function AgeMatrix() {
         {/* <h2 className="text-3xl font-bold text-center mb-2">
           Comprehensive <span className="text-green-600">Therapy Services</span>
         </h2> */}
+        {admin==false ?
+        <>
          <Heading
           className="text-black text-center"
           heading1={"Comprehensive"}
@@ -100,7 +102,9 @@ export default function AgeMatrix() {
         />
        <p className="font-medium text-[15px] text-center mb-8  text-gray-700 p-4 md:p-0 max-w-[600px] mx-auto">
           Our certified therapists provide individualized care across all developmental stages
-        </p>
+        </p> 
+        </> : ""
+      }
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 lg:gap-6 xl:gap-8">
           {ageGroupsLists.map((group, idx) => (
             <div key={idx} className="bg-white border-b border-[#009C4A] rounded-[25px] shadow overflow-hidden flex flex-col items-center">
