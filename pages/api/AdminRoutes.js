@@ -13,7 +13,6 @@ class AdminRoutes extends Component {
         return Api.post("/agegroup/add",data);
     }
 
-
     render() {
         return (
             <div>

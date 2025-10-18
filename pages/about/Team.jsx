@@ -54,7 +54,8 @@ const Team = () => {
                 </div>
             </div>
             <Swiper
-                spaceBetween={2} centeredSlides={true}
+                spaceBetween={2} 
+                centeredSlides={true}
                 slidesPerView={3}
                 loop={true}
                 autoplay={{ delay: 3000 }}
@@ -71,7 +72,7 @@ const Team = () => {
                 {teams && teams?.map((team, idx) => (
                     <SwiperSlide key={idx}>
                         <div className="flex p-1 flex-col items-start justify-start min-h-[450px]">
-                            <div className="relative w-full h-[400px] rounded-2xl overflow-hidden group">
+                            <div className="relative w-full h-[450px] rounded-2xl overflow-hidden group">
                                 <Image
                                     src={team?.img}
                                     width={500}

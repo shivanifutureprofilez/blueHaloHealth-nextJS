@@ -1,20 +1,12 @@
-import AgeBanner from '@/components/AgeBanner'
-import BookingTab from '@/components/BookingTab'
-import Layout from '@/components/Layout'
-import ServiceCard from '@/components/ServiceCard'
 import React, { useEffect, useState } from 'react'
-import SectionBanner from '@/components/SectionBanner'
-import RoutesLists from '../api/RoutesLists'
+import AuthLayout from '../layout/AuthLayout'
+import AddAgeGroup from '../agegroups/AddAgeGroup'
+import ServiceCard from '@/components/ServiceCard';
+import RoutesLists from '@/pages/api/RoutesLists';
+import AddService from './AddService';
 
-export default function Index() {
-
-
-  const [ageGroup, setAgeGroup] = useState('0-6');
-  const updateAgeGroup = (e) => {
-      setAgeGroup(e);
-  }
-
-  const  Filter = () => {
+function list() {
+    const  Filter = () => {
     return (
         <div className='container mt-12 mx-auto'>
             <div className='container mx-auto  pb-2 md:pb-[30px]'>
@@ -37,7 +29,7 @@ export default function Index() {
         </div>
     )
   }
-  const [serviceList, setServiceList] = useState([]);
+    const [serviceList, setServiceList] = useState([]);
   const fetchServices = async () => {
     const lists = new RoutesLists();
     const data = lists.getServices();
@@ -55,20 +47,21 @@ export default function Index() {
     fetchServices();
   }, []);
   return (
-    <Layout>
-      <div className='bg-[#F7F4F0]'>
-        {/* <AgeBanner title={"0-6 (Early Years)"} /> */}
-        <SectionBanner title={"Services"} />
-        <Filter />
+    <AuthLayout>
+      <div className="flex items-center justify-between tracking-tight border-b border-[#2a2a2a] pb-4 mb-6 w-full">
+        <h1 className="text-3xl lg:text-4xl font-bold text-white">Services</h1>
+        <AddService />
+      </div>
+      <Filter />
         <div className='container mx-auto'>
           <div className="grid grid-cols-1 md:grid-cols-3 p-3 gap-6 md:mt-4 md:mb-8">
             {serviceList?.map((item, index) => (
               <ServiceCard item={item}  idx={index}  />
             ))}
           </div>
-          <BookingTab />
         </div>
-      </div>
-    </Layout>
+    </AuthLayout>
   )
-}
+};
+
+export default list;

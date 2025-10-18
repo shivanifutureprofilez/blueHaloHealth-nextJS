@@ -4,7 +4,7 @@ import Popup from '@/components/Popup';
 import toast from 'react-hot-toast';
 import AdminRoutes from '@/pages/api/AdminRoutes';
 
-function AddAgeGroup({ id, item }) {
+function AddService({ id, item }) {
     const router = useRouter();
     const [items, setItems] = useState({
         title: "",
@@ -13,7 +13,6 @@ function AddAgeGroup({ id, item }) {
         min_age: "",
         max_age: "",
     })
-
     console.log("items ", items)
     const handleChange = (e) => {
         const name = e.target.name;
@@ -53,15 +52,15 @@ function AddAgeGroup({ id, item }) {
         <Popup size='max-w-[700px]' bg="" space={'p-6 md:p-8'} btnclasses="button cursor-pointer" btntext="+ Add Age Group">
             <div className=" w-full  flex flex-wrap md:flex-nowrap ">
                 <div className="w-full relative ">
-                    <h5 className="text-2xl font-medium text-gray-800 mt-2">Add Age Group</h5>
+                    <h5 className="text-2xl font-medium text-gray-800 mt-2">Add Service</h5>
                     <form className="mt-6" onSubmit={handleSubmit}>
                         <div className='grid grid-cols-2 gap-4 mb-4 mt-3'>
                             <div >
-                                <label className="font-medium text-base block mb-2">Title</label>
+                                <label className="font-medium text-base block mb-2">Name</label>
                                 <input
                                     type="text"
                                     onChange={handleChange}
-                                    value={items?.title}
+                                    value={items?.name}
                                     name='title'
                                     placeholder="Enter Age Group Title"
                                     className=" w-full bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg 
@@ -73,9 +72,33 @@ function AddAgeGroup({ id, item }) {
                                 <input
                                     type="text"
                                     onChange={handleChange}
-                                    value={items?.description}
+                                    value={items?.description1}
                                     name='description'
                                     placeholder="Enter Age Group Description"
+                                    className=" w-full bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg 
+                            focus:ring-blue-500 focus:border-blue-500 py-3 px-4"
+                                />
+                            </div>
+                            <div>
+                                <label className="font-medium text-base block mb-2">Provider</label>
+                                <input
+                                    type="text"
+                                    onChange={handleChange}
+                                    value={items?.provider}
+                                    name='image'
+                                    placeholder="Type Image URL for Age Group Banner"
+                                    className=" w-full bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg 
+                            focus:ring-blue-500 focus:border-blue-500 py-3 px-4"
+                                />
+                            </div>
+                            <div>
+                                <label className="font-medium text-base block mb-2">Benefits</label>
+                                <input
+                                    type="text"
+                                    onChange={handleChange}
+                                    value={items?.benefits}
+                                    name='image'
+                                    placeholder="Type Image URL for Age Group Banner"
                                     className=" w-full bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg 
                             focus:ring-blue-500 focus:border-blue-500 py-3 px-4"
                                 />
@@ -85,7 +108,7 @@ function AddAgeGroup({ id, item }) {
                                 <input
                                     type="text"
                                     onChange={handleChange}
-                                    value={items?.image}
+                                    value={items?.bannerImg}
                                     name='image'
                                     placeholder="Type Image URL for Age Group Banner"
                                     className=" w-full bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg 
@@ -134,4 +157,4 @@ function AddAgeGroup({ id, item }) {
     )
 }
 
-export default AddAgeGroup;
+export default AddService;
