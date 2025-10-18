@@ -1,11 +1,9 @@
 import AgeBanner from '@/components/AgeBanner';
 import BookingTab from '@/components/BookingTab';
 import Layout from '@/components/Layout';
-import SectionBanner from '@/components/SectionBanner';
 import ServiceCard from '@/components/ServiceCard';
-import { useParams } from 'next/navigation';
 import React from 'react'
-import Filter from './Filter';
+// import Filter from './Filter';
 
 function index() {
 
@@ -37,7 +35,7 @@ function index() {
     <Layout>
       <div className='bg-[#F7F4F0]'>
         <AgeBanner title={"0-6 (Early Years)"} />
-        <Filter/>
+        {/* <Filter/> */}
         <div className='container mx-auto'>
         <div className="grid grid-cols-1 md:grid-cols-3 p-3 gap-10 md:mt-4 md:mb-8">
                     {features?.map((item, index) => (
