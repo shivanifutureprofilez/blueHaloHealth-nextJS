@@ -30,7 +30,7 @@ function list() {
     )
   }
     const [serviceList, setServiceList] = useState([]);
-  const fetchServices = async () => {
+    const fetchServices = async () => {
     const lists = new RoutesLists();
     const data = lists.getServices();
     console.log("data ",data);

@@ -39,21 +39,15 @@ function ContactForm() {
             <FaPaperPlane className="text-green-600" /> Send Us a Message
           </h2>
           <form className="space-y-4">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              <input type="text" placeholder="First name" className="bg-white rounded-lg border border-gray-300 px-4 py-3 w-full outline-none" />
-              <input type="text" placeholder="Last name" className="bg-white rounded-lg border border-gray-300 px-4 py-3 w-full outline-none" />
-            </div>
+              <input type="text" placeholder="Full Name" className="bg-white rounded-lg border border-gray-300 px-4 py-3 w-full outline-none" />
+            
             <input type="number" placeholder="Age" className="bg-white rounded-lg border border-gray-300 px-4 py-3 w-full outline-none" />
             <div className="grid grid-cols-2 gap-4">
               <input type="text" placeholder="Phone number" className="bg-white rounded-lg border border-gray-300 px-4 py-3 w-full outline-none" />
               <input type="email" placeholder="Email" className="bg-white rounded-lg border border-gray-300 px-4 py-3 w-full outline-none" />
             </div>
-            <input type="text" placeholder="Please call me between" className="bg-white rounded-lg border border-gray-300 px-4 py-3 w-full outline-none" />
             <textarea placeholder="Message" rows={3} className="bg-white rounded-lg border border-gray-300 px-4 py-3 w-full outline-none" />
-            <select className="bg-white rounded-lg border border-gray-300 px-4 py-3 w-full outline-none">
-              <option>8:00 AM - 6:00 PM</option>
-              <option>6:00 PM - 10:00 PM</option>
-            </select>
+            
             <div className="flex items-center gap-2">
               <input type="checkbox" id="sms" className="accent-green-600" />
               <label htmlFor="sms" className="text-gray-700 text-sm">I agree to receive SMS / Text communication</label>

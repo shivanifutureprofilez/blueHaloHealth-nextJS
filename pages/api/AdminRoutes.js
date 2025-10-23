@@ -12,6 +12,10 @@ class AdminRoutes extends Component {
     async addagegroup(data) {
         return Api.post("/agegroup/add",data);
     }
+    async addservice(data) {
+        return Api.post("/service/add",data);
+    }
+    
 
     render() {
         return (

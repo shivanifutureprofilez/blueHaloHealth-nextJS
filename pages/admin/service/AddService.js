@@ -3,53 +3,57 @@ import { useRouter } from 'next/router';
 import Popup from '@/components/Popup';
 import toast from 'react-hot-toast';
 import AdminRoutes from '@/pages/api/AdminRoutes';
+import dynamic from 'next/dynamic';
+const ServiceEditor = dynamic(() => import('./ServiceEditor'), { ssr: false });
 
-function AddService({ id, item }) {
+
+function AddService({ id, item, }) {
+
     const router = useRouter();
+    const [editorHtmlContent, setEditorHtmlContent] = useState(null);
     const [items, setItems] = useState({
-        title: "",
+        name: "",
+        bannerImg: "",
         description: "",
-        image: "",
-        min_age: "",
-        max_age: "",
-    })
+        benefits: "",
+        content:editorHtmlContent
+    });
+    
     console.log("items ", items)
-    const handleChange = (e) => {
+    const handleChange = (e) => {r
         const name = e.target.name;
         const value = e.target.value;
         setItems(values => ({ ...values, [name]: value }));
     }
     const [loading, setLoading] = useState(false);
 
+
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            if (!items.title || !items.description || !items.image || !items.min_age || !items.max_age) {
-                toast.error("All fields are required");
-                return false;
-            }
+            // if (!items.name || !items.provider || !items.bannerImg) {
+            //     toast.error("All fields are required");
+            //     return false;
+            // }
             setLoading(true);
             const lists = new AdminRoutes();
-            const data = await lists.addagegroup(items);
-            toast.success("Age Group added successfully!");
-            router.push("/admin/agegroups/list");
+            const data = await lists.addservice({...items, content:editorHtmlContent});
+            toast.success("Service added successfully!");
+            router.push("/admin/service/list");
             setItems({
-                title: "",
-                description: "",
-                image: "",
-                min_age: "",
-                max_age: "",
+                name: "",
+                provider: "",
+                bannerImg: "",
             });
             setLoading(false);
         } catch (error) {
             console.error("Error:", error);
             toast.error("Something went wrong");
             setLoading(false);
-
         }
     };
     return (
-        <Popup size='max-w-[700px]' bg="" space={'p-6 md:p-8'} btnclasses="button cursor-pointer" btntext="+ Add Age Group">
+        <Popup size='max-w-[700px]' bg="" space={'p-6 md:p-8'} btnclasses="button cursor-pointer" btntext="+ Add Services">
             <div className=" w-full  flex flex-wrap md:flex-nowrap ">
                 <div className="w-full relative ">
                     <h5 className="text-2xl font-medium text-gray-800 mt-2">Add Service</h5>
@@ -61,7 +65,7 @@ function AddService({ id, item }) {
                                     type="text"
                                     onChange={handleChange}
                                     value={items?.name}
-                                    name='title'
+                                    name='name'
                                     placeholder="Enter Age Group Title"
                                     className=" w-full bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg 
                             focus:ring-blue-500 focus:border-blue-500 py-3 px-4"
@@ -72,26 +76,26 @@ function AddService({ id, item }) {
                                 <input
                                     type="text"
                                     onChange={handleChange}
-                                    value={items?.description1}
+                                    value={items?.description}
                                     name='description'
                                     placeholder="Enter Age Group Description"
                                     className=" w-full bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg 
                             focus:ring-blue-500 focus:border-blue-500 py-3 px-4"
                                 />
                             </div>
-                            <div>
+                            {/* <div>
                                 <label className="font-medium text-base block mb-2">Provider</label>
                                 <input
                                     type="text"
                                     onChange={handleChange}
                                     value={items?.provider}
-                                    name='image'
+                                    name='provider'
                                     placeholder="Type Image URL for Age Group Banner"
                                     className=" w-full bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg 
                             focus:ring-blue-500 focus:border-blue-500 py-3 px-4"
                                 />
-                            </div>
-                            <div>
+                            </div> */}
+                            {/* <div>
                                 <label className="font-medium text-base block mb-2">Benefits</label>
                                 <input
                                     type="text"
@@ -102,45 +106,24 @@ function AddService({ id, item }) {
                                     className=" w-full bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg 
                             focus:ring-blue-500 focus:border-blue-500 py-3 px-4"
                                 />
-                            </div>
+                            </div> */}
                             <div>
                                 <label className="font-medium text-base block mb-2">Image Url</label>
                                 <input
                                     type="text"
                                     onChange={handleChange}
                                     value={items?.bannerImg}
-                                    name='image'
+                                    name='bannerImg'
                                     placeholder="Type Image URL for Age Group Banner"
                                     className=" w-full bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg 
                             focus:ring-blue-500 focus:border-blue-500 py-3 px-4"
                                 />
                             </div>
-                            <div >
-                                <label className="font-medium text-base block mb-2">Minimum Age</label>
-                                <input
-                                    type="number"
-                                    onChange={handleChange}
-                                    value={items?.min_age}
-                                    name='min_age'
-                                    placeholder="Enter Minimum Age For This Age Group"
-                                    className=" w-full bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg 
-                            focus:ring-blue-500 focus:border-blue-500 py-3 px-4"
-                                />
-                            </div>
-                            <div >
-                                <label className="font-medium text-base block mb-2">Maximum Age</label>
-                                <input
-                                    type="number"
-                                    onChange={handleChange}
-                                    value={items?.max_age}
-                                    name='max_age'
-                                    placeholder="Enter Maximum Age For This Age Group"
-                                    className=" w-full bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg 
-                            focus:ring-blue-500 focus:border-blue-500 py-3 px-4"
-                                />
-                            </div>
+                            
                         </div>
                     </form>
+                    <ServiceEditor setEditorHtmlContent={setEditorHtmlContent}  />
+
                     <button
                         onClick={handleSubmit}
                         type="submit"
