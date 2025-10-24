@@ -15,7 +15,9 @@ class AdminRoutes extends Component {
     async addservice(data) {
         return Api.post("/service/add",data);
     }
-    
+    async getcontactlist() {
+        return Api.get("/contact/list");
+    }
 
     render() {
         return (

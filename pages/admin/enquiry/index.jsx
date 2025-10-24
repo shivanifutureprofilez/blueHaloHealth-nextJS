@@ -1,9 +1,27 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import AuthLayout from "../layout/AuthLayout";
-import { MyContext } from "@/pages/context/UserContext";
+import AdminRoutes from "@/pages/api/AdminRoutes";
+import Tooltip from "@/components/ToolTip";
 export default function index() {
    
-  const {name} = useContext(MyContext);
+  
+  const [contacts, setContacts] = useState([]);
+  
+    const fetchGroups = async () => {
+      const lists = new AdminRoutes();
+      const data = lists.getcontactlist();
+      data.then((res)=>{ 
+        console.log(":res" , res)
+        setContacts(res?.data?.enquiryData || []);
+      }).catch((err)=>{ 
+        setContacts([]);
+        console.log("err",err)
+      });
+    }
+    useEffect(()=>{
+      fetchGroups();
+    },[]);
+    console.log("contacts",contacts)
   return ( 
     <AuthLayout>
       <div className="flex items-center justify-between tracking-tight border-b border-[#2a2a2a] pb-4 mb-6 w-full">
@@ -23,26 +41,53 @@ export default function index() {
                   Email
                 </th>
                 <th className="border-b border-[#ffffff]  text-[14px] text-[#ffffff] uppercase text-left   p-[10px]">
+                  Phone no
+                </th>
+                <th className="border-b border-[#ffffff]  text-[14px] text-[#ffffff] uppercase text-left   p-[10px]">
+                  Age
+                </th>
+                <th className="border-b border-[#ffffff]  text-[14px] text-[#ffffff] uppercase text-left   p-[10px]">
                   Message
+                </th>
+                <th className="border-b border-[#ffffff]  text-[14px] text-[#ffffff] uppercase text-left   p-[10px]">
+                  SMS Checkbox
                 </th>
               </tr>
             </thead>
             <tbody>
 
+          {contacts &&  contacts?.map((contacts , index)=>(
                 <tr key={index}>
                   <td className=" font-[600] text-white text-[16px] text-left px-[10px] py-[16px]  border-b border-[#ffffff1a]">
-                    1
+                    {index+1}
                   </td>
                   <td className="font-[600] text-white text-[16px]  px-[10px] py-[16px]  border-b border-[#ffffff1a] text-left  ">
-                   Khkjdsdf
+                   {contacts?.fullName}
                   </td>
                   <td className=" font-[600] text-white text-[16px]  px-[10px] py-[16px]  border-b border-[#ffffff1a] text-left   ">
-                    sdfsd@gmail/cp,
+                    {contacts?.email}
+                  </td>
+                  <td className=" font-[600] text-white text-[16px]  px-[10px] py-[16px]  border-b border-[#ffffff1a] text-left   ">
+                    {contacts?.phone}
+                  </td>
+                  <td className=" font-[600] text-white text-[16px]  px-[10px] py-[16px]  border-b border-[#ffffff1a] text-left   ">
+                    {contacts?.age}
                   </td>
                   <td className=" font-[600] text-white text-[16px] px-[10px] py-[16px]  border-b border-[#ffffff1a] text-left   ">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas blanditiis et adipisci odit hic, omnis sapiente modi fugit ex voluptatem exercitationem nisi, atque ab dolores repellendus numquam impedit sed tenetur.
+                    <Tooltip content={contacts?.message}>
+                      <span className=" max-w-[100px] block overflow-hidden underline cursor-pointer text-white">
+                        {contacts?.message}
+                      </span>
+                    </Tooltip>
+
+                  </td>
+                   <td className=" font-[600] text-white text-[16px] px-[10px] py-[16px]  border-b border-[#ffffff1a] text-left   ">
+                    {contacts?.smsCheckbox === true ? "True" : "False"}
                   </td>
                 </tr>
+          )
+              
+          )}
            </tbody>
           </table>
       </div>

@@ -4,7 +4,7 @@ import Popup from '@/components/Popup';
 import toast from 'react-hot-toast';
 import AdminRoutes from '@/pages/api/AdminRoutes';
 
-function AddAgeGroup({ id, item }) {
+function AddAgeGroup({ id, fetchGroups }) {
     const router = useRouter();
     const [items, setItems] = useState({
         title: "",
@@ -14,6 +14,7 @@ function AddAgeGroup({ id, item }) {
         max_age: "",
     })
 
+    const [action, setAction] = useState();
     console.log("items ", items)
     const handleChange = (e) => {
         const name = e.target.name;
@@ -41,6 +42,8 @@ function AddAgeGroup({ id, item }) {
                 min_age: "",
                 max_age: "",
             });
+            fetchGroups && fetchGroups();
+            setAction("close")
             setLoading(false);
         } catch (error) {
             console.error("Error:", error);
@@ -49,7 +52,7 @@ function AddAgeGroup({ id, item }) {
         }
     };
     return (
-        <Popup size='max-w-[700px]' bg="" space={'p-6 md:p-8'} btnclasses="button cursor-pointer" btntext="+ Add Age Group">
+        <Popup action={action} size='max-w-[700px]' bg="" space={'p-6 md:p-8'} btnclasses="button cursor-pointer" btntext="+ Add Age Group">
             <div className=" w-full  flex flex-wrap md:flex-nowrap ">
                 <div className="w-full relative ">
                     <h5 className="text-2xl font-medium text-gray-800 mt-2">Add Age Group</h5>

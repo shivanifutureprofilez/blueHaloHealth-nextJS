@@ -25,7 +25,7 @@ function Resource() {
     ]
     return (
         <div className='bg-[#F7F4F0] py-12 md:pt-16 md:pb-24'>
-            <div className=''>
+            <div className='container mx-auto'>
                 <Heading
                     className="text-black text-center"
                     heading1={"Insights &"}

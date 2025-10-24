@@ -27,6 +27,10 @@ class RoutesLists extends Component {
         return Api.post("/contact",data);
     }
 
+    async deleteagegroup(pid){
+        return Api.get(`/agegroup/delete/${pid}`);
+    }
+
     render() {
         return (
             <div>

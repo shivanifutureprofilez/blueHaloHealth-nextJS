@@ -35,7 +35,7 @@ function Mission() {
           className="text-black "
           pClass="text-center"
           heading1={"Our"}
-          heading2={" Vission"}
+          heading2={" Vision"}
           content={"At BlueHaloHealth, we envision a world where every child, adolescent, and adult can reach their full potential — supported by compassionate care, expert guidance, and a community that understands their unique journey. We aim to create brighter futures by making therapy and assessment services accessible, empowering, and meaningful for every family we serve."}
         />
         </div>
