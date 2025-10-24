@@ -1,9 +1,18 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { IoLocationOutline, IoMailOpenOutline } from "react-icons/io5";
 import { CiPhone } from "react-icons/ci";
 import { FaPaperPlane } from "react-icons/fa";
 
 function ContactForm() {
+  const handleChange = (e) => {r
+        const name = e.target.name;
+        const value = e.target.value;
+        setItems(values => ({ ...values, [name]: value }));
+    }
+
+    const[items , setitems] = useState({
+
+    })
   return (
     <div className="container mx-auto py-12">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -39,18 +48,36 @@ function ContactForm() {
             <FaPaperPlane className="text-green-600" /> Send Us a Message
           </h2>
           <form className="space-y-4">
-              <input type="text" placeholder="Full Name" className="bg-white rounded-lg border border-gray-300 px-4 py-3 w-full outline-none" />
-            
-            <input type="number" placeholder="Age" className="bg-white rounded-lg border border-gray-300 px-4 py-3 w-full outline-none" />
+            <input onChange={handleChange}
+              value={items?.fullName}
+              name='fullName'
+              type="text" placeholder="Full Name" className="bg-white rounded-lg border border-gray-300 px-4 py-3 w-full outline-none" />
+
+            <input onChange={handleChange}
+              value={items?.age}
+              name='age'
+              type="number" placeholder="Age" className="bg-white rounded-lg border border-gray-300 px-4 py-3 w-full outline-none" />
             <div className="grid grid-cols-2 gap-4">
-              <input type="text" placeholder="Phone number" className="bg-white rounded-lg border border-gray-300 px-4 py-3 w-full outline-none" />
-              <input type="email" placeholder="Email" className="bg-white rounded-lg border border-gray-300 px-4 py-3 w-full outline-none" />
+              <input onChange={handleChange}
+                value={items?.phone}
+                name='phone'
+                type="number" placeholder="Phone number" className="bg-white rounded-lg border border-gray-300 px-4 py-3 w-full outline-none" />
+              <input onChange={handleChange}
+                value={items?.email}
+                name='email'
+                type="email" placeholder="Email" className="bg-white rounded-lg border border-gray-300 px-4 py-3 w-full outline-none" />
             </div>
-            <textarea placeholder="Message" rows={3} className="bg-white rounded-lg border border-gray-300 px-4 py-3 w-full outline-none" />
-            
+            <textarea onChange={handleChange}
+              value={items?.message}
+              name='message'
+              placeholder="Message" rows={3} className="bg-white rounded-lg border border-gray-300 px-4 py-3 w-full outline-none" />
+
             <div className="flex items-center gap-2">
-              <input type="checkbox" id="sms" className="accent-green-600" />
-              <label htmlFor="sms" className="text-gray-700 text-sm">I agree to receive SMS / Text communication</label>
+              <input onChange={handleChange}
+                value={items?.benefits}
+                name=''
+                type="checkbox" id="sms" className="accent-green-600" />
+              <label className="text-gray-700 text-sm">I agree to receive SMS / Text communication</label>
             </div>
             <button type="submit" className="bg-green-600 text-white font-semibold px-6 py-3 rounded-lg hover:bg-green-700 transition w-full mt-2">
               Submit Inquiry

@@ -71,42 +71,6 @@ function AddService({ id, item, }) {
                             focus:ring-blue-500 focus:border-blue-500 py-3 px-4"
                                 />
                             </div>
-                            <div >
-                                <label className="font-medium text-base block mb-2">Description</label>
-                                <input
-                                    type="text"
-                                    onChange={handleChange}
-                                    value={items?.description}
-                                    name='description'
-                                    placeholder="Enter Age Group Description"
-                                    className=" w-full bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg 
-                            focus:ring-blue-500 focus:border-blue-500 py-3 px-4"
-                                />
-                            </div>
-                            {/* <div>
-                                <label className="font-medium text-base block mb-2">Provider</label>
-                                <input
-                                    type="text"
-                                    onChange={handleChange}
-                                    value={items?.provider}
-                                    name='provider'
-                                    placeholder="Type Image URL for Age Group Banner"
-                                    className=" w-full bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg 
-                            focus:ring-blue-500 focus:border-blue-500 py-3 px-4"
-                                />
-                            </div> */}
-                            {/* <div>
-                                <label className="font-medium text-base block mb-2">Benefits</label>
-                                <input
-                                    type="text"
-                                    onChange={handleChange}
-                                    value={items?.benefits}
-                                    name='image'
-                                    placeholder="Type Image URL for Age Group Banner"
-                                    className=" w-full bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg 
-                            focus:ring-blue-500 focus:border-blue-500 py-3 px-4"
-                                />
-                            </div> */}
                             <div>
                                 <label className="font-medium text-base block mb-2">Image Url</label>
                                 <input
@@ -119,8 +83,119 @@ function AddService({ id, item, }) {
                             focus:ring-blue-500 focus:border-blue-500 py-3 px-4"
                                 />
                             </div>
-                            
                         </div>
+                            <div >
+                                <label className="font-medium text-base block mb-2">Description</label>
+                                <textarea type="text"
+                                    onChange={handleChange}
+                                    value={items?.description}
+                                    name='description' placeholder="Enter Age Group Description" rows={3} className="w-full bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg 
+                            focus:ring-blue-500 focus:border-blue-500 py-3 px-4" />
+                        
+                            </div>
+                            
+                            
+                            
+                        {/* </div> */}
+                         <div className='grid grid-cols-2 gap-4 mb-4 mt-3'>
+                            <div >
+                                <label className="font-medium text-base block mb-2">Age Group Name</label>
+                                <input
+                                    type="text"
+                                    onChange={handleChange}
+                                    value={items?.name}
+                                    name='name'
+                                    placeholder="Enter Age Group Title"
+                                    className=" w-full bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg 
+                            focus:ring-blue-500 focus:border-blue-500 py-3 px-4"
+                                />
+                            </div>
+                            <div>
+                                <label className="font-medium text-base block mb-2">Benefits</label>
+                                <input
+                                    type="text"
+                                    onChange={handleChange}
+                                    value={items?.benefits}
+                                    name='bannerImg'
+                                    placeholder="Type Age Group Benefits"
+                                    className=" w-full bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg 
+                            focus:ring-blue-500 focus:border-blue-500 py-3 px-4"
+                                />
+                            </div>
+                             <div >
+                                <label className="font-medium text-base block mb-2">Age Group Name</label>
+                                <input
+                                    type="text"
+                                    onChange={handleChange}
+                                    value={items?.name}
+                                    name='name'
+                                    placeholder="Enter Age Group Title"
+                                    className=" w-full bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg 
+                            focus:ring-blue-500 focus:border-blue-500 py-3 px-4"
+                                />
+                            </div>
+                            <div>
+                                <label className="font-medium text-base block mb-2">Benefits</label>
+                                <input
+                                    type="text"
+                                    onChange={handleChange}
+                                    value={items?.benefits}
+                                    name='bannerImg'
+                                    placeholder="Type Age Group Benefits"
+                                    className=" w-full bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg 
+                            focus:ring-blue-500 focus:border-blue-500 py-3 px-4"
+                                />
+                            </div>
+                             <div >
+                                <label className="font-medium text-base block mb-2">Age Group Name</label>
+                                <input
+                                    type="text"
+                                    onChange={handleChange}
+                                    value={items?.name}
+                                    name='name'
+                                    placeholder="Enter Age Group Title"
+                                    className=" w-full bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg 
+                            focus:ring-blue-500 focus:border-blue-500 py-3 px-4"
+                                />
+                            </div>
+                            <div>
+                                <label className="font-medium text-base block mb-2">Benefits</label>
+                                <input
+                                    type="text"
+                                    onChange={handleChange}
+                                    value={items?.benefits}
+                                    name='bannerImg'
+                                    placeholder="Type Age Group Benefits"
+                                    className=" w-full bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg 
+                            focus:ring-blue-500 focus:border-blue-500 py-3 px-4"
+                                />
+                            </div>
+                             <div >
+                                <label className="font-medium text-base block mb-2">Age Group Name</label>
+                                <input
+                                    type="text"
+                                    onChange={handleChange}
+                                    value={items?.name}
+                                    name='name'
+                                    placeholder="Enter Age Group Title"
+                                    className=" w-full bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg 
+                            focus:ring-blue-500 focus:border-blue-500 py-3 px-4"
+                                />
+                            </div>
+                            <div>
+                                <label className="font-medium text-base block mb-2">Benefits</label>
+                                <input
+                                    type="text"
+                                    onChange={handleChange}
+                                    value={items?.benefits}
+                                    name='bannerImg'
+                                    placeholder="Type Age Group Benefits"
+                                    className=" w-full bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg 
+                            focus:ring-blue-500 focus:border-blue-500 py-3 px-4"
+                                />
+                            </div>
+
+                         </div>
                     </form>
                     <ServiceEditor setEditorHtmlContent={setEditorHtmlContent}  />
 
