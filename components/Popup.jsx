@@ -42,11 +42,11 @@ export default function Popup({btnclasses, btntext, size, children, space, actio
               leaveFrom="opacity-100 translate-y-0 sm:scale-100"
               leaveTo="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
             >
-              <Dialog.Panel className={` transform overflow-hidden rounded-[35px] ${bg ? bg : "bg-white"} text-left shadow-xl transition-all sm:my-8
+              <Dialog.Panel className={`relative transform overflow-hidden rounded-[35px] ${bg ? bg : "bg-white"} text-left shadow-xl transition-all sm:my-8
                 w-full  ${size ? size : 'md:max-w-lg'} ${space}`}>
                   <button
                     type="button"
-                    className="close absolute top-2 z-10 right-6 text-white text-[30px] "
+                    className="close absolute top-2 z-10 right-6 text-black text-[30px] cursor-pointer"
                     onClick={() => setOpen(false)}
                     ref={cancelButtonRef}>
                     &times;
