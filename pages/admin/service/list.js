@@ -4,6 +4,7 @@ import AddAgeGroup from '../agegroups/AddAgeGroup'
 import ServiceCard from '@/components/ServiceCard';
 import RoutesLists from '@/pages/api/RoutesLists';
 import AddService from './AddService';
+import Link from 'next/link';
 
 function list() {
     const  Filter = () => {
@@ -15,13 +16,13 @@ function list() {
                     <div className='w-full  py-3 '>
                         
                         <div className='flex justify-center items-center flex-wrap gap-2'>
-                            <button className={`button-white w-full md:w-[230px] border   `} onClick={() => { updateAgeGroup('0-6') }}><span className="pl-2 pr-2">0-6 (Early Years)</span></button>
+                            <button className={`button-white w-full md:w-[230px] border cursor-pointer`} onClick={() => { updateAgeGroup('0-6') }}><span className="pl-2 pr-2">0-6 (Early Years)</span></button>
 
-                            <button className={`button-white w-full md:w-[230px] border `} onClick={() => { updateAgeGroup('7-12') }}><span className="pl-2 pr-2">7-12 (School Age)</span></button>
+                            <button className={`button-white w-full md:w-[230px] border cursor-pointer`} onClick={() => { updateAgeGroup('7-12') }}><span className="pl-2 pr-2">7-12 (School Age)</span></button>
 
-                            <button className={`button-white w-full md:w-[230px] border  `} onClick={() => { updateAgeGroup('13-17') }}><span className="pl-2 pr-2">13-17 (Adolescent)</span></button>
+                            <button className={`button-white w-full md:w-[230px] border cursor-pointer`} onClick={() => { updateAgeGroup('13-17') }}><span className="pl-2 pr-2">13-17 (Adolescent)</span></button>
 
-                            <button className={`button-white w-full md:w-[230px] border  `} onClick={() => { updateAgeGroup('18+') }}><span className="pl-2 pr-2" >18+ (Adults)</span></button>
+                            <button className={`button-white w-full md:w-[230px] border cursor-pointer`} onClick={() => { updateAgeGroup('18+') }}><span className="pl-2 pr-2" >18+ (Adults)</span></button>
                         </div>
                     </div>
                 </div>
@@ -50,7 +51,8 @@ function list() {
     <AuthLayout>
       <div className="flex items-center justify-between tracking-tight border-b border-[#2a2a2a] pb-4 mb-6 w-full">
         <h1 className="text-3xl lg:text-4xl font-bold text-white">Services</h1>
-        <AddService />
+        {/* <AddService /> */}
+        <Link href="/admin/service/add" className="button cursor-pointer">+ Add Services</Link>
       </div>
       <Filter />
         <div className='container mx-auto'>

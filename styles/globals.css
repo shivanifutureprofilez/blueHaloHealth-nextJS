@@ -75,3 +75,16 @@ body  {
     @apply font-bold text-[#1E1E1E] text-[26px] md:text-[35px] lg:text-[42px];
   }
 }
+
+.wrapper-class .rdw-dropdown-wrapper .rdw-dropdown-selectedtext {
+  color: #f9fafb; /* text-gray-100 */
+}
+
+.wrapper-class .rdw-dropdown-wrapper .rdw-dropdown-optionwrapper {
+  background-color: #374151; /* gray-700 */
+  color: #f9fafb; /* text-gray-100 */
+}
+
+.wrapper-class .rdw-dropdown-wrapper .rdw-dropdownoption-default:hover {
+  background-color: #4b5563; /* gray-600 */
+}

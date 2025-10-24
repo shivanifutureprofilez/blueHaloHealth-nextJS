@@ -1,40 +1,50 @@
-import React, { useEffect, useState } from 'react';
-import { EditorState, convertToRaw } from 'draft-js';
-import { Editor } from 'react-draft-wysiwyg';
-import draftToHtml from 'draftjs-to-html';
-import 'react-draft-wysiwyg/dist/react-draft-wysiwyg.css';
+import dynamic from "next/dynamic";
+import React from "react";
+import 'react-quill-new/dist/quill.snow.css';
 
-function ServiceEditor({setEditorHtmlContent}) {
-  const [editorState, setEditorState] = useState(EditorState.createEmpty());
+// Dynamically import with SSR disabled
+const ReactQuill = dynamic(() => import("react-quill-new"), { ssr: false });
 
+const ReactQuillEditor = ({ label, desc, handleBioChange }) => {
+  const modules = {
+    toolbar: [
+      [{ header: [1, 2, 3, 4, 5, 6, false] }],
+      ["bold", "italic", "underline", "strike", "blockquote"],
+      [{ color: [] }, { background: [] }], // <-- text color & background
+      [{ list: "ordered" }, { list: "bullet" }],
+      ["link", "image"],
+      ["clean"],
+    ],
+  };
 
-  useEffect(()=>{
-    setEditorHtmlContent && setEditorHtmlContent(draftToHtml(convertToRaw(editorState.getCurrentContent())))
-  },[editorState]);
+  const formats = [
+    "header",
+    "bold",
+    "italic",
+    "underline",
+    "strike",
+    "blockquote",
+    "color",      // <-- add this
+    "background", // <-- add this
+    "list",
+    "bullet",
+    "link",
+    "image",
+  ];
 
-  
   return (
-    <>
-      <div className='border !border-gray-200 p-2'>
-        <Editor
-          editorState={editorState}
-          onEditorStateChange={setEditorState}
+    <div className="mb-6">
+      <div className="bg-white text-black">
+        <ReactQuill
+          value={desc}
+          onChange={handleBioChange}
+          modules={modules}
+          formats={formats}
+          theme="snow"
         />
       </div>
-
-      <div style={{ marginTop: '20px' }}>
-        <strong>Output:</strong>
-        <div className='my-2'
-          dangerouslySetInnerHTML={{
-            __html: draftToHtml(convertToRaw(editorState.getCurrentContent())),
-          }}
-        />
-
-
-        {draftToHtml(convertToRaw(editorState.getCurrentContent()))}
-      </div>
-    </>
+    </div>
   );
-}
+};
 
-export default ServiceEditor;
+export default ReactQuillEditor;
