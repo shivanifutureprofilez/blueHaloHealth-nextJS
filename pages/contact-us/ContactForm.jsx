@@ -2,17 +2,66 @@ import React, { useState } from 'react'
 import { IoLocationOutline, IoMailOpenOutline } from "react-icons/io5";
 import { CiPhone } from "react-icons/ci";
 import { FaPaperPlane } from "react-icons/fa";
+import RoutesLists from '../api/RoutesLists';
+import toast from 'react-hot-toast';
 
 function ContactForm() {
-  const handleChange = (e) => {r
-        const name = e.target.name;
-        const value = e.target.value;
-        setItems(values => ({ ...values, [name]: value }));
+  const [items, setItems] = useState({
+    fullName: "",
+    age: "",
+    phone: "",
+    email: "",
+    message: "",
+    smsCheckbox: false, // default unchecked
+
+  })
+  const handleChange = (e) => {
+    const { name, value, type, checked } = e.target;
+
+    setItems((prev) => ({
+      ...prev,
+      [name]: type === "checkbox" ? checked : value,
+    }));
+  };
+
+
+  const [loading, setLoading] = useState(false);
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    const phoneRegex = /^[0-9]{10}$/;
+    if (!emailRegex.test(items.email)) {
+      toast.error("Please enter a valid email address.");
+      return;
     }
 
-    const[items , setitems] = useState({
+    try {
+      setLoading(true);
+      const lists = new RoutesLists();
+      const response = await lists.getEnquiry(items);
+      console.log("response", response);
 
-    })
+      if (response.data.status) {
+        toast.success(response.data.message);
+        setItems({
+          fullName: "",
+          age: "",
+          phone: "",
+          email: "",
+          message: "",
+          smsCheckbox: false,
+        });
+      } else {
+        toast.error(response.data.message);
+      }
+    } catch (error) {
+      console.error("Error:", error);
+      toast.error("Something went wrong. Please try again later.");
+    } finally {
+      setLoading(false);
+    }
+  };
+
   return (
     <div className="container mx-auto py-12">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -47,7 +96,7 @@ function ContactForm() {
           <h2 className="font-bold text-2xl mb-6 text-black flex items-center gap-2">
             <FaPaperPlane className="text-green-600" /> Send Us a Message
           </h2>
-          <form className="space-y-4">
+          <form className="space-y-4" onSubmit={handleSubmit}>
             <input onChange={handleChange}
               value={items?.fullName}
               name='fullName'
@@ -58,14 +107,29 @@ function ContactForm() {
               name='age'
               type="number" placeholder="Age" className="bg-white rounded-lg border border-gray-300 px-4 py-3 w-full outline-none" />
             <div className="grid grid-cols-2 gap-4">
-              <input onChange={handleChange}
-                value={items?.phone}
-                name='phone'
-                type="number" placeholder="Phone number" className="bg-white rounded-lg border border-gray-300 px-4 py-3 w-full outline-none" />
+              <input
+                onChange={(e) => {
+                  const value = e.target.value.replace(/\D/g, "");
+                  if (value.length <= 10) {
+                    handleChange({
+                      target: { name: "phone", value },
+                    });
+                  }
+                }}
+                value={items.phone}
+                name="phone"
+                maxLength={10}
+                type="text"
+                placeholder="Phone number"
+                className="bg-white rounded-lg border border-gray-300 px-4 py-3 w-full outline-none"
+              />
+
               <input onChange={handleChange}
                 value={items?.email}
                 name='email'
-                type="email" placeholder="Email" className="bg-white rounded-lg border border-gray-300 px-4 py-3 w-full outline-none" />
+                type="Email"
+                placeholder="Email"
+                className="bg-white rounded-lg border border-gray-300 px-4 py-3 w-full outline-none" />
             </div>
             <textarea onChange={handleChange}
               value={items?.message}
@@ -73,14 +137,20 @@ function ContactForm() {
               placeholder="Message" rows={3} className="bg-white rounded-lg border border-gray-300 px-4 py-3 w-full outline-none" />
 
             <div className="flex items-center gap-2">
-              <input onChange={handleChange}
-                value={items?.benefits}
-                name=''
-                type="checkbox" id="sms" className="accent-green-600" />
+              <input
+                onChange={handleChange}
+                checked={items.smsCheckbox} // ✅ use "checked" not "value"
+                name="smsCheckbox"
+                type="checkbox"
+                id="sms"
+                className="accent-green-600"
+              />
               <label className="text-gray-700 text-sm">I agree to receive SMS / Text communication</label>
             </div>
-            <button type="submit" className="bg-green-600 text-white font-semibold px-6 py-3 rounded-lg hover:bg-green-700 transition w-full mt-2">
-              Submit Inquiry
+            <button onClick={handleSubmit}
+              type="submit"
+              disabled={loading} className="bg-green-dark text-white font-semibold px-6 py-3 rounded-lg hover:bg-green-700 transition w-full mt-2">
+              {loading ? "Loading..." : "Submit Enquiry"}
             </button>
           </form>
         </div>

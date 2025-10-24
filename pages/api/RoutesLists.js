@@ -23,6 +23,9 @@ class RoutesLists extends Component {
         return Api.get(`/agegroup/${pid}`);
     }
 
+    async getEnquiry(data){
+        return Api.post("/contact",data);
+    }
 
     render() {
         return (

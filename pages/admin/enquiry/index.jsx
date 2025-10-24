@@ -33,13 +33,13 @@ export default function index() {
                   <td className=" font-[600] text-white text-[16px] text-left px-[10px] py-[16px]  border-b border-[#ffffff1a]">
                     1
                   </td>
-                  <td className="font-[600] text-white text-[16px] text-left px-[10px] py-[16px]  border-b border-[#ffffff1a] text-left  ">
+                  <td className="font-[600] text-white text-[16px]  px-[10px] py-[16px]  border-b border-[#ffffff1a] text-left  ">
                    Khkjdsdf
                   </td>
-                  <td className=" font-[600] text-white text-[16px] text-left px-[10px] py-[16px]  border-b border-[#ffffff1a] text-left   ">
+                  <td className=" font-[600] text-white text-[16px]  px-[10px] py-[16px]  border-b border-[#ffffff1a] text-left   ">
                     sdfsd@gmail/cp,
                   </td>
-                  <td className=" font-[600] text-white text-[16px] text-left px-[10px] py-[16px]  border-b border-[#ffffff1a] text-left   ">
+                  <td className=" font-[600] text-white text-[16px] px-[10px] py-[16px]  border-b border-[#ffffff1a] text-left   ">
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas blanditiis et adipisci odit hic, omnis sapiente modi fugit ex voluptatem exercitationem nisi, atque ab dolores repellendus numquam impedit sed tenetur.
                   </td>
                 </tr>

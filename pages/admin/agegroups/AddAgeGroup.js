@@ -46,7 +46,6 @@ function AddAgeGroup({ id, item }) {
             console.error("Error:", error);
             toast.error("Something went wrong");
             setLoading(false);
-
         }
     };
     return (
