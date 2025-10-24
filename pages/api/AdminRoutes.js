@@ -18,6 +18,10 @@ class AdminRoutes extends Component {
     async getcontactlist() {
         return Api.get("/contact/list");
     }
+    async deleteService(data) {
+        return Api.get(`/service/delete/${data}`);
+    }
+    
 
     render() {
         return (
