@@ -15,13 +15,18 @@ class AdminRoutes extends Component {
     async addservice(data) {
         return Api.post("/service/add",data);
     }
+    async updateService(id,data) {
+        return Api.post(`/service/update/${id}`,data);
+    }
     async getcontactlist() {
         return Api.get("/contact/list");
     }
     async deleteService(data) {
         return Api.get(`/service/delete/${data}`);
     }
-    
+    async getServiceById(data) {
+        return Api.get(`/service/list/${data}`);
+    }    
 
     render() {
         return (

@@ -15,7 +15,7 @@ function CheckLogin({ children }) {
     const fetch = data.adminprofile()
     fetch.then((res) => {
       if (res.data.status) {
-        console.log("res.data.user ",res.data.user);
+        // console.log("res.data.user ",res.data.user);
         setUser(res.data.user);
         setName("Shivani");
       } else {
