@@ -30,7 +30,7 @@ function Importance() {
   ];
 
   return (
-    <section className="bg-[#E6EBE3] pb-3 md:pb-26 md:pt-14 md:p-14  ">
+    <section className="bg-[#E6EBE3] pb-3 md:pb-26 md:pt-18   ">
       <div className="container mx-auto">
         <div className='pt-10 md:pt-0'>
         <Heading
@@ -40,14 +40,14 @@ function Importance() {
           //content={"Trusted expertise, personalized care, and proven results for every stage of development."}
         />
         </div>
-        <p className="font-medium text-[15px] text-center mb-12  text-gray-700 p-6 md:p-0 max-w-[600px] mx-auto">
+        <p className="font-medium text-[15px] text-center mb-12  text-gray-700 p-2 md:p-0 max-w-[600px] mx-auto">
           Trusted expertise, personalized care, and proven results  for every stage of development.
         </p>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3 md:gap-6  lg:gap-8 mt-8 m-3 md:m-0">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3  m-3 md:m-0">
           {features.map((feature, idx) => (
             <div
               key={idx}
-              className="bg-white rounded-2xl  flex flex-col items-center p-10  text-center"
+              className="bg-white rounded-2xl  flex flex-col items-center p-5 md:p-10  text-center"
             >
               <div className="flex  justify-center items-center w-16 h-16 rounded-full bg-[#E6F4EA] mb-4">
                 {feature.icon}

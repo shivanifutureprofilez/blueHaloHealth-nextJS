@@ -3,7 +3,7 @@ import React from 'react';
 function ResourceCard({ label = 'Resource', title, date, tags = [] }) {
   return (
     <div 
-      className="bg-white rounded-lg p-6 cursor-pointer transition-all hover:shadow-lg"
+      className="bg-white rounded-lg p-6 cursor-pointer max-h-[150px] hover:shadow-lg"
     >
       <div className="flex items-center justify-between">
         <span className="text-emerald-600 font-medium text-sm">{label}</span>
@@ -12,7 +12,7 @@ function ResourceCard({ label = 'Resource', title, date, tags = [] }) {
         )}
       </div>
 
-      <h2 className="text-2xl md:text-3xl font-bold mt-2 mb-3">{title}</h2>
+      <h2 className="text-2xl md:text-2xl font-bold mt-2 mb-3">{title}</h2>
       {date && (
         <p className="text-gray-600">{date}</p>
       )}

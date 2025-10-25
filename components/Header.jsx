@@ -25,7 +25,7 @@ function Header() {
         <div className="flex !z-[99] rounded-tr-xl rounded-tl-xl  justify-center sticky top-0  w-full">
           <div className="w-full flex items-center   py-4  justify-between">
             {/* Logo */}
-            <div className=" flex items-center  justify-between">
+            <div className=" flex  justify-between items-center">
               {/* <span className="block text-2xl font-bold text-gray-800"> */}
               <Link href='/' className="text-green-dark text-[24px] font-bold ">
                 {/* <img className="max-w-[230px] w-[230px]" src='/logo.png'/> */}

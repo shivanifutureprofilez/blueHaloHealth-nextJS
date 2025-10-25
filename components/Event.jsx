@@ -26,7 +26,7 @@ function Event() {
                 <p className="font-medium text-[15px] text-center mb-8 text-gray-700 p-8 md:p-0 max-w-[600px] mx-auto">
                     Join our community events designed to support families and build connections
                 </p>
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-5 mt-8 mb-8">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-8 mb-8">
                     {f?.map((item, index) => (
                         <EventCard item={item} index={index} />
                     ))}

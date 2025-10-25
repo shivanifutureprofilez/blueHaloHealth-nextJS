@@ -6,6 +6,10 @@ import Faq from '@/components/Faq'
 import BookingTab from '@/components/BookingTab'
 import ResourceCard from '@/components/ResourceCard'
 import Link from 'next/link'
+import { FaDownload } from "react-icons/fa";
+import { RiParentLine } from "react-icons/ri";
+import { FaUserDoctor } from "react-icons/fa6";
+import { FaHandHoldingHeart } from "react-icons/fa";
 
 const features = [
   {
@@ -75,53 +79,56 @@ const features = [
 ]
 
 function index() {
-  const [selectedAudience, setSelectedAudience] = useState(null) // 'parent' | 'physician' | 'care' | null
+  const [cats, setCats] = useState(null);
 
-  const toggleAudience = (aud) => {
-    setSelectedAudience((prev) => (prev === aud ? null : aud))
+ const changeAudience = (audience) => {
+  if (cats === audience) {
+    setCats(null);
+  } else {
+    setCats(audience);
   }
+};
 
-  const filtered = selectedAudience
-    ? features.filter((f) => f.tags && f.tags.includes(selectedAudience))
+  const filtered = cats
+    ? features.filter((f) => f.tags && f.tags.includes(cats))
     : features
 
   return (
     <Layout>
       <SectionBanner title={"Resources"} />
-
+    <div className='container mx-auto'>
       <div className="grid grid-cols-1 md:grid-cols-3 p-3 gap-5 md:mt-4 md:mb-8">
-        {/* Left sidebar: I Am */}
         <div className="mb-6 md:mb-0">
           <h3 className="text-2xl font-bold mb-4">I Am</h3>
 
           <div className="space-y-4">
             <button
-              onClick={() => toggleAudience('parent')}
-              className={`w-full flex items-center gap-3 p-3 rounded-lg border text-sm ${selectedAudience === 'parent' ? 'border-emerald-400 bg-emerald-50' : 'border-gray-200 bg-white'} hover:shadow-sm`}
+              onClick={() => changeAudience('parent')}
+              className={`w-full flex items-center gap-3 p-3 rounded-lg border text-medium ${cats === 'parent' ? 'border-emerald-400 bg-emerald-50' : 'border-gray-200 bg-white'} hover:shadow-sm`}
             >
-              <span className="inline-flex items-center justify-center w-8 h-8 bg-emerald-50 text-emerald-600 rounded-full">👪</span>
+              <span className="flex items-center justify-center  bg-emerald-50 text-green-dark rounded-full"><RiParentLine size={20}/></span>
               <span className="text-gray-700">A parent or Caregiver</span>
             </button>
 
             <button
-              onClick={() => toggleAudience('physician')}
-              className={`w-full flex items-center gap-3 p-3 rounded-lg border text-sm ${selectedAudience === 'physician' ? 'border-emerald-400 bg-emerald-50' : 'border-gray-200 bg-white'} hover:shadow-sm`}
+              onClick={() => changeAudience('physician')}
+              className={`w-full flex items-center gap-3 p-3 rounded-lg border text-medium ${cats === 'physician' ? 'border-emerald-400 bg-emerald-50' : 'border-gray-200 bg-white'} hover:shadow-sm`}
             >
-              <span className="inline-flex items-center justify-center w-8 h-8 bg-emerald-50 text-emerald-600 rounded-full">👨‍⚕️</span>
+              <span className="flex items-center justify-center  bg-emerald-50 text-green-dark rounded-full"><FaUserDoctor size={20}/></span>
               <span className="text-gray-700">A Physician</span>
             </button>
 
             <button
-              onClick={() => toggleAudience('care')}
-              className={`w-full flex items-center gap-3 p-3 rounded-lg border text-sm ${selectedAudience === 'care' ? 'border-emerald-400 bg-emerald-50' : 'border-gray-200 bg-white'} hover:shadow-sm`}
+              onClick={() => changeAudience('care')}
+              className={`w-full flex items-center gap-3 p-3 rounded-lg border text-medium ${cats === 'care' ? 'border-emerald-400 bg-emerald-50' : 'border-gray-200 bg-white'} hover:shadow-sm`}
             >
-              <span className="inline-flex items-center justify-center w-8 h-8 bg-emerald-50 text-emerald-600 rounded-full">🏥</span>
+              <span className="flex items-center justify-center  bg-emerald-50 text-green-dark rounded-full"><FaHandHoldingHeart size={20}/></span>
               <span className="text-gray-700">Care with BlueHaloHealth</span>
             </button>
           </div>
         </div>
 
-        {/* Right: resources grid */}
+        
         <div className="md:col-span-2 grid grid-cols-1 sm:grid-cols-2 gap-5">
           {filtered.map((item) => (
             <Link key={item.id} href={item.link}>
@@ -130,6 +137,7 @@ function index() {
           ))}
         </div>
       </div>
+    </div>
 
       <BookingTab />
     </Layout>

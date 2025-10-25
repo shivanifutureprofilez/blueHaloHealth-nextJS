@@ -11,6 +11,7 @@ import { BsTrash } from 'react-icons/bs';
 import toast from 'react-hot-toast';
 import { FaTrash } from 'react-icons/fa';
 import { MdEdit } from "react-icons/md";
+import AdminRoutes from '@/pages/api/AdminRoutes';
 
 const services = [
   "Autism & Developmental Screening",
@@ -36,13 +37,18 @@ function List() {
     });
   }
 
-  const editAge = async (pid) => {
-    try {
-      
-    } catch (err) {
-      console.log("error ",err)
+  const editAge = () => {
+        const lists = new AdminRoutes();
+        const data = lists.editAge();
+        data.then((res) => {
+            if (res.data.status) {
+                toast.success(res.data.message);
+                navigate("/admin/agegroups/list");
+            } else {
+                toast.error(res.data.message)
+            }
+        })
     }
-  }
   const deleteAge = async (pid) => {
     console.log("pid", pid)
     try {

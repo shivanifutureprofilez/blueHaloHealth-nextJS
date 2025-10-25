@@ -21,7 +21,9 @@ class AdminRoutes extends Component {
     async deleteService(data) {
         return Api.get(`/service/delete/${data}`);
     }
-    
+    async editAge(data){
+        return Api.post("/agegroup/update",data);
+    }
 
     render() {
         return (
