@@ -1,14 +1,14 @@
-import React from 'react';
-import Link from 'next/link';
-import AdminRoutes from '@/pages/api/AdminRoutes';
-import { FaTrash } from 'react-icons/fa'; 
-import toast from 'react-hot-toast';
+import React from "react";
+import Link from "next/link";
+import AdminRoutes from "@/pages/api/AdminRoutes";
+import { FaTrash, FaEdit } from "react-icons/fa";
+import toast from "react-hot-toast";
 
 function ServiceCard({ item, idx, isAdmin = false, fetchServices }) {
-    
   const handleDelete = (id) => {
     const main = new AdminRoutes();
-    main.deleteService(id)
+    main
+      .deleteService(id)
       .then((r) => {
         toast.success(r?.data?.message);
         fetchServices();
@@ -25,8 +25,22 @@ function ServiceCard({ item, idx, isAdmin = false, fetchServices }) {
       className="bg-white rounded-[25px] shadow overflow-hidden flex flex-col items-center relative"
     >
       {isAdmin && (
+        <Link
+        //   onClick={() => handleEdit(item?._id)}
+        href={`/admin/service/${item?._id}`}
+          className="absolute top-3 left-3 bg-blue-500 hover:bg-blue-600 text-white p-2 rounded-full shadow-md transition-colors duration-200 z-10 cursor-pointer
+               flex items-center justify-center"
+          title="Edit service"
+        >
+          <FaEdit size={14} />
+        </Link>
+      )}
+
+      {isAdmin && (
         <button
-          onClick={()=> {handleDelete(item?._id)}}
+          onClick={() => {
+            handleDelete(item?._id);
+          }}
           className="absolute top-3 right-3 bg-red-500 hover:bg-red-600 text-white p-2 rounded-full shadow-md transition-colors duration-200 z-2 cursor-pointer"
           title="Delete service"
         >
