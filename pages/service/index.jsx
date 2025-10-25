@@ -9,7 +9,7 @@ import RoutesLists from '../api/RoutesLists'
 export default function Index() {
 
 
-  const [ageGroup, setAgeGroup] = useState('0-6');
+  const [ageGroup, setAgeGroup] = useState('all');
   const updateAgeGroup = (e) => {
       setAgeGroup(e);
   }
@@ -23,6 +23,8 @@ export default function Index() {
                     <div className='w-full  py-3 '>
                         
                         <div className='flex justify-center items-center flex-wrap gap-2'>
+                            <button className={`button-white w-full md:w-[230px] border`} onClick={()=> {updateAgeGroup('all')}}><span className='pl-2 pr-2'>All Services</span></button>
+
                             <button className={`button-white w-full md:w-[230px] border   `} onClick={() => { updateAgeGroup('0-6') }}><span className="pl-2 pr-2">0-6 (Early Years)</span></button>
 
                             <button className={`button-white w-full md:w-[230px] border `} onClick={() => { updateAgeGroup('7-12') }}><span className="pl-2 pr-2">7-12 (School Age)</span></button>
@@ -62,8 +64,10 @@ export default function Index() {
         <Filter />
         <div className='container mx-auto'>
           <div className="grid grid-cols-1 md:grid-cols-3 p-3 gap-6 md:mt-4 md:mb-8">
+           
             {serviceList?.map((item, index) => (
-              <ServiceCard item={item}  idx={index}  />
+              <ServiceCard item={item} ageGroup={ageGroup} idx={index}  />
+              
             ))}
           </div>
           <BookingTab />

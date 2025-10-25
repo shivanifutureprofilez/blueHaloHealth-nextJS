@@ -26,7 +26,10 @@ class AdminRoutes extends Component {
     }
     async getServiceById(data) {
         return Api.get(`/service/list/${data}`);
-    }    
+    }   
+    async editAge(data){
+        return Api.post(`/agegroup/update`,data);
+    } 
 
     render() {
         return (

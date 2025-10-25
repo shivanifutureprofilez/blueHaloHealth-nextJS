@@ -1,18 +1,29 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useRouter } from 'next/router';
 import Popup from '@/components/Popup';
 import toast from 'react-hot-toast';
 import AdminRoutes from '@/pages/api/AdminRoutes';
 
-function AddAgeGroup({ id, fetchGroups }) {
+function AddAgeGroup({ id, fetchGroups, isEdit, group }) {
     const router = useRouter();
     const [items, setItems] = useState({
-        title: "",
-        description: "",
-        image: "",
-        min_age: "",
-        max_age: "",
+        title: group?.title || "",
+        description: group?.description || "",
+        image: group?.image || "",
+        minAge: group?.minAge || "",
+        _id: group?._id || "",
+        maxAge: group?.maxAge || "",
     })
+    useEffect(() => {
+        setItems({
+            title: group?.title || "",
+            description: group?.description || "",
+            image: group?.image || "",
+            minAge: group?.minAge || "",
+            _id: group?._id || "",
+            maxAge: group?.maxAge || "",
+        })
+    }, [group])
 
     const [action, setAction] = useState();
     console.log("items ", items)
@@ -26,7 +37,7 @@ function AddAgeGroup({ id, fetchGroups }) {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            if (!items.title || !items.description || !items.image || !items.min_age || !items.max_age) {
+            if (!items.title || !items.description || !items.image || !items.minAge || !items.maxAge) {
                 toast.error("All fields are required");
                 return false;
             }
@@ -39,8 +50,37 @@ function AddAgeGroup({ id, fetchGroups }) {
                 title: "",
                 description: "",
                 image: "",
-                min_age: "",
-                max_age: "",
+                minAge: "",
+                maxAge: "",
+            });
+            fetchGroups && fetchGroups();
+            setAction("close")
+            setLoading(false);
+        } catch (error) {
+            console.error("Error:", error);
+            toast.error("Something went wrong");
+            setLoading(false);
+        }
+    };
+
+    const handleEdit = async (e) => {
+        e.preventDefault();
+        try {
+            if (!items.title || !items.description || !items.image || !items.minAge || !items.maxAge) {
+                toast.error("All fields are required");
+                return false;
+            }
+            setLoading(true);
+            const lists = new AdminRoutes();
+            const data = await lists.editAge(items);
+            toast.success("Age Group added successfully!");
+            router.push("/admin/agegroups/list");
+            setItems({
+                title: "",
+                description: "",
+                image: "",
+                minAge: "",
+                maxAge: "",
             });
             fetchGroups && fetchGroups();
             setAction("close")
@@ -52,10 +92,10 @@ function AddAgeGroup({ id, fetchGroups }) {
         }
     };
     return (
-        <Popup action={action} size='max-w-[700px]' bg="" space={'p-6 md:p-8'} btnclasses="button cursor-pointer" btntext="+ Add Age Group">
+        <Popup action={action} size='max-w-[700px]' bg="" space={isEdit ? 'p-6 md:p-4' : "p-6 md:p-8"} btnclasses="button cursor-pointer" btntext={isEdit ? "Edit" : "+ Add Age Group"} >
             <div className=" w-full  flex flex-wrap md:flex-nowrap ">
                 <div className="w-full relative ">
-                    <h5 className="text-2xl font-medium text-gray-800 mt-2">Add Age Group</h5>
+                    <h5 className="text-2xl font-medium text-gray-800 mt-2">{isEdit ? "Edit " : "Add Age Group"} </h5>
                     <form className="mt-6" onSubmit={handleSubmit}>
                         <div className='grid grid-cols-2 gap-4 mb-4 mt-3'>
                             <div >
@@ -99,8 +139,8 @@ function AddAgeGroup({ id, fetchGroups }) {
                                 <input
                                     type="number"
                                     onChange={handleChange}
-                                    value={items?.min_age}
-                                    name='min_age'
+                                    value={items?.minAge}
+                                    name='minAge'
                                     placeholder="Enter Minimum Age For This Age Group"
                                     className=" w-full bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg 
                             focus:ring-blue-500 focus:border-blue-500 py-3 px-4"
@@ -111,8 +151,8 @@ function AddAgeGroup({ id, fetchGroups }) {
                                 <input
                                     type="number"
                                     onChange={handleChange}
-                                    value={items?.max_age}
-                                    name='max_age'
+                                    value={items?.maxAge}
+                                    name='maxAge'
                                     placeholder="Enter Maximum Age For This Age Group"
                                     className=" w-full bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg 
                             focus:ring-blue-500 focus:border-blue-500 py-3 px-4"
@@ -121,7 +161,7 @@ function AddAgeGroup({ id, fetchGroups }) {
                         </div>
                     </form>
                     <button
-                        onClick={handleSubmit}
+                        onClick={isEdit ? handleEdit : handleSubmit}
                         type="submit"
                         disabled={loading}
                         className="button w-full  mt-6  md:w-32  py-3"

@@ -1,7 +1,7 @@
 import { Fragment, useEffect, useRef, useState } from 'react'
 import { Dialog, Transition } from '@headlessui/react'
 
-export default function Popup({btnclasses, btntext, size, children, space, action, bg}) {
+export default function Popup({btnclasses, btntext, size, children, space, action, bg ,isEdit = false}) {
   const [open, setOpen] = useState(false)
   const cancelButtonRef = useRef(null);
     

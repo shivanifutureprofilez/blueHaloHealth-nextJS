@@ -63,7 +63,7 @@ function ServiceCard({ item, idx, isAdmin = false, fetchServices }) {
           {item?.name}
         </h2>
         <p className="mb-8 text-[15px] font-medium line-clamp-3 text-gray-600">
-          {item?.description1}
+          {item?.description}
         </p>
         <button className="button md:w-[200px]">Learn More</button>
       </div>

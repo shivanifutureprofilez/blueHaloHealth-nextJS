@@ -36,19 +36,6 @@ function List() {
       console.log("err", err)
     });
   }
-
-  const editAge = () => {
-        const lists = new AdminRoutes();
-        const data = lists.editAge();
-        data.then((res) => {
-            if (res.data.status) {
-                toast.success(res.data.message);
-                navigate("/admin/agegroups/list");
-            } else {
-                toast.error(res.data.message)
-            }
-        })
-    }
   const deleteAge = async (pid) => {
     console.log("pid", pid)
     try {
@@ -93,7 +80,7 @@ function List() {
       <div className='flex mt-5'>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-3 sm:gap-4 lg:gap-6 xl:gap-6">
           {ageGroupsLists.map((group, idx) => (
-            <div key={idx} className=" bg-white border-b border-[#009C4A] rounded-[25px] shadow overflow-hidden flex flex-col items-center relative">
+            <div key={idx} className=" bg-white relative border-b border-[#009C4A] rounded-[25px] shadow overflow-hidden flex flex-col items-center ">
               <div className="w-full min-h-[250px] max-h-[250px]  rounded-lg overflow-hidden mb-4 relative">
                 {/* <Link href={<AddAgeGroup/>} > */}
                 <img
@@ -110,18 +97,15 @@ function List() {
                 className={` absolute top-3 right-3 bg-red-500 hover:bg-red-600 text-white p-2 rounded-full shadow-md transition-colors duration-200 z-2 cursor-pointer`} >
                 <FaTrash size={14} />
               </button>
-              <button
-                onClick={() => { editAge(group?._id) }}
-                className={` absolute top-3 right-15 bg-green-dark text-white p-2 rounded-full shadow-md transition-colors duration-200 z-2 cursor-pointer`} >
-              <MdEdit size={14}/>
-              </button>
-              <ul className="text-gray-800 p-4 w-full ">
-                {services.map((service, i) => (
+              <div className="absolute top-3 right-15 ">
+                <AddAgeGroup fetchGroups={fetchGroups} group={group} isEdit={true}  />
+              </div>              <ul className="text-gray-800 p-4 w-full ">
+                {group && group.services && group.services.map((service, i) => (
                   <li key={i} className="mb-2 text-[#626262] flex items-start font-semibold text-[15px] ">
                     <span className="mr-2 mt-1">
                       <FaCircleCheck className="text-green-500 rounded-xl" />
                     </span>
-                    {service}
+                    {service?.name}
                   </li>
                 )) || ''}
               </ul>

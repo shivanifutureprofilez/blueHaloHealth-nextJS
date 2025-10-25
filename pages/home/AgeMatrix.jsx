@@ -119,12 +119,12 @@ export default function AgeMatrix({admin}) {
               <h3 className="mb-3 text-start py-[15px] px-[30px] text-white text-xl font-semibold absolute top-0 left-0 w-full  bg-[#0006]">{group.title}</h3>
               </div>
               <ul className="text-gray-800 p-4 w-full ">
-                {services.map((service, i) => (
+                {group && group.services && group.services.map((service, i) => (
                   <li key={i} className="mb-2 text-[#626262] flex items-start font-semibold text-[15px] ">
                     <span className="mr-2 mt-1">
                       <FaCircleCheck  className="text-green-500 rounded-xl"/>
                     </span>
-                    {service}
+                    {service?.name}
                   </li>
                 )) || ''}
               </ul>

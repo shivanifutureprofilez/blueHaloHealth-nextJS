@@ -15,25 +15,6 @@ export default function ageGroupDetail() {
    const [loading, setLoading ] = useState(true);
     const pid = useParams();
     const [data, setData] = useState(null);
-    const [services, setServices] = useState([]);
-
-    const ShowAgeGroupDetails = () => {
-        const lists = new RoutesLists();
-        const data = lists.getServicesByAge(pid);
-        data.then((res)=>{
-            console.log("res ",res);
-            setServices(res?.data?.allServices || null);
-            setTimeout(()=>{
-                setLoading(false);
-            },1000)
-        }).catch((error)=>{
-            console.log("error",error);
-            setTimeout(()=>{
-                setLoading(false);
-            },1000);
-        });
-    };
-
 
     const getAgeData = () => {
         const lists = new RoutesLists();
@@ -41,8 +22,7 @@ export default function ageGroupDetail() {
         data.then((res)=>{
             console.log("res ",res);
             setData(res?.data?.ageGroupData || null);
-                setLoading(false);
-                ShowAgeGroupDetails();
+                setLoading(false); 
         }).catch((error)=>{
               console.log("error",error);
               setLoading(false);
@@ -64,7 +44,7 @@ export default function ageGroupDetail() {
         <SectionBanner title={data.title || 'Service Detail'} />
         <div className='container mx-auto'>
           <div className='grid grid-cols-3 gap-3 py-12'>
-              {services && services.map((s,i)=>{
+              {data && data?.services && data?.services.map((s,i)=>{
                 return <>
                     <ServiceCard item={s}  idx={i}  />
                 </>
