@@ -3,6 +3,7 @@ import { useRouter } from 'next/router';
 import Popup from '@/components/Popup';
 import toast from 'react-hot-toast';
 import AdminRoutes from '@/pages/api/AdminRoutes';
+import { CiEdit } from "react-icons/ci";
 
 function AddAgeGroup({ id, fetchGroups, isEdit, group }) {
     const router = useRouter();
@@ -92,10 +93,10 @@ function AddAgeGroup({ id, fetchGroups, isEdit, group }) {
         }
     };
     return (
-        <Popup action={action} size='max-w-[700px]' bg="" space={isEdit ? 'p-6 md:p-4' : "p-6 md:p-8"} btnclasses="button cursor-pointer" btntext={isEdit ? "Edit" : "+ Add Age Group"} >
+        <Popup action={action} size='max-w-[700px]' bg="" space={isEdit ? 'p-6 md:p-4' : "p-6 md:p-8"} btnclasses={isEdit ? "bg-green-dark p-1.5 rounded-xl cursor-pointer" : "button cursor-pointer"} btntext={isEdit ? <CiEdit /> : "+ Add Age Group"} >
             <div className=" w-full  flex flex-wrap md:flex-nowrap ">
                 <div className="w-full relative ">
-                    <h5 className="text-2xl font-medium text-gray-800 mt-2">{isEdit ? "Edit " : "Add Age Group"} </h5>
+                    <h5 className="text-2xl font-medium text-gray-800 mt-2">{isEdit ? "Edit " : "Add Age Group"}</h5>
                     <form className="mt-6" onSubmit={handleSubmit}>
                         <div className='grid grid-cols-2 gap-4 mb-4 mt-3'>
                             <div >
