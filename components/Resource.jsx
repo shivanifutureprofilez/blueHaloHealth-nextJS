@@ -28,7 +28,7 @@ function Resource() {
         <div className='bg-[#F7F4F0] md:pt-12 md:pb-18  py-10'>
             <div className='container mx-auto'>
                 <Heading
-                    className="text-black text-center"
+                    className="heading text-center md:text-left poppins text-black tracking-tighter leading-tight font-bold text-4xl md:text-5xl lg:text-5xl mb-3"
                     heading1={"Insights &"}
                     heading2={" Resources for Families"}
                     //content={"Stay informed with expert articles, practical tips, and inspiring stories to help families at every stage of life. Our blogs cover child development, parenting strategies, mental health, therapy guidance, and more."}
@@ -36,9 +36,9 @@ function Resource() {
                  <p className="font-medium text-[15px] text-center mb-6 text-gray-700 p-2 md:p-0 max-w-[600px] mx-auto">
                     Stay informed with expert articles, practical tips, and inspiring stories to help families at every stage of life. Our blogs cover child development, parenting strategies, mental health, therapy guidance, and more.
                 </p>
-                <div className=' md:py-[30px] grid grid-cols-1 md:grid-cols-3 md:gap-4 '>
+                <div className=' md:py-[30px] grid grid-cols-1 md:grid-cols-3 gap-4 '>
                     {features?.map((item, indx) => (
-                        <div key={indx} className="bg-white rounded-3xl shadow  m-3 md:m-0 md:p-0 flex flex-col overflow-hidden">
+                        <div key={indx} className="bg-white rounded-3xl shadow  md:m-0 md:p-0 flex flex-col overflow-hidden">
                             <div className="relative">
                                 <Image
                                     src={`${item?.image}`}

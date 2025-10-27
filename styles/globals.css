@@ -72,7 +72,7 @@ body  {
   }
 
   .heading {
-    @apply font-bold text-[#1E1E1E] text-[26px] md:text-[35px] lg:text-[42px];
+    @apply font-bold text-[#1E1E1E] text-[28px] md:text-[35px] lg:text-[42px];
   }
 }
 

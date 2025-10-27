@@ -33,7 +33,7 @@ function Header() {
               </Link>
 
 
-              <div className="lg:hidden">
+              <div className="lg:hidden absolute right-0">
               {isMobileMenuOpen ? (
                 <FiX
                   className="text-2xl cursor-pointer"

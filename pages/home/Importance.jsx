@@ -34,13 +34,13 @@ function Importance() {
       <div className="container mx-auto">
         <div className='pt-10 md:pt-0'>
         <Heading
-          className="text-black text-center"
+          className="heading text-center md:text-left poppins text-black tracking-tighter leading-tight font-bold text-4xl md:text-5xl lg:text-5xl mb-3"
           heading1={"Why Families Choose"}
           heading2={" BlueHaloHealth"}
           //content={"Trusted expertise, personalized care, and proven results for every stage of development."}
         />
         </div>
-        <p className="font-medium text-[15px] text-center mb-4  text-gray-700 p-2 md:p-0 max-w-[600px] mx-auto">
+        <p className="font-medium text-[15px] text-center mb-6 md:mb-12 text-gray-700 p-2 md:p-0 max-w-[600px] mx-auto">
           Trusted expertise, personalized care, and proven results  for every stage of development.
         </p>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3  ">

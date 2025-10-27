@@ -7,8 +7,8 @@ class RoutesLists extends Component {
         return Api.get("/agegroup/list");
     }
 
-    async getServices() {
-        return Api.get("/service/list");
+    async getServices(data) {
+        return Api.get(`/service/list?age=${data}`);
     }
 
     async getServiceDetail({pid}) {

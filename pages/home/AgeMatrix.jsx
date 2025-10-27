@@ -98,7 +98,7 @@ export default function AgeMatrix({admin}) {
         </h2> */}
         
          <Heading
-          className="text-black text-center"
+          className="heading text-center md:text-left poppins text-black tracking-tighter leading-tight font-bold text-4xl md:text-5xl lg:text-5xl mb-3"
           heading1={"Comprehensive"}
           heading2={" Therapy Services"}
           //content={"Trusted expertise, personalized care, and proven results for every stage of development."}
