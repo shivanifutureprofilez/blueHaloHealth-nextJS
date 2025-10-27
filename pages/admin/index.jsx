@@ -9,24 +9,6 @@ export default function Index() {
   const [loading, setLoading] = useState(false);
   const [data, setData] = useState({});
 
-  // const fetchData = async () => {
-  //   try {
-  //     setLoading(true);
-  //     const main = new Listing();
-  //     const response = await main.Dashboard();
-  //     setData(response?.data?.data || []);
-  //   } catch (error) {
-  //     console.log("error", error);
-  //     setData({});
-  //   }
-  //   setLoading(false);
-  // };
-
-  // useEffect(() => {
-  //   fetchData();
-  // }, []);
-  // console.log("data", data);
-
   const stats = useMemo(
     () =>[
     {

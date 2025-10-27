@@ -11,7 +11,6 @@ export default function index() {
       const lists = new AdminRoutes();
       const data = lists.getcontactlist();
       data.then((res)=>{ 
-        console.log(":res" , res)
         setContacts(res?.data?.enquiryData || []);
       }).catch((err)=>{ 
         setContacts([]);
@@ -21,7 +20,6 @@ export default function index() {
     useEffect(()=>{
       fetchGroups();
     },[]);
-    console.log("contacts",contacts)
   return ( 
     <AuthLayout>
       <div className="flex items-center justify-between tracking-tight border-b border-[#2a2a2a] pb-4 mb-6 w-full">

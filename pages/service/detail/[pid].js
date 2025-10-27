@@ -24,7 +24,7 @@ export default function ServiceDetails() {
             setLoading(false)
           },1000)
     }).catch((error) => {
-        console.log("error",error);
+        //console.log("error",error);
         setTimeout(()=>{
           setLoading(false)
         }),1000        // toast.error("Unable To Fetch Service Details. Please Try Again Later");

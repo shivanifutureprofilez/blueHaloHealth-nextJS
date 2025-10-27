@@ -84,7 +84,7 @@ export default function AgeMatrix({admin}) {
   useEffect(()=>{
     fetchGroups();
   },[]);
-  console.log("ageGroupsLists",ageGroupsLists)
+  //console.log("ageGroupsLists",ageGroupsLists)
  
 
 

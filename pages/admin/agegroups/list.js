@@ -37,12 +37,11 @@ function List() {
     });
   }
   const deleteAge = async (pid) => {
-    console.log("pid", pid)
     try {
       const lists = new RoutesLists();
       const data = lists.deleteagegroup(pid);
       data.then((res) => {
-        console.log("res", res.data.message)
+        
         if (res.data.status) {
           toast.success(res.data.message);
           fetchGroups();
@@ -66,7 +65,7 @@ function List() {
   //         }
   //     }, [pid]);
 
-  console.log("ageGroupsLists", ageGroupsLists)
+
 
 
 

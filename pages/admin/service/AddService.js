@@ -19,7 +19,7 @@ function AddService({ id, item, }) {
         content:editorHtmlContent
     });
     
-    console.log("items ", items)
+    //console.log("items ", items)
     const handleChange = (e) => {r
         const name = e.target.name;
         const value = e.target.value;

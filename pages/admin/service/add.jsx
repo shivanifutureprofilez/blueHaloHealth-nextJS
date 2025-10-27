@@ -46,8 +46,7 @@ export default function add() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log("items", items);
-    console.log("ageGroupBenefits", ageGroupBenefits);
+   
     try {
       setLoading(true);
       const lists = new AdminRoutes();

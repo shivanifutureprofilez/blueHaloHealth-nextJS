@@ -13,7 +13,7 @@ export default function AuthLayout({ children }) {
   const router = useRouter();
 
     const { setUser, user } = useContext(MyContext)
-  // console.log("user",user)
+  
 
   function showSidebar() {
     setToggle(!toggle);

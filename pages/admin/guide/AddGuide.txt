@@ -27,7 +27,6 @@ export default function AddGuide({ isOpen, onClose }) {
       setFormData((prev) => ({ ...prev, thumbnail: file }));
       setThumbnailPreview(URL.createObjectURL(file));
     } else if (name === "file" && files?.[0]) {
-      console.log("files",files);
       const file = files[0];
       if (!file.type.startsWith("application/pdf")) {
         toast.error("Only video or audio files allowed");

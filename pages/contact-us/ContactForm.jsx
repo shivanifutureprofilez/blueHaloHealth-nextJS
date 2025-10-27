@@ -39,7 +39,7 @@ function ContactForm() {
       setLoading(true);
       const lists = new RoutesLists();
       const response = await lists.getEnquiry(items);
-      console.log("response", response);
+      //console.log("response", response);
 
       if (response.data.status) {
         toast.success(response.data.message);

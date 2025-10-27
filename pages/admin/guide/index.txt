@@ -27,7 +27,7 @@ export default function index() {
     fetchGuides();
   }, []);
 
-  // console.log("data",data);
+  
 
   return (
     <AuthLayout>

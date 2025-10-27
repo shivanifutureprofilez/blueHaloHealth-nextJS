@@ -20,7 +20,7 @@ export default function ageGroupDetail() {
         const lists = new RoutesLists();
         const data = lists.getGroupData(pid);
         data.then((res)=>{
-            console.log("res ",res);
+            //console.log("res ",res);
             setData(res?.data?.ageGroupData || null);
                 setLoading(false); 
         }).catch((error)=>{

@@ -27,7 +27,7 @@ function AddAgeGroup({ id, fetchGroups, isEdit, group }) {
     }, [group])
 
     const [action, setAction] = useState();
-    console.log("items ", items)
+    
     const handleChange = (e) => {
         const name = e.target.name;
         const value = e.target.value;
