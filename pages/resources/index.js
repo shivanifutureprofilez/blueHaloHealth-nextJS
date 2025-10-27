@@ -81,13 +81,13 @@ const features = [
 function index() {
   const [cats, setCats] = useState(null);
 
- const changeAudience = (audience) => {
-  if (cats === audience) {
-    setCats(null);
-  } else {
-    setCats(audience);
-  }
-};
+  const changeAudience = (audience) => {
+    if (cats === audience) {
+      setCats(null);
+    } else {
+      setCats(audience);
+    }
+  };
 
   const filtered = cats
     ? features.filter((f) => f.tags && f.tags.includes(cats))
@@ -96,48 +96,50 @@ function index() {
   return (
     <Layout>
       <SectionBanner title={"Resources"} />
-    <div className='container mx-auto'>
-      <div className="grid grid-cols-1 md:grid-cols-3 p-3 gap-5 md:mt-4 md:mb-8">
-        <div className="mb-6 md:mb-0">
-          <h3 className="text-2xl font-bold mb-4">I Am</h3>
+      <div className='bg-[#F7F8F9]'>
+         <div className="container mx-auto  px-4 py-4 md:py-8  md:px-8 ">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-5 md:mt-4 md:mb-8">
+            <div className="mb-6 md:mb-0">
+              <h3 className="text-2xl font-bold mb-4">I Am</h3>
 
-          <div className="space-y-4">
-            <button
-              onClick={() => changeAudience('parent')}
-              className={`w-full flex items-center gap-3 p-3 rounded-lg border text-medium ${cats === 'parent' ? 'border-emerald-400 bg-emerald-50' : 'border-gray-200 bg-white'} hover:shadow-sm`}
-            >
-              <span className="flex items-center justify-center  bg-emerald-50 text-green-dark rounded-full"><RiParentLine size={20}/></span>
-              <span className="text-gray-700">A parent or Caregiver</span>
-            </button>
+              <div className="space-y-4">
+                <button
+                  onClick={() => changeAudience('parent')}
+                  className={`w-full flex items-center gap-3 p-3 rounded-lg border text-medium ${cats === 'parent' ? 'border-emerald-400 bg-emerald-50' : 'border-[#00000033] bg-transparent'} hover:shadow-sm`}
+                >
+                  <span className="flex items-center justify-center  bg-emerald-50 text-green-dark rounded-full"><RiParentLine size={20} /></span>
+                  <span className="text-gray-700">A parent or Caregiver</span>
+                </button>
 
-            <button
-              onClick={() => changeAudience('physician')}
-              className={`w-full flex items-center gap-3 p-3 rounded-lg border text-medium ${cats === 'physician' ? 'border-emerald-400 bg-emerald-50' : 'border-gray-200 bg-white'} hover:shadow-sm`}
-            >
-              <span className="flex items-center justify-center  bg-emerald-50 text-green-dark rounded-full"><FaUserDoctor size={20}/></span>
-              <span className="text-gray-700">A Physician</span>
-            </button>
+                <button
+                  onClick={() => changeAudience('physician')}
+                  className={`w-full flex items-center gap-3 p-3 rounded-lg border text-medium ${cats === 'physician' ? 'border-emerald-400 bg-emerald-50' : 'border-[#00000033] bg-transparent'} hover:shadow-sm`}
+                >
+                  <span className="flex items-center justify-center  bg-emerald-50 text-green-dark rounded-full"><FaUserDoctor size={20} /></span>
+                  <span className="text-gray-700">A Physician</span>
+                </button>
 
-            <button
-              onClick={() => changeAudience('care')}
-              className={`w-full flex items-center gap-3 p-3 rounded-lg border text-medium ${cats === 'care' ? 'border-emerald-400 bg-emerald-50' : 'border-gray-200 bg-white'} hover:shadow-sm`}
-            >
-              <span className="flex items-center justify-center  bg-emerald-50 text-green-dark rounded-full"><FaHandHoldingHeart size={20}/></span>
-              <span className="text-gray-700">Care with BlueHaloHealth</span>
-            </button>
+                <button
+                  onClick={() => changeAudience('care')}
+                  className={`w-full flex items-center gap-3 p-3 rounded-lg border text-medium ${cats === 'care' ? 'border-emerald-400 bg-emerald-50' : 'border-[#00000033] bg-transparent'} hover:shadow-sm`}
+                >
+                  <span className="flex items-center justify-center  bg-emerald-50 text-green-dark rounded-full"><FaHandHoldingHeart size={20} /></span>
+                  <span className="text-gray-700">Care with BlueHaloHealth</span>
+                </button>
+              </div>
+            </div>
+
+
+            <div className="md:col-span-2 grid grid-cols-1 sm:grid-cols-2 gap-5">
+              {filtered.map((item) => (
+                <Link key={item.id} href={item.link}>
+                  <ResourceCard label={item.label} title={item.title} date={item.date} tags={item.tags} />
+                </Link>
+              ))}
+            </div>
           </div>
         </div>
-
-        
-        <div className="md:col-span-2 grid grid-cols-1 sm:grid-cols-2 gap-5">
-          {filtered.map((item) => (
-            <Link key={item.id} href={item.link}>
-              <ResourceCard label={item.label} title={item.title} date={item.date} tags={item.tags} />
-            </Link>
-          ))}
-        </div>
       </div>
-    </div>
 
       <BookingTab />
     </Layout>

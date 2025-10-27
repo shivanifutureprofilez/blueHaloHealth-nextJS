@@ -49,22 +49,21 @@ function Faq() {
   };
 
   return (
-    <section className="bg-[#F7F4F0] py-16 px-4 md:px-8 lg:px-16">
-      <div className="container mx-auto">
+    <section className="bg-[#F7F8F9]  ">
+      <div className="container mx-auto  px-4 py-4 md:py-8  md:px-8">
         <div className="flex flex-wrap justify-between md:flex-nowrap">
-          <div className="mt-6 p-3 ">
+          <div className="max-w-sm">
             <Heading
               className="text-black"
               heading1={"Frequently asked "}
               heading2={" questions"}
-            //content={"Stay informed with expert articles, practical tips, and inspiring stories to help families at every stage of life. Our blogs cover child development, parenting strategies, mental health, therapy guidance, and more."}
             />
           </div>
           <div className="space-y-4 mt-4">
             {faqs.map((faq, index) => (
               <div
                 key={index}
-                className="bg-white max-w-[600px] rounded-lg shadow-sm border border-gray-100 p-5 transition-all duration-900 ease-in-out hover:shadow-md "
+                className="bg-white max-w-[800px] rounded-lg shadow-sm border border-gray-100 p-5 transition-all duration-900 ease-in-out hover:shadow-md "
               >
                 <button
                   className="flex justify-between items-center w-full text-left"

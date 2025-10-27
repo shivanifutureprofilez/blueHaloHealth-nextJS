@@ -28,9 +28,9 @@ function Mission() {
         
       ];
   return (
-    <div className="bg-[#E6EBE3] py-10 ">
-      <div className="container mx-auto">
-        <div className='mb-5 mt-3 p-3'>
+    <div className="bg-[#E6EBE3]  ">
+      <div className="container mx-auto  px-4 py-4 md:py-8  md:px-8 ">
+        <div className='p-5'>
         <Heading
           className="text-black "
           pClass="text-center"
@@ -39,7 +39,7 @@ function Mission() {
           content={"At BlueHaloHealth, we envision a world where every child, adolescent, and adult can reach their full potential — supported by compassionate care, expert guidance, and a community that understands their unique journey. We aim to create brighter futures by making therapy and assessment services accessible, empowering, and meaningful for every family we serve."}
         />
         </div>
-        <div className='mb-5 mt-3 p-3'>
+        <div className='p-5 '>
         <Heading
           className="text-black "
           pClass="text-center"
@@ -48,7 +48,7 @@ function Mission() {
           content={"Our mission is to provide comprehensive, evidence-based therapy and assessment services that nurture growth, independence, and well-being across all ages. We are committed to supporting individuals and families through personalized care, collaborative teamwork, and a warm, inclusive environment — helping every client achieve progress that lasts a lifetime."}
         />
         </div>
-        <div className='mb-5 mt-3 p-3'>
+        <div className='p-5 '>
         <Heading
           className="text-black text-center"
           heading1={"Our"}
@@ -57,13 +57,13 @@ function Mission() {
           content={"Blue Halo Health’s core values are at the heart of its mission: Passion fuels efforts to help children with autism and their families, quality is reflected in every standard they uphold, and transparency is shown through honest, open communication with clients, caregivers, and the team."}
         />
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-8 m-3 md:m-0 pb-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 p-4">
           {features.map((feature, idx) => (
             <div
               key={idx}
-              className="bg-white rounded-2xl shadow flex flex-col items-center px-8 py-10 text-center"
+              className="bg-white rounded-2xl shadow flex flex-col items-center px-3 py-3 md:px-6 md:py-6 text-center"
             >
-              <div className="flex  justify-center items-center w-16 h-16 rounded-full bg-[#E6F4EA] mb-4">
+              <div className="flex  justify-center items-center w-24 h-24 rounded-full bg-[#E6F4EA] mb-4 p-1">
                 {feature.icon}
               </div>
               <h3 className="font-semibold text-lg mb-2">{feature.title}</h3>

@@ -10,27 +10,22 @@ import HowItWorks from '@/components/HowItWorks';
 function index() {
     return (
         <Layout>
-            
+
             <div className='bg-[#F7F4F0]'>
                 <SectionBanner title={"Events"} />
-                <div className='container mx-auto py-12'>
-                <div className=' mt-3'>
+                <div className="container mx-auto px-4 py-4 md:py-8 md:px-8 ">
                     <Heading
                         className="text-black"
-                        //pClass="text-center"
                         heading1={"Event "}
                         heading2={"Highlights"}
-                        //content={"At BlueHaloHealth, we envision a world where every child, adolescent, and adult can reach their full potential — supported by compassionate care, expert guidance, and a community that understands their unique journey. We aim to create brighter futures by making therapy and assessment services accessible, empowering, and meaningful for every family we serve."}
                     />
+                    <div className="grid grid-cols-1 md:grid-cols-3  p-4 md:p-8 gap-5">
+                        {features?.map((item, index) => (
+                            <EventCard item={item} index={index} />
+                        ))}
+                    </div>
                 </div>
-                <div className="grid grid-cols-1 md:grid-cols-3 p-3 gap-5 md:mt-4 md:mb-8">
-                    {features?.map((item, index) => (
-                        <EventCard item={item} index={index} />
-                    ))}
-                </div>
-            </div>
-            {/* <HowItWorks/> */}
-            <BookingTab/>
+                <BookingTab />
             </div>
         </Layout>
     )

@@ -10,7 +10,7 @@ export default function AboutPageIndex() {
     <Layout>
       <div className='bg-[#F7F4F0]'>
         <SectionBanner title={"About"} />
-        <Founder />
+        {/* <Founder /> */}
         <Mission />
         <Team />
         <BookingTab/>
