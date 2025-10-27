@@ -1,6 +1,16 @@
-import Button from '@/components/Button'
-import Heading from '@/components/Heading'
-import React from 'react'
+// import Button from '@/components/Button'
+// import Heading from '@/components/Heading'
+// import Link from 'next/link'
+// import React from 'react'
+// import Swiper from 'swiper'
+// import { Autoplay, Navigation } from 'swiper/modules'
+// import { SwiperSlide } from 'swiper/react'
+// import 'swiper/css';
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import "swiper/css/navigation";
+import { Autoplay, Navigation } from "swiper/modules";
+import Link from 'next/link'
 
 export default function Banner() {
   return (
@@ -8,7 +18,7 @@ export default function Banner() {
       <section className=" md:!bg-[#edeee8] md:px-8   rounded-2xl md:rounded-4xl flex flex-col lg:flex-row items-center justify-between  py-2 md:py-[150px] md:shadow">
         <div className="order-2 md:order-1 md:m-3 flex-1 flex flex-col justify-center">
           <div className='leading-snug'>
-            <h2 className={`heading text-center md:text-left pt-12 md:pt-0 poppins text-black tracking-tighter leading-tight font-bold text-4xl md:text-5xl lg:text-5xl mb-3`} >Empowering Families Through <span className='text-[#009C4A]'>Expert Therapy </span><br/>& Support</h2>
+            <h2 className={`heading text-center md:text-left pt-12 md:pt-0 poppins text-black tracking-tighter leading-tight font-bold text-4xl md:text-5xl lg:text-5xl mb-3`} >Empowering Families Through <span className='text-[#009C4A]'>Expert Therapy </span><br />& Support</h2>
             <p className={` text-gray-500 text-center md:text-left font-medium text-[15px]`}>Individualized programs for children, teens, and adults with developmental or behavioral challenges.</p>
           </div>
           {/* <Heading
@@ -27,7 +37,13 @@ export default function Banner() {
           <div className="flex flex-wrap gap-4 mt-6">
 
             <button className='button w-full md:w-[230px]'>Book Free Consultation</button>
-            <button className='button-white w-full md:w-[230px] border-0'>Explore Our Services</button>
+            <Link
+              href="/service"
+              className="w-full md:w-[230px] text-center border border-green-600 text-green-600 px-3 py-3 rounded-lg font-semibold hover:bg-green-50 transition inline-block"
+            >
+              Explore Our Services
+            </Link>
+            {/* <button  className='button-white w-full md:w-[230px] border-0'>Explore Our Services</button> */}
             {/* <Button title={"Book Free Consultation"} className="bg-green-600 text-white font-semibold px-6 py-3 rounded hover:bg-green-700" />
             <Button title={"Explore Our Services"} className="bg-white text-black font-semibold px-6 py-3 rounded border border-gray-300 hover:bg-gray-100" /> */}
           </div>
@@ -38,6 +54,55 @@ export default function Banner() {
             alt="Illustration"
             className="w-full rounded-xl"
           />
+          {/* <Swiper
+            // spaceBetween={20}
+            loop={true}
+            Autoplay={{
+              delay: 2500,
+              disableOnInteraction: false,
+            }}
+            pagination={{
+              clickable: true,
+            }}
+            modules={[Autoplay, Navigation]}
+            className="mySwiper"
+            breakpoints={
+              {
+                468: {
+                  slidesPerView: 1,
+                },
+                767: {
+                  slidesPerView: 1,
+                },
+                1024: {
+                  slidesPerView: 1,
+                },
+              }
+            }
+          >
+           
+              <SwiperSlide><img
+                src="/homeBanner2.png"
+                alt="Illustration"
+                className="w-full rounded-xl"
+              /></SwiperSlide>
+               <SwiperSlide><img
+                src="/banner1.png"
+                alt="Illustration"
+                className="w-full rounded-xl"
+              /></SwiperSlide>
+              <SwiperSlide><img
+                src="/banner2.png"
+                alt="Illustration"
+                className="w-full rounded-xl"
+              /></SwiperSlide>
+               <SwiperSlide><img
+                src="/banner3.png"
+                alt="Illustration"
+                className="w-full rounded-xl"
+              /></SwiperSlide>
+            
+          </Swiper> */}
         </div>
       </section>
     </div>

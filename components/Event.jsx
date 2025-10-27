@@ -14,7 +14,7 @@ function Event() {
 
 
     return (
-        <section className="bg-[#F7F8F9] py-12 md:pt-18 md:pb-25">
+        <section className="bg-[#F7F8F9] md:pt-12 md:pb-18  py-10">
             <div className="container mx-auto">
                 
                 <Heading
@@ -23,7 +23,7 @@ function Event() {
                     heading2={" Community Events"}
                 //content={"Join our community events designed to support families and build connections"}
                 />
-                <p className="font-medium text-[15px] text-center mb-8 text-gray-700 p-8 md:p-0 max-w-[600px] mx-auto">
+                <p className="font-medium text-[15px] text-center mb-6 text-gray-700 p-2 md:p-0 max-w-[600px] mx-auto">
                     Join our community events designed to support families and build connections
                 </p>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-8 mb-8">
