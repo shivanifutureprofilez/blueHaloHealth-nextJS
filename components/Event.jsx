@@ -18,7 +18,7 @@ function Event() {
             <div className="container mx-auto">
                 
                 <Heading
-                    className="text-black text-center"
+                    className="heading text-center md:text-left poppins text-black tracking-tighter leading-tight font-bold text-4xl md:text-5xl lg:text-5xl mb-3"
                     heading1={"Workshops &"}
                     heading2={" Community Events"}
                 //content={"Join our community events designed to support families and build connections"}
