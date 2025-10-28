@@ -5,6 +5,7 @@ import Image from 'next/image';
 import { IoLocationOutline } from "react-icons/io5";
 import { CiPhone } from "react-icons/ci";
 import { IoMailOpenOutline } from "react-icons/io5";
+import Link from 'next/link';
 
 function BookingTab() {
     return (
@@ -25,10 +26,23 @@ function BookingTab() {
                         <div className="w-full z-[1]" >
                             <Heading className="!text-white heading text-center md:text-left poppins  tracking-tighter leading-tight font-bold text-4xl md:text-5xl md:mb-3" heading1={"Ready To Get Started ?"} />
                             <p className="text-center text-[16px] text-white p-2 md:p-4 max-w-[600px] mx-auto">Take the first step towards personalized therapy and support. Our team is here to help you navigate your journey</p>
-                            <div className="flex flex-wrap justify-center items-center space-x-2 ">
-                                <div className="flex items-center gap-2 font-semibold md:font-bold"><CiPhone size={24} /> 9876543218</div>
-                                <div className="flex items-center gap-2 font-semibold md:font-bold"><IoMailOpenOutline size={24} /> hello@blueHaloHealth.com</div>
+                            <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 bg-[#0000001A] rounded-lg py-3 px-3 mx-auto max-w-[600px]">
+                                <Link
+                                    href="tel:9876543218"
+                                    className="flex items-center gap-2 font-semibold md:font-bold text-white hover:text-[#00D967] transition"
+                                >
+                                    <CiPhone size={24} /> 9876543218
+                                </Link>
+
+                                <Link
+                                    href="mailto:hello@blueHaloHealth.com"
+                                    className="flex items-center gap-2 font-semibold md:font-bold text-white hover:text-[#00D967] transition"
+                                >
+                                    <IoMailOpenOutline size={24} /> hello@blueHaloHealth.com
+                                </Link>
                             </div>
+
+
                             <div className='flex justify-center items-center p-2 md:p-4'>
                                 <Button title={"Book Free Consultation"} className={`button-transparent mt-4 !border-white !text-white`} />
                             </div>
