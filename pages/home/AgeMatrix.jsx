@@ -102,32 +102,30 @@ export default function AgeMatrix({ admin }) {
         <p className="font-medium text-[15px] text-center mb-8  text-gray-700 p-4 md:p-0 max-w-[600px] mx-auto">
           Our certified therapists provide individualized care across all developmental stages
         </p>
-
-
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4  py-[15px] md:py-[30px] ">
-        {ageGroupsLists && ageGroupsLists?.map((group, idx) => (
-          <div key={idx} className="bg-white border-b border-[#009C4A] rounded-[25px] shadow overflow-hidden flex flex-col items-center">
-            <div className="w-full min-h-[250px] max-h-[250px]  rounded-lg overflow-hidden mb-4 relative">
-              <Link href={`/agegroups/detail/${group?._id}`} ><img
-                src={group?.image || 'https://thumbs.dreamstime.com/b/elderly-man-medical-insurance-health-plan-older-people-pixel-perfect-editable-stroke-line-design-icon-elderly-man-medical-273635532.jpg'}
-                alt={group.title}
-                className="object-cover bg-gray-200  w-full h-full"
-              /></Link>
-              <h3 className="mb-3 text-start py-[15px] px-[30px] text-white text-xl font-semibold absolute top-0 left-0 w-full  bg-[#0006]">{group.title}</h3>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4  py-[15px] md:py-[30px] ">
+          {ageGroupsLists && ageGroupsLists?.map((group, idx) => (
+            <div key={idx} className="bg-white border-b border-[#009C4A] rounded-[25px] shadow overflow-hidden flex flex-col items-center">
+              <div className="w-full min-h-[250px] max-h-[250px]  rounded-lg overflow-hidden mb-4 relative">
+                <Link href={`/agegroups/detail/${group?._id}`} ><img
+                  src={group?.image || 'https://thumbs.dreamstime.com/b/elderly-man-medical-insurance-health-plan-older-people-pixel-perfect-editable-stroke-line-design-icon-elderly-man-medical-273635532.jpg'}
+                  alt={group.title}
+                  className="object-cover bg-gray-200  w-full h-full"
+                /></Link>
+                <h3 className="mb-3 text-start py-[15px] px-[30px] text-white text-xl font-semibold absolute top-0 left-0 w-full  bg-[#0006]">{group.title}</h3>
+              </div>
+              <ul className="text-gray-800 p-4 w-full ">
+                {group && group.services && group.services.map((service, i) => (
+                  <li key={i} className="mb-2 text-[#626262] flex items-start font-semibold text-[15px] ">
+                    <span className="mr-2 mt-1">
+                      <FaCircleCheck className="text-green-500 rounded-xl" />
+                    </span>
+                    {service?.name}
+                  </li>
+                )) || ''}
+              </ul>
             </div>
-            <ul className="text-gray-800 p-4 w-full ">
-              {group && group.services && group.services.map((service, i) => (
-                <li key={i} className="mb-2 text-[#626262] flex items-start font-semibold text-[15px] ">
-                  <span className="mr-2 mt-1">
-                    <FaCircleCheck className="text-green-500 rounded-xl" />
-                  </span>
-                  {service?.name}
-                </li>
-              )) || ''}
-            </ul>
-          </div>
-        ))}
-      </div>
+          ))}
+        </div>
       </div>
     </section>
   );
