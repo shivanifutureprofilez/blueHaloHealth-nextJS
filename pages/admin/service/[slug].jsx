@@ -43,7 +43,7 @@ export default function Index() {
         // console.log("service", service);
         setItems({
           title: service?.name || "",
-          name: service?.agegroup || "",
+          name: service?.agegroup?._id || "",
           bannerImg: service?.bannerImg || "",
           description: service?.description || "",
           content: service?.content || "",
@@ -60,6 +60,7 @@ export default function Index() {
       console.log("error", error);
     }
   };
+  console.log("items", items);
 
   useEffect(() => {
       if(slug){
@@ -89,7 +90,7 @@ export default function Index() {
         benefits: ageGroupBenefits,
       });
       if (response?.data?.status) {
-        toast.success("Service added successfully!");
+        toast.success("Service updated successfully!");
         router.push("/admin/service/list");
         setItems({
             title: "",

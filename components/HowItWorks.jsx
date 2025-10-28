@@ -7,7 +7,7 @@ function HowItWorks() {
   return (
     <div className='bg-[#F7F8F9]'>
     <div className='container mx-auto'>
-        <div className='pt-6'>
+        <div className='pt-8'>
         <Heading
           className="text-black text-center"
           heading1={"How It"}

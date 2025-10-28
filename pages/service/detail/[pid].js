@@ -1,5 +1,7 @@
+import Benefits from '@/components/Benefits';
 import BookingTab from '@/components/BookingTab';
 import Faq from '@/components/Faq';
+import HowItWorks from '@/components/HowItWorks';
 import Layout from '@/components/Layout';
 import Loading from '@/components/Loading';
 import SectionBanner from '@/components/SectionBanner';
@@ -37,6 +39,7 @@ export default function ServiceDetails() {
     }
   }, [pid]);  
 
+  console.log("service : ",service);
   return (
     <Layout>
       <div className='bg-[#F7F4F0]'>
@@ -44,6 +47,13 @@ export default function ServiceDetails() {
         : 
         <>
         <SectionBanner title={service?.name || 'Service Detail'} />
+        <div className="md:col-span-2 grid grid-cols-1 sm:grid-cols-2 gap-5">
+              {service?.Benefits?.map((item) => (
+                <Benefits title={item?.title} description={item?.description} />
+              ))}
+        </div>
+       
+        <HowItWorks/>
         <Faq/>
         <BookingTab/>
         </>}
