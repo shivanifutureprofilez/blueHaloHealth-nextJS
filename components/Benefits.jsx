@@ -3,6 +3,7 @@ import { FaChild } from "react-icons/fa";
 
 function Benefits({ title, description }) {
   return (
+    
     <div className='container mx-auto'>
     <div className='flex bg-white rounded-[20px] p-4 max-h-[150px]'>
     <div className='p-3'>
