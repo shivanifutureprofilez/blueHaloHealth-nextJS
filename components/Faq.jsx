@@ -49,8 +49,8 @@ function Faq() {
   };
 
   return (
-    <section className="bg-[#F7F8F9]  ">
-      <div className="container mx-auto  px-4 py-4 md:py-8  md:px-8">
+    <section className="bg-[#F7F8F9] py-[20px] md:py-[40px] lg:py-[60px]  ">
+      <div className="mx-auto container sm:container md:container lg:container xl:max-w-[1230px]  px-4 text-center">
         <div className="flex flex-wrap justify-between md:flex-nowrap">
           <div className="max-w-sm">
             <Heading
@@ -63,7 +63,7 @@ function Faq() {
             {faqs.map((faq, index) => (
               <div
                 key={index}
-                className="bg-white max-w-[800px] rounded-lg shadow-sm border border-gray-100 p-5 transition-all duration-900 ease-in-out hover:shadow-md "
+                className="bg-white !max-w-[600px] rounded-lg shadow-sm border border-gray-100 p-5 transition-all duration-900 ease-in-out hover:shadow-md "
               >
                 <button
                   className="flex justify-between items-center w-full text-left"

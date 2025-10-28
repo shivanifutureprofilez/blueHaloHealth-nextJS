@@ -54,49 +54,45 @@ export default function Index() {
 
   const Filter = () => {
     return (
-      <div className="container mx-auto px-8 py-8 md:py-16 md:px-16 ">
-
-        <div className="flex justify-center items-center flex-wrap gap-2">
+      <div className="flex justify-center items-center flex-wrap gap-2">
+        <button
+          className={`button-white w-full md:w-[230px] border cursor-pointer ${ageGroup === "" ? 'bg-[#009C4A] border-[#009C4A] text-white transition-[1s]' : ''}`}
+          onClick={() => {
+            updateAgeGroup("");
+          }}
+        >
+          <span className="pl-2 pr-2">All Services</span>
+        </button>
+        {totalAgeGroups && totalAgeGroups?.map((item, index) => (
           <button
-            className={`button-white w-full md:w-[230px] border cursor-pointer ${ageGroup === "" ? 'bg-[#009C4A] border-[#009C4A] text-white transition-[1s]' : ''}`}
+            key={index}
+            className={`button-white w-full md:w-[230px] border cursor-pointer ${ageGroup === item?._id ? 'bg-[#009C4A] border-[#009C4A] text-white transition-[1s]' : ''}`}
             onClick={() => {
-              updateAgeGroup("");
+              updateAgeGroup(item?._id);
             }}
           >
-            <span className="pl-2 pr-2">All Services</span>
+            <span className="pl-2 pr-2">{item?.title}</span>
           </button>
-          {totalAgeGroups && totalAgeGroups?.map((item, index) => (
-            <button
-              key={index}
-              className={`button-white w-full md:w-[230px] border cursor-pointer ${ageGroup === item?._id ? 'bg-[#009C4A] border-[#009C4A] text-white transition-[1s]' : ''}`}
-              onClick={() => {
-                updateAgeGroup(item?._id);
-              }}
-            >
-              <span className="pl-2 pr-2">{item?.title}</span>
-            </button>
-          ))}
-        </div>
+        ))}
       </div>
     );
   };
 
   return (
     <Layout>
-      <div className="bg-[#F7F4F0]">
-        {/* <AgeBanner title={"0-6 (Early Years)"} /> */}
-        <SectionBanner title={"Services"} />
-        <Filter />
-        <div className="container mx-auto px-8 py-8 md:py-16 md:px-16">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <SectionBanner title={"Services"} />
+      <div className="bg-[#F7F4F0] py-[20px] md:py-[40px] lg:py-[60px]">
+        <div className="mx-auto container sm:container md:container lg:container xl:max-w-[1230px]  px-4 text-center">
+          <Filter />
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4  py-[15px] md:py-[30px] ">
             {serviceList &&
               serviceList?.map((item, index) => (
                 <ServiceCard item={item} ageGroup={ageGroup} idx={index} />
               ))}
           </div>
-          <BookingTab />
         </div>
       </div>
+      <BookingTab />
     </Layout>
   );
 }
