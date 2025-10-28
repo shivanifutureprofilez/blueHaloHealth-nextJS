@@ -83,7 +83,7 @@ function List() {
         {loading ? <Loading /> 
         :
         <>
-        {ageGroupsLists && ageGroupsLists.length > 0 ? 
+        {ageGroupsLists && ageGroupsLists?.length > 0 ? 
             <div className='flex mt-5'>
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-3 sm:gap-4 lg:gap-6 xl:gap-6">
                 {ageGroupsLists&& ageGroupsLists.map((group, idx) => (
@@ -121,7 +121,8 @@ function List() {
               </div>
             </div>
           :
-          <NoResultFound />}
+          <NoResultFound />
+          }
           </>
         }
         

@@ -101,22 +101,25 @@ const [ageGroup, setAgeGroup] = useState("");
         </Link>
       </div>
       <Filter />
-      <div className="container mx-auto">
-        {loading ? <Loading />
-        :
+      {loading ? (
+        <Loading />
+      ) : (
         <>
-          {serviceList && serviceList.length ? 
-          <div className="grid grid-cols-1 md:grid-cols-3 p-3 gap-6 md:mt-4 md:mb-8">
-            {serviceList&& serviceList?.map((item, index) => (
-              <ServiceCard item={item} idx={index} isAdmin={true} fetchServices={fetchServices} />
-            ))}
-          </div>
-          : <NoResultFound />
-          
-        }
-        </> 
-        }
-      </div>
+          {serviceList && serviceList.length ? (
+            <>
+              <div className="container mx-auto">
+                <div className="grid grid-cols-1 md:grid-cols-3 p-3 gap-6 md:mt-4 md:mb-8">
+                  {serviceList && serviceList?.map((item, index) => (
+                    <ServiceCard key={item._id || index} item={item} idx={index} isAdmin={true} fetchServices={fetchServices} />
+                  ))}
+                </div>
+              </div>
+            </>
+          ) : (
+            <NoResultFound title={"No Services Found !!"}/>
+          )}
+        </>
+      )}
     </>
   );
 }

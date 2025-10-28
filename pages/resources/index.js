@@ -18,15 +18,15 @@ const features = [
     label: 'Resource',
     date: 'October 3, 2025',
     tags: ['parent', 'care'],
-    link: '/resources/start-here',
+    link: 'https://www.egyankosh.ac.in/bitstream/123456789/92699/1/Unit-18.pdf'
   },
   {
     id: 'tennessee-autism-aba-directory',
-    title: 'Tennessee Autism & ABA Directory',
+    title: 'Tennessee Autism & ABA Directory Tennessee Autism & ABA DirectoryTennessee Autism & ABA Directory',
     label: 'Resource',
     date: 'October 3, 2025',
     tags: ['parent', 'physician'],
-    link: '/resources/tennessee-autism-aba-directory',
+    link: 'https://www.egyankosh.ac.in/bitstream/123456789/92699/1/Unit-18.pdf',
   },
   {
     id: 'utah-support-guide',
@@ -34,7 +34,7 @@ const features = [
     label: 'Resource',
     date: 'October 3, 2025',
     tags: ['parent', 'care'],
-    link: '/resources/utah-support-guide',
+    link: 'https://www.egyankosh.ac.in/bitstream/123456789/92699/1/Unit-18.pdf'
   },
   {
     id: 'south-carolina-family-toolkit',
@@ -42,7 +42,7 @@ const features = [
     label: 'Resource',
     date: 'October 3, 2025',
     tags: ['parent'],
-    link: '/resources/south-carolina-family-toolkit',
+    link: 'https://www.egyankosh.ac.in/bitstream/123456789/92699/1/Unit-18.pdf',
   },
   {
     id: 'north-carolina-care-guide',
@@ -50,7 +50,7 @@ const features = [
     label: 'Resource',
     date: 'October 3, 2025',
     tags: ['parent', 'care'],
-    link: '/resources/north-carolina-care-guide',
+    link: 'https://www.egyankosh.ac.in/bitstream/123456789/92699/1/Unit-18.pdf',
   },
   {
     id: 'california-autism-aba-guide',
@@ -58,7 +58,7 @@ const features = [
     label: 'Resource',
     date: 'October 3, 2025',
     tags: ['physician', 'care'],
-    link: '/resources/california-autism-aba-guide',
+    link: 'https://www.egyankosh.ac.in/bitstream/123456789/92699/1/Unit-18.pdf',
   },
   {
     id: 'family-toolkit-example',
@@ -66,7 +66,7 @@ const features = [
     label: 'Resource',
     date: 'October 3, 2025',
     tags: ['parent'],
-    link: '/resources/family-toolkit-example',
+    link: 'https://www.egyankosh.ac.in/bitstream/123456789/92699/1/Unit-18.pdf'
   },
   {
     id: 'care-navigation',
@@ -74,12 +74,12 @@ const features = [
     label: 'Resource',
     date: 'October 3, 2025',
     tags: ['care', 'physician'],
-    link: '/resources/care-navigation',
-  },
+    link: 'https://www.egyankosh.ac.in/bitstream/123456789/92699/1/Unit-18.pdf'
+  }
 ]
 
 function index() {
-  const [cats, setCats] = useState(null);
+  const [cats, setCats] = useState('parent');
 
   const changeAudience = (audience) => {
     if (cats === audience) {
@@ -131,9 +131,9 @@ function index() {
 
             <div className="md:col-span-2 grid grid-cols-1 sm:grid-cols-2 gap-5">
               {filtered.map((item) => (
-                <Link key={item.id} href={item.link}>
+                <a key={item.id} href={item.link} target='_blank' download >
                   <ResourceCard label={item.label} title={item.title} date={item.date} tags={item.tags} />
-                </Link>
+                </a>
               ))}
             </div>
           </div>

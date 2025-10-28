@@ -70,7 +70,7 @@ function ContactForm() {
           <div className=' md:p-4 '>
             <div className='bg-white p-4 rounded-[20px]'>
 
-            <h2 className="font-bold text-2xl mb-4 text-black">Contact us</h2>
+            <h2 className="font-bold text-2xl mb-4 text-left text-black">Contact us</h2>
             <ul className="space-y-6 text-base">
               <li className="flex items-center gap-3 text-gray-700">
                 <span className="bg-green-100 rounded-full p-2">
@@ -123,6 +123,7 @@ function ContactForm() {
                   value={items.phone}
                   name="phone"
                   maxLength={10}
+                  minLength={10}
                   type="text"
                   placeholder="Phone number"
                   className="bg-white rounded-lg border border-gray-300 px-4 py-3 w-full outline-none"

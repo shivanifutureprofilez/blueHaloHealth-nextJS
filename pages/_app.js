@@ -6,7 +6,13 @@ import NProgress from "nprogress";
 
 import { usePathname, useSearchParams } from "next/navigation";
 import { useEffect } from "react";
-NProgress.configure({ showSpinner: false, speed: 400 });
+import { Router } from "next/router";
+NProgress.configure({ showSpinner: false, speed: 800, minimum: 0.2 })
+
+Router.events.on('routeChangeStart', () => NProgress.start())
+Router.events.on('routeChangeComplete', () => NProgress.done())
+Router.events.on('routeChangeError', () => NProgress.done())
+
 
 export default function App({ Component, pageProps }) {
 
@@ -17,7 +23,7 @@ export default function App({ Component, pageProps }) {
     NProgress.start();
     const timeout = setTimeout(() => {
       NProgress.done();
-    }, 50);
+    }, 2);
 
     return () => {
       clearTimeout(timeout);

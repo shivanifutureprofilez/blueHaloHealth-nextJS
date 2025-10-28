@@ -51,7 +51,7 @@ export default function ServiceDetails() {
             <div className="bg-[#F7F4F0] py-[20px] md:py-[40px] lg:py-[60px]">
               <div className="mx-auto container sm:container md:container lg:container xl:max-w-[1230px]  px-4 text-center">
              <div
-                  className=" text-center services mb-4  "
+                  className=" text-center services mb-4  max-w-[900px] mx-auto"
                   dangerouslySetInnerHTML={{ __html: service?.content }}
                 />
               </div>

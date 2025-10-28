@@ -18,10 +18,10 @@ function EventCard({item, index}) {
             <p className="!text-[#009C4A] font-medium mb-2">{item?.date}</p>
             <h2 className="font-bold text-lg text-black mb-2">{item?.title}</h2>
             <p className="text-gray-700 mb-4 line-clamp-3">{item?.description}</p>
-            <Link href="/" className="text-green-600 font-semibold  justify-cente flex  gap-1 hover:underline">
-                {item?.link}
+            {item?.link ? <a href={item?.link} className="text-green-600 font-semibold  justify-cente flex  gap-1 hover:underline">
+                {item?.buttontext}
                 <span className="ml-1">&#8594;</span>
-            </Link>
+            </a> : ''}
         </div>
 </> : ""}
     </>

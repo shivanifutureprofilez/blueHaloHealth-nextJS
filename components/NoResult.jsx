@@ -1,3 +1,3 @@
-export default function NoResultFound(){ 
-    return <div className="p-12 rounded-xl bg-gray-700 text-white text-lg text-center font-bold">No Result Found !!</div>
+export default function NoResultFound({title}) {
+    return <div className="p-12 rounded-xl bg-[#F7F4F0] text-black text-lg text-center font-bold">{title || "No Result Found !!"}</div>
 }

@@ -6,7 +6,8 @@ import "swiper/css/navigation";
 import { Autoplay } from "swiper/modules";
 import Image from "next/image";
 import Heading from "@/components/Heading";
-
+import 'swiper/css/pagination';
+import { Pagination } from 'swiper/modules';
 
 const teams = [
     { name: "Mr. Ramesh Chand Sharma", designation: "Chairman", parah1: "I am an ASHA board certified Speech-Language Pathologist. I graduated from Psychology from Ohio State University with my Bachelors and Hunter College with my Masters", parah2: "Throughout my career as a speech therapist, I have enjoyed treating and evaluating a wide variety of speech and language issues across the lifespan", img: '/team1.png' },
@@ -20,6 +21,7 @@ const teams = [
     { name: "Mr. M.S. Bhati", designation: "H.O.D. Of Architecture", parah1: "I am an ASHA board certified Speech-Language Pathologist. I graduated from Psychology from Ohio State University with my Bachelors and Hunter College with my Masters", parah2: "Throughout my career as a speech therapist, I have enjoyed treating and evaluating a wide variety of speech and language issues across the lifespan", img: '/team1.png' },
     { name: "Mr. Govind Kumar", designation: "H.O.D. Of Management", parah1: "I am an ASHA board certified Speech-Language Pathologist. I graduated from Psychology from Ohio State University with my Bachelors and Hunter College with my Masters", parah2: "Throughout my career as a speech therapist, I have enjoyed treating and evaluating a wide variety of speech and language issues across the lifespan", img: '/team2.png' },
 ];
+
 
 const Team = () => {
     return (
@@ -47,7 +49,10 @@ const Team = () => {
                     768: { slidesPerView: 3 },
                     1024: { slidesPerView: 4 },
                 }}
-                modules={[Autoplay]}
+                modules={[Autoplay,Pagination]}
+                pagination={{
+                    clickable: true,
+                }}
 
                 className="w-full"
             >
@@ -60,10 +65,10 @@ const Team = () => {
                                     width={500}
                                     height={400}
                                     alt={team?.name}
-                                    className="object-cover w-full h-full rounded-2xl transform transition-transform duration-500 group-hover:-translate-y-4"
+                                    className="object-cover w-full h-full rounded-2xl transform transition-transform duration-1000 group-hover:-translate-y-1"
                                 />
 
-                                <div className="absolute inset-0  flex items-center text-center justify-center hover:bg-[#009C4A]">
+                                <div className="absolute inset-0  flex items-center text-center justify-center duration-1000  hover:bg-green-500/60">
                                     <div className=" text-white p-4 rounded-md opacity-0 translate-y-full transition-all duration-500 group-hover:opacity-100 group-hover:translate-y-0">
                                         <h2 className="text-[20px] font-bold">
                                             {team?.name}
