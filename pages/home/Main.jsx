@@ -15,11 +15,6 @@ export default function Main() {
     <Layout>
       <div className='bg-[#F7F4F0]'>
         <Banner/>
-    {/* <div class="hero_bg pt-[118px] lg:pt-[128px] pb-[50px] lg:pb-[98px]">
-        <div class="mx-auto container sm:container md:container lg:container 
-        xl:max-w-[1230px]  px-4">
-            </div>
-            </div> */}
         <AgeMatrix/>
         <About/>
         <Importance/>

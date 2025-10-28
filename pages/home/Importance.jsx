@@ -30,24 +30,22 @@ function Importance() {
   ];
 
   return (
-    <section className="bg-[#E6EBE3] pb-12 md:pb-26 md:pt-18  ">
-      <div className="container mx-auto">
-        <div className='pt-10 md:pt-0'>
+    <section className="bg-[#4B9B711A] py-[20px] md:py-[40px] lg:py-[60px]  ">
+      <div className="mx-auto container sm:container md:container lg:container xl:max-w-[1230px]  px-4 text-center">
         <Heading
-          className="heading text-center md:text-left poppins text-black tracking-tighter leading-tight font-bold text-4xl md:text-5xl lg:text-5xl mb-3"
+          className="heading text-center poppins text-black tracking-tighter leading-tight font-bold text-4xl md:text-5xl lg:text-5xl mb-3"
           heading1={"Why Families Choose"}
           heading2={" BlueHaloHealth"}
-          //content={"Trusted expertise, personalized care, and proven results for every stage of development."}
+        //content={"Trusted expertise, personalized care, and proven results for every stage of development."}
         />
-        </div>
-        <p className="font-medium text-[15px] text-center mb-6 md:mb-12 text-gray-700 p-2 md:p-0 max-w-[600px] mx-auto">
+        <p className="font-medium text-[15px] text-center  text-gray-700 max-w-[600px] mx-auto">
           Trusted expertise, personalized care, and proven results  for every stage of development.
         </p>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3  ">
-          {features.map((feature, idx) => (
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4  py-[15px] md:py-[30px] ">
+          {features && features?.map((feature, idx) => (
             <div
               key={idx}
-              className="bg-white rounded-2xl  flex flex-col items-center p-5 md:p-10  text-center"
+              className="bg-white rounded-2xl  flex flex-col items-center p-5 md:p-8  text-center"
             >
               <div className="flex  justify-center items-center w-16 h-16 rounded-full bg-[#E6F4EA] mb-4">
                 {feature.icon}

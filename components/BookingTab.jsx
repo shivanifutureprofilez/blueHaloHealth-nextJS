@@ -8,8 +8,9 @@ import { IoMailOpenOutline } from "react-icons/io5";
 
 function BookingTab() {
     return (
-        <div className='bg-[#F7F4F0]  px-4 py-4 md:py-8 md:px-8'>
-            <div className='container mx-auto'>
+        <div className='bg-[#F7F4F0]  py-[20px] md:py-[40px] lg:py-[60px]'>
+            <div className="mx-auto container sm:container md:container lg:container xl:max-w-[1230px]  px-4 text-center">
+
                 <section className="overflow-hidden w-full relative  flex items-center justify-center ">
                     {/* mt-24 remove */}
                     <div className="max-h-[600px] md:!max-h-[400px] relative text-white w-full flex items-center justify-center gap-6 md:gap-12 
@@ -20,10 +21,10 @@ function BookingTab() {
                             width={1500} height={400}
                         />
                         <div className='w-full h-full opacity-[0.5] absolute top-0 left-0  bg-gradient-to-b from-black via-emerald-600 to-green-600'></div>
-                        
+
                         <div className="w-full z-[1]" >
-                           <Heading className="!text-white heading text-center md:text-left poppins  tracking-tighter leading-tight font-bold text-4xl md:text-5xl md:mb-3" heading1={"Ready To Get Started ?"} /> 
-                           <p className="text-center text-[16px] text-white p-2 md:p-4 max-w-[600px] mx-auto">Take the first step towards personalized therapy and support. Our team is here to help you navigate your journey</p>
+                            <Heading className="!text-white heading text-center md:text-left poppins  tracking-tighter leading-tight font-bold text-4xl md:text-5xl md:mb-3" heading1={"Ready To Get Started ?"} />
+                            <p className="text-center text-[16px] text-white p-2 md:p-4 max-w-[600px] mx-auto">Take the first step towards personalized therapy and support. Our team is here to help you navigate your journey</p>
                             <div className="flex flex-wrap justify-center items-center space-x-2 ">
                                 <div className="flex items-center gap-2 font-semibold md:font-bold"><CiPhone size={24} /> 9876543218</div>
                                 <div className="flex items-center gap-2 font-semibold md:font-bold"><IoMailOpenOutline size={24} /> hello@blueHaloHealth.com</div>

@@ -97,7 +97,7 @@ function index() {
     <Layout>
       <SectionBanner title={"Resources"} />
       <div className='bg-[#F7F8F9]'>
-         <div className="container mx-auto  px-4 py-4 md:py-8  md:px-8 ">
+         <div className="container mx-auto px-8 py-8 md:py-16 md:px-16">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-5 md:mt-4 md:mb-8">
             <div className="mb-6 md:mb-0">
               <h3 className="text-2xl font-bold mb-4">I Am</h3>

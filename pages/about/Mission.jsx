@@ -29,7 +29,7 @@ function Mission() {
       ];
   return (
     <div className="bg-[#E6EBE3]  ">
-      <div className="container mx-auto  px-4 py-4 md:py-8  md:px-8 ">
+      <div className="container mx-auto px-8 py-8 md:py-16 md:px-16">
         <div className='p-5'>
         <Heading
           className="text-black "

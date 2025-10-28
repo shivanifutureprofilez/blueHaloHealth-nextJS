@@ -64,7 +64,7 @@ function ContactForm() {
 
   return (
     <div className='bg-[#F7F4F0]' >
-      <div className="container mx-auto  px-4 py-4 md:py-8  md:px-8 ">
+      <div className="container mx-auto px-8 py-8 md:py-16 md:px-16">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {/* Contact Info Card */}
           <div className=' md:p-4 '>

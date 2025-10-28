@@ -4,7 +4,7 @@ import Image from "next/image";
 export default function Founder() {
   return (
     <div className='bg-[#F7F4F0] p-3'>
-      <div className='container mx-auto  px-4 py-4 md:py-8  md:px-8  bg-white'>
+      <div className='container mx-auto px-8 py-8 md:py-16 md:px-16 bg-white'>
         <div className=' md:flex'>
           <div className="w-full md:w-2/3 text-center md:m-8 md:text-left">
             <h3 className="text-black font-semibold text-2xl p-6 md:p-0 mt-2 ">
