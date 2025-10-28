@@ -48,7 +48,7 @@ export default function ServiceDetails() {
         <>
         <SectionBanner title={service?.name || 'Service Detail'} />
         <div className="md:col-span-2 grid grid-cols-1 sm:grid-cols-2 gap-5">
-              {service?.Benefits?.map((item) => (
+              {service?.benefits?.map((item) => (
                 <Benefits title={item?.title} description={item?.description} />
               ))}
         </div>
