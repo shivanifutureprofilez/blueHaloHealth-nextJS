@@ -54,7 +54,7 @@ function Faq() {
         <div className="flex flex-wrap justify-between md:flex-nowrap">
           <div className="max-w-sm">
             <Heading
-              className="text-black"
+              className="text-black text-center md:text-left"
               heading1={"Frequently asked "}
               heading2={" questions"}
             />
