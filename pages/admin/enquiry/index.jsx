@@ -6,6 +6,7 @@ export default function index() {
    
   
   const [contacts, setContacts] = useState([]);
+  const [loading, setLoading] = useState();
   
     const fetchGroups = async () => {
       const lists = new AdminRoutes();
