@@ -31,7 +31,7 @@ export default function Index() {
     fetchData();
   }, []);
 
-    const [serviceList, setServiceList] = useState([]);
+  const [serviceList, setServiceList] = useState([]);
   const fetchServices = async () => {
     const lists = new RoutesLists();
     const data = lists.getServices(ageGroup);
@@ -54,33 +54,28 @@ export default function Index() {
 
   const Filter = () => {
     return (
-      <div className="container mt-12 mx-auto">
-        <div className="container mx-auto  pb-2 md:pb-[30px]">
-          <div className="lg:flex justify-between items-center flex-wrap ">
-            <div className="w-full  py-3 ">
-              <div className="flex justify-center items-center flex-wrap gap-2">
-                <button
-                  className={`button-white w-full md:w-[230px] border cursor-pointer ${ageGroup === "" ? 'bg-[#009C4A] border-[#009C4A] text-white transition-[1s]' : ''}`}
-                  onClick={() => {
-                    updateAgeGroup("");
-                  }}
-                >
-                  <span className="pl-2 pr-2">All Services</span>
-                </button>
-                {totalAgeGroups && totalAgeGroups?.map((item, index)=>(
-                <button
-                  key={index}
-                  className={`button-white w-full md:w-[230px] border cursor-pointer ${ageGroup === item?._id ? 'bg-[#009C4A] border-[#009C4A] text-white transition-[1s]' : ''}`}
-                  onClick={() => {
-                    updateAgeGroup(item?._id);
-                  }}
-                >
-                  <span className="pl-2 pr-2">{item?.title}</span>
-                </button>
-                ))}
-              </div>
-            </div>
-          </div>
+      <div className="container mx-auto px-8 py-8 md:py-16 md:px-16 ">
+
+        <div className="flex justify-center items-center flex-wrap gap-2">
+          <button
+            className={`button-white w-full md:w-[230px] border cursor-pointer ${ageGroup === "" ? 'bg-[#009C4A] border-[#009C4A] text-white transition-[1s]' : ''}`}
+            onClick={() => {
+              updateAgeGroup("");
+            }}
+          >
+            <span className="pl-2 pr-2">All Services</span>
+          </button>
+          {totalAgeGroups && totalAgeGroups?.map((item, index) => (
+            <button
+              key={index}
+              className={`button-white w-full md:w-[230px] border cursor-pointer ${ageGroup === item?._id ? 'bg-[#009C4A] border-[#009C4A] text-white transition-[1s]' : ''}`}
+              onClick={() => {
+                updateAgeGroup(item?._id);
+              }}
+            >
+              <span className="pl-2 pr-2">{item?.title}</span>
+            </button>
+          ))}
         </div>
       </div>
     );
@@ -92,8 +87,8 @@ export default function Index() {
         {/* <AgeBanner title={"0-6 (Early Years)"} /> */}
         <SectionBanner title={"Services"} />
         <Filter />
-        <div className="container mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-3 p-3 gap-6 md:mt-4 md:mb-8">
+        <div className="container mx-auto px-8 py-8 md:py-16 md:px-16">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {serviceList &&
               serviceList?.map((item, index) => (
                 <ServiceCard item={item} ageGroup={ageGroup} idx={index} />
