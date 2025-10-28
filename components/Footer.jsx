@@ -1,66 +1,80 @@
-import { FaFacebookF, FaTwitter, FaInstagram, FaLinkedinIn, FaHeart } from "react-icons/fa";
-import { IoLocationOutline } from "react-icons/io5";
-import { CiPhone } from "react-icons/ci";
-import { IoMailOpenOutline } from "react-icons/io5";
-import { Toaster } from "react-hot-toast";
+import { FaFacebookF, FaInstagram, FaLinkedinIn } from "react-icons/fa";
+import Link from 'next/link';
 
-function Footer({bg,text}) {
+function Footer() {
   return (
-    <div>
-    <footer className={`py-8 px-4 ${bg} `}>
-      <div className="max-w-6xl mx-auto flex flex-col md:flex-row md:items-start justify-between gap-8">
-        {/* Logo & Description */}
-        <div className="flex flex-col items-start min-w-[180px]">
-          <div className="flex items-center space-x-2 mb-2">
-            {/* <img src="/logo.svg" alt="Furnixar" className="h-8 w-8" /> */}
-            <span className={`text-2xl font-bold ${text}`}>BlueHaloHealth</span>
+    <div className="bg-[#31363F] text-white py-16">
+      <div className="container mx-auto px-4">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+          {/* Company Info */}
+          <div className="col-span-1">
+            <h3 className="text-2xl font-bold mb-4">BlueHaloHealth</h3>
+            <p className="text-gray-300 mb-4">
+              Comprehensive therapy and support for children, teens, and adults with autism,
+              speech delays, and developmental challenges.
+            </p>
+            <p className="text-sm text-gray-300">
+              PHIPA Compliant | Funding Options Available
+            </p>
           </div>
-          <p className={`text-xs max-w-[180px] ${text}`}>
-            Comprehensive therapy and support for children, teens, adults with autism, speech delays and developmental challenges.
-          </p>
+
+          {/* Quick Links */}
+          <div className="">
+            <h4 className="text-lg font-semibold mb-4">Quick Links</h4>
+            <nav>
+              <ul className="space-y-2">
+                <li><Link href="/services" className="">Services</Link></li>
+                <li><Link href="/ages" className="">Ages</Link></li>
+                <li><Link href="/resources" className="">Resources</Link></li>
+                <li><Link href="/about" className="">About Us</Link></li>
+                <li><Link href="/contact" className="">Contact</Link></li>
+              </ul>
+            </nav>
+          </div>
+
+          {/* Contact Info */}
+          <div className="">
+            <h4 className="text-lg font-semibold mb-4">Contact Info</h4>
+            <address className="not-italic">
+              <p className="text-gray-300 mb-2">123 Therapy Lane, Toronto, ON M5V 3A8</p>
+              <p className="text-gray-300 mb-2">(416) 555-BLUE</p>
+              <p className="text-gray-300">hello@bluehalohealth.ca</p>
+            </address>
+          </div>
+
+          {/* Connect With Us */}
+          <div className="">
+            <h4 className="text-lg font-semibold mb-4">Connect With Us</h4>
+            <div className="flex space-x-4 mb-4">
+              <Link href="#" className="text-gray-300 hover:text-white">
+                <FaFacebookF size={20} />
+              </Link>
+              <Link href="#" className="text-gray-300 hover:text-white">
+                <FaInstagram size={20} />
+              </Link>
+              <Link href="#" className="text-gray-300 hover:text-white">
+                <FaLinkedinIn size={20} />
+              </Link>
+            </div>
+            <div className="space-y-2">
+              <Link href="/privacy-policy" className="block text-gray-300 hover:text-white">
+                Privacy Policy
+              </Link>
+              <Link href="/terms-of-service" className="block text-gray-300 hover:text-white">
+                Terms of Service
+              </Link>
+            </div>
+          </div>
         </div>
-        <div className="flex flex-wrap gap-8 md:gap-0">
-          <div className="px-6 border-r border-dotted border-gray-300">
-            <h4 className={`font-bold mb-2 ${text}`}>Quick Links</h4>
-            <ul className={`space-y-1 text-xs text-gray-300 `} >
-              <li>Services</li>
-              <li>Ages</li>
-              <li>Resources</li>
-              <li>About</li>
-              <li>Contact</li>
-            </ul>
-          </div>
-          
-          <div className="px-6 border-r border-dotted border-gray-300">
-            <h4 className={`font-bold mb-2 ${text}`} >Contact Info</h4>
-            <ul className={`space-y-1 text-xs flex flex-col text-gray-300`}>
-              <li className="flex items-center gap-2"><IoLocationOutline size={16}/>123, Therapy Lane</li>
-              <li className="flex items-center gap-2"><CiPhone size={16} /> 9876543218</li>
-              <li className="flex items-center gap-2"><IoMailOpenOutline size={16} /> hello@blueHaloHealth.com</li>
-            </ul>
-          </div>
-          {/* Shop */}
-          <div className="px-6 border-r border-dotted border-gray-300">
-            <h4 className={`font-bold mb-2 ${text}`}>Connect With Us</h4>
-            <ul className={`space-y-1 text-xs text-gray-300`}>
-              <li> <div className="flex gap-2"> <FaFacebookF/>  <FaTwitter/> <FaInstagram/> <FaLinkedinIn/></div></li>
-              <li>Privacy Policy</li>
-              <li>Terms Of Service</li>
-            </ul>
-          </div>
+
+        {/* Copyright */}
+        <div className="border-t border-gray-700 mt-12 pt-8 flex justify-between items-center text-sm text-gray-400">
+          <p>© 2025 BlueHaloHealth. All rights reserved.</p>
+          <p className="italic">Designed By FutureProfilez Pvt. Ltd.</p>
         </div>
       </div>
-      {/* Copyright */} 
-      <div className={`mt-8 text-center text-xs ${text}`}>
-        © 2025 BlueHaloHealth Develop with <FaHeart className="inline text-red-500 mx-1" /> By FutureProfilez Pvt. Ltd.
-      </div>
-    </footer>
-    <Toaster
-          position="top-right"
-          reverseOrder={false}
-        />
-      </div>
+    </div>
   )
-}
+};
 
 export default Footer;
