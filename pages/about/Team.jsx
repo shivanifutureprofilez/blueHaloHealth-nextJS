@@ -24,8 +24,8 @@ const teams = [
 const Team = () => {
     return (
         <>
-            <div className="container mx-auto px-8 py-8 md:py-16 md:px-16">
-                <div className='mb-3 mt-3'>
+            <div className="py-[20px] md:py-[40px] lg:py-[60px]  ">
+                <div className="mx-auto container sm:container md:container lg:container xl:max-w-[1230px]  px-4 text-center">
                     <Heading
                         className="text-black "
                         heading1={"Meet "}

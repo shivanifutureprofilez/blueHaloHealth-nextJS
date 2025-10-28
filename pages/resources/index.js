@@ -96,12 +96,11 @@ function index() {
   return (
     <Layout>
       <SectionBanner title={"Resources"} />
-      <div className='bg-[#F7F8F9]'>
-         <div className="container mx-auto px-8 py-8 md:py-16 md:px-16">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-5 md:mt-4 md:mb-8">
+          <div className="bg-[#F7F8F9] py-[20px] md:py-[40px] lg:py-[60px]  ">
+                    <div className="mx-auto container sm:container md:container lg:container xl:max-w-[1230px]  px-4 text-center">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 ">
             <div className="mb-6 md:mb-0">
               <h3 className="text-2xl font-bold mb-4">I Am</h3>
-
               <div className="space-y-4">
                 <button
                   onClick={() => changeAudience('parent')}
