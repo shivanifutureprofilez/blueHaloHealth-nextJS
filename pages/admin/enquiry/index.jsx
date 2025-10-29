@@ -35,7 +35,7 @@ export default function index() {
       ) : (
         contacts && contacts?.length > 0 ? (
       <>
-      <div className="overflow-auto">
+      <div className="">
         <table className="w-full table-auto whitespace-nowrap">
             <thead>
               <tr className="bg-theme">
@@ -69,7 +69,7 @@ export default function index() {
                   <td className=" font-[600] text-white text-[16px] text-left px-[10px] py-[16px]  border-b border-[#ffffff1a]">
                     {index+1}
                   </td>
-                  <td className="font-[600] text-white text-[16px]  px-[10px] py-[16px]  border-b border-[#ffffff1a] text-left  ">
+                  <td className="capitalize font-[600] text-white text-[16px]  px-[10px] py-[16px]  border-b border-[#ffffff1a] text-left  ">
                    {contacts?.fullName}
                   </td>
                   <td className=" font-[600] text-white text-[16px]  px-[10px] py-[16px]  border-b border-[#ffffff1a] text-left   ">
@@ -81,7 +81,7 @@ export default function index() {
                   <td className=" font-[600] text-white text-[16px]  px-[10px] py-[16px]  border-b border-[#ffffff1a] text-left   ">
                     {contacts?.age}
                   </td>
-                  <td className=" font-[600] text-white text-[16px] px-[10px] py-[16px]  border-b border-[#ffffff1a] text-left   ">
+                  <td className=" capitalize font-[600] text-white text-[16px] px-[10px] py-[16px]  border-b border-[#ffffff1a] text-left   ">
                     <Tooltip content={contacts?.message}>
                       <span className=" max-w-[100px] block overflow-hidden underline cursor-pointer text-white">
                         {contacts?.message}
