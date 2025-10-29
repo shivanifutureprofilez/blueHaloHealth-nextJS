@@ -106,12 +106,13 @@ function ContactForm() {
               <input onChange={handleChange}
                 value={items?.fullName}
                 name='fullName'
+                required
                 type="text" placeholder="Full Name" className="bg-white rounded-lg border border-gray-300 px-4 py-3 w-full outline-none" />
 
               <input onChange={handleChange}
                 value={items?.age}
                 name='age'
-                type="number" placeholder="Age" className="bg-white rounded-lg border border-gray-300 px-4 py-3 w-full outline-none" />
+                type="number" placeholder="Age" required className="bg-white rounded-lg border border-gray-300 px-4 py-3 w-full outline-none" />
               <div className="grid grid-cols-2 gap-4">
                 <input
                   onChange={(e) => {
@@ -136,6 +137,7 @@ function ContactForm() {
                   name='email'
                   type="Email"
                   placeholder="Email"
+                  required
                   className="bg-white rounded-lg border border-gray-300 px-4 py-3 w-full outline-none" />
               </div>
               <textarea onChange={handleChange}
