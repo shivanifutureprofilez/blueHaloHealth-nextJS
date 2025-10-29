@@ -48,7 +48,7 @@ function ServiceCard({ item, idx, isAdmin = false, fetchServices }) {
         </button>
       )}
 
-      <div className="w-full h-70 rounded-lg overflow-hidden mb-4 relative">
+      <div className="w-full h-70 rounded-lg overflow-hidden  relative">
         <Link href={`/service/detail/${item?._id}`}>
           <img
             src={item?.bannerImg}
@@ -62,10 +62,12 @@ function ServiceCard({ item, idx, isAdmin = false, fetchServices }) {
         <h2 className="font-bold text-xl text-black mb-2 line-clamp-1">
           {item?.name}
         </h2>
-        <p className="mb-8 text-[15px] font-medium line-clamp-3 text-gray-600">
+        <p className="mb-4 text-[15px] font-medium line-clamp-3 text-gray-600">
           {item?.description}
         </p>
-        <button className="button md:w-[200px]">Learn More</button>
+        <Link href={`/service/detail/${item?._id}`}>
+        <button className="button md:w-[200px] cursor-pointer">Learn More</button>
+        </Link>
       </div>
     </div>
   );

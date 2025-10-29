@@ -48,30 +48,36 @@ export default function ServiceDetails() {
           :
           <>
             <SectionBanner title={service?.name || 'Service Detail'} />
-            <div className="bg-[#F7F4F0] py-[20px] md:py-[40px] lg:py-[60px]">
+            <div className="bg-[#F7F4F0]s py-[20px] md:py-[40px] lg:py-[60px]">
               <div className="mx-auto container sm:container md:container lg:container xl:max-w-[1230px]  px-4 text-center">
              <div
-                  className=" text-center services mb-4  max-w-[900px] mx-auto"
+                  className="  services mb-4  max-w-[900px] mx-auto"
                   dangerouslySetInnerHTML={{ __html: service?.content }}
                 />
               </div>
             </div>
             
-            <div className="bg-[#E6EBE3] py-[20px] md:py-[40px] lg:py-[60px]">
+            {service?.benefits && service?.benefits.length > 0 
+            && service?.benefits && service?.benefits[0]?.title !== '' && service?.benefits[0]?.description !== ''
+            ? 
+            
+            <div className=" ">
               <div className="mx-auto container sm:container md:container lg:container xl:max-w-[1230px]  px-4 text-center">
                 <div className=" grid grid-cols-1 sm:grid-cols-2 gap-4">
                   {service?.benefits?.map((item) => (
                     <Benefits title={item?.title} description={item?.description} />
                   ))}
                 </div>
-                <div className="flex justify-center px-4 py-4">
+                <div className="flex justify-center px-4 py-14">
                   <Button
                     title="Book Consultation"
                     className="button bg-green-dark text-[14px] "
                   />
                 </div>
               </div>
-            </div>
+            </div> 
+            
+            : ''}
 
             <HowItWorks />
             <Faq />

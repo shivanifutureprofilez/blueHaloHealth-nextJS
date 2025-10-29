@@ -99,11 +99,11 @@ export default function AgeMatrix({ admin }) {
     <section className="bg-[#E6EBE3] md:bg-[#F7F4F0] py-[30px] md:py-[40px] lg:py-[60px]  ">
       <div className="mx-auto container sm:container md:container lg:container xl:max-w-[1230px]  px-4 text-center">
         <Heading
-          className="heading text-center  poppins text-black tracking-tighter leading-tight font-bold text-4xl md:text-5xl lg:text-5xl "
+          className="heading mb-0 text-center  poppins text-black tracking-tighter leading-tight font-bold text-4xl md:text-5xl lg:text-5xl "
           heading1={"Comprehensive"}
           heading2={" Therapy Services"}
         />
-        <p className="font-medium text-[15px] text-center mb-6 md:mb-2  text-gray-700 p-4 md:p-0 max-w-[600px] mx-auto">
+        <p className="font-medium text-[15px] mt-1 text-center  md:mb-2  text-gray-700  px-4 md:p-0 max-w-[600px] mx-auto">
           Our certified therapists provide individualized care across all developmental stages
         </p>
 

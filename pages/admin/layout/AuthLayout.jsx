@@ -54,6 +54,7 @@ export default function AuthLayout({ children }) {
 
   return (
     <>
+    <style  >{`html { background:#1e2939;}`}</style>
       {toggle ? (
         <div
           onClick={showSidebar}

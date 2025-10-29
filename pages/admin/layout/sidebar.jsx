@@ -14,7 +14,7 @@ export default function Sidebar({ toggle, handleLogout }) {
     <>
       <div
         id="sidebar"
-        className={`mobilesidebar fixed top-0 z-[49] max-h-[100vh] h-screen overflow-hidden bg-black border-r  pb-22 w-full max-w-[300px] min-w-[300px] border-gray-800 transition-transform duration-300 ease-in-out transform ${toggle ? "bg-black translate-x-0 min-h-screen p-4 pt-[30px]" : "-translate-x-full p-8 pt-[140px]"
+        className={`mobilesidebar fixed top-0 z-[49] max-h-[100vh] h-screen overflow-hidden bg-black border-r  pb-22 w-full max-w-[300px] min-w-[300px] border-gray-800 transition-transform duration-300 ease-in-out transform ${toggle ? "bg-black translate-x-0 z-[9999] min-h-screen p-4 pt-[30px]" : "-translate-x-full p-8 pt-[140px]"
           } md:sticky md:translate-x-0`}
       >
         <div className="max-h-[76vh] overflow-auto hidescroll">

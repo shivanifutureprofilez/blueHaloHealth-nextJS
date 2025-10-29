@@ -26,40 +26,47 @@ function ContactForm() {
 
 
   const [loading, setLoading] = useState(false);
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    const phoneRegex = /^[0-9]{10}$/;
-    if (!emailRegex.test(items.email)) {
-      toast.error("Please enter a valid email address.");
-      return;
-    }
 
-    try {
+
+  const handleSubmit = async (e) => {
+      e.preventDefault();
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailRegex.test(items.email)) {
+        toast.error("Please enter a valid email address.");
+        return;
+      }
+      if (items.message == '' || items.message == null || items.message ==   undefined ) {
+        toast.error("Message can not be empty.");
+        return;
+      }
+      if (items.message.length < 20 ) {
+        toast.error("Message can not be too short. Type at least 20 characters.");
+        return;
+      }
+       
       setLoading(true);
       const lists = new RoutesLists();
-      const response = await lists.getEnquiry(items);
-      //console.log("response", response);
-
-      if (response.data.status) {
-        toast.success(response.data.message);
-        setItems({
-          fullName: "",
-          age: "",
-          phone: "",
-          email: "",
-          message: "",
-          smsCheckbox: false,
-        });
-      } else {
-        toast.error(response.data.message);
-      }
-    } catch (error) {
-      console.error("Error:", error);
-      toast.error("Something went wrong. Please try again later.");
-    } finally {
-      setLoading(false);
-    }
+      const response =   lists.getEnquiry(items);
+      response.then((res)=>{ 
+        if (res.data?.status) {
+          toast.success(res.data.message);
+          setItems({
+            fullName: "",
+            age: "",
+            phone: "",
+            email: "",
+            message: "",
+            smsCheckbox: false,
+          });
+        } else {
+          toast.error(response.data.message);
+        }
+        setLoading(false);
+      }).catch((err)=>{ 
+        console.error("Error:", err);
+        toast.error("Something went wrong. Please try again later.");
+        setLoading(false);
+      })
   };
 
   return (
@@ -156,7 +163,7 @@ function ContactForm() {
                 />
                 <label className="text-gray-700 text-sm text-left">I agree to receive SMS / Text communication</label>
               </div>
-              <button onClick={handleSubmit}
+              <button  
                 type="submit"
                 disabled={loading} className="bg-green-dark text-white font-semibold px-6 py-3 rounded-lg hover:bg-green-700 transition w-full mt-2">
                 {loading ? "Loading..." : "Submit Enquiry"}

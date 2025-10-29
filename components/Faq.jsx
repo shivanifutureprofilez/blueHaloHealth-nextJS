@@ -60,7 +60,7 @@ function Faq() {
             />
           </div>
           <div className="space-y-4 mt-4">
-            {faqs.map((faq, index) => (
+            {faqs && faqs?.map((faq, index) => (
               <div
                 key={index}
                 className="bg-white !max-w-[600px] rounded-lg shadow-sm border border-gray-100 p-5 transition-all duration-900 ease-in-out hover:shadow-md "

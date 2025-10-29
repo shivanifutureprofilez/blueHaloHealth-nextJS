@@ -140,7 +140,7 @@ body {
   }
 
   .heading {
-    @apply font-bold text-[#1E1E1E] text-[28px] md:text-[35px] lg:text-[42px];
+    @apply font-bold text-[#1E1E1E] text-[22px] md:text-[28px] lg:text-[35px] xl:text-[42px];
   }
 }
 
@@ -177,30 +177,30 @@ body {
 .services h1 {
   color: #000 !important;
   font-family: "Inter", sans-serif;
-  ;
   font-size: 38px;
   font-style: normal;
   font-weight: 600;
   line-height: 42px;
   text-transform: uppercase;
   margin: 0 0 15px;
+  padding-bottom: 5px;
+  padding-top: 5px;
 }
 
 .services h2 {
   color: #000 !important;
   font-family: "Inter", sans-serif;
-  ;
   font-size: 32px;
   font-style: normal;
   font-weight: 600;
   line-height: 38px;
   text-transform: uppercase;
+  padding-bottom: 15px;
 }
 
 .services h3 {
   color: #000 !important;
   font-family: "Inter", sans-serif;
-  ;
   font-size: 22px;
   font-style: normal;
   font-weight: 600;
@@ -241,6 +241,7 @@ body {
   font-family: "Poppins", sans-serif;
   font-style: normal;
   line-height: 29px;
+  text-align: justify;
 }
 
 .services p a {
@@ -262,8 +263,14 @@ body {
 .services ul li {
   color: #000 !important;
   margin-bottom: 10px;
+  text-align: left !important;
 }
-
+.services ol li {
+  list-style-type: decimal;
+  color: #000 !important;
+  margin-bottom: 10px;
+  text-align: left !important;
+} 
 .services img {
       align-items: center;
     justify-content: center;
