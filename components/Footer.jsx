@@ -7,7 +7,7 @@ function Footer() {
   return (
     <div className="bg-[#2B333B] text-white py-10">
       <div className="container mx-auto ">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-10 md:gap-20">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-20">
          
           <div className="max-w-[700px]">
             <h3 className="text-2xl font-bold mb-4">BlueHaloHealth</h3>
@@ -95,7 +95,7 @@ function Footer() {
         </div>
 
       
-        <div className="border-t border-gray-700 mt-4 pt-4 md:flex md:justify-between md:items-center text-sm text-white">
+        <div className="border-t border-gray-700 mt-4 pt-4 md:flex md:justify-left gap-10 lg:justify-between  md:items-center text-sm text-white">
           <p className="">©2025 BlueHaloHealth. All rights reserved.</p>
           <p className="italic pt-2 md:pt-0 ">Designed By FutureProfilez Pvt. Ltd.</p>
         </div>

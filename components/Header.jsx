@@ -1,4 +1,4 @@
-"use client";
+
 import { FiMenu, FiX } from "react-icons/fi";
 import { useState } from "react";
 import Link from "next/link";
@@ -18,19 +18,19 @@ function Header() {
   ];
 
   return (
-    <header className="bg-[#F7F4F0] sticky top-0 z-50 ">
+    <header className="bg-[#F7F4F0] sticky top-0 z-50  ">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between py-4">
           {/* Logo */}
           <Link
             href="/"
-            className="text-green-dark text-[22px] sm:text-[24px] font-bold"
+            className="text-green-dark text-[24px] md:text-[26px] font-bold"
           >
             BlueHaloHealth
           </Link>
 
           {/* Desktop Nav */}
-          <nav className="hidden lg:flex items-center space-x-8 lg:space-x-12">
+          <nav className="hidden lg:flex items-center space-x-8 lg:space-x-10">
             {navLinks.map((link) => (
               <Link
                 key={link.name}
@@ -76,35 +76,37 @@ function Header() {
 
       {/* Mobile Dropdown */}
       {isMobileMenuOpen && (
-        <div className="lg:hidden bg-white shadow-lg border-t border-gray-100">
-          <ul className="flex flex-col space-y-4 px-6 py-4 text-gray-800 font-medium">
-            {navLinks.map((link) => (
-              <li key={link.name}>
+          <div className="p-6 fixed md:relative top-[50px] w-full md:block">
+            <div className=" rounded-2xl  w-full max-w-[100%]  lg:hidden bg-white shadow-lg border-t border-gray-100">
+              <ul className="flex flex-col space-y-4 px-6 py-4 text-gray-800 font-medium">
+                {navLinks.map((link) => (
+                  <li key={link.name}>
+                    <Link
+                      href={link.href}
+                      className="block hover:text-[#00D967] transition"
+                      onClick={() => setIsMobileMenuOpen(false)}
+                    >
+                      {link.name}
+                    </Link>
+                  </li>
+                ))}
+                <a href="https://phpdemo.futureprofilez.com/wp/blue-halo-health-blog/" className="block hover:text-[#00D967] transition">Blogs</a>
                 <Link
-                  href={link.href}
-                  className="block hover:text-[#00D967] transition"
+                    href='/contact-us'
+                    className="block hover:text-[#00D967] transition"
+                  >
+                    Contact
+                  </Link>
+              </ul>
+              <div className="p-4 flex justify-left ">
+                <Button
+                  title="Book Free Consultation"
+                  className="button w-full bg-green-dark text-[14px] px-4 py-2"
                   onClick={() => setIsMobileMenuOpen(false)}
-                >
-                  {link.name}
-                </Link>
-              </li>
-            ))}
-            <a href="https://phpdemo.futureprofilez.com/wp/blue-halo-health-blog/" className="block hover:text-[#00D967] transition">Blogs</a>
-            <Link
-                href='/contact-us'
-                className="block hover:text-[#00D967] transition"
-              >
-                Contact
-              </Link>
-          </ul>
-          <div className="flex justify-left px-2 py-2">
-            <Button
-              title="Book Free Consultation"
-              className="button bg-green-dark text-[14px] px-4 py-2"
-              onClick={() => setIsMobileMenuOpen(false)}
-            />
-          </div>
-        </div>
+                />
+              </div>
+            </div>
+          </div>        
       )}
     </header>
   );

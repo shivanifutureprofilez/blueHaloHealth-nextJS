@@ -30,7 +30,7 @@ function Importance() {
   ];
 
   return (
-    <section className="bg-[#4B9B711A] py-[20px] md:py-[40px] lg:py-[60px]  ">
+    <section className="bg-[#4B9B711A] py-[40px]  lg:py-[60px]  ">
       <div className="mx-auto container sm:container md:container lg:container xl:max-w-[1230px]  px-4 text-center">
         <Heading
           className="heading text-center poppins text-black tracking-tighter leading-tight font-bold text-4xl md:text-5xl lg:text-5xl mb-3"
@@ -38,7 +38,7 @@ function Importance() {
           heading2={" BlueHaloHealth"}
         //content={"Trusted expertise, personalized care, and proven results for every stage of development."}
         />
-        <p className="font-medium text-[15px] text-center  text-gray-700 max-w-[600px] mx-auto">
+        <p className="mb-6 md:mb-2 font-medium text-[15px] text-center  text-gray-700 max-w-[600px] mx-auto">
           Trusted expertise, personalized care, and proven results  for every stage of development.
         </p>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4  py-[15px] md:py-[30px] ">
