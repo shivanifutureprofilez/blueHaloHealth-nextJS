@@ -43,7 +43,7 @@ export default function ageGroupDetail() {
         <>
         <SectionBanner title={data.title || 'Service Detail'} />
         <div className='container mx-auto'>
-          <div className='grid grid-cols-3 gap-3 py-12'>
+          <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 py-[15px] md:py-[30px]'>
               {data && data?.services && data?.services.map((s,i)=>{
                 return <>
                     <ServiceCard item={s}  idx={i}  />

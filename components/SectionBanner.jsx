@@ -9,7 +9,7 @@ export default function SectionBanner({ title = "Shop" }) {
         src="/sectionBanner.png"
         alt={`${title} banner`}
         fill
-        className="object-cover opacity-90"
+        className="object-cover opacity-90 w-full"
         priority
       />
 

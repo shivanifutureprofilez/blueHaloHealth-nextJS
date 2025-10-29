@@ -13,7 +13,8 @@ function Header() {
     { name: "About", href: "/about" },
     { name: "Resources", href: "/resources" },
     { name: "Events", href: "/events" },
-    { name: "Contact", href: "/contact-us" },
+    // { name: "Blogs", href: "/https://phpdemo.futureprofilez.com/wp/blue-halo-health-blog/" },
+    // { name: "Contact", href: "/contact-us" },
   ];
 
   return (
@@ -39,6 +40,13 @@ function Header() {
                 {link.name}
               </Link>
             ))}
+            <a href="https://phpdemo.futureprofilez.com/wp/blue-halo-health-blog/" className="text-gray-800 hover:text-[#00D967] font-medium transition">Blogs</a>
+            <Link
+                href='/contact-us'
+                className="text-gray-800 hover:text-[#00D967] font-medium transition"
+              >
+                Contact
+              </Link>
           </nav>
 
           {/* Desktop Button */}
@@ -81,6 +89,13 @@ function Header() {
                 </Link>
               </li>
             ))}
+            <a href="https://phpdemo.futureprofilez.com/wp/blue-halo-health-blog/" className="block hover:text-[#00D967] transition">Blogs</a>
+            <Link
+                href='/contact-us'
+                className="block hover:text-[#00D967] transition"
+              >
+                Contact
+              </Link>
           </ul>
           <div className="flex justify-left px-2 py-2">
             <Button

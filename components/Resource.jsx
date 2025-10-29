@@ -52,10 +52,10 @@ function Resource() {
                                 </span>
                             </div>
                             <div className="p-6">
-                                <h2 className='font-bold text-xl text-black mb-2'>
+                                <h2 className='font-bold text-left text-xl text-black mb-2'>
                                     {item?.title}
                                 </h2>
-                                <p className=' mb-8 text-[15px] font-medium text-gray-600'>
+                                <p className=' mb-8 text-left text-[15px] font-medium text-gray-600'>
                                     {item?.description}
                                 </p>
                             </div>

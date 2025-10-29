@@ -5,9 +5,9 @@ import { CiPhone } from "react-icons/ci";
 
 function Footer() {
   return (
-    <div className="bg-[#2B333B] text-white py-16">
+    <div className="bg-[#2B333B] text-white py-10">
       <div className="container mx-auto ">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-20">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-10 md:gap-20">
          
           <div className="max-w-[700px]">
             <h3 className="text-2xl font-bold mb-4">BlueHaloHealth</h3>
@@ -37,30 +37,30 @@ function Footer() {
           
           <div className="">
             <h4 className="text-lg font-semibold mb-4">Contact Info</h4>
-              <ul className="space-y-6 text-base">
+              <ul className="space-y-2 text-base">
                             <li className="flex items-center gap-3 text-gray-300">
                               <span className="">
                                 <IoLocationOutline size={20}  />
                               </span>
-                              <Link href="mailto:hello@bluehalohealth.ca" className="text-gray-300">
+                              <span className="text-gray-300">
                               123 Therapy Lane
-                              </Link>
+                              </span>
                             </li>
                             <li className="flex items-center gap-3 text-gray-300">
                               <span className="">
                                 <CiPhone size={20}  />
                               </span>
-                              <Link href="mailto:hello@bluehalohealth.ca" className="text-gray-300">
+                              <a href="tel:9876543218" className="text-gray-300">
                               (416) 555-BLUE
-                              </Link>
+                              </a>
                             </li>
                             <li className="flex items-center hover:cursor-default gap-3">
                               <span className="">
                                 <IoMailOpenOutline size={20}  className="text-gray-300"/>
                               </span>
-                              <Link href="mailto:hello@bluehalohealth.com" className="text-gray-300">
+                              <a href="mailto:hello@bluehalohealth.com" className="text-gray-300">
                                 hello@bluehalohealth.ca
-                              </Link>
+                              </a>
                             </li>
                           </ul> 
               {/* <p className="text-gray-300 mb-2">123 Therapy Lane, Toronto, ON M5V 3A8</p>
@@ -95,9 +95,9 @@ function Footer() {
         </div>
 
       
-        <div className="border-t border-gray-700 mt-12 pt-8 flex justify-between items-center text-sm text-white">
-          <p>© 2025 BlueHaloHealth. All rights reserved.</p>
-          <p className="italic">Designed By FutureProfilez Pvt. Ltd.</p>
+        <div className="border-t border-gray-700 mt-4 pt-4 md:flex md:justify-between md:items-center text-sm text-white">
+          <p className="">©2025 BlueHaloHealth. All rights reserved.</p>
+          <p className="italic pt-2 md:pt-0 ">Designed By FutureProfilez Pvt. Ltd.</p>
         </div>
       </div>
     </div>

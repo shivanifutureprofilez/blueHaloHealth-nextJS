@@ -80,7 +80,7 @@ function Faq() {
                 </button>
 
                 {openIndex === index && (
-                  <p className="text-gray-600 mt-3 leading-relaxed text-[15px] md:text-[16px]">
+                  <p className="text-gray-600 mt-3 text-left leading-relaxed text-[15px] md:text-[16px]">
                     {faq.answer}
                   </p>
                 )}
