@@ -5,6 +5,7 @@ import SectionBanner from '@/components/SectionBanner'
 import Mission from './Mission'
 import Team from './Team'
 import BookingTab from '@/components/BookingTab'
+import VirtualTherapy from '@/components/VirtualTherapy'
 export default function AboutPageIndex() {
   return (
     <Layout>
@@ -12,6 +13,7 @@ export default function AboutPageIndex() {
         <SectionBanner title={"About"} />
         {/* <Founder /> */}
         <Mission />
+        <VirtualTherapy/>
         <Team />
         <BookingTab/>
       </div>

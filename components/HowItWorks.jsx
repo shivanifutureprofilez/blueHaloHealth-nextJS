@@ -5,7 +5,7 @@ import Button from './Button';
 
 function HowItWorks() {
   return (
-    <div className="bg-[#F7F8F9] py-[20px] md:py-[40px] lg:py-[60px]">
+    <div className="bg-[#E6EBE3] py-[20px] md:py-[40px] lg:py-[60px]">
       <div className="mx-auto container sm:container md:container lg:container xl:max-w-[1230px]  px-4 text-center">
           <Heading
             className="text-black text-center"
@@ -14,16 +14,20 @@ function HowItWorks() {
           />
         <div className='md:flex gap-30 justify-center items-center '>
           <div className="md:mt-10 md:mb-10 p-8 md:p-0">
-            <Image src='/step1.png' alt="About" className="w-full object-cover" width={400} height={300} />
+            <Image src='/step1.png' alt="About" className="w-full object-contain" width={600} height={600} />
             <p className='text-center font-bold pt-6'>Book A Free Consultation</p>
           </div>
           <div className="md:mt-10 md:mb-10 p-8 md:p-0">
-            <Image src='/step2.png' alt="About" className="w-full object-cover" width={400} height={300} />
-            <p className='text-center font-bold pt-6'>Match With A Therapist</p>
+            <Image src='/step2.png' alt="About" className="w-full object-contain" width={400} height={300} />
+            <p className='text-center font-bold pt-6'>Get matched with the right therapist or service provider</p>
           </div>
           <div className="md:mt-10 md:mb-10 p-8 md:p-0">
-            <Image src='/step3.png' alt="About" className="w-full object-cover" width={400} height={300} />
-            <p className='text-center font-bold pt-6'>Get Started</p>
+            <Image src='/step33.png' alt="About" className="w-full object-contain" width={400} height={300} />
+            <p className='text-center font-bold pt-6'>Pay securely to confirm your appointment </p>
+          </div>
+          <div className="md:mt-10 md:mb-10 p-8 md:p-0">
+            <Image src='/step4.png' alt="About" className="w-full object-contain" width={400} height={300} />
+            <p className='text-center font-bold pt-6'>Your care begins</p>
           </div>
         </div>
       </div>

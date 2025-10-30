@@ -1,26 +1,33 @@
 import React from 'react'
 import Heading from './Heading';
 import Image from 'next/image';
+import ResourceCard from './ResourceCard';
 
 function Resource() {
-    const features = [
+    const resource = [
         {
-            "image": "/resourceImg.png",
-            "category": "Parenting",
-            "title": "5 Simple Ways to Strengthen",
-            "description": "Discover easy, everyday strategies to build trust, improve listening, and create stronger bonds with your child."
+            id: 'start-here',
+            title: 'Utah Support Guide',
+            label: 'Resource',
+            date: 'October 3, 2025',
+            tags: ['parent', 'care'],
+            link: 'https://www.egyankosh.ac.in/bitstream/123456789/92699/1/Unit-18.pdf'
         },
         {
-            "image": "/resourceImg.png",
-            "category": "Parenting",
-            "title": "5 Simple Ways to Strengthen",
-            "description": "Discover easy, everyday strategies to build trust, improve listening, and create stronger bonds with your child."
+            id: 'tennessee-autism-aba-directory',
+            title: 'Tennessee Autism & ABA Directory Tennessee Autism & ABA DirectoryTennessee Autism & ABA Directory',
+            label: 'Resource',
+            date: 'October 3, 2025',
+            tags: ['parent', 'physician'],
+            link: 'https://www.egyankosh.ac.in/bitstream/123456789/92699/1/Unit-18.pdf',
         },
         {
-            "image": "/resourceImg.png",
-            "category": "Parenting",
-            "title": "5 Simple Ways to Strengthen",
-            "description": "Discover easy, everyday strategies to build trust, improve listening, and create stronger bonds with your child."
+            id: 'utah-support-guide',
+            title: 'Utah Support Guide',
+            label: 'Resource',
+            date: 'October 3, 2025',
+            tags: ['parent', 'care'],
+            link: 'https://www.egyankosh.ac.in/bitstream/123456789/92699/1/Unit-18.pdf'
         },
 
     ]
@@ -36,32 +43,13 @@ function Resource() {
                 <p className="font-medium text-[15px] text-center mb-6 md:mb-2 text-gray-700  max-w-[600px] mx-auto">
                     Stay informed with expert articles, practical tips, and inspiring stories to help families at every stage of life. Our blogs cover child development, parenting strategies, mental health, therapy guidance, and more.
                 </p>
-                <div className='grid grid-cols-1 md:grid-cols-2  lg:grid-cols-3 gap-4 py-[15px] md:py-[30px]'>
-                    {features?.map((item, indx) => (
-                        <div key={indx} className="bg-white rounded-3xl shadow  md:m-0 md:p-0 flex flex-col overflow-hidden">
-                            <div className="relative">
-                                <Image
-                                    src={`${item?.image}`}
-                                    alt={item?.title}
-                                    width={400}
-                                    height={250}
-                                    className="w-full h-[250px] object-cover rounded-t-2xl"
-                                />
-                                <span className="absolute left-6 bottom-4 bg-green-600 text-white px-4 py-1 rounded font-semibold text-sm shadow">
-                                    {item?.category}
-                                </span>
-                            </div>
-                            <div className="p-6">
-                                <h2 className='font-bold text-left text-xl text-black mb-2'>
-                                    {item?.title}
-                                </h2>
-                                <p className=' mb-8 text-left text-[15px] font-medium text-gray-600'>
-                                    {item?.description}
-                                </p>
-                            </div>
-                        </div>
-                    ))}
-                </div>
+               <div className=" grid grid-cols-1 mt-10 md:grid-cols-3  gap-5">
+              {resource.map((item) => (
+                <a key={item.id} href={item.link} target='_blank' download >
+                  <ResourceCard label={item.label} title={item.title} date={item.date} tags={item.tags} />
+                </a>
+              ))}
+            </div>
             </div>
         </div>
     )

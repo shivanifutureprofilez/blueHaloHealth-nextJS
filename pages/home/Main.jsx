@@ -8,6 +8,7 @@ import Resource from '@/components/Resource'
 import Event from '@/components/Event'
 import BookingTab from '@/components/BookingTab'
 import AgeMatrix from './AgeMatrix'
+import FeaturedServices from './FeaturedServices'
 // import About from './About'
 
 export default function Main() {
@@ -16,6 +17,7 @@ export default function Main() {
       <div className='bg-[#F7F4F0]'>
         <Banner/>
         <AgeMatrix/>
+        <FeaturedServices/>
         <About/>
         <Importance/>
         <Feedback/>

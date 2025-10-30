@@ -71,7 +71,6 @@ const services = [
 export default function AgeMatrix({ admin }) {
 
   const [ageGroupsLists, setAgeGroupsLists] = useState([]);
-
   const [loading, setLoading] = useState(true)
   const fetchGroups = async () => {
     const lists = new RoutesLists();

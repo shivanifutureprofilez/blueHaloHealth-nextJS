@@ -10,6 +10,9 @@ class RoutesLists extends Component {
     async getServices(data) {
         return Api.get(`/service/list?age=${data}`);
     }
+    async getFeaturedServices() {
+        return Api.get(`/service/featured/list`);
+    }
 
     async getServiceDetail({pid}) {
         return Api.get(`/service/${pid}`);

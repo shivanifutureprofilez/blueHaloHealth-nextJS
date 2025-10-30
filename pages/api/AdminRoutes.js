@@ -24,6 +24,9 @@ class AdminRoutes extends Component {
     async deleteService(data) {
         return Api.get(`/service/delete/${data}`);
     }
+    async featureService(id) {
+        return Api.get(`/service/mark/featured/${id}`);
+    }
     async getServiceById(data) {
         return Api.get(`/service/list/${data}`);
     }   

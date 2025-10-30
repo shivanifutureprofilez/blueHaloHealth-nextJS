@@ -7,6 +7,7 @@ import SectionBanner from "@/components/SectionBanner";
 import RoutesLists from "../api/RoutesLists";
 import Loading from "@/components/Loading";
 import NoResultFound from "@/components/NoResult";
+import ServiceCardSmall from "@/components/ServiceCardSmall";
 
 export default function Index() {
   const [ageGroup, setAgeGroup] = useState("");
@@ -70,7 +71,7 @@ export default function Index() {
           </>
         ) : <div className="flex justify-center items-center flex-wrap gap-2">
           <button
-            className={`button-white w-full md:w-[230px] border cursor-pointer ${ageGroup === "" ? 'bg-[#009C4A] border-[#009C4A] text-white transition-[1s]' : ''}`}
+            className={`button-white  !rounded-2xl md:w-[200px] border cursor-pointer ${ageGroup === "" ? 'bg-[#009C4A] border-[#009C4A] text-white transition-[1s]' : ''}`}
             onClick={() => {
               updateAgeGroup("");
             }}
@@ -80,7 +81,7 @@ export default function Index() {
           {totalAgeGroups && totalAgeGroups?.map((item, index) => (
             <button
               key={index}
-              className={`button-white w-full md:w-[230px] border cursor-pointer ${ageGroup === item?._id ? 'bg-[#009C4A] border-[#009C4A] text-white transition-[1s]' : ''}`}
+              className={`button-white !rounded-2xl md:w-[200px] border cursor-pointer ${ageGroup === item?._id ? 'bg-[#009C4A] border-[#009C4A] text-white transition-[1s]' : ''}`}
               onClick={() => {
                 updateAgeGroup(item?._id);
               }}
@@ -104,9 +105,9 @@ export default function Index() {
             <Loading />
           ) : serviceList && serviceList.length ? (
             <>
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 py-[15px] md:py-[30px] ">
+              <div className="grid grid-cols-1  lg:grid-cols-2 gap-5 py-[15px] md:py-[30px] ">
                 {serviceList.map((item, index) => (
-                  <ServiceCard key={item?._id || index} item={item} ageGroup={ageGroup} idx={index} />
+                  <ServiceCardSmall key={item?._id || index} item={item} ageGroup={ageGroup} idx={index} />
                 ))}
               </div>
             </>

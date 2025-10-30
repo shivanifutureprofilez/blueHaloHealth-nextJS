@@ -7,6 +7,7 @@ import AddService from "./AddService";
 import Link from "next/link";
 import Loading from "@/components/Loading";
 import NoResultFound from "@/components/NoResult";
+import ServiceCardSmall from "@/components/ServiceCardSmall";
 
 function ServicesBox() {
 const [ageGroup, setAgeGroup] = useState("");
@@ -110,7 +111,7 @@ const [ageGroup, setAgeGroup] = useState("");
               <div className="container mx-auto">
                 <div className="grid grid-cols-1 md:grid-cols-3 p-3 gap-6 md:mt-4 md:mb-8">
                   {serviceList && serviceList?.map((item, index) => (
-                    <ServiceCard key={item._id || index} item={item} idx={index} isAdmin={true} fetchServices={fetchServices} />
+                    <ServiceCardSmall key={item._id || index} item={item} idx={index} isAdmin={true} fetchServices={fetchServices} />
                   ))}
                 </div>
               </div>
