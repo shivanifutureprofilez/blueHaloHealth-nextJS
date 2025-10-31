@@ -21,7 +21,7 @@ export default function Banner() {
             <h2 className={`heading text-center md:text-left pt-12 md:pt-0 poppins text-black tracking-tighter leading-tight font-bold text-4xl md:text-5xl lg:text-5xl mb-3`} >Empowering Families Through <span className='text-[#009C4A]'>Expert Therapy </span><br />& Support</h2>
             <p className={` text-gray-500 text-center md:text-left font-medium text-[15px]`}>Individualized programs for children, teens, and adults with developmental or behavioral challenges.</p>
             <div className="flex flex-wrap pt-4 rounded-lg   max-w-[600px]">
-                                 <p className="rounded-lg font-bold text-xl bg-[#FFFFFF] p-3">15 MIN consultation on us.</p>
+                                 <p className="rounded-lg font-bold text-xl bg-[#FFFFFF] p-3">15 MIN Consultation On Us.</p>
                             </div>
            
           </div>

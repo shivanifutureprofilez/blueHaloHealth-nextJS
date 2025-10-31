@@ -33,7 +33,9 @@ class AdminRoutes extends Component {
     async editAge(data){
         return Api.post(`/agegroup/update`,data);
     } 
-
+    async addEvent(data){
+        return Api.post('/event/add',data);
+    }
     render() {
         return (
             <div>

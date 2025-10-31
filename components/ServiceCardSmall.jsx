@@ -35,7 +35,7 @@ function ServiceCardSmall({ item, idx, isAdmin = false, fetchServices }) {
   return (
     <div
       key={idx}
-      className="bg-white rounded-[25px] h-[200px] shadow overflow-hidden flex flex-col items-center relative"
+      className="bg-white rounded-[25px]  shadow overflow-hidden flex flex-col items-center relative"
     >
       {isAdmin && (
         <Link
@@ -54,14 +54,14 @@ function ServiceCardSmall({ item, idx, isAdmin = false, fetchServices }) {
           onClick={() => {
             handleDelete(item?._id);
           }}
-          className="absolute top-3 right-3 bg-red-500 hover:bg-red-600 text-white p-2 rounded-full shadow-md transition-colors duration-200 z-2 cursor-pointer"
+          className="absolute top-3 right-3 bg-red-600 hover:bg-red-600 text-white p-2 rounded-full shadow-md transition-colors duration-200 z-2 cursor-pointer"
           title="Delete service"
         >
           <FaTrash size={14} />
         </button>
       )}
-    <div className="flex">
-      <div className="  p-2 rounded-lg overflow-hidden  relative">
+    <div className="flex p-4 ">
+      <div className=" rounded-lg overflow-hidden  relative">
         <Link href={`/service/detail/${item?._id}`}>
           <img
             src={item?.bannerImg}
@@ -70,8 +70,8 @@ function ServiceCardSmall({ item, idx, isAdmin = false, fetchServices }) {
           />
         </Link>
       </div>
-          {item?.featured && isAdmin  ? <div>{item?.featured ? 'Featured' : ''}</div> : ''}
-      <div className="p-6 text-left">
+        
+      <div className="text-left ps-4">
         <h2 className="font-bold text-xl text-black mb-2 line-clamp-1">
           {item?.name}
         </h2>
@@ -79,24 +79,25 @@ function ServiceCardSmall({ item, idx, isAdmin = false, fetchServices }) {
           {item?.description}
         </p>
         <div className="flex gap-2">
-        <Link href={`/service/detail/${item?._id}`} className="text-green-dark">
-        {/* <button className="button md:w-[200px] cursor-pointer"> */}
-            Learn More
-            
-            {/* </button> */}
-        </Link>
-         <Link href={`/service/detail/${item?._id}`} className="text-green-dark">
-        <LuMoveUpRight className=" p-1 rounded-full text-green-dark text-2xl bg-[#E6F4EA]"/></Link>
+
+
+        { !isAdmin &&   <Link href={`/service/detail/${item?._id}`} className="text-green-dark flex gap-2">
+           <LuMoveUpRight className=" p-1 rounded-full text-green-dark text-2xl bg-[#E6F4EA]"/>   Learn More
+        </Link>}
+      
         </div>
 
         {isAdmin && (
         <button
           onClick={markAsFeatured}
-          className="  bg-blue-500 hover:bg-blue-600 text-white px-2 py-1 w-full mt-2  rounded-full shadow-md transition-colors duration-200 z-10 cursor-pointer
-               flex items-center justify-center text-sm"
+          className={`
+            ${item?.featured && isAdmin  ? "bg-red-900 hover:bg-red-900" : "bg-green-500 hover:bg-green-500"} 
+            
+            text-white px-2 py-1 w-full mt-2  rounded-full shadow-md transition-colors duration-200 z-10 cursor-pointer
+               flex items-center justify-center text-sm`}
           title="Edit service"
         >
-         {item?.featured ? "Remove From Freatured" :" Mark As Featured"}
+         {item?.featured ? "Remove From Featured" :" Mark As Featured"}
         </button>
       )}
 

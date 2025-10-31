@@ -3,7 +3,6 @@ import AuthLayout from "../layout/AuthLayout";
 import AddAgeGroup from "../agegroups/AddAgeGroup";
 import ServiceCard from "@/components/ServiceCard";
 import RoutesLists from "@/pages/api/RoutesLists";
-import AddService from "./AddService";
 import Link from "next/link";
 import Loading from "@/components/Loading";
 import NoResultFound from "@/components/NoResult";
@@ -61,13 +60,13 @@ const [ageGroup, setAgeGroup] = useState("");
 
   const Filter = () => {
     return (
-      <div className="container mt-12 mx-auto">
-        <div className="container mx-auto  pb-2 md:pb-[30px]">
+      <div className="    mx-auto">
+        <div className=" ">
           <div className="lg:flex justify-between items-center flex-wrap ">
             <div className="w-full  py-3 ">
-              <div className="flex justify-center items-center flex-wrap gap-2">
+              <div className="flex  flex-wrap items-center   gap-2">
                 <button
-                  className={`button-white w-full md:w-[230px] border cursor-pointer ${ageGroup === "" ? 'bg-[#009C4A] border-[#009C4A] text-white transition-[1s]' : ''}`}
+                  className={`w-full sm:w-auto button-white   border cursor-pointer ${ageGroup === "" ? 'bg-[#009C4A] border-[#009C4A] text-white transition-[1s]' : ''}`}
                   onClick={() => {
                     updateAgeGroup("");
                   }}
@@ -77,12 +76,12 @@ const [ageGroup, setAgeGroup] = useState("");
                 {totalAgeGroups && totalAgeGroups?.map((item, index)=>(
                 <button
                   key={index}
-                  className={`button-white w-full md:w-[230px] border cursor-pointer ${ageGroup === item?._id ? 'bg-[#009C4A] border-[#009C4A] text-white transition-[1s]' : ''}`}
+                  className={`w-full sm:w-auto button-white border cursor-pointer ${ageGroup === item?._id ? 'bg-[#009C4A] border-[#009C4A] text-white transition-[1s]' : ''}`}
                   onClick={() => {
                     updateAgeGroup(item?._id);
                   }}
                 >
-                  <span className="pl-2 pr-2">{item?.title}</span>
+                  <span className="pl-2 pr-2 whitespace-nowrap">{item?.title}</span>
                 </button>
                 ))}
               </div>
@@ -108,8 +107,8 @@ const [ageGroup, setAgeGroup] = useState("");
         <>
           {serviceList && serviceList.length ? (
             <>
-              <div className="container mx-auto">
-                <div className="grid grid-cols-1 md:grid-cols-3 p-3 gap-6 md:mt-4 md:mb-8">
+              <div className="  mx-auto">
+                <div className="grid grid-cols-1 md:grid-cols-2  gap-6 md:mt-4 md:mb-8">
                   {serviceList && serviceList?.map((item, index) => (
                     <ServiceCardSmall key={item._id || index} item={item} idx={index} isAdmin={true} fetchServices={fetchServices} />
                   ))}

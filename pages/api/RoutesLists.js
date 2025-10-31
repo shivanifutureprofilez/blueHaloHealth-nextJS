@@ -34,6 +34,10 @@ class RoutesLists extends Component {
         return Api.get(`/agegroup/delete/${pid}`);
     }
 
+    async getEvents(){
+        return Api.get('/event/list');
+    }
+
     render() {
         return (
             <div>
