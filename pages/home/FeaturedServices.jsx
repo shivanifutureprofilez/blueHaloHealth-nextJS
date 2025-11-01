@@ -52,7 +52,13 @@ function FeaturedServices() {
 
                                     })}
                                     <div className='  md:justify-start md:text-left flex'>
-                                        <Button title={"Read More"} className={`button-transparent mt-4 !border-white !text-white`} />
+                                        {/* <Button title={"Read More"} className={`button-transparent mt-4 !border-white !text-white`} /> */}
+                                        <Link
+                                            href="/service"
+                                            className="button-transparent mt-4 !border-white !text-white"
+                                        >
+                                            Read More
+                                        </Link>
                                     </div>
                                 </div>
                                 <div className='!h-full max-w-[50%]'>

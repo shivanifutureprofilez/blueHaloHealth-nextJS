@@ -39,7 +39,7 @@ function VirtualTherapy() {
           className="heading text-center poppins text-black tracking-tighter leading-tight font-bold text-4xl md:text-5xl lg:text-5xl mb-3"
           heading1={"Virtual Therapy"}
         //   heading2={" BlueHaloHealth"}
-        content={"At BlueKiteHealth, we understand that not every family can visit a clinic easily. Our Virtual Therapy sessions bring expert care directly to your home making therapy more flexible, convenient, and consistent. Whether it’s speech therapy, occupational therapy, or behavioral support, our licensed professionals provide the same quality of care through secure online sessions."}
+        content={"At BlueHaloHealth, we understand that not every family can visit a clinic easily. Our Virtual Therapy sessions bring expert care directly to your home making therapy more flexible, convenient, and consistent. Whether it’s speech therapy, occupational therapy, or behavioral support, our licensed professionals provide the same quality of care through secure online sessions."}
         />
         {/* <p className="mb-6 md:mb-2 font-medium text-[15px] text-center  text-gray-700 max-w-[600px] mx-auto">
           At BlueKiteHealth, we understand that not every family can visit a clinic easily. Our Virtual Therapy sessions bring expert care directly to your home — making therapy more flexible, convenient, and consistent. Whether it’s speech therapy, occupational therapy, or behavioral support, our licensed professionals provide the same quality of care through secure online sessions.
