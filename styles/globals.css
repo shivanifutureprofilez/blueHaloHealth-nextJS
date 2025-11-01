@@ -241,7 +241,6 @@ body {
   font-family: "Poppins", sans-serif;
   font-style: normal;
   line-height: 29px;
-  text-align: justify;
 }
 
 .services p a {
@@ -266,11 +265,13 @@ body {
   text-align: left !important;
 }
 .services ol li {
-  list-style-type: decimal;
-  color: #000 !important;
-  margin-bottom: 10px;
-  text-align: left !important;
-} 
+    list-style-type: decimal;
+    color: #000 !important;
+    margin-bottom: 10px;
+    text-align: left !important;
+    list-style-position: inside;
+}
+
 .services img {
       align-items: center;
     justify-content: center;
