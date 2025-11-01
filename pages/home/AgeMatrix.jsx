@@ -121,10 +121,11 @@ export default function AgeMatrix({ admin }) {
                     <ul className="text-gray-800 p-4 w-full ">
                       {group && group.services && group.services.map((service, i) => (
                         <li key={i} className="mb-2 text-[#626262] flex items-start font-semibold text-[15px] text-start ">
+                          
                           <span className="mr-2 mt-1">
                             <FaCircleCheck className="text-green-500 rounded-xl" />
                           </span>
-                          {service?.name}
+                          <Link href={`/service/detail/${service?._id}`} className=''>{service?.name}</Link>
                         </li>
                       )) || ''}
                     </ul>
