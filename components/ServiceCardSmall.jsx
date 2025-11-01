@@ -85,7 +85,7 @@ function ServiceCardSmall({ item, idx, isAdmin = false, fetchServices }) {
            <LuMoveUpRight className=" p-1 rounded-full text-green-dark text-2xl bg-[#E6F4EA]"/>   Learn More
         </Link>}
       
-        </div>
+        </div> 
 
         {isAdmin && (
         <button

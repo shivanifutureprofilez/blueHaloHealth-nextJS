@@ -30,7 +30,7 @@ function Header() {
           </Link>
 
           {/* Desktop Nav */}
-          <nav className="hidden lg:flex items-center space-x-8 lg:space-x-10">
+          <nav className="hidden lg:flex items-center space-x-8 lg:space-x-7">
             {navLinks.map((link) => (
               <Link
                 key={link.name}
@@ -50,11 +50,24 @@ function Header() {
           </nav>
 
           {/* Desktop Button */}
-          <div className="hidden lg:flex">
+          <div className="hidden gap-4 lg:flex">
             <Button
               title="Book Free Consultation"
               className="button bg-green-dark text-[15px] px-5 py-2"
             />
+            {/* <Button
+              title="Patient Portal"
+              className="button bg-green-dark text-[15px] px-5 py-2"
+            /> */}
+             <Link
+                  // title="Patient Portal"
+                  href="/"
+                  className=" text-center border border-green-600 text-green-600  rounded-lg font-semibold hover:bg-green-50 transition inline-block text-[15px] px-5 py-2"
+                  // onClick={() => setIsMobileMenuOpen(false)}
+                  
+                >
+                Patient Portal
+                </Link>
           </div>
 
           {/* Mobile Menu Button */}
@@ -98,12 +111,22 @@ function Header() {
                     Contact
                   </Link>
               </ul>
-              <div className="p-4 flex justify-left ">
+              <div className="p-4 grid gap-2 justify-left ">
                 <Button
                   title="Book Free Consultation"
                   className="button w-full bg-green-dark text-[14px] px-4 py-2"
                   onClick={() => setIsMobileMenuOpen(false)}
                 />
+                <Link
+                  // title="Patient Portal"
+                  href="/"
+                  className=" text-center w-full border border-green-600 text-green-600  rounded-lg font-semibold hover:bg-green-50 transition inline-block text-[14px] px-4 py-2"
+                  // onClick={() => setIsMobileMenuOpen(false)}
+                  
+                >
+                Patient Portal
+                </Link>
+
               </div>
             </div>
           </div>        

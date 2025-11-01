@@ -4,13 +4,43 @@ import Heading from './Heading';
 import features from "../public/events.json";
 import Link from 'next/link';
 import EventCard from './EventCard';
+import RoutesLists from '@/pages/api/RoutesLists';
 
 function Event() {
 
-    const [f, setF] = useState(features || []);
+    const [loading, setLoading] = useState(true);
+    const [events, setEvents] = useState("");
+    const fetchData = async () => {
+        try {
+            setLoading(true);
+            const lists = new RoutesLists();
+            const data = lists.getEvents();
+            data.then((res) => {
+                // setEvents(res?.data?.eventList || []);
+               setEvents(res?.data?.eventList && res?.data?.eventList.slice(0, 3));
+                setLoading(false)
+            }).catch((err) => {
+                setEvents([]);
+                console.log("error : ", err);
+                setLoading(false);
+            })
+        } catch (error) {
+            setLoading(false);
+            setEvents([]);
+            console.log("error :", error);
+        }
+    }
     useEffect(() => {
-        setF(features && features.slice(0, 3))
+        fetchData();
     }, []);
+    // const [f, setF] = useState(events);
+    // useEffect(() => {
+    //     setEvents(events && events.slice(0, 3));
+    // }, []);
+
+
+
+
 
 
     return (
@@ -27,7 +57,7 @@ function Event() {
                     Join our community events designed to support families and build connections
                 </p>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 py-[15px] md:py-[30px]">
-                    {f?.map((item, index) => (
+                    {events && events?.map((item, index) => (
                         <EventCard item={item} index={index} />
                     ))}
                 </div>

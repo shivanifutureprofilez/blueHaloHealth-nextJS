@@ -95,7 +95,7 @@ function Footer() {
         </div>
 
       
-        <div className="border-t border-gray-700 mt-4 pt-4 md:flex md:justify-left gap-10 lg:justify-between  md:items-center text-sm text-white">
+        <div className="border-t border-gray-700 mt-4 pt-4 md:flex justify-center md:justify-center gap-10 lg:justify-between  md:items-center text-sm text-white">
           <p className="">©2025 BlueHaloHealth. All rights reserved.</p>
           <p className="italic pt-2 md:pt-0 ">Designed By FutureProfilez Pvt. Ltd.</p>
         </div>
