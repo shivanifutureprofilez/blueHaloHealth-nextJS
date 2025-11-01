@@ -9,6 +9,7 @@ import HowItWorks from '@/components/HowItWorks';
 import RoutesLists from '../api/RoutesLists';
 import Loading from '@/components/Loading';
 import NoResultFound from '@/components/NoResult';
+import Head from 'next/head';
 
 function index() {
 
@@ -41,6 +42,20 @@ function index() {
 
 
     return (
+        <>
+        <Head>
+  <title>Events & Workshops | Blue Halo Health</title>
+  <meta name="description" content="Join Blue Halo Health’s upcoming events, retreats, and workshops focused on holistic wellness and mindfulness." />
+  <meta name="keywords" content="health events, wellness workshops, retreats, Blue Halo Health events" />
+  <meta property="og:url" content="https://bluehalohealth.com/events" />
+  <meta property="og:title" content="Events & Workshops | Blue Halo Health" />
+  <meta property="og:description" content="Stay updated with Blue Halo Health events and workshops designed for your holistic growth." />
+  <meta property="og:image" content="https://bluehalohealth.com/images/events.jpg" />
+  <meta name="twitter:title" content="Events & Workshops | Blue Halo Health" />
+  <meta name="twitter:description" content="Join our upcoming wellness events and retreats." />
+  <meta name="twitter:image" content="https://bluehalohealth.com/images/events.jpg" />
+  <link rel="canonical" href="https://bluehalohealth.com/events" />
+</Head>
         <Layout>
 
             <div className='bg-[#F7F4F0]'>
@@ -76,6 +91,7 @@ function index() {
                 <BookingTab />
             </div>
         </Layout>
+        </>
     )
 }
 

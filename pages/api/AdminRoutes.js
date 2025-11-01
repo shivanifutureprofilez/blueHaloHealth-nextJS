@@ -36,6 +36,12 @@ class AdminRoutes extends Component {
     async addEvent(data){
         return Api.post('/event/add',data);
     }
+    async deleteEvents(pid){
+        return Api.get(`/event/delete/${pid}`);
+    }
+    async editEvent(pid, data){
+        return Api.post(`/event/update/${pid}`,data);
+    } 
     render() {
         return (
             <div>

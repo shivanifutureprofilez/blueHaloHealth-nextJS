@@ -9,13 +9,15 @@ import Event from '@/components/Event'
 import BookingTab from '@/components/BookingTab'
 import AgeMatrix from './AgeMatrix'
 import FeaturedServices from './FeaturedServices'
+import HeroBanner from './HeroBanner'
 // import About from './About'
 
 export default function Main() {
   return (
     <Layout>
       <div className='bg-[#F7F4F0]'>
-        <Banner/>
+        {/* <Banner/> */}
+        <HeroBanner/>
         <AgeMatrix/>
         <FeaturedServices/>
         <About/>

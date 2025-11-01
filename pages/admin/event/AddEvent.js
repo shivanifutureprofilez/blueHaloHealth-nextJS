@@ -5,26 +5,26 @@ import toast from 'react-hot-toast';
 import AdminRoutes from '@/pages/api/AdminRoutes';
 import { CiEdit } from "react-icons/ci";
 
-function AddEvent({ id, fetchData, isEdit, event }) {
+function AddEvent({  fetchData, isEdit, item }) {
     const router = useRouter();
     const [items, setItems] = useState({
-        name: event?.name || "",
-        description: event?.description || "",
-        link: event?.link || "",
-        linkText: event?.linkText || "",
-        startDate: event?.startDate || "",
-        endDate: event?.endDate || "",
+        name: item?.name || "",
+        description: item?.description || "",
+        link: item?.link || "",
+        linkText: item?.linkText || "",
+        startDate: item?.startDate || "",
+        endDate: item?.endDate || "",
     })
     useEffect(() => {
         setItems({
-            name: event?.name || "",
-            description: event?.description || "",
-            link: event?.link || "",
-            linkText: event?.linkText || "",
-            startDate: event?.startDate || "",
-            endDate: event?.endDate || "",
+            name: item?.name || "",
+            description: item?.description || "",
+            link: item?.link || "",
+            linkText: item?.linkText || "",
+            startDate: item?.startDate || "",
+            endDate: item?.endDate || "",
         })
-    }, [event])
+    }, [item])
 
     const [action, setAction] = useState();
 
@@ -35,7 +35,7 @@ function AddEvent({ id, fetchData, isEdit, event }) {
     }
     const [loading, setLoading] = useState(false);
 
-    const handleSubmit =  (e) => {
+    const handleSubmit = (e) => {
         try {
             e.preventDefault();
             if (!items.name || !items.description || !items.link || !items.linkText || !items.startDate || !items.endDate) {
@@ -45,21 +45,21 @@ function AddEvent({ id, fetchData, isEdit, event }) {
             setLoading(true);
             const lists = new AdminRoutes();
             const data = lists.addEvent(items);
-            data.then((res)=>{
+            data.then((res) => {
                 toast.success(res?.data?.message || "Event Added Successfully");
                 router.push("/admin/event");
                 setItems({
                     name: "",
-                    description:  "",
+                    description: "",
                     link: "",
-                    linkText:"",
-                    startDate:  "",
-                    endDate:  "",
+                    linkText: "",
+                    startDate: "",
+                    endDate: "",
                 });
                 fetchData && fetchData();
                 setLoading(false);
                 setAction("close")
-            }).catch((err)=>{
+            }).catch((err) => {
                 console.error("Error:", err);
                 toast.error("Something went wrong");
                 setLoading(false);
@@ -71,33 +71,44 @@ function AddEvent({ id, fetchData, isEdit, event }) {
         }
     };
     const handleEdit = async (e) => {
-        e.preventDefault();
         try {
-            if (!items.title || !items.description || !items.image || !items.minAge || !items.maxAge) {
-                toast.error("All fields are required");
-                return false;
-            }
+            e.preventDefault();
+            // if (!name || !description || !link || !linkText || !startDate || !endDate) {
+            //     toast.error("All fields are required");
+            //     return false;
+            // }
             setLoading(true);
             const lists = new AdminRoutes();
-            const data = await lists.editAge(items);
-            toast.success("Age Group added successfully!");
-            router.push("/admin/agegroups/list");
-            setItems({
-                title: "",
-                description: "",
-                image: "",
-                minAge: "",
-                maxAge: "",
+            const data =  lists.editEvent(item?._id, items);
+            data.then((res) => {
+                toast.success(res?.data?.message || "Event added successfully!");
+                router.push("/admin/event");
+                setItems({
+                    name: "",
+                    description: "",
+                    link: "",
+                    linkText: "",
+                    startDate: "",
+                    endDate: "",
+                });
+                fetchData && fetchData();
+                setAction("close")
+                setLoading(false);
+            }).catch((err) => {
+                console.error("Error:", err);
+                toast.error("Something went wrong");
+                setLoading(false);
             });
-            fetchGroups && fetchGroups();
-            setAction("close")
-            setLoading(false);
+
         } catch (error) {
             console.error("Error:", error);
             toast.error("Something went wrong");
             setLoading(false);
         }
     };
+    console.log("item ",item);
+    console.log("items ",items);
+
     return (
         <Popup action={action} size='max-w-[700px]' bg="" space={isEdit ? 'p-6 md:p-4' : "p-6 md:p-8"} btnclasses={isEdit ? "bg-green-dark p-1.5 rounded-xl cursor-pointer" : "button cursor-pointer"} btntext={isEdit ? <CiEdit /> : "+ Add Event"} >
             <div className=" w-full  flex flex-wrap md:flex-nowrap ">
@@ -131,30 +142,31 @@ function AddEvent({ id, fetchData, isEdit, event }) {
                             </div>
                             <div >
                                 <label className="font-medium text-base block mb-2">Start Date</label>
-                                <input 
+                                <input
                                     min={new Date().toISOString().split("T")[0]}
                                     type="date"
                                     onChange={handleChange}
-                                    value={items?.startDate}
-                                    name='startDate'
+                                    value={items?.startDate ? items.startDate.split("T")[0] : ""}
+                                    name="startDate"
                                     placeholder="Enter Start Date Of The Event"
-                                    className=" w-full bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg 
-                            focus:ring-blue-500 focus:border-blue-500 py-3 px-4"
+                                    className="w-full bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg 
+                                        focus:ring-blue-500 focus:border-blue-500 py-3 px-4"
                                 />
+
                             </div>
                             <div >
                                 <label className="font-medium text-base block mb-2">End Date</label>
                                 <input
                                     type="date"
                                     onChange={handleChange}
-                                    value={items?.endDate}
+                                    value={items?.endDate ? items.endDate.split("T")[0] : ""}
                                     name='endDate'
                                     placeholder="Enter End Date Of The Event"
                                     className=" w-full bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg 
                             focus:ring-blue-500 focus:border-blue-500 py-3 px-4"
                                 />
                             </div>
-                             <div>
+                            <div>
                                 <label className="font-medium text-base block mb-2">Link Text</label>
                                 <input
                                     type="text"

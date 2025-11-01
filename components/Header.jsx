@@ -62,7 +62,8 @@ function Header() {
              <Link
                   // title="Patient Portal"
                   href="/"
-                  className=" text-center border border-green-600 text-green-600  rounded-lg font-semibold hover:bg-green-50 transition inline-block text-[15px] px-5 py-2"
+                  className="button-white  text-center  text-black  rounded-lg font-semibold 
+              hover:bg-green-50 transition inline-block text-[15px] px-5 py-2"
                   // onClick={() => setIsMobileMenuOpen(false)}
                   
                 >
@@ -120,7 +121,7 @@ function Header() {
                 <Link
                   // title="Patient Portal"
                   href="/"
-                  className=" text-center w-full border border-green-600 text-green-600  rounded-lg font-semibold hover:bg-green-50 transition inline-block text-[14px] px-4 py-2"
+                  className=" text-center w-full border border-green-600 text-green-600  rounded-lg font-semibold  w-full hover:bg-green-50 transition inline-block text-[14px] px-4 py-2"
                   // onClick={() => setIsMobileMenuOpen(false)}
                   
                 >

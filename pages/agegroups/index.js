@@ -3,6 +3,7 @@ import BookingTab from '@/components/BookingTab';
 import Layout from '@/components/Layout';
 import ServiceCard from '@/components/ServiceCard';
 import React from 'react'
+import Head from "next/head";
 // import Filter from './Filter';
 
 function index() {
@@ -32,6 +33,16 @@ function index() {
     },
   ]
   return (
+    <>
+     <Head>
+        <title>Age-Based Wellness Programs | Blue Halo Health</title>
+        <meta name="description"
+          content="Discover Blue Halo Health’s holistic wellness programs for every age group — from children to seniors — tailored to your health needs."
+        />
+        <meta name="keywords"
+          content="age-based health, child wellness, adult wellness, senior wellness, Blue Halo Health programs, holistic health"
+        />
+      </Head>
     <Layout>
       <div className='bg-[#F7F4F0]'>
         <AgeBanner title={"0-6 (Early Years)"} />
@@ -46,6 +57,7 @@ function index() {
         </div>
       </div>
     </Layout>
+    </>
   )
 }
 

@@ -33,11 +33,11 @@ function FeaturedServices() {
     return (
         <>
             {featured && featured.length ? <div className='bg-[#F7F4F0] '>
-                <div className="mx-auto container sm:container md:container lg:container xl:max-w-[1230px] mt-18 md:mt-2 mb-6 md:mb-6 px-4 text-center">
+                <div className="mx-auto container sm:container md:container lg:container xl:max-w-[1230px] mt-[18] md:mt-2 mb-6 md:mb-6 px-4 text-center">
 
                     <section className="overflow-hidden w-full relative  flex items-center justify-center ">
                         {/* mt-24 remove */}
-                        <div className="bg-green-dark  relative text-white w-full flex items-center justify-center gap-6 md:gap-12 
+                        <div className="bg-green-dark relative text-white w-full flex items-center justify-center gap-6 md:gap-12 
                       rounded-2xl overflow-hidden">
                             <div className='flex items-center w-full '>
                                 <div className="w-full z-[1] text-left  p-[30px] md:p-[30px]  xl:p-[50px]  " >

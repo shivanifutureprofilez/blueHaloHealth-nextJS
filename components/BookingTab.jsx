@@ -41,8 +41,8 @@ function BookingTab() {
                                     <IoMailOpenOutline size={24} /> hello@blueHaloHealth.com
                                 </Link>
                             </div>
-                            <div className="flex mt-4 flex-wrap items-center justify-center gap-x-6 gap-y-2 bg-[#0000001A] rounded-lg py-3 px-3 mx-auto max-w-[600px]">
-                                <p className="rounded-lg font-semibold md:font-bold text-medium p-1">15 MIN Consultation On Us.</p>
+                            <div className="flex mt-4 flex-wrap items-center justify-center gap-x-6 gap-y-2  rounded-lg py-3 px-3 mx-auto max-w-[600px]">
+                                <p className="uppercase tagline rounded-lg font-bold text-2xl  p-3 text-center">15 MIN Consultation On Us.</p>
                             </div>
 
                             <div className='flex justify-center items-center p-2 md:p-4'>

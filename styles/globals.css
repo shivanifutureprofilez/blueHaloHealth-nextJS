@@ -307,3 +307,9 @@ body {
     font-size: 14px;
   }
 }
+.tagline { 
+  background: linear-gradient(to right, white, green);
+  -webkit-background-clip: text;
+  background-clip: text;                color: transparent;
+
+}
