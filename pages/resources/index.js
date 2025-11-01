@@ -10,6 +10,7 @@ import { FaDownload } from "react-icons/fa";
 import { RiParentLine } from "react-icons/ri";
 import { FaUserDoctor } from "react-icons/fa6";
 import { FaHandHoldingHeart } from "react-icons/fa";
+import Head from 'next/head'
 
 const features = [
   {
