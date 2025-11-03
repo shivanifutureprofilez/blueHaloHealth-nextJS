@@ -65,14 +65,14 @@ const [ageGroup, setAgeGroup] = useState("");
           <div className="lg:flex justify-between items-center flex-wrap ">
             <div className="w-full  py-3 ">
               <div className="flex  flex-wrap items-center   gap-2">
-                <button
+                {/* <button
                   className={`w-full sm:w-auto button-white   border cursor-pointer ${ageGroup === "" ? 'bg-[#009C4A] border-[#009C4A] text-white transition-[1s]' : ''}`}
                   onClick={() => {
                     updateAgeGroup("");
                   }}
                 >
                   <span className="pl-2 pr-2">All Services</span>
-                </button>
+                </button> */}
                 {totalAgeGroups && totalAgeGroups?.map((item, index)=>(
                 <button
                   key={index}
@@ -108,7 +108,7 @@ const [ageGroup, setAgeGroup] = useState("");
           {serviceList && serviceList.length ? (
             <>
               <div className="  mx-auto">
-                <div className="grid grid-cols-1 md:grid-cols-2  gap-6 md:mt-4 md:mb-8">
+                <div className="grid grid-cols-1 md:grid-cols-3  gap-6 md:mt-4 md:mb-8">
                   {serviceList && serviceList?.map((item, index) => (
                     <ServiceCardSmall key={item._id || index} item={item} idx={index} isAdmin={true} fetchServices={fetchServices} />
                   ))}

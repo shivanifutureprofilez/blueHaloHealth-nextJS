@@ -71,14 +71,14 @@ export default function Index() {
           <>
           </>
         ) : <div className="flex justify-center items-center flex-wrap gap-2">
-          <button
+          {/* <button
             className={`button-white  !rounded-2xl md:w-[200px] border cursor-pointer ${ageGroup === "" ? 'bg-[#009C4A] border-[#009C4A] text-white transition-[1s]' : ''}`}
             onClick={() => {
               updateAgeGroup("");
             }}
           >
             <span className="pl-2 pr-2">All Services</span>
-          </button>
+          </button> */}
           {totalAgeGroups && totalAgeGroups?.map((item, index) => (
             <button
               key={index}

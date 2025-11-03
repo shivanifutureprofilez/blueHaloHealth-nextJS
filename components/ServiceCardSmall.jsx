@@ -45,7 +45,7 @@ function ServiceCardSmall({ item, idx, isAdmin = false, fetchServices }) {
                flex items-center justify-center"
           title="Edit service"
         >
-          <FaEdit size={14} />
+          <FaEdit size={18} />
         </Link>
       )}
       
@@ -57,52 +57,40 @@ function ServiceCardSmall({ item, idx, isAdmin = false, fetchServices }) {
           className="absolute top-3 right-3 bg-red-600 hover:bg-red-600 text-white p-2 rounded-full shadow-md transition-colors duration-200 z-2 cursor-pointer"
           title="Delete service"
         >
-          <FaTrash size={14} />
+          <FaTrash size={18} />
         </button>
       )}
-    <div className="flex p-4 ">
-      <div className=" rounded-lg overflow-hidden  relative">
+    <div className="w-full h-70 rounded-lg overflow-hidden  relative">
         <Link href={`/service/detail/${item?._id}`}>
           <img
             src={item?.bannerImg}
             alt={item?.name}
-            className="object-cover rounded-[25px] h-full w-[580px]"
+            className="object-cover w-full h-full"
           />
         </Link>
       </div>
-        
-      <div className="text-left ps-4">
+
+      <div className="p-6 ">
         <h2 className="font-bold text-xl text-black mb-2 line-clamp-1">
           {item?.name}
         </h2>
         <p className="mb-4 text-[15px] font-medium line-clamp-3 text-gray-600">
           {item?.description}
         </p>
-        <div className="flex gap-2">
-
-
-        { !isAdmin &&   <Link href={`/service/detail/${item?._id}`} className="text-green-dark flex gap-2">
-           <LuMoveUpRight className=" p-1 rounded-full text-green-dark text-2xl bg-[#E6F4EA]"/>   Learn More
-        </Link>}
-      
-        </div> 
-
-        {isAdmin && (
+       {isAdmin && (
         <button
           onClick={markAsFeatured}
           className={`
             ${item?.featured && isAdmin  ? "bg-red-900 hover:bg-red-900" : "bg-green-500 hover:bg-green-500"} 
             
-            text-white px-2 py-1 w-full mt-2  rounded-full shadow-md transition-colors duration-200 z-10 cursor-pointer
-               flex items-center justify-center text-sm`}
+            text-white px-2 py-2 mt-2  rounded-full shadow-md transition-colors duration-200 z-10 cursor-pointer
+               flex items-center justify-center text-sm md:w-[200px]`}
           title="Edit service"
         >
          {item?.featured ? "Remove From Featured" :" Mark As Featured"}
         </button>
       )}
-
       </div>
-    </div>
     </div>
   );
 }
