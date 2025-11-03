@@ -10,7 +10,7 @@ function HeroBanner() {
   const slides = [
     "/swiperhero.png",
     "/behaviorTherapy.jpg",
-    //    "/swiperhero.png"
+     "/heroBanner3.jpg"
   ]
   return (
     <div className="relative ">
