@@ -68,6 +68,15 @@ export default function Sidebar({ toggle, handleLogout }) {
               Events
             </Link>
           </li>
+          <li>
+            <Link
+              className={`hover:opacity-[0.7] hover:text-white focus:!text-white bg-dark text-gray-200 mb-2 py-[13px] px-[13px] ${pathname === "/admin/service/list" ? "bg-theme" : ""} border border-gray-700 rounded-2xl  flex items-center`}
+              href={"/admin/resource"}
+            >
+              <MdOutlineSpaceDashboard className="me-2" size={"1.4rem"} />{" "}
+              Resources
+            </Link>
+          </li>
 
           
 

@@ -2,11 +2,11 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 
-export default function SectionBanner({ title = "Shop" }) {
+export default function SectionBanner({ title = "Blue Halo Health" , img = "/sectionBanner.png"}) {
   return (
     <section className="relative w-full h-[200px] md:h-[280px] lg:h-[300px] flex items-center justify-center overflow-hidden bg-[#F7F4F0]">
       <Image
-        src="/sectionBanner.png"
+        src={img || "/sectionBanner.png"}
         alt={`${title} banner`}
         fill
         className="object-cover opacity-90 w-full"

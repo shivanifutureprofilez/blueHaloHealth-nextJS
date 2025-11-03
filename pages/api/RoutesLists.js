@@ -37,6 +37,9 @@ class RoutesLists extends Component {
     async getEvents(){
         return Api.get('/event/list');
     }
+    async getResources(){
+        return Api.get('/resource/list');
+    }
 
     render() {
         return (
