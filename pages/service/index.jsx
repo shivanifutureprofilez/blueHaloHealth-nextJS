@@ -123,9 +123,9 @@ export default function Index() {
             <Loading />
           ) : serviceList && serviceList.length ? (
             <>
-              <div className="grid grid-cols-1  lg:grid-cols-2 gap-5 py-[15px] md:py-[30px] ">
+              <div className="grid grid-cols-1  lg:grid-cols-3 gap-5 py-[15px] md:py-[30px] ">
                 {serviceList.map((item, index) => (
-                  <ServiceCardSmall key={item?._id || index} item={item} ageGroup={ageGroup} idx={index} />
+                  <ServiceCard key={item?._id || index} item={item} ageGroup={ageGroup} idx={index} />
                 ))}
               </div>
             </>
