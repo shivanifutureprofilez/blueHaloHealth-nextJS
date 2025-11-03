@@ -35,7 +35,7 @@ const [ageGroup, setAgeGroup] = useState("");
   
   const [loading, setLoading] = useState(true)
   const [serviceList, setServiceList] = useState([]);
-  const fetchServices = async () => {
+  const fetchServices = async (ageGroup) => {
     setLoading(true)
     const lists = new RoutesLists();
     const data = lists.getServices(ageGroup);
@@ -54,9 +54,21 @@ const [ageGroup, setAgeGroup] = useState("");
       });
   };
 
-  useEffect(() => {
-    fetchServices();
-  }, [ageGroup]);
+    useEffect(() => {
+      if (totalAgeGroups && totalAgeGroups.length > 0) {
+        const firstGroupId = totalAgeGroups[0]._id;
+        setAgeGroup(firstGroupId);
+        fetchServices(firstGroupId);
+      }
+    }, [totalAgeGroups]);
+  
+    useEffect(() => {
+        fetchServices(ageGroup);
+    }, [ageGroup]);
+
+  // useEffect(() => {
+  //   fetchServices();
+  // }, [ageGroup]);
 
   const Filter = () => {
     return (

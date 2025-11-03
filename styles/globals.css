@@ -314,3 +314,10 @@ body {
   background-clip: text;                color: transparent;
 
 }
+
+.tagline2 { 
+  background: linear-gradient(to right, white, black);
+  -webkit-background-clip: text;
+  background-clip: text;                color: transparent;
+
+}

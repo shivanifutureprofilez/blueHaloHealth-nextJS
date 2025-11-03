@@ -16,7 +16,7 @@ export default function SectionBanner({ title = "Shop" }) {
       <div className="absolute inset-0 bg-[#F7F4F0]/60 mix-blend-multiply"></div>
 
       <div className="relative text-center z-10 px-4">
-        <h1 className="text-[#00A859] font-bold text-4xl md:text-5xl lg:text-6xl tracking-tight mb-3">
+        <h1 className="text-[#00A859] font-bold text-3xl md:text-4xl lg:text-5xl tracking-tight mb-3">
           {title}
         </h1>
 

@@ -66,7 +66,7 @@ function ServiceCard({ item, idx, isAdmin = false, fetchServices }) {
           {item?.description}
         </p>
         <Link href={`/service/detail/${item?._id}`}>
-        <button className="button md:w-[200px] cursor-pointer">Learn More</button>
+        <button className="button md:w-[200px] cursor-pointer">Read More</button>
         </Link>
       </div>
     </div>

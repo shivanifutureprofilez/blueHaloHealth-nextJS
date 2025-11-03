@@ -61,7 +61,7 @@ function FeaturedServices() {
                                         </Link>
                                     </div>
                                 </div>
-                                <div className='!h-full max-w-[50%]'>
+                                <div className='!h-full max-w-[60%]'>
                                     <img className='object-cover !h-full hidden lg:block' src='/featured.png' width={1655} height={1450} />
                                 </div>
                             </div>

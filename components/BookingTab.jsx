@@ -24,7 +24,7 @@ function BookingTab() {
                         <div className='w-full h-full opacity-[0.5] absolute top-0 left-0  bg-gradient-to-b from-black via-emerald-600 to-green-600'></div>
 
                         <div className="w-full z-[1]" >
-                            <Heading className="!text-white heading text-center md:text-left poppins  tracking-tighter leading-tight font-bold text-3xl md:text-5xl md:mb-3" heading1={"Ready To Get Started ?"} />
+                            <Heading className="!text-white heading text-center md:text-left poppins  tracking-tighter leading-tight font-bold text-3xl md:text-5xl md:mt-1 md:mb-3" heading1={"Ready To Get Started ?"} />
                             <p className="text-center text-[16px] text-white p-2 md:p-4 max-w-[600px] mx-auto">Take the first step towards personalized therapy and support. Our team is here to help you navigate your journey</p>
                             <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 bg-[#0000001A] rounded-lg py-3 px-3 mx-auto max-w-[600px]">
                                 <Link
@@ -41,12 +41,12 @@ function BookingTab() {
                                     <IoMailOpenOutline size={24} /> hello@blueHaloHealth.com
                                 </Link>
                             </div>
-                            <div className="flex mt-4 flex-wrap items-center justify-center gap-x-6 gap-y-2  rounded-lg py-3 px-3 mx-auto max-w-[600px]">
+                            <div className="flex mt-4 flex-wrap bg-[#0000001A] items-center justify-center gap-x-6 gap-y-2  rounded-lg py-3 md:py-0 px-3 mx-auto max-w-[600px]">
                                 <p className="uppercase tagline rounded-lg font-bold text-2xl  p-3 text-center">15 MIN Consultation On Us.</p>
                             </div>
 
-                            <div className='flex justify-center items-center p-2 md:p-4'>
-                                <Button title={"Book Free Consultation"} className={`button-transparent mt-4 !border-white !text-white`} />
+                            <div className='flex justify-center items-center p-2  md:p-4'>
+                                <Button title={"Book Free Consultation"} className={`button-transparent  !border-white !text-white`} />
                             </div>
                         </div>
                     </div>

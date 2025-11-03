@@ -46,7 +46,7 @@ function HeroBanner() {
           </SwiperSlide>
         ))}
       </Swiper>
-              <div className='absolute left-[0] right-[0] bottom-[50px] w-full max-w-[1320px] m-auto  px-8 md:px-[15px]  z-10'>
+              <div className='absolute left-[0] right-[0] bottom-[50px] md:bottom-[200px] w-full max-w-[1320px] m-auto  px-8 md:px-[15px]  z-10'>
                 <div className='leading-snug max-w-[1000px] mx-auto'>
                   <h2 className={`heading text-center  pt-12 md:pt-0 poppins text-white tracking-tighter leading-tight font-bold text-4xl md:text-5xl lg:text-5xl mb-3`} >Empowering Families Through <span className='text-white'>Expert Therapy </span>  & Support</h2>
                   <p className={` text-white text-center   text-[15px]`}>Individualized programs for children, teens, and adults with developmental or behavioral challenges.</p>
