@@ -3,7 +3,7 @@ import React from 'react';
 function ResourceCard({ label = 'Resource', title, date, tags = [] }) {
   return (
     <div 
-      className="bg-white rounded-[20px] p-4  cursor-pointer max-h-[150px] "
+      className="bg-white rounded-[20px] p-4  cursor-pointer h-full  "
     >
       <div className="flex items-start justify-between">
         <span className="text-[#009C4A] font-medium text-sm">{label}</span>
