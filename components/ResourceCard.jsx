@@ -1,5 +1,6 @@
 import React from 'react';
 import { IoDownloadOutline } from 'react-icons/io5';
+import { MdFileDownload } from 'react-icons/md';
 
 function ResourceCard({ label = 'Resource', link, title, date, tags = [] }) {
   return (
@@ -26,7 +27,8 @@ function ResourceCard({ label = 'Resource', link, title, date, tags = [] }) {
         download
         className="flex items-center gap-2 me-3 rounded-full bg-green-100 text-black px-4 py-2 font-medium capitalize shadow-sm  hover:bg-green-200 hover:shadow-md "
       >
-        <IoDownloadOutline className="text-lg" />
+        {/* <IoDownloadOutline className="text-lg" /> */}
+        <MdFileDownload className="text-lg" />
         <span>Download</span>
       </a>
       </div>

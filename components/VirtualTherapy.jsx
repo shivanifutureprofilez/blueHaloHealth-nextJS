@@ -53,7 +53,7 @@ function VirtualTherapy() {
               <div className="flex  justify-center absolute top-[-30px] left-4 items-center w-16 h-16 rounded-full bg-green-dark mb-4">
                 {feature.icon}
               </div>
-              <h3 className="font-bold  text-xl mb-2">{feature.title}</h3>
+              <h3 className="font-bold  text-xl mb-2 mt-4 md:mt-2">{feature.title}</h3>
               <p className="text-gray-600  font-medium text-[15px]">{feature.description}</p>
             </div>
           ))}

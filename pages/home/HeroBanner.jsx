@@ -42,7 +42,7 @@ function HeroBanner() {
               <img
                 src={slide}
                 alt="Slide"
-                className=" w-full h-[690px] object-cover"
+                className=" w-full h-[690px] md:h-[750px] object-cover"
               />
               <div className="absolute inset-0 bg-black/40"></div>
             </div>
