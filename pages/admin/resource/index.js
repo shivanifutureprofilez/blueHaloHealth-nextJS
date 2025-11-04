@@ -86,7 +86,7 @@ function index() {
                                         <AddResource fetchData={fetchData} item={item} isEdit={true} />
                                     </div>
                                     <div
-                                        className="bg-white rounded-[20px] p-4 h-full cursor-pointer max-h-[150px] "
+                                        className="bg-white rounded-[20px] p-4 h-full  max-h-[150px] "
                                     >
                                         <div className="flex items-start justify-between">
                                             <span className="text-[#009C4A] font-medium text-sm">Resource</span>
