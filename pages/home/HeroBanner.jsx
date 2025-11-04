@@ -63,7 +63,7 @@ function HeroBanner() {
                   <button className='button bg-[#009C4A] cursor-pointer w-full md:w-[230px]'>Book Free Consultation</button>
                   <Link
                     href="/"
-                    className="button-white w-full md:w-[230px] text-center  text-black px-3 py-3 rounded-lg font-semibold  hover:bg-green-50 transition inline-block"
+                    className="bg-white transition-[1s] w-full md:w-[230px] text-center  text-black px-3 py-3 rounded-lg font-semibold  hover:bg-green-50  inline-block"
                   >
                     Patient Portal
                   </Link>

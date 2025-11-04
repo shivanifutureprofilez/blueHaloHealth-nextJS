@@ -62,7 +62,7 @@ function Header() {
              <Link
                   // title="Patient Portal"
                   href="/"
-                  className="button-white  text-center  text-black  rounded-lg font-semibold 
+                  className="bg-white border !border-[#009C4A]  text-center  text-black  rounded-lg font-semibold 
               hover:bg-green-50 transition inline-block text-[15px] px-5 py-2"
                   // onClick={() => setIsMobileMenuOpen(false)}
                   

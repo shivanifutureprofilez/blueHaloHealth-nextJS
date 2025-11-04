@@ -29,6 +29,31 @@ function AddResource({ fetchData, isEdit, item }) {
         const value = e.target.value;
         setItems(values => ({ ...values, [name]: value }));
     }
+
+
+
+    const [tag, setTags] = useState([]);
+    const changeTags = (value) => {
+        let tmp;
+
+        if (tag.includes(value)) {
+            // Remove the value
+            tmp = tag.filter((t) => t !== value);
+        } else {
+            // Add the value
+            tmp = [...tag, value];
+        }
+
+        setTags(tmp); // update tag state
+        setItems({ ...items, tags: tmp }); // update items state
+    };
+    console.log("items",items);
+
+
+
+
+
+
     const [loading, setLoading] = useState(false);
 
     const handleSubmit = (e) => {
@@ -106,8 +131,8 @@ function AddResource({ fetchData, isEdit, item }) {
             <div className=" w-full  flex flex-wrap md:flex-nowrap ">
                 <div className="w-full relative ">
                     <h5 className="text-2xl font-medium text-gray-800 mt-2">{isEdit ? "Edit " : "Add Age Group"}</h5>
-                    <form className="mt-6" onSubmit={handleSubmit}>
-                        <div className='grid grid-cols-2 gap-4 mb-4 mt-3'>
+                    <form className="mt-6" onSubmit={isEdit ? handleEdit : handleSubmit}>
+                        <div className='grid grid-cols-1 gap-4 mb-4 mt-3'>
                             <div >
                                 <label className="font-medium text-base block mb-2">Title</label>
                                 <input
@@ -120,18 +145,7 @@ function AddResource({ fetchData, isEdit, item }) {
                             focus:ring-blue-500 focus:border-blue-500 py-3 px-4"
                                 />
                             </div>
-                            <div >
-                                <label className="font-medium text-base block mb-2">Resource Tags</label>
-                                <input
-                                    type="text"
-                                    onChange={handleChange}
-                                    value={items?.tags}
-                                    name='tags'
-                                    // placeholder="Enter Resource Title"
-                                    className=" w-full bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg 
-                            focus:ring-blue-500 focus:border-blue-500 py-3 px-4"
-                                />
-                            </div>
+                            
                             <div >
                                 <label className="font-medium text-base block mb-2">Publish Date</label>
                                 <input
@@ -159,15 +173,22 @@ function AddResource({ fetchData, isEdit, item }) {
                                 />
                             </div>
                         </div>
+                        <div >
+                            <label className="font-medium mt-2 text-base block mb-2">Resource Tags</label>
+
+                            <div>
+                                <button type="button" onClick={()=>changeTags("parent")} className={`${tag.includes("parent") ? 'opacity-[0.9] bg-green-600 text-white' : 'bg-gray-100'} me-3  text-black rounded-[30px] px-3 py-2 capitalize`}>Parent</button>
+                                <button type="button" onClick={()=>changeTags("physician")} className={`${tag.includes("physician") ? 'opacity-[0.9] bg-green-600 text-white' : 'bg-gray-100'} me-3   text-black rounded-[30px] px-3 py-2 capitalize`}>Physician</button>
+                                <button type="button" onClick={()=>changeTags("blueHaloHealth")} className={`${tag.includes("blueHaloHealth") ? 'opacity-[0.9] bg-green-600 text-white' : 'bg-gray-100'} me-3 b text-black rounded-[30px] px-3 py-2 capitalize`}>BlueHaloHealth</button>
+                            </div>
+                        </div>
+                        <button 
+                            type="submit"
+                            className="button w-full  mt-6  md:w-32  py-3"
+                        >
+                            {loading ? "Loading..." : "Submit"}
+                        </button>
                     </form>
-                    <button
-                        onClick={isEdit ? handleEdit : handleSubmit}
-                        type="submit"
-                        disabled={loading}
-                        className="button w-full  mt-6  md:w-32  py-3"
-                    >
-                        {loading ? "Loading..." : "Submit"}
-                    </button>
                 </div>
             </div>
             <div>

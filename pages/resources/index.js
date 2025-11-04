@@ -81,45 +81,47 @@ import RoutesLists from '../api/RoutesLists'
 // ]
 
 function index() {
-  const [cats, setCats] = useState('parent');
-const [loading, setLoading] = useState(false);
-const [resources, setResources] = useState("");
-  const changeAudience = (audience) => {
-    if (cats === audience) {
-      setCats(null);
-    } else {
-      setCats(audience);
-    }
-  };
+  const [cats, setCats] = useState("parent");
+  const [loading, setLoading] = useState(false);
+  const [resources, setResources] = useState([]);
+  const [filtred, setFiltred] = useState([]);
+  
+  useEffect(() => {
+  if (!resources || resources.length === 0) return;
+  console.log("cats:", cats);
+  const catValue = String(cats);
+  const filtered = resources.filter(item =>
+    Array.isArray(item.tags) && item.tags.includes(catValue)
+  );
+  setFiltred(filtered);
+}, [cats, resources]);
 
-  console.log("resources" ,resources)
-  const filtered = resources
-    ? resources?.filter((f) => f.tags && f.tags.includes(cats))
-    : resources
 
-const fetchData = async () => {
-  try {
-    setLoading(true);
-    const lists = new RoutesLists();
-    const data = lists.getResources();
-    data.then((res) => {
-      setResources(res?.data?.resourceList || []);
-      setLoading(false)
-    }).catch((err) => {
-      setResources([]);
-      console.log("error : ", err);
+  console.log("filtred",filtred)
+  const fetchData = async () => {
+    try {
+      setLoading(true);
+      const lists = new RoutesLists();
+      const data = lists.getResources();
+      data.then((res) => {
+        setResources(res?.data?.resourceList || []);
+        // setFiltred(res?.data?.resourceList || []);
+        setLoading(false)
+      }).catch((err) => {
+        setResources([]);
+        console.log("error : ", err);
+        setLoading(false);
+      })
+    } catch (error) {
       setLoading(false);
-    })
-  } catch (error) {
-    setLoading(false);
-    setResources([]);
-    console.log("error :", error);
+      setResources([]);
+      console.log("error :", error);
+    }
   }
-}
 
-useEffect(() => {
-  fetchData();
-}, []);
+  useEffect(() => {
+    fetchData();
+  }, []);
 
   return (
     <>
@@ -145,7 +147,8 @@ useEffect(() => {
                 <h3 className="text-2xl font-bold mb-4">I Am</h3>
                 <div className="space-y-4">
                   <button
-                    onClick={() => changeAudience('parent')}
+                    // onClick={() => changeAudience('parent')}
+                    onClick={() => setCats("parent")}
                     className={`w-full flex items-center gap-3 p-3 rounded-lg border text-medium ${cats === 'parent' ? 'border-emerald-400 bg-emerald-50' : 'border-[#00000033] bg-transparent'} hover:shadow-sm`}
                   >
                     <span className="flex items-center justify-center  bg-emerald-50 text-green-dark rounded-full"><RiParentLine size={20} /></span>
@@ -153,7 +156,8 @@ useEffect(() => {
                   </button>
 
                   <button
-                    onClick={() => changeAudience('physician')}
+                    // onClick={() => setCats('physician')}
+                    onClick={() => setCats("physician")}
                     className={`w-full flex items-center gap-3 p-3 rounded-lg border text-medium ${cats === 'physician' ? 'border-emerald-400 bg-emerald-50' : 'border-[#00000033] bg-transparent'} hover:shadow-sm`}
                   >
                     <span className="flex items-center justify-center  bg-emerald-50 text-green-dark rounded-full"><FaUserDoctor size={20} /></span>
@@ -161,8 +165,9 @@ useEffect(() => {
                   </button>
 
                   <button
-                    onClick={() => changeAudience('care')}
-                    className={`w-full flex items-center gap-3 p-3 rounded-lg border text-medium ${cats === 'care' ? 'border-emerald-400 bg-emerald-50' : 'border-[#00000033] bg-transparent'} hover:shadow-sm`}
+                    // onClick={() => setCats('care')}
+                    onClick={() => setCats("blueHaloHealth")}
+                    className={`w-full flex items-center gap-3 p-3 rounded-lg border text-medium ${cats === 'blueHaloHealth' ? 'border-emerald-400 bg-emerald-50' : 'border-[#00000033] bg-transparent'} hover:shadow-sm`}
                   >
                     <span className="flex items-center justify-center  bg-emerald-50 text-green-dark rounded-full"><FaHandHoldingHeart size={20} /></span>
                     <span className="text-gray-700">Care with BlueHaloHealth</span>
@@ -172,9 +177,9 @@ useEffect(() => {
 
 
               <div className="md:col-span-2 grid grid-cols-1 sm:grid-cols-2 gap-5">
-                {resources && resources?.map((item) => (
+                {filtred && filtred?.map((item) => (
                   <a key={item._id} href={item.link} target='_blank' download >
-                    <ResourceCard  title={item?.title} date={item?.date.split('T')[0]} tags={item?.tags} />
+                    <ResourceCard title={item?.title} date={item?.date.split('T')[0]} tags={item?.tags} />
                   </a>
                 ))}
               </div>

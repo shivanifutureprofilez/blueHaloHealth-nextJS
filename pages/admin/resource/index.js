@@ -71,7 +71,7 @@ function index() {
             {loading ? <Loading /> :
                 <>
                     {resources && resources.length > 0 ? <>
-                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4  py-[15px] md:py-[30px] ">
+                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-4  py-[15px] md:py-[30px] ">
                             {resources?.map((item, index) => (
                                 <div
                                     key={index}
@@ -88,12 +88,12 @@ function index() {
                                     <div
                                         className="bg-white rounded-[20px] p-4 h-full cursor-pointer max-h-[150px] "
                                     >
-                                        <div className="flex items-starr justify-between">
+                                        <div className="flex items-start justify-between">
                                             <span className="text-[#009C4A] font-medium text-sm">Resource</span>
                                             {item?.tags && item?.tags.length > 0 && (
                                                 <span className="text-xs text-gray-500 capitalize ">
-                                                    {/* {item?.tags.join(', ')} */}
-                                                    {item?.tags}
+                                                    {item?.tags.join(', ')}
+                                                    {/* {item?.tags} */}
                                                     </span>
                                             )}
                                         </div>

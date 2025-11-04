@@ -9,8 +9,8 @@ function ResourceCard({ label = 'Resource', title, date, tags = [] }) {
         <span className="text-[#009C4A] font-medium text-sm">{label}</span>
         {tags && tags.length > 0 && (
           <span className="text-xs text-gray-500 capitalize ">
-            {/* {tags.join(', ')} */}
-            {tags}
+            {tags.join(', ')}
+            {/* {tags} */}
             </span>
         )}
       </div>
