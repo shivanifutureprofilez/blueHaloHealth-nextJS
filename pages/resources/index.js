@@ -149,7 +149,7 @@ function index() {
                   <button
                     // onClick={() => changeAudience('parent')}
                     onClick={() => setCats("parent")}
-                    className={`w-full flex items-center gap-3 p-3 rounded-lg border text-medium ${cats === 'parent' ? 'border-emerald-400 bg-emerald-50' : 'border-[#00000033] bg-transparent'} hover:shadow-sm`}
+                    className={`w-full flex items-center cursor-pointer gap-3 p-3 rounded-lg border text-medium ${cats === 'parent' ? 'border-emerald-400 bg-emerald-50' : 'border-[#00000033] bg-transparent'} hover:shadow-sm`}
                   >
                     <span className="flex items-center justify-center  bg-emerald-50 text-green-dark rounded-full"><RiParentLine size={20} /></span>
                     <span className="text-gray-700">A parent or Caregiver</span>
@@ -158,7 +158,7 @@ function index() {
                   <button
                     // onClick={() => setCats('physician')}
                     onClick={() => setCats("physician")}
-                    className={`w-full flex items-center gap-3 p-3 rounded-lg border text-medium ${cats === 'physician' ? 'border-emerald-400 bg-emerald-50' : 'border-[#00000033] bg-transparent'} hover:shadow-sm`}
+                    className={`w-full flex items-center gap-3 cursor-pointer p-3 rounded-lg border text-medium ${cats === 'physician' ? 'border-emerald-400 bg-emerald-50' : 'border-[#00000033] bg-transparent'} hover:shadow-sm`}
                   >
                     <span className="flex items-center justify-center  bg-emerald-50 text-green-dark rounded-full"><FaUserDoctor size={20} /></span>
                     <span className="text-gray-700">A Physician</span>
@@ -167,7 +167,7 @@ function index() {
                   <button
                     // onClick={() => setCats('care')}
                     onClick={() => setCats("blueHaloHealth")}
-                    className={`w-full flex items-center gap-3 p-3 rounded-lg border text-medium ${cats === 'blueHaloHealth' ? 'border-emerald-400 bg-emerald-50' : 'border-[#00000033] bg-transparent'} hover:shadow-sm`}
+                    className={`w-full flex items-center cursor-pointer gap-3 p-3 rounded-lg border text-medium ${cats === 'blueHaloHealth' ? 'border-emerald-400 bg-emerald-50' : 'border-[#00000033] bg-transparent'} hover:shadow-sm`}
                   >
                     <span className="flex items-center justify-center  bg-emerald-50 text-green-dark rounded-full"><FaHandHoldingHeart size={20} /></span>
                     <span className="text-gray-700">Care with BlueHaloHealth</span>
@@ -178,9 +178,10 @@ function index() {
 
               <div className="md:col-span-2 grid grid-cols-1 sm:grid-cols-2 gap-5">
                 {filtred && filtred?.map((item) => (
-                  <a key={item._id} href={item.link} target='_blank' download >
-                    <ResourceCard title={item?.title} date={item?.date.split('T')[0]} tags={item?.tags} />
-                  </a>
+                  // <a key={item._id} href={item.link} target='_blank' download >
+                    <ResourceCard title={item?.title} link={item?.link} date={item?.date.split('T')[0]} tags={item?.tags} />
+                  // </a>
+                  
                 ))}
               </div>
             </div>
