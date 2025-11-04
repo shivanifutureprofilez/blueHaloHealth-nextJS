@@ -8,9 +8,13 @@ import Link from 'next/link';
 
 function HeroBanner() {
   const slides = [
+    "/heroBanner2.jpg",
     "/swiperhero.png",
-    "/behaviorTherapy.jpg",
-     "/heroBanner3.jpg"
+    //  "/heroBanner3.jpg",
+      "/heroBanner4.jpg",
+      // "/heroBanner5.jpg",
+      "/heroBanner6.jpg"
+
   ]
   return (
     <div className="relative ">

@@ -24,16 +24,16 @@ function index() {
             const lists = new RoutesLists();
             const data = lists.getResources();
             data.then((res) => {
-                setResources..(res?.data?.eventList || []);
+                setResources(res?.data?.resourceList || []);
                 setLoading(false)
             }).catch((err) => {
-                setEvents([]);
+                setResources([]);
                 console.log("error : ", err);
                 setLoading(false);
             })
         } catch (error) {
             setLoading(false);
-            setEvents([]);
+            setResources([]);
             console.log("error :", error);
         }
     }
@@ -64,38 +64,44 @@ function index() {
     return (
         <AuthLayout>
             <div className="flex items-center justify-between tracking-tight border-b border-[#2a2a2a] pb-4 mb-6 w-full">
-                <h1 className="text-3xl lg:text-4xl font-bold text-white">Events</h1>
+                <h1 className="text-3xl lg:text-4xl font-bold text-white">Resources</h1>
                 <AddResource fetchData={fetchData} />
             </div>
             {loading ? <Loading /> :
                 <>
-                    {events && events.length > 0 ? <>
+                    {resources && resources.length > 0 ? <>
                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4  py-[15px] md:py-[30px] ">
-                            {events?.map((item, index) => (
+                            {resources?.map((item, index) => (
                                 <div
                                     key={index}
                                     className=" relative bg-white rounded-2xl border border-gray-200 shadow flex flex-col p-4 text-start"
                                 >
                                     <button
                                         onClick={() => { deleteevent(item?._id) }}
-                                        className={` absolute top-3 right-3 bg-red-500 hover:bg-red-600 text-white p-2 rounded-full shadow-md transition-colors duration-200 z-2 cursor-pointer`} >
+                                        className={` absolute bottom-3 right-3 bg-red-500 hover:bg-red-600 text-white p-2 rounded-full shadow-md transition-colors duration-200 z-2 cursor-pointer`} >
                                         <FaTrash size={14} />
                                     </button>
-                                    <div className="absolute top-3 right-15 ">
+                                    <div className="absolute bottom-3 right-13 ">
                                         <AddResource fetchData={fetchData} item={item} isEdit={true} />
                                     </div>
-                                    <div className="flex justify-center items-center text-center w-12 h-12 rounded-lg bg-[#E6F4EA] mb-4 p-2">
-                                        {item?.tag === 'Learn More'
-                                            ? <GrWorkshop size={35} className="text-green-600" />
-                                            : <LuCalendarDays size={35} className="text-green-600" />}
+                                    <div
+                                        className="bg-white rounded-[20px] p-4 h-full cursor-pointer max-h-[150px] "
+                                    >
+                                        <div className="flex items-starr justify-between">
+                                            <span className="text-[#009C4A] font-medium text-sm">Resource</span>
+                                            {item?.tags && item?.tags.length > 0 && (
+                                                <span className="text-xs text-gray-500 capitalize ">
+                                                    {/* {item?.tags.join(', ')} */}
+                                                    {item?.tags}
+                                                    </span>
+                                            )}
+                                        </div>
+
+                                        <h2 title={item?.title} className="text-[18px] line-clamp-2 text-start  md:text-[20px] font-bold">{item?.title}</h2>
+                                        {item?.date && (
+                                            <p className="text-start text-[#373737]">{item?.date}</p>
+                                        )}
                                     </div>
-                                    <p className="!text-[#009C4A] font-medium mb-2">{item?.startDate.split('T')[0]}</p>
-                                    <h2 className="font-bold text-lg text-black mb-2">{item?.name}</h2>
-                                    <p className="text-gray-700 mb-4 line-clamp-3">{item?.description}</p>
-                                    {item?.link ? <a href={item?.link} className="text-green-600 font-semibold  justify-cente flex  gap-1 hover:underline">
-                                        {item?.linkText}
-                                        <span className="ml-1">&#8594;</span>
-                                    </a> : ''}
                                 </div>
                             ))}
                         </div>
