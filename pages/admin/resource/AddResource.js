@@ -67,23 +67,21 @@ function AddResource({ fetchData, isEdit, item }) {
     const handleEdit = async (e) => {
         try {
             e.preventDefault();
-            // if (!name || !description || !link || !linkText || !startDate || !endDate) {
-            //     toast.error("All fields are required");
-            //     return false;
-            // }
+           if (!items.title || !items.date || !items.link || !items.tags) {
+                toast.error("All fields are required");
+                return false;
+            }
             setLoading(true);
             const lists = new AdminRoutes();
-            const data = lists.editEvent(item?._id, items);
+            const data = lists.editResource(item?._id, items);
             data.then((res) => {
-                toast.success(res?.data?.message || "Event added successfully!");
-                router.push("/admin/event");
+                toast.success(res?.data?.message || "Resource edited successfully!");
+                router.push("/admin/resource");
                 setItems({
-                    name: "",
-                    description: "",
+                    title:  "",
+                    date: "",
+                    tags: "",
                     link: "",
-                    linkText: "",
-                    startDate: "",
-                    endDate: "",
                 });
                 fetchData && fetchData();
                 setAction("close")

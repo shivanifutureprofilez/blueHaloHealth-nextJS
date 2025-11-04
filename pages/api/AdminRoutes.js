@@ -45,6 +45,12 @@ class AdminRoutes extends Component {
     async addresource(data){
         return Api.post('/resource/add',data);
     }
+    async deleteResources(pid){
+        return Api.get(`/resource/delete/${pid}`);
+    }
+    async editResource(pid, data){
+        return Api.post(`/resource/update/${pid}`,data);
+    } 
     render() {
         return (
             <div>

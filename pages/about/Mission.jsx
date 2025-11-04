@@ -30,6 +30,7 @@ function Mission() {
   return (
     <div className=" py-[20px] md:py-[40px] lg:py-[60px]  ">
       <div className="mx-auto container sm:container md:container lg:container xl:max-w-[1230px]  px-4 text-center">
+        <div className='grid grid-cols-1 md:grid-cols-2'>
         <div className='p-5'>
           <Heading
             className="text-black "
@@ -47,6 +48,7 @@ function Mission() {
             heading2={" Mission"}
             content={"Our mission is to provide comprehensive, evidence-based therapy and assessment services that nurture growth, independence, and well-being across all ages. We are committed to supporting individuals and families through personalized care, collaborative teamwork, and a warm, inclusive environment — helping every client achieve progress that lasts a lifetime."}
           />
+        </div>
         </div>
         <div className='p-5 '>
           <Heading

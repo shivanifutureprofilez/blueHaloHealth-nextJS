@@ -42,10 +42,11 @@ function index() {
         fetchData();
     }, []);
 
-    const deleteevent = async (pid) => {
+    const deleteresource = async (pid) => {
         try {
             const lists = new AdminRoutes();
-            const data = lists.deleteEvents(pid);
+            const data = lists.deleteResources(pid);
+            console.log("pid ",pid);
             data.then((res) => {
                 if (res.data.status) {
                     toast.success(res.data.message);
@@ -77,7 +78,7 @@ function index() {
                                     className=" relative bg-white rounded-2xl border border-gray-200 shadow flex flex-col p-4 text-start"
                                 >
                                     <button
-                                        onClick={() => { deleteevent(item?._id) }}
+                                        onClick={() => { deleteresource(item?._id) }}
                                         className={` absolute bottom-3 right-3 bg-red-500 hover:bg-red-600 text-white p-2 rounded-full shadow-md transition-colors duration-200 z-2 cursor-pointer`} >
                                         <FaTrash size={14} />
                                     </button>
@@ -99,7 +100,7 @@ function index() {
 
                                         <h2 title={item?.title} className="text-[18px] line-clamp-2 text-start  md:text-[20px] font-bold">{item?.title}</h2>
                                         {item?.date && (
-                                            <p className="text-start text-[#373737]">{item?.date}</p>
+                                            <p className="text-start text-[#373737]">{item?.date.split('T')[0]}</p>
                                         )}
                                     </div>
                                 </div>

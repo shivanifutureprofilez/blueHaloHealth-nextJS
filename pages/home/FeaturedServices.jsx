@@ -20,7 +20,7 @@ function FeaturedServices() {
             setFeatured(res?.data?.allServices || []);
             setLoading(false)
         }).catch((err) => {
-            featured([]);
+            setFeatured([]);
             console.log("err", err)
             setLoading(false)
         });
