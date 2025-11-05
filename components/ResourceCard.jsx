@@ -1,12 +1,11 @@
+import Link from 'next/link';
 import React from 'react';
 import { IoDownloadOutline } from 'react-icons/io5';
 import { MdFileDownload } from 'react-icons/md';
 
 function ResourceCard({ label = 'Resource', link, title, date, tags = [] }) {
   return (
-    <div
-      className="bg-white rounded-[20px] p-4   h-full  "
-    >
+    <div className="bg-white rounded-[20px] p-4 h-full ">
       <div className="flex items-start justify-between">
         <span className="text-[#009C4A] font-medium text-sm">{label}</span>
         {tags && tags.length > 0 && (
@@ -21,16 +20,17 @@ function ResourceCard({ label = 'Resource', link, title, date, tags = [] }) {
       {date && (
         <p className="text-start text-[#373737]">{date}</p>
       )}
-      <div className='flex pt-3 '>
-      <a
-        href={link}
-        download
-        className="flex items-center gap-2 me-3 rounded-full bg-green-100 text-black px-4 py-2 font-medium capitalize shadow-sm  hover:bg-green-200 hover:shadow-md "
-      >
-        {/* <IoDownloadOutline className="text-lg" /> */}
-        <MdFileDownload className="text-lg" />
-        <span>Download</span>
-      </a>
+       <div className='flex pt-3 '>
+        <a href={link}  >
+          <button
+            onClick={() => window.open(downloadLink, "_blank")}
+            className="flex items-center gap-2 me-3 rounded-full bg-green-100 text-black px-4 py-2 font-medium capitalize shadow-sm hover:bg-green-200 hover:shadow-md"
+          >
+            <MdFileDownload className="text-lg" />
+            <span>Download</span>
+          </button>
+        </a>
+
       </div>
     </div>
   )
