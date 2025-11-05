@@ -12,6 +12,7 @@ import { FaTrash } from 'react-icons/fa';
 import AdminRoutes from '@/pages/api/AdminRoutes';
 import toast from 'react-hot-toast';
 import AddResource from './AddResource';
+import FormattedDate from '@/components/FormattedDate';
 
 function index() {
 
@@ -100,7 +101,7 @@ function index() {
 
                                         <h2 title={item?.title} className="text-[18px] line-clamp-2 text-start  md:text-[20px] font-bold">{item?.title}</h2>
                                         {item?.date && (
-                                            <p className="text-start text-[#373737]">{item?.date.split('T')[0]}</p>
+                                            <p className="text-start text-[#373737]"><FormattedDate date={item?.date.split('T')[0]}/></p>
                                         )}
                                     </div>
                                 </div>

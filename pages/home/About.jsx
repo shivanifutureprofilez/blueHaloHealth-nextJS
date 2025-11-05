@@ -12,7 +12,7 @@ function About() {
         <div className="grid grid-cols-1 lg:grid-cols-2 items-center gap-4 lg:gap-8">
           {/* Left Image */}
           <Image
-            src="/about.png"
+            src="/about2.png"
             alt="About"
             className="w-full lg:max-w-[580px] object-cover hidden md:block"
             width={400}
@@ -25,17 +25,12 @@ function About() {
                 About <span className="text-[#009C4A]">BlueHaloHealth</span>
               </h2>
               <p className="text-gray-500 font-medium text-[15px] mb-2 lg:mb-4">
-                At BlueHaloHealth, we believe that every family deserves the right
-                support, guidance, and care to thrive at every stage of life. Our
-                mission is to empower children, adolescents, and adults with expert
-                therapy services tailored to their unique needs.
+               At BlueHaloHealth, we believe that every individual and family deserves accessible, expert care—no matter where they are. Our mission is to make high-quality mental health and therapy services available to everyone through secure, virtual platforms that fit seamlessly into modern life.
               </p>
-              <p className="text-gray-500 font-medium text-[15px]">
-                With a team of certified and compassionate therapists, we provide
-                evidence-based interventions that nurture growth, improve communication,
-                and strengthen family bonds. From early developmental milestones to adult
-                challenges, we walk alongside families every step of the way.
-              </p>
+              <p className="text-gray-500 font-medium text-[15px] mb-2 lg:mb-4">
+               Our team of certified, compassionate therapists provides evidence-based virtual therapy designed to support children, adolescents, and adults at every stage of growth. Through personalized digital sessions, we help clients build resilience, improve communication, and strengthen relationships—all from the comfort and privacy of home.
+</p>
+<p className='text-gray-500 font-medium text-[15px]'>From developmental milestones to life’s most complex challenges, BlueHaloHealth delivers the guidance, connection, and care needed to help individuals and families thrive—virtually, together.              </p>
             </div>
 
             <Link

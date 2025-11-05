@@ -6,6 +6,7 @@ import { IoLocationOutline } from "react-icons/io5";
 import { CiPhone } from "react-icons/ci";
 import { IoMailOpenOutline } from "react-icons/io5";
 import Link from 'next/link';
+import CommingSoonBookButton from './CommingSoonBookButton';
 
 function BookingTab() {
     return (
@@ -46,7 +47,9 @@ function BookingTab() {
                             </div>
 
                             <div className='flex justify-center items-center p-2  md:p-4'>
-                                <Button title={"Book Free Consultation"} className={`button-transparent  !border-white !text-white`} />
+                                {/* <Button title={"Book Free Consultation"} className={`button-transparent  !border-white !text-white`} /> */}
+
+                                <CommingSoonBookButton classes={`button-transparent  !border-white !text-white`} content={`Thankyou so much but we are not available right now`}/>
                             </div>
                         </div>
                     </div>

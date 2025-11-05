@@ -2,6 +2,7 @@ import React from 'react'
 import { LuCalendarDays } from "react-icons/lu";
 import { GrWorkshop } from "react-icons/gr";
 import Link from 'next/link';
+import FormattedDate from './FormattedDate';
 
 function EventCard({ item, index }) {
     return <>
@@ -15,7 +16,10 @@ function EventCard({ item, index }) {
                         ? <GrWorkshop size={35} className="text-green-600" />
                         : <LuCalendarDays size={35} className="text-green-600" />}
                 </div>
-                <p className="!text-[#009C4A] font-medium mb-2">{item?.startDate.split('T')[0]} </p>
+                <p className="!text-[#009C4A] font-medium mb-2"> 
+                    <FormattedDate date={item?.startDate.split('T')[0]}/>
+                {/* {item?.startDate.split('T')[0]} */}
+                 </p>
                 <h2 className="font-bold text-lg text-black mb-2">{item?.name}</h2>
                 <p className="text-gray-700 mb-4 line-clamp-3">{item?.description}</p>
                 {item?.link ? <a href={item?.link} className="text-green-600 font-semibold  justify-cente flex  gap-1 hover:underline">

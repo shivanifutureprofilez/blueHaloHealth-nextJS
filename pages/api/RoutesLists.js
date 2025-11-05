@@ -40,7 +40,9 @@ class RoutesLists extends Component {
     async getResources(){
         return Api.get('/resource/list');
     }
-
+    async getWaitList(){
+        return Api.get('/waitlist/list');
+    }
     render() {
         return (
             <div>

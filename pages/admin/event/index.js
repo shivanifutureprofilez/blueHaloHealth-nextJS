@@ -11,6 +11,7 @@ import NoResultFound from '@/components/NoResult';
 import { FaTrash } from 'react-icons/fa';
 import AdminRoutes from '@/pages/api/AdminRoutes';
 import toast from 'react-hot-toast';
+import FormattedDate from '@/components/FormattedDate';
 
 function index() {
 
@@ -88,7 +89,7 @@ function index() {
                                             ? <GrWorkshop size={35} className="text-green-600" />
                                             : <LuCalendarDays size={35} className="text-green-600" />}
                                     </div>
-                                    <p className="!text-[#009C4A] font-medium mb-2">{item?.startDate.split('T')[0]}</p>
+                                    <p className="!text-[#009C4A] font-medium mb-2"><FormattedDate date={item?.startDate.split('T')[0]}/></p>
                                     <h2 className="font-bold text-lg text-black mb-2">{item?.name}</h2>
                                     <p className="text-gray-700 mb-4 line-clamp-3">{item?.description}</p>
                                     {item?.link ? <a href={item?.link} className="text-green-600 font-semibold  justify-cente flex  gap-1 hover:underline">

@@ -2,6 +2,7 @@ import Link from 'next/link';
 import React from 'react';
 import { IoDownloadOutline } from 'react-icons/io5';
 import { MdFileDownload } from 'react-icons/md';
+import FormattedDate from './FormattedDate';
 
 function ResourceCard({ label = 'Resource', link, title, date, tags = [] }) {
   console.log("link ", link);
@@ -17,14 +18,17 @@ function ResourceCard({ label = 'Resource', link, title, date, tags = [] }) {
         )}
       </div>
 
-      <h2 title={title} className="text-[18px] line-clamp-2 text-start  md:text-[20px] font-bold">{title}</h2>
-      {date && (
-        <p className="text-start text-[#373737]">{date}</p>
-      )}
+      <div className='md:min-h-[80px]'>
+            <h2 title={title} className="text-[18px] line-clamp-2 text-start  md:text-[20px] font-bold ">{title}</h2>
+            {date && (
+              <p className="text-start text-[#373737]"><FormattedDate date={date}/></p>
+            )}
+      </div>
+
       <div className="flex pt-3">
         <button
           onClick={() => window.open(link, "_blank")}
-          className="flex items-center gap-2 me-3 rounded-full bg-green-100 text-black px-4 py-2 font-medium capitalize shadow-sm hover:bg-green-200 hover:shadow-md"
+          className="flex items-center gap-2 me-3 rounded-full bg-green-100 text-black px-4 py-2 font-medium capitalize shadow-sm hover:bg-green-200 hover:shadow-md cursor-pointer"
         >
           <MdFileDownload className="text-lg" />
           <span>Download</span>
@@ -35,3 +39,8 @@ function ResourceCard({ label = 'Resource', link, title, date, tags = [] }) {
 }
 
 export default ResourceCard;
+
+
+
+
+

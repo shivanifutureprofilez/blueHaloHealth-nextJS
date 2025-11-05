@@ -5,6 +5,7 @@ import { Autoplay } from 'swiper/modules'
 import "swiper/css";
 import { Swiper, SwiperSlide } from "swiper/react";
 import Link from 'next/link';
+import CommingSoonBookButton from '@/components/CommingSoonBookButton';
 
 function HeroBanner() {
   const slides = [
@@ -60,13 +61,17 @@ function HeroBanner() {
                 </div>
                 <div className="flex justify-center flex-wrap gap-4 mt-6">
 
-                  <button className='button bg-[#009C4A] cursor-pointer w-full md:w-[230px]'>Book Free Consultation</button>
-                  <Link
+                  {/* <button className='button bg-[#009C4A] cursor-pointer w-full md:w-[230px]'>Book Free Consultation</button> */}
+
+                  <CommingSoonBookButton classes={`button bg-[#009C4A] cursor-pointer w-full md:w-[230px]`} content={`Thankyou so much but we are not available right now`}/>
+                  
+                  {/* <Link
                     href="/"
                     className="bg-white transition-[1s] w-full md:w-[230px] text-center  text-black px-3 py-3 rounded-lg font-semibold  hover:bg-green-50  inline-block"
                   >
                     Patient Portal
-                  </Link>
+                  </Link> */}
+                   <CommingSoonBookButton classes={`bg-white transition-[1s] w-full md:w-[230px] text-center  text-black px-3 py-3 rounded-lg font-semibold  hover:bg-green-50  inline-block`} content={`Thankyou so much but we are not available right now`} btnText={`Patient Portal`}/>
                 </div>
               </div>
       {/* </div> */}

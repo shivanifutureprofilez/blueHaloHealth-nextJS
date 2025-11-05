@@ -1,0 +1,120 @@
+import React, { useState } from 'react'
+
+import Link from 'next/link'
+
+import Popup from './Popup';
+import AdminRoutes from '@/pages/api/AdminRoutes';
+import toast from 'react-hot-toast';
+import { useRouter } from 'next/router';
+
+
+export default function CommingSoonBookButton({ classes, content, btnText }) {
+
+    const router = useRouter();
+    const [action, setAction] = useState();
+    const [items, setItems] = useState({
+            email: "",
+        })
+    const handleChange = (e) => {
+        const name = e.target.name;
+        const value = e.target.value;
+        setItems(values => ({ ...values, [name]: value }));
+    }
+    const [loading, setLoading] = useState(false);
+
+    const handleSubmit = (e) => {
+        try {
+            e.preventDefault();
+            if (!items.email) {
+                toast.error("Email is required");
+                return false;
+            }
+            setLoading(true);
+            const lists = new AdminRoutes();
+            const data = lists.addtoWaitlist(items);
+            data.then((res) => {
+                toast.success(res?.data?.message || "Our Team Will Contact You Soon");
+                router.push("/");
+                setItems({
+                    email:"",
+                });
+                setLoading(false);
+                setAction("close")
+            }).catch((err) => {
+                console.error("Error:", err);
+                toast.error("Something went wrong");
+                setLoading(false);
+            });
+        } catch (error) {
+            console.error("Error:", error);
+            toast.error("Something went wrong");
+            setLoading(false);
+        }
+    };
+    return (
+        <Popup size='max-w-[700px] max-h-[900px] h-full' bg="bg-green-50" space={"p-6 md:p-8"} btnclasses={classes || 'button cursor-pointer'} btntext={btnText || "Book Free Consultation"} >
+            {/* <div className="space-y-3 text-black text-medium  p-4 rounded-lg">
+                <p>Hello, thank you for contacting Blue Halo Health.</p>
+                <p>
+                    Bookings are currently unavailable at <strong>Blue Halo Health</strong>.
+                    We’ll reopen this service in a few weeks.
+                </p>
+                <p>
+                    In the meantime, you can reach us through our contact form:
+                    {' '}
+                    <Link
+                        href="https://blue-halo-health-next-js.vercel.app/contact-us"
+                        className="text-sky-600 hover:underline font-medium"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        bluehalohealth.com/contact
+                    </Link>
+                </p>
+            </div> */}
+            <div className="flex flex-col w-full items-center justify-center text-center p-6  rounded-2xl bg-white shadow-md max-w-md mx-auto">
+                <h2 className="text-2xl md:text-3xl font-extrabold  text-green-600 mb-3">Thank You!</h2>
+                <p className="text-gray-700 text-sm md:text-lg leading-relaxed pb-6">
+                    We appreciate your interest in <span className="font-semibold text-green-700">Blue Halo Health</span>.
+                    Bookings are currently unavailable at <strong>Blue Halo Health</strong>.
+                    We’ll reopen this service in a few weeks.</p>
+                <p className='text-sm md:text-lg'>
+                    In the meantime, you can reach us through our contact form:
+                    {' '}
+                    <Link
+                        href="https://blue-halo-health-next-js.vercel.app/contact-us"
+                        className="text-sky-600 hover:underline font-medium"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        bluehalohealth.com/contact
+                    </Link>
+
+                    <form className="mt-6" onSubmit={handleSubmit}>
+
+                        <div >
+                            <label className="font-medium text-base block mb-2">Email</label>
+                            <input
+                                type="email"
+                                onChange={handleChange}
+                                value={items?.email}
+                                name='email'
+                                placeholder="Enter Your Email Id"
+                                className=" w-full bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg 
+                            focus:ring-blue-500 focus:border-blue-500 py-3 px-4"
+                            />
+                        </div>
+                        <button
+                            onClick={handleSubmit}
+                            type="submit"
+                            disabled={loading}
+                            className="button w-full  mt-6  md:w-32  py-3"
+                        >
+                            {loading ? "Loading..." : "Submit"}
+                        </button>
+                    </form>
+                </p>
+            </div>
+        </Popup>
+    )
+}

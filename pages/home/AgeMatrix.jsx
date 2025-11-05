@@ -5,68 +5,9 @@ import RoutesLists from "../api/RoutesLists";
 import { Api } from "../api/Api";
 import Link from "next/link";
 import Loading from "@/components/Loading";
+ 
 
-
-const services = [
-  "Autism & Developmental Screening",
-  "Occupational Therapy",
-  "ABA/Behavior Therapy",
-  "Speech Therapy",
-  "Feeding/Nutrition",
-  "Family Counseling",
-]
-
-// const ageGroups = [
-//   {
-//     title: "0-6 Early Years",
-//     image: '/AgeMatrix1.png', 
-//     services: [
-//       "Autism & Developmental Screening",
-//       "Occupational Therapy",
-//       "ABA/Behavior Therapy",
-//       "Speech Therapy",
-//       "Feeding/Nutrition",
-//       "Family Counseling",
-//     ],
-//   },
-//   {
-//     title: "7-12 School Age",
-//     image: "/AgeMatrix2.png",
-//     services: [
-//       "Psychoeducational testing",
-//       "Speech & OT",
-//       "ADHD evaluation",
-//       "Nutrition support",
-//       "ABA/social skills groups",
-//       "Family counseling",
-//     ],
-//   },
-//   {
-//     title: "13-17 Adolescent",
-//     image: "/AgeMatrix3.png",
-//     services: [
-//       "Mental health & counselling",
-//       "Transition planning",
-//       "Executive function coaching",
-//       "Advanced speech/OT",
-//       "ADHD assessment",
-//       "Dietitian",
-//       "Audiology",
-//     ],
-//   },
-//   {
-//     title: "18+ Adults",
-//     image: "/AgeMatrix4.png",
-//     services: [
-//       "Mental health therapy",
-//       "Adult ADHD/ASD assessment",
-//       "Career & life counselling",
-//       "Occupational rehab",
-//       "Nutrition for Chronic Conditions",
-//       "Audiology",
-//     ],
-//   },
-// ];
+ 
 
 export default function AgeMatrix({ admin }) {
 
@@ -87,12 +28,7 @@ export default function AgeMatrix({ admin }) {
   useEffect(() => {
     fetchGroups();
   }, []);
-  //console.log("ageGroupsLists",ageGroupsLists)
-
-
-
-
-
+   
   return (
 
     <section className="bg-[#E6EBE3] md:bg-[#F7F4F0] py-[30px] md:py-[40px] lg:py-[60px]  ">
@@ -111,7 +47,10 @@ export default function AgeMatrix({ admin }) {
                 {ageGroupsLists && ageGroupsLists?.map((group, idx) => (
                   <div key={idx} className="bg-white border-b border-[#009C4A] rounded-[25px] shadow overflow-hidden flex flex-col items-center">
                     <div className="w-full min-h-[250px] max-h-[250px]  rounded-lg overflow-hidden mb-4 relative">
-                      <Link href={`/agegroups/detail/${group?._id}`} ><img
+                      {/* <Link href={`/agegroups/detail/${group?._id}`} > */}
+                      <Link href={`/service?agegroup=${group?._id}`} >
+                      {/* </Link>                       */}
+                      <img
                         src={group?.image || 'https://thumbs.dreamstime.com/b/elderly-man-medical-insurance-health-plan-older-people-pixel-perfect-editable-stroke-line-design-icon-elderly-man-medical-273635532.jpg'}
                         alt={group.title}
                         className="object-cover bg-gray-200  w-full h-full"
@@ -133,8 +72,6 @@ export default function AgeMatrix({ admin }) {
                 ))}
               </div>
           }
-
-
       </div>
     </section>
   );

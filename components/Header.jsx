@@ -3,12 +3,14 @@ import { FiMenu, FiX } from "react-icons/fi";
 import { useState } from "react";
 import Link from "next/link";
 import Button from "./Button";
+import Popup from "./Popup";
+import CommingSoonBookButton from "./CommingSoonBookButton";
 
 function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const navLinks = [
-    { name: "Home", href: "/" },
+    // { name: "Home", href: "/" },
     { name: "Services", href: "/service" },
     { name: "About", href: "/about" },
     { name: "Resources", href: "/resources" },
@@ -51,15 +53,23 @@ function Header() {
 
           {/* Desktop Button */}
           <div className="hidden gap-4 lg:flex">
-            <Button
+            
+            
+            {/* <Button
               title="Book Free Consultation"
               className="button bg-green-dark text-[15px] px-5 py-2"
-            />
+            /> */}
+              <CommingSoonBookButton />
+
+
+
+
+
             {/* <Button
               title="Patient Portal"
               className="button bg-green-dark text-[15px] px-5 py-2"
             /> */}
-             <Link
+             {/* <Link
                   // title="Patient Portal"
                   href="/"
                   className="bg-white border !border-[#009C4A]  text-center  text-black  rounded-lg font-semibold 
@@ -68,7 +78,11 @@ function Header() {
                   
                 >
                 Patient Portal
-                </Link>
+                </Link> */}
+                <CommingSoonBookButton classes={`bg-white border !border-[#009C4A]  text-center  text-black  rounded-lg font-semibold 
+              hover:bg-green-50 transition inline-block text-[15px] px-5 py-2`} 
+              // content={`Patient Portal`} 
+              btnText={`Patient Portal`}/>
           </div>
 
           {/* Mobile Menu Button */}
@@ -113,12 +127,13 @@ function Header() {
                   </Link>
               </ul>
               <div className="p-4 grid gap-2 justify-left ">
-                <Button
+                {/* <Button
                   title="Book Free Consultation"
                   className="button w-full bg-green-dark text-[14px] px-4 py-2"
                   onClick={() => setIsMobileMenuOpen(false)}
-                />
-                <Link
+                /> */}
+                <CommingSoonBookButton classes={`button w-full bg-green-dark text-[14px] px-4 py-2`}/>
+                {/* <Link
                   // title="Patient Portal"
                   href="/"
                   className=" text-center w-full border border-green-600 text-green-600  rounded-lg font-semibold  w-full hover:bg-green-50 transition inline-block text-[14px] px-4 py-2"
@@ -126,7 +141,10 @@ function Header() {
                   
                 >
                 Patient Portal
-                </Link>
+                </Link> */}
+                <CommingSoonBookButton classes={`text-center w-full border border-green-600 text-green-600  rounded-lg font-semibold  w-full hover:bg-green-50 transition inline-block text-[14px] px-4 py-2`} 
+              // content={`Patient Portal`} 
+              btnText={`Patient Portal`}/>
 
               </div>
             </div>

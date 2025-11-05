@@ -1,36 +1,63 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import Heading from './Heading';
 import Image from 'next/image';
 import ResourceCard from './ResourceCard';
+import RoutesLists from '@/pages/api/RoutesLists';
 
 function Resource() {
-    const resource = [
-        {
-            id: 'start-here',
-            title: 'Utah Support Guide',
-            label: 'Resource',
-            date: 'October 3, 2025',
-            tags: ['parent', 'care'],
-            link: 'https://www.egyankosh.ac.in/bitstream/123456789/92699/1/Unit-18.pdf'
-        },
-        {
-            id: 'tennessee-autism-aba-directory',
-            title: 'Tennessee Autism & ABA Directory Tennessee Autism & ABA DirectoryTennessee Autism & ABA Directory',
-            label: 'Resource',
-            date: 'October 3, 2025',
-            tags: ['parent', 'physician'],
-            link: 'https://www.egyankosh.ac.in/bitstream/123456789/92699/1/Unit-18.pdf',
-        },
-        {
-            id: 'utah-support-guide',
-            title: 'Utah Support Guide',
-            label: 'Resource',
-            date: 'October 3, 2025',
-            tags: ['parent', 'care'],
-            link: 'https://www.egyankosh.ac.in/bitstream/123456789/92699/1/Unit-18.pdf'
-        },
+    // const resource = [
+    //     {
+    //         id: 'start-here',
+    //         title: 'Utah Support Guide',
+    //         label: 'Resource',
+    //         date: 'October 3, 2025',
+    //         tags: ['parent', 'care'],
+    //         link: 'https://www.egyankosh.ac.in/bitstream/123456789/92699/1/Unit-18.pdf'
+    //     },
+    //     {
+    //         id: 'tennessee-autism-aba-directory',
+    //         title: 'Tennessee Autism & ABA Directory Tennessee Autism & ABA DirectoryTennessee Autism & ABA Directory',
+    //         label: 'Resource',
+    //         date: 'October 3, 2025',
+    //         tags: ['parent', 'physician'],
+    //         link: 'https://www.egyankosh.ac.in/bitstream/123456789/92699/1/Unit-18.pdf',
+    //     },
+    //     {
+    //         id: 'utah-support-guide',
+    //         title: 'Utah Support Guide',
+    //         label: 'Resource',
+    //         date: 'October 3, 2025',
+    //         tags: ['parent', 'care'],
+    //         link: 'https://www.egyankosh.ac.in/bitstream/123456789/92699/1/Unit-18.pdf'
+    //     },
 
-    ]
+    // ]
+ const [loading, setLoading] = useState(false);
+  const [resources, setResources] = useState([]);
+      const fetchData = async () => {
+    try {
+      setLoading(true);
+      const lists = new RoutesLists();
+      const data = lists.getResources();
+      data.then((res) => {
+        setResources(res?.data?.resourceList && res?.data?.resourceList.slice(0,3));
+        // setFiltred(res?.data?.resourceList || []);
+        setLoading(false)
+      }).catch((err) => {
+        setResources([]);
+        console.log("error : ", err);
+        setLoading(false);
+      })
+    } catch (error) {
+      setLoading(false);
+      setResources([]);
+      console.log("error :", error);
+    }
+  }
+
+  useEffect(() => {
+    fetchData();
+  }, []);
     return (
         <div className='bg-[#F7F4F0]  py-[40px]  lg:py-[60px]'>
             <div className="mx-auto container sm:container md:container lg:container xl:max-w-[1230px]  px-4 text-center">
@@ -44,10 +71,10 @@ function Resource() {
                     Stay informed with expert articles, practical tips, and inspiring stories to help families at every stage of life. Our blogs cover child development, parenting strategies, mental health, therapy guidance, and more.
                 </p>
                <div className=" grid grid-cols-1 mt-10 md:grid-cols-3  gap-5">
-              {resource.map((item) => (
-                <a key={item.id} href={item.link} target='_blank' download >
-                  <ResourceCard label={item.label} title={item.title} date={item.date} tags={item.tags} />
-                </a>
+              {resources.map((item) => (
+                // <a key={item.id} href={item.link} target='_blank' download >
+                  <ResourceCard label={item.label} title={item.title} date={item?.date.split('T')[0]} tags={item.tags} />
+                // </a>
               ))}
             </div>
             </div>

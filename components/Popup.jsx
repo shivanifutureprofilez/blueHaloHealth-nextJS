@@ -18,7 +18,7 @@ export default function Popup({btnclasses, btntext, size, children, space, actio
    <>
    <button className={btnclasses || "btn text-black font-bold"} onClick={() => setOpen(true)}>{btntext || "open"}</button>
     <Transition.Root show={open} as={Fragment}>
-      <Dialog className="relative z-10 " initialFocus={cancelButtonRef} onClose={setOpen}>
+      <Dialog className="relative z-[99999] " initialFocus={cancelButtonRef} onClose={setOpen}>
         <Transition.Child
           as={Fragment}
           enter="ease-out duration-300"
@@ -28,7 +28,7 @@ export default function Popup({btnclasses, btntext, size, children, space, actio
           leaveFrom="opacity-100"
           leaveTo="opacity-0"
         >
-          <div className="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity" />
+          <div className="fixed inset-0 bg-black opacity-75 transition-opacity" />
         </Transition.Child>
 
         <div className="fixed inset-0 z-10 w-screen overflow-y-auto px-3">
@@ -46,7 +46,7 @@ export default function Popup({btnclasses, btntext, size, children, space, actio
                 w-full  ${size ? size : 'md:max-w-lg'} ${space}`}>
                   <button
                     type="button"
-                    className="close absolute top-2 z-10 right-6 text-black text-[30px] cursor-pointer"
+                    className="close absolute top-2 z-10 right-6 text-black text-[35px] cursor-pointer"
                     onClick={() => setOpen(false)}
                     ref={cancelButtonRef}>
                     &times;

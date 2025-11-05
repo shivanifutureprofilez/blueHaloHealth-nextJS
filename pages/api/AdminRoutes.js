@@ -51,6 +51,9 @@ class AdminRoutes extends Component {
     async editResource(pid, data){
         return Api.post(`/resource/update/${pid}`,data);
     } 
+    async addtoWaitlist(data){
+        return Api.post('/waitlist/add',data);
+    }
     render() {
         return (
             <div>
