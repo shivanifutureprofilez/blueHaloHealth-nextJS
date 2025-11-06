@@ -12,9 +12,10 @@ export default function CommingSoonBookButton({ classes, content, btnText }) {
 
     const router = useRouter();
     const [action, setAction] = useState();
+    const [messageSent, setMessageSent] = useState(false);
     const [items, setItems] = useState({
-            email: "",
-        })
+        email: "",
+    })
     const handleChange = (e) => {
         const name = e.target.name;
         const value = e.target.value;
@@ -33,11 +34,12 @@ export default function CommingSoonBookButton({ classes, content, btnText }) {
             const lists = new AdminRoutes();
             const data = lists.addtoWaitlist(items);
             data.then((res) => {
-                toast.success(res?.data?.message || "Our Team Will Contact You Soon");
+                toast.success("Our Team Will Contact You Soon");
                 router.push("/");
                 setItems({
-                    email:"",
+                    email: "",
                 });
+                setMessageSent(true);
                 setLoading(false);
                 setAction("close")
             }).catch((err) => {
@@ -73,16 +75,31 @@ export default function CommingSoonBookButton({ classes, content, btnText }) {
                 </p>
             </div> */}
             {/* <div className="flex flex-col w-full items-center justify-center text-center p-6  rounded-2xl  shadow-md max-w-md mx-auto"> */}
-                <h2 className="text-2xl md:text-3xl text-center font-extrabold mt-3  text-green-600 mb-3">Thank You!</h2>
-                <p className="text-gray-700 text-sm md:text-lg leading-relaxed pb-6">
-                    We appreciate your interest in <span className="font-semibold text-green-700">Blue Halo Health</span>. 
-                    Bookings are currently closed, but you can join our waitlist to be notified as soon as we reopen.
-                    {/* We appreciate your interest in <span className="font-semibold text-green-700">Blue Halo Health</span>.
+            <div className=" p-4 rounded-[20px]  md:p-8">
+                {messageSent ?
+                    <div className='thankyou-wrap min-h-[300px] flex items-center justify-center'>
+                        <div className="flex flex-col items-center justify-center text-center p-6 bg-green-50 rounded-2xl shadow-md max-w-md mx-auto">
+                            <h2 className="text-2xl font-extrabold text-green-600 mb-3">Thank You!</h2>
+                            <p className="text-gray-700 leading-relaxed">
+                                We appreciate your interest in <span className="font-semibold text-green-700">Blue Halo Health</span>.
+                                You’ve been added to our waitlist, and our team will prioritize your request.
+                                We’ll reach out as soon as possible with the next steps and updates.
+                            </p>
+                        </div>
+                    </div>
+
+                    :
+                    <>
+                        <h2 className="text-2xl md:text-3xl text-center font-extrabold mt-3  text-green-600 mb-3">Thank You!</h2>
+                        <p className="text-gray-700 text-sm md:text-lg leading-relaxed pb-6">
+                            We appreciate your interest in <span className="font-semibold text-green-700">Blue Halo Health</span>.
+                            Bookings are currently closed, but you can join our waitlist to be notified as soon as we reopen.
+                            {/* We appreciate your interest in <span className="font-semibold text-green-700">Blue Halo Health</span>.
                     Bookings are currently unavailable at <strong>Blue Halo Health</strong>.
                     We’ll reopen this service in a few weeks.</p> */}
-                <p className='text-sm italic pt-4 md:text-lg'>
-                    Enter your email below to join the waitlist and stay updated!</p>
-                    {/* In the meantime, you can reach us through our contact form:
+                            <p className='text-sm italic pt-4 md:text-lg'>
+                                Enter your email below to join the waitlist and stay updated!</p>
+                            {/* In the meantime, you can reach us through our contact form:
                     {' '}
                     <Link
                         href="https://blue-halo-health-next-js.vercel.app/contact-us"
@@ -91,32 +108,35 @@ export default function CommingSoonBookButton({ classes, content, btnText }) {
                         rel="noopener noreferrer"
                     >
                         bluehalohealth.com/contact
-                    </Link> */} 
+                    </Link> */}
 
-                    <form className="mt-6 " onSubmit={handleSubmit}>
+                            <form className="mt-6 " onSubmit={handleSubmit}>
 
-                        <div className='flex justify-center items-center gap-4'>
-                            {/* <label className="text-sm md:text-lg font-medium  block mb-2">Email</label> */}
-                            <input
-                                type="email"
-                                onChange={handleChange}
-                                value={items?.email}
-                                name='email'
-                                placeholder="Enter Your Email Id"
-                                className=" w-full  bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg 
+                                <div className='flex justify-center items-center gap-4'>
+                                    {/* <label className="text-sm md:text-lg font-medium  block mb-2">Email</label> */}
+                                    <input
+                                        type="email"
+                                        onChange={handleChange}
+                                        value={items?.email}
+                                        name='email'
+                                        placeholder="Enter Your Email Id"
+                                        className=" w-full  bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg 
                             focus:ring-blue-500 focus:border-blue-500 py-3 px-4"
-                            />
-                        </div>
-                        <button
-                            onClick={handleSubmit}
-                            type="submit"
-                            disabled={loading}
-                            className=" bg-[#009C4A] cursor-pointer w-full md:w-[160px] button flex justify-center items-center mx-auto   mt-6    py-3"
-                        >
-                            {loading ? "Loading..." : "Join Waitlist"}
-                        </button>
-                    </form>
-                </p>
+                                    />
+                                </div>
+                                <button
+                                    onClick={handleSubmit}
+                                    type="submit"
+                                    disabled={loading}
+                                    className=" bg-[#009C4A] cursor-pointer w-full md:w-[160px] button flex justify-center items-center mx-auto   mt-6    py-3"
+                                >
+                                    {loading ? "Loading..." : "Join Waitlist"}
+                                </button>
+                            </form>
+                        </p>
+                    </>
+                }
+            </div>
             {/* </div> */}
         </Popup>
     )

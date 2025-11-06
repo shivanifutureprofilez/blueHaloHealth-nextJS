@@ -63,19 +63,19 @@ function Faq() {
             {faqs && faqs?.map((faq, index) => (
               <div
                 key={index}
-                className="bg-white !max-w-[600px] rounded-lg shadow-sm border border-gray-100 p-5 transition-all duration-900 ease-in-out hover:shadow-md "
+                className="bg-white !max-w-[600px]  rounded-lg shadow-sm border border-gray-100 p-5 transition-all duration-900 ease-in-out hover:shadow-md "
               >
                 <button
-                  className="flex justify-between items-center w-full text-left"
+                  className="flex justify-between items-center cursor-pointer w-full text-left"
                   onClick={() => toggleFAQ(index)}
                 >
                   <h3 className="font-semibold text-gray-800 text-[17px] md:text-[18px]">
                     {faq.question}
                   </h3>
                   {openIndex === index ? (
-                    <FiMinus className="text-[#00D967] text-xl " />
+                    <FiMinus className="text-[#00D967] text-xl cursor-pointer" />
                   ) : (
-                    <FiPlus className="text-[#00D967] text-xl " />
+                    <FiPlus className="text-[#00D967] text-xl cursor-pointer" />
                   )}
                 </button>
 
