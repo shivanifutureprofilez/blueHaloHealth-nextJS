@@ -11,6 +11,8 @@ import AgeMatrix from './AgeMatrix'
 import FeaturedServices from './FeaturedServices'
 import HeroBanner from './HeroBanner'
 import VirtualTherapy from '@/components/VirtualTherapy'
+import VirtualTherapy2 from '@/components/VirtualTherapy2'
+import VirtualTherapy3 from '@/components/VirtualTherapy3'
 // import About from './About'
 
 export default function Main() {
@@ -23,7 +25,7 @@ export default function Main() {
         <FeaturedServices/>
         <About/>
         {/* <Importance/> */}
-        <VirtualTherapy/>
+        <VirtualTherapy2/>
         <Feedback/>
         <Resource/>
         <Event/>

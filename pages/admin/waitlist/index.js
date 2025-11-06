@@ -4,26 +4,28 @@ import AdminRoutes from "@/pages/api/AdminRoutes";
 import Tooltip from "@/components/ToolTip";
 import NoResultFound from "@/components/NoResult";
 import Loading from "@/components/Loading";
+import RoutesLists from "@/pages/api/RoutesLists";
+import FormattedDate from "@/components/FormattedDate";
 export default function index() {
    
   
-  const [contacts, setContacts] = useState([]);
+  const [waitlist, setWaitlist] = useState([]);
   const [loading, setLoading] = useState(true);
   
-    const fetchGroups = async () => {
-      const lists = new AdminRoutes();
-      const data = lists.getcontactlist();
+    const fetchWaitlist = async () => {
+      const lists = new RoutesLists();
+      const data = lists.getWaitList();
       data.then((res)=>{ 
-        setContacts(res?.data?.enquiryData || []);
+        setWaitlist(res?.data?.waitlistData || []);
         setLoading(false)
       }).catch((err)=>{ 
-        setContacts([]);
+        setWaitlist([]);
         console.log("err",err)
         setLoading(false)
       });
     }
     useEffect(()=>{
-      fetchGroups();
+      fetchWaitlist();
     },[]);
   return ( 
     <AuthLayout>
@@ -33,7 +35,7 @@ export default function index() {
       {loading ? (
         <Loading />
       ) : (
-        contacts && contacts?.length > 0 ? (
+        waitlist && waitlist?.length > 0 ? (
       <>
       <div className="">
         <table className="w-full table-auto whitespace-nowrap">
@@ -43,60 +45,25 @@ export default function index() {
                   S.No.
                 </th>
                 <th className="border-b border-[#ffffff]  text-[14px] text-[#ffffff] uppercase text-left p-[10px] ">
-                  Name{" "}
+                  Date
                 </th>
                 <th className="border-b border-[#ffffff]  text-[14px] text-[#ffffff] uppercase text-left   p-[10px]">
                   Email
-                </th>
-                <th className="border-b border-[#ffffff]  text-[14px] text-[#ffffff] uppercase text-left   p-[10px]">
-                  Phone no
-                </th>
-                <th className="border-b border-[#ffffff]  text-[14px] text-[#ffffff] uppercase text-left   p-[10px]">
-                  Age
-                </th>
-                <th className="border-b border-[#ffffff]  text-[14px] text-[#ffffff] uppercase text-left   p-[10px]">
-                  Service 
-                </th>
-                <th className="border-b border-[#ffffff]  text-[14px] text-[#ffffff] uppercase text-left   p-[10px]">
-                  Message
-                </th>
-                <th className="border-b border-[#ffffff]  text-[14px] text-[#ffffff] uppercase text-left   p-[10px]">
-                  Promotion Agreement
                 </th>
               </tr>
             </thead>
             <tbody>
 
-          { contacts?.map((contacts , index)=>(
+          { waitlist?.map((waitlist , index)=>(
                 <tr key={index}>
                   <td className=" font-[600] text-white text-[16px] text-left px-[10px] py-[16px]  border-b border-[#ffffff1a]">
                     {index+1}
                   </td>
                   <td className="capitalize font-[600] text-white text-[16px]  px-[10px] py-[16px]  border-b border-[#ffffff1a] text-left  ">
-                   {contacts?.fullName}
+                   <FormattedDate date={waitlist?.createdAt}/>
                   </td>
                   <td className=" font-[600] text-white text-[16px]  px-[10px] py-[16px]  border-b border-[#ffffff1a] text-left   ">
-                    {contacts?.email}
-                  </td>
-                  <td className=" font-[600] text-white text-[16px]  px-[10px] py-[16px]  border-b border-[#ffffff1a] text-left   ">
-                    {contacts?.phone}
-                  </td>
-                  <td className=" font-[600] text-white text-[16px]  px-[10px] py-[16px]  border-b border-[#ffffff1a] text-left   ">
-                    {contacts?.age}
-                  </td>
-                  <td className=" font-[600] text-white text-[16px]  px-[10px] py-[16px]  border-b border-[#ffffff1a] text-left   ">
-                    {contacts?.service}
-                  </td>
-                  <td className=" capitalize font-[600] text-white text-[16px] px-[10px] py-[16px]  border-b border-[#ffffff1a] text-left   ">
-                    <Tooltip content={contacts?.message}>
-                      <span className=" max-w-[100px] block overflow-hidden underline cursor-pointer text-white">
-                        {contacts?.message}
-                      </span>
-                    </Tooltip>
-
-                  </td>
-                   <td className=" font-[600] text-white text-[16px] px-[10px] py-[16px]  border-b border-[#ffffff1a] text-left   ">
-                    {contacts?.smsCheckbox === true ? "Agree" : "Disagree"}
+                    {waitlist?.email}
                   </td>
                 </tr>
           )
