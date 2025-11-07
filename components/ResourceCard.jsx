@@ -7,7 +7,7 @@ import FormattedDate from './FormattedDate';
 function ResourceCard({ label = 'Resource', link, title, date, tags = [] }) {
   console.log("link ", link);
   return (
-    <div className="bg-white rounded-[20px] p-4 h-full ">
+    <div className="bg-white rounded-[20px] p-4 h-full hover:shadow-md cursor-pointer">
       <div className="flex items-start justify-between">
         <span className="text-[#009C4A] font-medium text-sm">{label}</span>
         {tags && tags.length > 0 && (

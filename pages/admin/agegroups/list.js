@@ -76,7 +76,7 @@ function List() {
   return (
     <AuthLayout>
       <div className="flex items-center justify-between tracking-tight border-b border-[#2a2a2a] pb-4 mb-6 w-full">
-        <h1 className="text-3xl lg:text-4xl font-bold text-white">Age Groups</h1>
+        <h1 className="text-[22px] lg:text-4xl font-bold text-white">Age Groups</h1>
         <AddAgeGroup fetchGroups={fetchGroups} />
       </div>
 

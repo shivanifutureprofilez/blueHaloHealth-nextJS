@@ -90,7 +90,7 @@ export default function CommingSoonBookButton({ classes, content, btnText }) {
 
                     :
                     <>
-                        <h2 className="text-2xl md:text-3xl text-center font-extrabold mt-3  text-green-600 mb-3">Thank You!</h2>
+                        <h2 className="text-2xl md:text-3xl text-center font-extrabold mt-3  text-green-600 mb-3">Join Our Waitlist!!</h2>
                         <p className="text-gray-700 text-sm md:text-lg leading-relaxed pb-6">
                             We appreciate your interest in <span className="font-semibold text-green-700">Blue Halo Health</span>.
                             Bookings are currently closed, but you can join our waitlist to be notified as soon as we reopen.

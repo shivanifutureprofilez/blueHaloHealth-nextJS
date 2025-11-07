@@ -54,6 +54,12 @@ class AdminRoutes extends Component {
     async addtoWaitlist(data){
         return Api.post('/waitlist/add',data);
     }
+    async deleteEnquiries(pid){
+        return Api.get(`/contact/delete/${pid}`);
+    }
+    async deleteWaitList(pid){
+        return Api.get(`/waitlist/delete/${pid}`);
+    }
     render() {
         return (
             <div>

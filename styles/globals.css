@@ -321,3 +321,18 @@ body {
   background-clip: text;                color: transparent;
 
 }
+.mytable tr:nth-child(even) {
+    background: #25354c;
+    
+}
+
+.mytable { 
+  max-width: 100%;
+ overflow: auto;
+}
+.mytable thead tr { 
+  background: #444444; 
+}
+.mytable tbody tr:hover {
+  background-color: #ffffff75;
+}

@@ -24,7 +24,7 @@ function ServiceCard({ item, idx, isAdmin = false, fetchServices }) {
   return (
     <div
       key={idx}
-      className="bg-white rounded-[25px] shadow overflow-hidden flex flex-col items-center relative"
+      className="bg-white  group rounded-[25px] shadow overflow-hidden flex flex-col items-center relative"
     >
       {isAdmin && (
         <Link
@@ -55,7 +55,7 @@ function ServiceCard({ item, idx, isAdmin = false, fetchServices }) {
           <img
             src={item?.bannerImg}
             alt={item?.name}
-            className="object-cover w-full h-full"
+            className="object-cover w-full h-full transform transition-transform duration-500 group-hover:scale-110"
           />
         </Link>
       </div>
