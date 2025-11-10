@@ -40,10 +40,10 @@ function FeaturedServices() {
                         <div className="bg-green-dark relative text-white w-full flex items-center justify-center gap-6 md:gap-12 
                       rounded-2xl overflow-hidden">
                             <div className='flex items-center w-full '>
-                                <div className="w-full z-[1] text-left  p-[30px] md:p-[30px]  xl:p-[50px]  " >
+                                <div data-aos="fade-right" className="w-full z-[1] text-left  p-[30px] md:p-[30px]  xl:p-[50px]  " >
                                     <Heading className="!text-white heading  !text-left poppins   font-bold text-2xl md:text-5xl md:mb-3" heading1={"Now Offering Specialized Assessments"} />
                                     {featured && featured.map((s, i) => {
-                                        return <div className='flex gap-1 pt-2  md:text-left'>
+                                        return <div className='flex gap-1 pt-2  md:text-left' data-aos="fade-right">
                                             <span className="mr-2 mt-1">
                                                 <FaCircleCheck className="text-center md:text-left text-white rounded-xl" />
                                             </span>

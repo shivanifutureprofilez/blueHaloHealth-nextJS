@@ -17,10 +17,10 @@ function VirtualTherapy2() {
 
           <div className="text-center lg:text-left">
             <div className="leading-snug px-6">
-              <h2 className="heading poppins text-black tracking-tighter leading-tight font-bold text-4xl md:text-5xl mb-3">
+              <h2 data-aos="zoom-out-left" className="heading poppins text-black tracking-tighter leading-tight font-bold text-4xl md:text-5xl mb-3">
                 Virtual <span className="text-[#009C4A]">Therapy</span>
               </h2>
-              <p className="text-black font-lg text-[16px] mb-5 lg:mb-4">
+              <p className="text-black font-lg text-[16px] mb-5 lg:mb-4" data-aos="zoom-out-left">
                 Bringing expert care home - through secure, personalized virtual sessions
               </p>
               {/* <p className="text-gray-500 font-medium text-[15px] mb-2 lg:mb-4">
@@ -28,7 +28,7 @@ function VirtualTherapy2() {
 </p>
 <p className='text-gray-500 font-medium text-[15px]'>From developmental milestones to life’s most complex challenges, BlueHaloHealth delivers the guidance, connection, and care needed to help individuals and families thrive—virtually, together.              </p> */}
               <div className='flex item-center justify-center md:block'>
-                <ul className="space-y-4 text-base">
+                <ul className="space-y-4 text-base" data-aos="zoom-out-left">
                   <li className="flex items-center gap-6 md:gap-3 text-black">
                     <span className="">
                       <TbWorldHeart size={25} className="text-green-dark" />
@@ -75,6 +75,7 @@ function VirtualTherapy2() {
           </div>
           <Image
             src="/vt4.png"
+            data-aos="flip-up"
             alt="About"
             className="w-full lg:max-w-[580px] object-cover hidden md:block"
             width={400}
@@ -82,7 +83,7 @@ function VirtualTherapy2() {
           />
         </div>
 
-       <CommingSoonBookButton btnText={"Start Virtual Therapy"} classes={`border border-green-600 text-green-600 px-8 py-3 rounded-lg font-semibold hover:bg-green-50 transition inline-block mt-7`} content={`Thankyou so much but we are not available right now`} />
+       <CommingSoonBookButton  btnText={"Start Virtual Therapy"} classes={`border border-green-600 text-green-600 px-8 py-3 rounded-lg font-semibold hover:bg-green-50 transition inline-block mt-7`} content={`Thankyou so much but we are not available right now`} />
 
       </div>
     </div>

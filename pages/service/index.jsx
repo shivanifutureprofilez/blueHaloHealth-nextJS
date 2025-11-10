@@ -86,7 +86,8 @@ export default function Index() {
             <button
               key={index}
               className={`button-white !rounded-2xl md:w-[200px] border cursor-pointer ${ageGroup === item?._id ? 'bg-[#009C4A] border-[#009C4A] text-white transition-[1s]' : ''}`}
-              onClick={() => { updateAgeGroup(item?._id) }} >
+              onClick={() => { updateAgeGroup(item?._id) }} 
+              data-aos="fade-right">
               <span className="pl-2 pr-2">{item?.title} </span>
             </button>
           ))}

@@ -38,8 +38,9 @@ function Mission2() {
                         className="w-full lg:max-w-[580px] object-cover hidden md:block"
                         width={400}
                         height={300}
+                        data-aos="flip-up"
                       />
-        <div className='p-5'>
+        <div className='p-5' data-aos="fade-left">
           <Heading
             className="text-black "
             pClass="text-center"
@@ -51,7 +52,7 @@ function Mission2() {
         </div>
         <div className='md:flex items-center justify-between'>
             
-        <div className='p-5 '>
+        <div className='p-5 ' data-aos="fade-right">
           <Heading
             className="text-black "
             pClass="text-center"
@@ -66,6 +67,7 @@ function Mission2() {
                         className="w-full lg:max-w-[580px] object-cover hidden md:block"
                         width={400}
                         height={300}
+                        data-aos="flip-up"
                       />
         </div>
         {/* </div> */}
@@ -76,8 +78,9 @@ function Mission2() {
                         className="w-full lg:max-w-[580px] object-cover hidden md:block"
                         width={400}
                         height={300}
+                        data-aos="flip-up"
                       />
-        <div className='p-5 '>
+        <div className='p-5 ' data-aos="zoom-in-left">
           <Heading
             className="text-black text-center"
             heading1={"Our"}
@@ -91,6 +94,7 @@ function Mission2() {
           {features.map((feature, idx) => (
             <div
               key={idx}
+              data-aos="fade-right" 
               className="bg-white rounded-2xl shadow flex flex-col items-center px-3 py-3 md:px-6 md:py-6 text-center"
             >
               <div className="flex  justify-center items-center w-24 h-24 rounded-full bg-[#E6F4EA] mb-4 p-1">

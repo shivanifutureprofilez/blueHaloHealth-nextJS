@@ -31,7 +31,7 @@ function Mission() {
     <div className=" py-[20px] md:py-[40px] lg:py-[60px]  ">
       <div className="mx-auto container sm:container md:container lg:container xl:max-w-[1230px]  px-4 text-center">
         {/* <div className='grid grid-cols-1 md:grid-cols-2'> */}
-        <div className='p-5'>
+        <div className='p-5'  data-aos="zoom-in-left">
           <Heading
             className="text-black "
             pClass="text-center"
@@ -40,7 +40,7 @@ function Mission() {
             content={"At BlueHaloHealth, we envision a world where every child, adolescent, and adult can reach their full potential — supported by compassionate care, expert guidance, and a community that understands their unique journey. We aim to create brighter futures by making therapy and assessment services accessible, empowering, and meaningful for every family we serve."}
           />
         </div>
-        <div className='p-5 '>
+        <div className='p-5 ' data-aos="zoom-in-right">
           <Heading
             className="text-black "
             pClass="text-center"
@@ -50,7 +50,7 @@ function Mission() {
           />
         </div>
         {/* </div> */}
-        <div className='p-5 '>
+        <div className='p-5 ' data-aos="zoom-in-left">
           <Heading
             className="text-black text-center"
             heading1={"Our"}

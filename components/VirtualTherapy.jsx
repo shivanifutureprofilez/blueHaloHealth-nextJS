@@ -49,6 +49,7 @@ function VirtualTherapy() {
             <div
               key={idx}
               className="bg-white rounded-2xl relative flex flex-col items-center px-5 md:px-9 py-5 md:pt-9 text-center"
+              data-aos="fade-left" 
             >
               <div className="flex  justify-center absolute top-[-30px] left-4 items-center w-16 h-16 rounded-full bg-green-dark mb-4">
                 {feature.icon}

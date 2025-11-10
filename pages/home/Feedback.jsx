@@ -12,8 +12,8 @@ export default function Feedback() {
     return (
         <>
             <div className='bg-[#f7f8fa]  py-[40px]  lg:py-[60px]'>
-                <div className="mx-auto container sm:container md:container lg:container xl:max-w-[1230px]  px-4 text-center">
-                    <Heading className="heading text-center md:text-left poppins text-black tracking-tighter leading-tight font-bold text-4xl md:text-5xl lg:text-5xl mb-3" heading1={"What"} heading2={" Families Say"} />
+                <div data-aos="fade-right" className="mx-auto container sm:container md:container lg:container xl:max-w-[1230px]  px-4 text-center">
+                    <Heading data-aos="fade-right" className="heading text-center md:text-left poppins text-black tracking-tighter leading-tight font-bold text-4xl md:text-5xl lg:text-5xl mb-3" heading1={"What"} heading2={" Families Say"} />
                     <p className="font-medium text-[15px] text-center mb-6 md:mb-2 text-gray-700  max-w-[600px] mx-auto">
                         Real stories from families who’ve experienced the care, guidance, and support of BlueHaloHealth.
                     </p>

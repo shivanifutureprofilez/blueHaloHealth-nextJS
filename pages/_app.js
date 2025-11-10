@@ -3,7 +3,8 @@ import "@/styles/globals.css";
 import UserProvider from "./context/UserContext";
 import { Toaster } from "react-hot-toast";
 import NProgress from "nprogress";
-
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 import { usePathname, useSearchParams } from "next/navigation";
 import { useEffect } from "react";
 import { Router } from "next/router";
@@ -31,6 +32,14 @@ export default function App({ Component, pageProps }) {
     };
   }, [pathname, searchParams]);
 
+   useEffect(() => {
+     AOS.init({
+          duration: 400,
+          once: false,
+          offset: 200,
+          delay: 300
+        })
+  }, [])
 
   return <>
   <UserProvider>

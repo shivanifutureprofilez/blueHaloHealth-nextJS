@@ -32,7 +32,7 @@ export default function AgeMatrix({ admin }) {
   return (
 
     <section className="bg-[#E6EBE3] md:bg-[#F7F4F0] py-[30px] md:py-[40px] lg:py-[60px]  ">
-      <div className="mx-auto container sm:container md:container lg:container xl:max-w-[1230px]  px-4 text-center">
+      <div  className="mx-auto container sm:container md:container lg:container xl:max-w-[1230px]  px-4 text-center">
         <Heading
           className="heading mb-0 text-center  poppins text-black tracking-tighter leading-tight font-bold text-4xl md:text-5xl lg:text-5xl "
           heading1={"Comprehensive"}
@@ -45,8 +45,8 @@ export default function AgeMatrix({ admin }) {
           {loading ? <Loading /> : 
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4  py-[15px] md:py-[30px] ">
                 {ageGroupsLists && ageGroupsLists?.map((group, idx) => (
-                  <div key={idx} className="bg-white group border-b border-[#009C4A] rounded-[25px] shadow overflow-hidden flex flex-col items-center">
-                    <div className="w-full min-h-[250px] max-h-[250px]  rounded-lg overflow-hidden mb-4 relative">
+                  <div  key={idx} data-aos="zoom-in-up" className="bg-white group border-b border-[#009C4A] rounded-[25px] shadow overflow-hidden flex flex-col items-center">
+                    <div  className="w-full min-h-[250px] max-h-[250px]  rounded-lg overflow-hidden mb-4 relative">
                       {/* <Link href={`/agegroups/detail/${group?._id}`} > */}
                       <Link href={`/service?agegroup=${group?._id}`} >
                       {/* </Link>                       */}
