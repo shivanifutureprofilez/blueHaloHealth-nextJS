@@ -10,6 +10,7 @@ function EventCard({ item, index }) {
             <div
                 key={index}
                 className=" bg-white rounded-2xl border border-gray-200 shadow flex flex-col p-4 text-start"
+                data-aos="fade-right" 
             >
                 <div className="flex justify-center items-center text-center w-12 h-12 rounded-lg bg-[#E6F4EA] mb-4 p-2">
                     {item?.tag === 'Learn More'

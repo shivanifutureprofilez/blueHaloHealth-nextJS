@@ -56,7 +56,7 @@ function Event() {
                 <p  data-aos="fade-right" className="font-medium mb-6 md:mb-2 text-[15px] text-center text-gray-700  max-w-[600px] mx-auto">
                     Join our community events designed to support families and build connections
                 </p>
-                <div  data-aos="fade-right" className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 py-[15px] md:py-[30px]">
+                <div  className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 py-[15px] md:py-[30px]">
                     {events && events?.map((item, index) => (
                         <EventCard item={item} index={index} />
                     ))}
