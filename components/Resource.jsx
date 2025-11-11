@@ -59,6 +59,8 @@ function Resource() {
     fetchData();
   }, []);
     return (
+      <>
+      {resources && resources.length > 0 ? (
         <div className='bg-[#F7F4F0]  py-[40px]  lg:py-[60px]'>
             <div data-aos="fade-left" className="mx-auto container sm:container md:container lg:container xl:max-w-[1230px]  px-4 text-center">
                 <Heading
@@ -79,6 +81,8 @@ function Resource() {
             </div>
             </div>
         </div>
+      ) : null}
+      </> 
     )
 }
 
