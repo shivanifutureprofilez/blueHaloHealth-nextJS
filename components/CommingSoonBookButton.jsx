@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 
 import Link from 'next/link'
 
@@ -6,16 +6,18 @@ import Popup from './Popup';
 import AdminRoutes from '@/pages/api/AdminRoutes';
 import toast from 'react-hot-toast';
 import { useRouter } from 'next/router';
+import { useParams } from 'next/navigation';
 
 
-export default function CommingSoonBookButton({ classes, content, btnText }) {
+export default function CommingSoonBookButton({ classes, action, btnText }) {
 
     const router = useRouter();
-    const [action, setAction] = useState();
     const [messageSent, setMessageSent] = useState(false);
     const [items, setItems] = useState({
         email: "",
-    })
+    });
+
+
     const handleChange = (e) => {
         const name = e.target.name;
         const value = e.target.value;
@@ -41,7 +43,6 @@ export default function CommingSoonBookButton({ classes, content, btnText }) {
                 });
                 setMessageSent(true);
                 setLoading(false);
-                setAction("close")
             }).catch((err) => {
                 console.error("Error:", err);
                 toast.error("Something went wrong");
@@ -54,7 +55,7 @@ export default function CommingSoonBookButton({ classes, content, btnText }) {
         }
     };
     return (
-        <Popup size='max-w-[700px] max-h-[900px] h-full' bg="bg-green-50" space={"p-6 md:p-10"} btnclasses={classes || 'button cursor-pointer'} btntext={btnText || "Book Free Consultation"} >
+        <Popup action={action} size='max-w-[700px] max-h-[900px] h-full' bg="bg-green-50" space={"p-6 md:p-10"} btnclasses={classes || 'button cursor-pointer'} btntext={btnText || "Book Free Consultation"} >
             {/* <div className="space-y-3 text-black text-medium  p-4 rounded-lg">
                 <p>Hello, thank you for contacting Blue Halo Health.</p>
                 <p>

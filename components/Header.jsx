@@ -1,10 +1,11 @@
 
 import { FiMenu, FiX } from "react-icons/fi";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Link from "next/link";
 import Button from "./Button";
 import Popup from "./Popup";
 import CommingSoonBookButton from "./CommingSoonBookButton";
+import { useRouter } from "next/router";
 
 function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -18,6 +19,15 @@ function Header() {
     // { name: "Blogs", href: "/https://phpdemo.futureprofilez.com/wp/blue-halo-health-blog/" },
     // { name: "Contact", href: "/contact-us" },
   ];
+
+  
+  const [action, setAction] = useState();
+    const {query} = useRouter();
+    useEffect(()=>{
+        if(query.join == 'waitlist'){
+            setAction('open')
+        }
+    },[query]);
 
   return (
     <header className="bg-[#F7F4F0] sticky top-0 z-50  " >
@@ -59,12 +69,7 @@ function Header() {
               title="Book Free Consultation"
               className="button bg-green-dark text-[15px] px-5 py-2"
             /> */}
-              <CommingSoonBookButton />
-
-
-
-
-
+              <CommingSoonBookButton action={action} />
             {/* <Button
               title="Patient Portal"
               className="button bg-green-dark text-[15px] px-5 py-2"
@@ -132,7 +137,7 @@ function Header() {
                   className="button w-full bg-green-dark text-[14px] px-4 py-2"
                   onClick={() => setIsMobileMenuOpen(false)}
                 /> */}
-                <CommingSoonBookButton classes={`button w-full bg-green-dark text-[14px] px-4 py-2`}/>
+                <CommingSoonBookButton action={action} classes={`button w-full bg-green-dark text-[14px] px-4 py-2`}/>
                 {/* <Link
                   // title="Patient Portal"
                   href="/"
