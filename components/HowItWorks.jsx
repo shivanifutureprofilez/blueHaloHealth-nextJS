@@ -8,7 +8,7 @@ function HowItWorks() {
     <div className="bg-[#E6EBE3] py-[20px] md:py-[40px] lg:py-[60px]">
       <div className="mx-auto container sm:container md:container lg:container xl:max-w-[1230px]  px-4 text-center">
           <Heading
-            className="text-black text-center"
+            className="text-black text-center text-3xl md:text-5xl lg:text-5xl"
             heading1={"How It"}
             heading2={" Works"}
           />

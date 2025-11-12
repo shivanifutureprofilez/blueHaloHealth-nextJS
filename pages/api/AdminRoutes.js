@@ -60,6 +60,15 @@ class AdminRoutes extends Component {
     async deleteWaitList(pid){
         return Api.get(`/waitlist/delete/${pid}`);
     }
+    async addMember(data){
+        return Api.post('/team/add',data);
+    }
+    async deleteTeamMembers(pid){
+        return Api.get(`/team/delete/${pid}`);
+    }
+    async editTeamMember(pid, data){
+        return Api.post(`/team/update/${pid}`,data);
+    } 
     render() {
         return (
             <div>

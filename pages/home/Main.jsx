@@ -24,12 +24,14 @@ export default function Main() {
         <AgeMatrix/>
         <FeaturedServices/>
         <About/>
-        {/* <Importance/> */}
         <VirtualTherapy2/>
         <Feedback/>
         <Resource/>
         <Event/>
         <BookingTab/>
+        {/* 
+         */}
+        {/* <Importance/> */}
       </div>
    </Layout>
   )

@@ -81,13 +81,13 @@ export default function Index() {
         {totalAgeGroups?.length === 0 ? (
           <>
           </>
-        ) : <div className="flex justify-center items-center flex-wrap gap-2">
+        ) : <div  className="flex justify-center items-center flex-wrap gap-2">
           {totalAgeGroups && totalAgeGroups?.map((item, index) => (
             <button
               key={index}
               className={`button-white !rounded-2xl md:w-[200px] border cursor-pointer ${ageGroup === item?._id ? 'bg-[#009C4A] border-[#009C4A] text-white transition-[1s]' : ''}`}
               onClick={() => { updateAgeGroup(item?._id) }} 
-              data-aos="fade-right">
+             >
               <span className="pl-2 pr-2">{item?.title} </span>
             </button>
           ))}
@@ -118,7 +118,7 @@ export default function Index() {
       <Layout>
         <SectionBanner title={"Services"} />
         <div className="bg-[#F7F4F0] py-[20px] md:py-[40px] lg:py-[60px]">
-          <div className="mx-auto container sm:container md:container lg:container xl:max-w-[1230px]  px-4 text-center">
+          <div className="mx-auto container    text-center">
 
             <Filter />
               { loading ? 

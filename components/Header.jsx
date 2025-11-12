@@ -147,7 +147,7 @@ function Header() {
                 >
                 Patient Portal
                 </Link> */}
-                <CommingSoonBookButton classes={`text-center w-full border border-green-600 text-green-600  rounded-lg font-semibold  w-full hover:bg-green-50 transition inline-block text-[14px] px-4 py-2`} 
+                <CommingSoonBookButton classes={`text-center w-full border border-green-600 text-green-600  rounded-lg font-semibold   hover:bg-green-50 transition inline-block text-[14px] px-4 py-2`} 
               // content={`Patient Portal`} 
               btnText={`Patient Portal`}/>
 

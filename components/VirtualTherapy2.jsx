@@ -7,17 +7,18 @@ import { FaRegHandshake } from 'react-icons/fa';
 import { AiOutlineSchedule } from 'react-icons/ai';
 import CommingSoonBookButton from './CommingSoonBookButton';
 // import { TbWorldHeart } from "react-icons/tb";
+import { motion } from "motion/react";
 
 
 function VirtualTherapy2() {
   return (
-    <div className='bg-[#F7F4F0] py-[40px]  lg:py-[60px] '>
+    <div className='bg-[#F7F4F0] py-[40px]  lg:py-[60px] overflow-hidden '>
       <div className='mx-auto container sm:container md:container lg:container xl:max-w-[1230px]  px-4 text-center'>
         <div className="grid grid-cols-1 lg:grid-cols-2 items-center gap-4 lg:gap-8">
 
           <div className="text-center lg:text-left">
             <div className="leading-snug px-6">
-              <h2 data-aos="zoom-out-left" className="heading poppins text-black tracking-tighter leading-tight font-bold text-4xl md:text-5xl mb-3">
+              <h2 data-aos="zoom-out-left" className="heading poppins text-black tracking-tighter leading-tight font-bold text-3xl md:text-5xl lg:text-5xl mb-3">
                 Virtual <span className="text-[#009C4A]">Therapy</span>
               </h2>
               <p className="text-black font-lg text-[16px] mb-5 lg:mb-4" data-aos="zoom-out-left">
@@ -82,8 +83,14 @@ function VirtualTherapy2() {
             height={300}
           />
         </div>
-
+                {/* <motion.div
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              whileHover={{ scale: 1.04 }}
+              whileTap={{ scale: 0.95 }}
+              transition={{ duration: 0.3 }}> */}
        <CommingSoonBookButton  btnText={"Start Virtual Therapy"} classes={`border border-green-600 text-green-600 px-8 py-3 rounded-lg font-semibold hover:bg-green-50 transition inline-block mt-7`} content={`Thankyou so much but we are not available right now`} />
+       {/* </motion.div> */}
 
       </div>
     </div>

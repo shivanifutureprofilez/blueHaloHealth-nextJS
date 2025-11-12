@@ -33,12 +33,12 @@ function VirtualTherapy() {
   ];
 
   return (
-    <section className="bg-[#4B9B711A] py-[40px]  lg:py-[60px]  ">
+    <section className="bg-[#4B9B711A] py-[40px]  lg:py-[60px]  overflow-hidden">
       <div className="mx-auto container sm:container md:container lg:container xl:max-w-[1230px]  px-4 text-center">
         <Heading
-          className="heading text-center poppins text-black tracking-tighter leading-tight font-bold text-4xl md:text-5xl lg:text-5xl mb-3"
-          heading1={"Virtual Therapy"}
-        //   heading2={" BlueHaloHealth"}
+          className="heading text-center poppins text-black tracking-tighter leading-tight font-bold  mb-3"
+          heading1={"Virtual "}
+        heading2={" Therapy"}
         content={"At BlueHaloHealth, we understand that not every family can visit a clinic easily. Our Virtual Therapy sessions bring expert care directly to your home making therapy more flexible, convenient, and consistent. Whether it’s speech therapy, occupational therapy, or behavioral support, our licensed professionals provide the same quality of care through secure online sessions."}
         />
         {/* <p className="mb-6 md:mb-2 font-medium text-[15px] text-center  text-gray-700 max-w-[600px] mx-auto">
@@ -54,7 +54,7 @@ function VirtualTherapy() {
               <div className="flex  justify-center absolute top-[-30px] left-4 items-center w-16 h-16 rounded-full bg-green-dark mb-4">
                 {feature.icon}
               </div>
-              <h3 className="font-bold  text-xl mb-2 mt-4 md:mt-2">{feature.title}</h3>
+              <h3 className="font-bold  text-lg md:text-xl mb-2 mt-4 md:mt-2">{feature.title}</h3>
               <p className="text-gray-600  font-medium text-[15px]">{feature.description}</p>
             </div>
           ))}

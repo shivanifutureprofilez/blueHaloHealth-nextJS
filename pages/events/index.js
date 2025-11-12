@@ -64,7 +64,7 @@ function index() {
                     <div className="mx-auto container sm:container md:container lg:container xl:max-w-[1230px]  px-4 text-center">
                            <div className='p-2 md:p-4'>
                             <Heading
-                                className="heading text-center poppins !text-black tracking-tighter leading-tight font-bold text-4xl md:text-5xl lg:text-5xl mb-3"
+                                className="heading text-center poppins !text-black tracking-tighter leading-tight font-bold text-[25px] md:text-[35px] mb-3"
                                 heading1={"Event  Highlights"}
                             />
                            </div>

@@ -67,7 +67,7 @@ function HeroBanner() {
 
           {/* <button className='button bg-[#009C4A] cursor-pointer w-full md:w-[230px]'>Book Free Consultation</button> */}
 
-          <CommingSoonBookButton classes={`button bg-[#009C4A] cursor-pointer w-full md:w-[230px]`} content={`Thankyou so much but we are not available right now`} />
+          <CommingSoonBookButton classes={`button bg-[#009C4A] cursor-pointer w-full md:w-[230px] `} content={`Thankyou so much but we are not available right now`} />
 
           {/* <Link
                     href="/"

@@ -43,6 +43,9 @@ class RoutesLists extends Component {
     async getWaitList(){
         return Api.get('/waitlist/list');
     }
+    async getTeamMembers(){
+        return Api.get('/team/list');
+    }
     render() {
         return (
             <div>

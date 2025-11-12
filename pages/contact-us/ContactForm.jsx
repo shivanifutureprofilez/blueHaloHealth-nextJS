@@ -99,7 +99,7 @@ function ContactForm() {
           <div className=' md:p-4 '>
             <div className='bg-white p-4 rounded-[20px]'>
 
-              <h2 className="font-bold text-2xl mb-4 text-left text-black">Contact us</h2>
+              <h2 className="font-bold text-xl md:text-2xl mb-4 text-left text-black">Contact us</h2>
               <ul className="space-y-6 text-base">
                 <li className="flex items-center text-left gap-3 text-gray-700">
                   <span className="bg-green-100 rounded-full p-2">
@@ -140,7 +140,7 @@ function ContactForm() {
               </div>
               :
               <>
-                <h2 className="font-bold text-2xl mb-3 md:mb-6 text-black flex items-center gap-2">
+                <h2 className="font-bold text-xl md:text-2xl mb-3 md:mb-6 text-black flex items-center gap-2">
                   <FaPaperPlane className="text-green-600" /> Send Us a Message
                 </h2>
                 <form className="space-y-4" onSubmit={handleSubmit}>

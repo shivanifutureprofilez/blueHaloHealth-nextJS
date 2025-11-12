@@ -29,7 +29,7 @@ function Mission2() {
 
   ];
   return (
-    <div className=" py-[20px] md:py-[40px] lg:py-[60px]  ">
+    <div className=" py-[20px] md:py-[40px] lg:py-[60px]  overflow-hidden">
       <div className="mx-auto container sm:container md:container lg:container xl:max-w-[1230px]  px-4 text-center">
         <div className='md:flex items-center justify-between'>
             <Image
@@ -40,7 +40,7 @@ function Mission2() {
                         height={300}
                         data-aos="flip-up"
                       />
-        <div className='p-5' data-aos="fade-left">
+        <div className='p-5 text-3xl md:text-5xl lg:text-5xl' data-aos="fade-left">
           <Heading
             className="text-black "
             pClass="text-center"
@@ -52,7 +52,7 @@ function Mission2() {
         </div>
         <div className='md:flex items-center justify-between'>
             
-        <div className='p-5 ' data-aos="fade-right">
+        <div className='p-5 text-3xl md:text-5xl lg:text-5xl' data-aos="fade-right">
           <Heading
             className="text-black "
             pClass="text-center"
@@ -71,7 +71,7 @@ function Mission2() {
                       />
         </div>
         {/* </div> */}
-        <div className='md:flex items-center justify-between'>
+        <div className='md:flex items-center text-3xl md:text-5xl lg:text-5xl justify-between'>
             <Image
                         src="/about.png"
                         alt="About"
@@ -80,7 +80,7 @@ function Mission2() {
                         height={300}
                         data-aos="flip-up"
                       />
-        <div className='p-5 ' data-aos="zoom-in-left">
+        <div className='p-5 text-3xl md:text-5xl lg:text-5xl' data-aos="zoom-in-left">
           <Heading
             className="text-black text-center"
             heading1={"Our"}
@@ -91,17 +91,17 @@ function Mission2() {
         </div>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 p-4">
-          {features.map((feature, idx) => (
+          {features && features?.map((feature, idx) => (
             <div
               key={idx}
               data-aos="fade-right" 
               className="bg-white rounded-2xl shadow flex flex-col items-center px-3 py-3 md:px-6 md:py-6 text-center"
             >
               <div className="flex  justify-center items-center w-24 h-24 rounded-full bg-[#E6F4EA] mb-4 p-1">
-                {feature.icon}
+                {feature?.icon}
               </div>
-              <h3 className="font-semibold text-lg mb-2">{feature.title}</h3>
-              <p className="text-gray-600 text-sm">{feature.description}</p>
+              <h3 className="font-semibold text-lg md:text-xl mb-2">{feature?.title}</h3>
+              <p className="text-gray-600 text-sm">{feature?.description}</p>
             </div>
           ))}
         </div>

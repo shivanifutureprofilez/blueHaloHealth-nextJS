@@ -8,6 +8,7 @@ import BookingTab from '@/components/BookingTab'
 import VirtualTherapy from '@/components/VirtualTherapy'
 import Head from "next/head";
 import Mission2 from './Mission2'
+import AnnimationTry from './AnnimationTry'
 export default function AboutPageIndex() {
   return (
     <>
@@ -29,6 +30,7 @@ export default function AboutPageIndex() {
         <SectionBanner title={"About"} />
         {/* <Founder /> */}
         {/* <Mission /> */}
+        {/* <AnnimationTry/> */}
         <Mission2/>
         <VirtualTherapy/>
         <Team />
