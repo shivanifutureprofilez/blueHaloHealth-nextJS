@@ -1,25 +1,18 @@
 import * as motion from "motion/react-client"
+import Link from "next/link"
 
 export default function AnimationTry() {
     return (
-        <motion.p
-            animate={{
-                scale: [1, 2, 2, 1, 1],
-                rotate: [0, 0, 180, 180, 0],
-                borderRadius: ["0%", "0%", "50%", "50%", "0%"],
-            }}
-            transition={{
-                duration: 2,
-                ease: "easeInOut",
-                times: [0, 0.2, 0.5, 0.8, 1],
-                repeat: Infinity,
-                repeatDelay: 1,
-            }}
-            // style={box}
-            className="uppercase tagline rounded-lg font-bold text-2xl  p-3 text-center"
-        >
-        15 MIN Consultation On Us.
-        </motion.p>
+        <motion.div   animate={{ x: 100 }}
+  transition={{ ease: "easeOut", duration: 4 }} className="text-center">
+            <Link
+                href="/about"
+                className="border border-green-600 text-green-600 px-8 py-3 rounded-lg font-semibold hover:bg-green-50 transition inline-block mt-7"
+              
+              >
+                Read More About Us
+              </Link>
+        </motion.div>
     )
 }
 

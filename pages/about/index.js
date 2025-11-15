@@ -9,6 +9,7 @@ import VirtualTherapy from '@/components/VirtualTherapy'
 import Head from "next/head";
 import Mission2 from './Mission2'
 import AnnimationTry from './AnnimationTry'
+import Values from './Values'
 export default function AboutPageIndex() {
   return (
     <>
@@ -32,8 +33,9 @@ export default function AboutPageIndex() {
         {/* <Mission /> */}
         {/* <AnnimationTry/> */}
         <Mission2/>
-        <VirtualTherapy/>
-        <Team />
+        <Values/>
+        {/* <VirtualTherapy/> */}
+        {/* <Team /> */}
         <BookingTab/>
       </div>
     </Layout>

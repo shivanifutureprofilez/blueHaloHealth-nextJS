@@ -116,7 +116,7 @@ export default function Index() {
         <link rel="canonical" href="https://bluehalohealth.com/service" />
       </Head>
       <Layout>
-        <SectionBanner title={"Services"} />
+        <SectionBanner title={"Autism & Developmental Therapy"} />
         <div className="bg-[#F7F4F0] py-[20px] md:py-[40px] lg:py-[60px]">
           <div className="mx-auto container    text-center">
 

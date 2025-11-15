@@ -6,13 +6,15 @@ import Button from "./Button";
 import Popup from "./Popup";
 import CommingSoonBookButton from "./CommingSoonBookButton";
 import { useRouter } from "next/router";
+import DropDown from "./DropDown";
+import { RiArrowDropDownLine } from "react-icons/ri";
 
 function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const navLinks = [
     // { name: "Home", href: "/" },
-    { name: "Services", href: "/service" },
+    // { name: "Core Services ", href: "/service" },
     { name: "About", href: "/about" },
     { name: "Resources", href: "/resources" },
     { name: "Events", href: "/events" },
@@ -20,14 +22,14 @@ function Header() {
     // { name: "Contact", href: "/contact-us" },
   ];
 
-  
+
   const [action, setAction] = useState();
-    const {query} = useRouter();
-    useEffect(()=>{
-        if(query.join == 'waitlist'){
-            setAction('open')
-        }
-    },[query]);
+  const { query } = useRouter();
+  useEffect(() => {
+    if (query.join == 'waitlist') {
+      setAction('open')
+    }
+  }, [query]);
 
   return (
     <header className="bg-[#F7F4F0] sticky top-0 z-50  " >
@@ -40,9 +42,43 @@ function Header() {
           >
             BlueHaloHealth
           </Link>
-
-          {/* Desktop Nav */}
           <nav className="hidden lg:flex items-center space-x-8 lg:space-x-7">
+            <DropDown menuwidth="min-w-[300px]"
+              btnclasses={'   focus:outline-none '}
+              label="Services"
+              onSelect={(item) => console.log('selected', item)}
+              align="left"
+            >
+              <div className="p-2  ">
+
+                <p className="font-bold text-sm">Autism & Developmental Therapy</p>
+                <ul className="mb-2 border-b mt-1 border-gray-200 pb-3">
+                  <Link href='/service?agegroup=68f098aae07796e988820b2b'> <li className="text-sm text-gray-500">0-6 Early Years</li></Link>                   
+                  <Link href='/service?agegroup=68f098aae07796e988820b2b'><li className="text-sm text-gray-500">6-12 School Age</li></Link>                
+                  <Link href='/service?agegroup=68f098aae07796e988820b2b'> <li className="text-sm text-gray-500">13-17 Adolescents</li></Link>
+                </ul>
+                <p className="font-bold text-sm">Neurodevelopmental</p>
+                <ul className="mb-2 border-b mt-1 border-gray-200 pb-3">
+                  <Link href='/service?agegroup=68f098aae07796e988820b2b'> <li className="text-sm text-gray-500">0-6 Early Years</li></Link>                   
+                  <Link href='/service?agegroup=68f098aae07796e988820b2b'><li className="text-sm text-gray-500">6-12 School Age</li></Link>                 
+                  <Link href='/service?agegroup=68f098aae07796e988820b2b'> <li className="text-sm text-gray-500">13-17 Adolescents</li></Link>
+                </ul>
+                <p className="font-bold text-sm"> Mental Health & Behaviour Health Counselling </p>
+                <ul className="mb-2 border-b mt-1 border-gray-200 pb-3">
+                  <Link href='/service?agegroup=68f098aae07796e988820b2b'> <li className="text-sm text-gray-500">0-6 Early Years</li></Link>                  
+                  <Link href='/service?agegroup=68f098aae07796e988820b2b'> <li className="text-sm text-gray-500">6-12 School Age</li></Link>                  
+                  <Link href='/service?agegroup=68f098aae07796e988820b2b'> <li className="text-sm text-gray-500">13-17 Adolescents</li></Link>
+                </ul>
+                <p className="font-bold text-sm">Psychiatry, Medication Management,</p>
+                <ul className="mb-2  mt-1 border-gray-200 pb-3">
+                  <Link href='/service?agegroup=68f098aae07796e988820b2b'> <li className="text-sm text-gray-500">0-6 Early Years</li></Link>                  
+                  <Link href='/service?agegroup=68f098aae07796e988820b2b'> <li className="text-sm text-gray-500">6-12 School Age</li></Link>                  
+                  <Link href='/service?agegroup=68f098aae07796e988820b2b'> <li className="text-sm text-gray-500">13-17 Adolescents</li></Link>
+                </ul>
+
+              </div>
+
+            </DropDown>
             {navLinks.map((link) => (
               <Link
                 key={link.name}
@@ -54,27 +90,27 @@ function Header() {
             ))}
             <a href="https://phpdemo.futureprofilez.com/wp/blue-halo-health-blog/" className="text-gray-800 hover:text-[#00D967] font-medium transition">Blogs</a>
             <Link
-                href='/contact-us'
-                className="text-gray-800 hover:text-[#00D967] font-medium transition"
-              >
-                Contact
-              </Link>
+              href='/contact-us'
+              className="text-gray-800 hover:text-[#00D967] font-medium transition"
+            >
+              Contact
+            </Link>
           </nav>
 
           {/* Desktop Button */}
           <div className="hidden gap-4 lg:flex">
-            
-            
+
+
             {/* <Button
               title="Book Free Consultation"
               className="button bg-green-dark text-[15px] px-5 py-2"
             /> */}
-              <CommingSoonBookButton action={action} />
+            <CommingSoonBookButton action={action} />
             {/* <Button
               title="Patient Portal"
               className="button bg-green-dark text-[15px] px-5 py-2"
             /> */}
-             {/* <Link
+            {/* <Link
                   // title="Patient Portal"
                   href="/"
                   className="bg-white border !border-[#009C4A]  text-center  text-black  rounded-lg font-semibold 
@@ -84,10 +120,10 @@ function Header() {
                 >
                 Patient Portal
                 </Link> */}
-                <CommingSoonBookButton classes={`bg-white border !border-[#009C4A]  text-center  text-black  rounded-lg font-semibold 
-              hover:bg-green-50 transition inline-block text-[15px] px-5 py-2`} 
+            <CommingSoonBookButton classes={`bg-white border !border-[#009C4A]  text-center  text-black  rounded-lg font-semibold 
+              hover:bg-green-50 transition inline-block text-[15px] px-5 py-2`}
               // content={`Patient Portal`} 
-              btnText={`Patient Portal`}/>
+              btnText={`Patient Portal`} />
           </div>
 
           {/* Mobile Menu Button */}
@@ -109,36 +145,36 @@ function Header() {
 
       {/* Mobile Dropdown */}
       {isMobileMenuOpen && (
-          <div className="p-6 fixed md:relative top-[50px] w-full md:block">
-            <div className=" rounded-2xl  w-full max-w-[100%]  lg:hidden bg-white shadow-lg border-t border-gray-100">
-              <ul className="flex flex-col space-y-4 px-6 py-4 text-gray-800 font-medium">
-                {navLinks.map((link) => (
-                  <li key={link.name}>
-                    <Link
-                      href={link.href}
-                      className="block hover:text-[#00D967] transition"
-                      onClick={() => setIsMobileMenuOpen(false)}
-                    >
-                      {link.name}
-                    </Link>
-                  </li>
-                ))}
-                <a href="https://phpdemo.futureprofilez.com/wp/blue-halo-health-blog/" className="block hover:text-[#00D967] transition">Blogs</a>
-                <Link
-                    href='/contact-us'
+        <div className="p-6 fixed md:relative top-[50px] w-full md:block">
+          <div className=" rounded-2xl  w-full max-w-[100%]  lg:hidden bg-white shadow-lg border-t border-gray-100">
+            <ul className="flex flex-col space-y-4 px-6 py-4 text-gray-800 font-medium">
+              {navLinks.map((link) => (
+                <li key={link.name}>
+                  <Link
+                    href={link.href}
                     className="block hover:text-[#00D967] transition"
+                    onClick={() => setIsMobileMenuOpen(false)}
                   >
-                    Contact
+                    {link.name}
                   </Link>
-              </ul>
-              <div className="p-4 grid gap-2 justify-left ">
-                {/* <Button
+                </li>
+              ))}
+              <a href="https://phpdemo.futureprofilez.com/wp/blue-halo-health-blog/" className="block hover:text-[#00D967] transition">Blogs</a>
+              <Link
+                href='/contact-us'
+                className="block hover:text-[#00D967] transition"
+              >
+                Contact
+              </Link>
+            </ul>
+            <div className="p-4 grid gap-2 justify-left ">
+              {/* <Button
                   title="Book Free Consultation"
                   className="button w-full bg-green-dark text-[14px] px-4 py-2"
                   onClick={() => setIsMobileMenuOpen(false)}
                 /> */}
-                <CommingSoonBookButton action={action} classes={`button w-full bg-green-dark text-[14px] px-4 py-2`}/>
-                {/* <Link
+              <CommingSoonBookButton action={action} classes={`button w-full bg-green-dark text-[14px] px-4 py-2`} />
+              {/* <Link
                   // title="Patient Portal"
                   href="/"
                   className=" text-center w-full border border-green-600 text-green-600  rounded-lg font-semibold  w-full hover:bg-green-50 transition inline-block text-[14px] px-4 py-2"
@@ -147,13 +183,13 @@ function Header() {
                 >
                 Patient Portal
                 </Link> */}
-                <CommingSoonBookButton classes={`text-center w-full border border-green-600 text-green-600  rounded-lg font-semibold   hover:bg-green-50 transition inline-block text-[14px] px-4 py-2`} 
-              // content={`Patient Portal`} 
-              btnText={`Patient Portal`}/>
+              <CommingSoonBookButton classes={`text-center w-full border border-green-600 text-green-600  rounded-lg font-semibold   hover:bg-green-50 transition inline-block text-[14px] px-4 py-2`}
+                // content={`Patient Portal`} 
+                btnText={`Patient Portal`} />
 
-              </div>
             </div>
-          </div>        
+          </div>
+        </div>
       )}
     </header>
   );
