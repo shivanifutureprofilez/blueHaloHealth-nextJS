@@ -34,7 +34,7 @@ export default function AgeMatrix({ admin }) {
   return (
 
     <section className="bg-[#E6EBE3] md:bg-[#F7F4F0] py-[30px] md:py-[40px] lg:py-[60px]  ">
-      <div className="mx-auto container sm:container md:container lg:container xl:max-w-[1230px]  px-4 text-center">
+      <div className="mx-auto container  px-4 text-center">
         <Heading
           className="heading mb-0 text-center  poppins text-black tracking-tighter leading-tight font-bold text-3xl md:text-5xl lg:text-5xl "
           heading1={"Comprehensive"}
@@ -47,23 +47,21 @@ export default function AgeMatrix({ admin }) {
 
 
         {loading ? <Loading /> :
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4  py-[15px] md:py-[30px] ">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4  py-[15px] md:py-[30px] ">
             {ageGroupsLists && ageGroupsLists?.map((group, idx) => (
-              <div key={idx}  className="bg-white group border-b border-[#009C4A] rounded-[25px] shadow overflow-hidden flex flex-col items-center">
-                <div className="w-full min-h-[250px] max-h-[250px]  rounded-lg overflow-hidden mb-4 relative">
-                  {/* <Link href={`/agegroups/detail/${group?._id}`} > */}
+              <div key={idx}  className="bg-white group   border-[#009C4A] rounded-[25px] shadow overflow-hidden flex flex-col items-center">
+                <div className="h-[150px] w-[150px]  p-6 pb-0 flex justify-center items-center relative">
                   <Link href={`/service?agegroup=${group?._id}`} >
-                    {/* </Link>                       */}
                     <img
-                      src={group?.image || 'https://thumbs.dreamstime.com/b/elderly-man-medical-insurance-health-plan-older-people-pixel-perfect-editable-stroke-line-design-icon-elderly-man-medical-273635532.jpg'}
+                      src={group?.image || group?.icon || 'https://thumbs.dreamstime.com/b/elderly-man-medical-insurance-health-plan-older-people-pixel-perfect-editable-stroke-line-design-icon-elderly-man-medical-273635532.jpg'}
                       alt={group.title}
-                      className="object-cover bg-gray-200  w-full h-full transform transition-transform duration-500 group-hover:scale-110"
+                      className="object-contain   transform transition-transform duration-500 group-hover:scale-110"
                     /></Link>
-                  <h3 className="mb-3 text-start py-[15px] px-[30px] text-white text-xl font-semibold absolute top-0 left-0 w-full  bg-[#0006]">{group.title}</h3>
                 </div>
                 <ul className="text-gray-800 p-4 w-full ">
-                  {group && group.services && group.services.map((service, i) => (
+                                    <h3 className="mb-3  text-start text-black text-md font-semibold capitalize w-full  ">{group.title}</h3>
 
+                  {group && group.services && group.services.map((service, i) => (
                     <motion.div
                       initial={{ opacity: 0, x: -100 }}
                       whileInView={{ opacity: 1, x: 0 }}
@@ -71,11 +69,10 @@ export default function AgeMatrix({ admin }) {
                       // viewport={{ once: true, amount: 0.2 }} // triggers when 20% is visible
                     >
                       <li key={i} className="mb-2 text-[#626262]  flex items-start hover:text-green-700 hover:underline font-semibold text-[15px] text-start ">
-
                         <span className="mr-2 mt-1">
                           <FaCircleCheck className="text-green-500 rounded-xl" />
                         </span>
-                        <Link href={`/service/detail/${service?._id}`} className=''>{service?.name}</Link>
+                        <Link href={`/service/detail/${service?._id}`} className='capitalize'>{service?.name}</Link>
                       </li>
                     </motion.div>
                   )) || ''}

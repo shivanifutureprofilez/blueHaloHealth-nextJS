@@ -12,7 +12,7 @@ import AnimationTry from '@/pages/about/AnnimationTry';
 function BookingTab() {
     return (
         <div className='bg-[#F7F4F0]  py-[20px] md:py-[40px] lg:py-[60px]'>
-            <div className="mx-auto container sm:container md:container lg:container xl:max-w-[1230px]  px-4 text-center">
+            <div className="mx-auto container  px-4 text-center">
 
                 <section className="overflow-hidden w-full relative  flex items-center justify-center ">
                     {/* mt-24 remove */}

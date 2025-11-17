@@ -62,7 +62,7 @@ function Resource() {
       <>
       {resources && resources.length > 0 ? (
         <div className='bg-[#F7F4F0]  py-[40px]  lg:py-[60px] overflow-hidden'>
-            <div data-aos="fade-left" className="mx-auto container sm:container md:container lg:container xl:max-w-[1230px]  px-4 text-center">
+            <div data-aos="fade-left" className="mx-auto container  px-4 text-center">
                 <Heading
                     className="heading text-center poppins text-black tracking-tighter leading-tight font-bold text-3xl md:text-5xl lg:text-5xl mb-3"
                     heading1={"Insights &"}

@@ -55,7 +55,7 @@ function Mission2() {
   ];
   return (
     <div className=" py-[20px] md:py-[40px] lg:py-[60px]  overflow-hidden">
-      <div className="mx-auto container sm:container md:container lg:container xl:max-w-[1230px]  px-4 text-center">
+      <div className="mx-auto container  px-4 text-center">
         <div className='md:flex items-center justify-between'>
             <Image
                         src="/about.png"

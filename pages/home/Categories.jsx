@@ -30,7 +30,7 @@ export default function Categories({ admin }) {
   return (
 
     <section className="bg-[#E6EBE3] md:bg-[#F7F4F0] py-[30px] md:py-[40px] lg:py-[60px]  ">
-      <div className="mx-auto container sm:container md:container lg:container xl:max-w-[1230px]  px-4 text-center">
+      <div className="mx-auto container  px-4 text-center">
         <Heading
           className="heading mb-0 text-center  poppins text-black tracking-tighter leading-tight font-bold text-3xl md:text-5xl lg:text-5xl "
           heading1={"Comprehensive"}
@@ -41,7 +41,7 @@ export default function Categories({ admin }) {
         </p>
 
         <div className="grid grid-cols-4 gap-4">
-            <Link href='/service?agegroup=68f098aae07796e988820b2b' className="bg-gray-200 border border-gray-300 rounded-xl p-6">
+            <Link href='/service?agegroup=68f098aae07796e988820b2b' className="bg-white border border-gray-300 rounded-xl p-6">
                 <h2 className="text-start font-bold">Autism & Developmental Therapy BY Age</h2>
                 <ul className="text-start mb-2 border-b mt-1 border-gray-200 pb-3">
                     <li className="text-md mt-2  text-gray-500">0-6 Early Years</li>

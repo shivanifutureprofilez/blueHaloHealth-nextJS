@@ -50,7 +50,7 @@ function Event() {
       <section className="bg-[#F7F8F9] py-[40px] lg:py-[60px]">
         <div
           data-aos="fade-right"
-          className="mx-auto container sm:container md:container lg:container xl:max-w-[1230px] px-4 text-center"
+          className="mx-auto container px-4 text-center"
         >
           <Heading
             className="heading text-center poppins text-black tracking-tighter leading-tight font-bold text-3xl md:text-5xl lg:text-5xl mb-3"

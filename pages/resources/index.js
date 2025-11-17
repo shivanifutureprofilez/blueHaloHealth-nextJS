@@ -141,7 +141,7 @@ function index() {
       <Layout>
         <SectionBanner title={"Resources"} />
         <div className="bg-[#F7F8F9] py-[20px] md:py-[40px] lg:py-[60px]  ">
-          <div className="mx-auto container sm:container md:container lg:container xl:max-w-[1230px]  px-4 text-center">
+          <div className="mx-auto container  px-4 text-center">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4 ">
               <div className="mb-6 md:mb-0">
                 <h3 className="text-2xl font-bold mb-4">I Am</h3>

@@ -82,9 +82,8 @@ export default function CommingSoonBookButton({ classes, action, btnText }) {
                         <div className="flex flex-col items-center justify-center text-center p-6 bg-green-50 rounded-2xl shadow-md max-w-md mx-auto">
                             <h2 className="text-2xl font-extrabold text-green-600 mb-3">Thank You!</h2>
                             <p className="text-gray-700 leading-relaxed">
-                                We appreciate your interest in <span className="font-semibold text-green-700">Blue Halo Health</span>.
-                                You’ve been added to our waitlist, and our team will prioritize your request.
-                                We’ll reach out as soon as possible with the next steps and updates.
+                                
+                                
                             </p>
                         </div>
                     </div>

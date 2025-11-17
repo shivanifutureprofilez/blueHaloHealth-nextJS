@@ -75,7 +75,7 @@ function HeroBanner() {
                   >
                     Patient Portal
                   </Link> */}
-          <CommingSoonBookButton classes={`bg-white transition-[1s] w-full md:w-[230px] text-center  text-black px-3 py-3 rounded-lg font-semibold  hover:bg-green-50  inline-block`} content={`Thankyou so much but we are not available right now`} btnText={`Patient Portal`} />
+          <CommingSoonBookButton classes={`bg-white transition-[1s] cursor-pointer w-full md:w-[230px] text-center  text-black px-3 py-3 rounded-lg font-semibold  hover:bg-green-50  inline-block`} content={`Thankyou so much but we are not available right now`} btnText={`Patient Portal`} />
         </div>
       </div>
       {/* </div> */}

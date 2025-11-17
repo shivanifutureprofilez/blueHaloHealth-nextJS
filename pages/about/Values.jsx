@@ -59,7 +59,7 @@ function Values() {
     return (
         <div>
             <div className='  '>
-                <div  className="mx-auto container sm:container md:container lg:container xl:max-w-[1230px]  px-4 text-center">
+                <div  className="mx-auto container  px-4 text-center">
                     {/* <Heading  className="heading text-center md:text-left poppins text-black tracking-tighter leading-tight font-bold text-3xl md:text-5xl lg:text-5xl mb-3" heading1={"Our"} heading2={" Values"} />
                     <p className="text-center pt-2 leading-snug   max-w-[600px] mx-auto">
                         Blue Halo Health’s core values are at the heart of its mission: Passion fuels efforts to help children with autism and their families, quality is reflected in every standard they uphold, and transparency is shown through honest, open communication with clients, caregivers, and the team.

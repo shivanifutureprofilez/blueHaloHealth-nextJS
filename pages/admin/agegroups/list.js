@@ -15,14 +15,7 @@ import AdminRoutes from '@/pages/api/AdminRoutes';
 import NoResultFound from '@/components/NoResult';
 import Loading from '@/components/Loading';
 
-const services = [
-  "Autism & Developmental Screening",
-  "Occupational Therapy",
-  "ABA/Behavior Therapy",
-  "Speech Therapy",
-  "Feeding/Nutrition",
-  "Family Counseling",
-]
+
 function List() {
   const router = useRouter();
 
@@ -45,7 +38,7 @@ function List() {
       const lists = new RoutesLists();
       const data = lists.deleteagegroup(pid);
       data.then((res) => {
-        
+
         if (res.data.status) {
           toast.success(res.data.message);
           fetchGroups();
@@ -80,25 +73,26 @@ function List() {
         <AddAgeGroup fetchGroups={fetchGroups} />
       </div>
 
-        {loading ? <Loading /> 
+      {loading ? <Loading />
         :
         <>
-        {ageGroupsLists && ageGroupsLists?.length > 0 ? 
+          {ageGroupsLists && ageGroupsLists?.length > 0 ?
             <div className='flex mt-5'>
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-3 sm:gap-4 lg:gap-6 xl:gap-6">
-                {ageGroupsLists&& ageGroupsLists.map((group, idx) => (
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-3 sm:gap-4 lg:gap-6 xl:gap-6">
+                {ageGroupsLists && ageGroupsLists.map((group, idx) => (
                   <div key={idx} className=" bg-white relative border-b border-[#009C4A] rounded-[25px] shadow overflow-hidden flex flex-col items-center ">
-                    <div className="w-full min-h-[250px] max-h-[250px]  rounded-lg overflow-hidden mb-4 relative">
+                    <div className="h-[150px] w-[150px]  p-6 pb-0 flex justify-center items-center relative">
                       {/* <Link href={<AddAgeGroup/>} > */}
                       <img
-                        src={group?.image || 'https://thumbs.dreamstime.com/b/elderly-man-medical-insurance-health-plan-older-people-pixel-perfect-editable-stroke-line-design-icon-elderly-man-medical-273635532.jpg'}
-                        alt={group.title}
-                        className="object-cover bg-gray-200  w-full h-full"
-                      />
-                      {/* </Link> */}
-                      <h3 className="mb-3 text-start py-[15px] px-[30px] text-white text-xl font-semibold absolute top-0 left-0 w-full  bg-[#0006]">{group.title}</h3>
+                      src={group?.image || group?.icon || 'https://thumbs.dreamstime.com/b/elderly-man-medical-insurance-health-plan-older-people-pixel-perfect-editable-stroke-line-design-icon-elderly-man-medical-273635532.jpg'}
+                      alt={group.title}
+                      className="object-contain   transform transition-transform duration-500 group-hover:scale-110"
+                    />
+                    {/* </Link> */}
+                </div>
+                
 
-                    </div>
+                   
                     <button
                       onClick={() => { deleteAge(group?._id) }}
                       className={` absolute top-3 right-3 bg-red-500 hover:bg-red-600 text-white p-2 rounded-full shadow-md transition-colors duration-200 z-2 cursor-pointer`} >
@@ -107,6 +101,8 @@ function List() {
                     <div className="absolute top-3 right-15 ">
                       <AddAgeGroup fetchGroups={fetchGroups} group={group} isEdit={true}  />
                     </div>              <ul className="text-gray-800 p-4 w-full ">
+                     
+                                    <h3 className="mb-3  text-start text-black text-md font-semibold  w-full  ">{group.title}</h3>
                       {group && group.services && group.services.map((service, i) => (
                         <li key={i} className="mb-2 text-[#626262] flex items-start font-semibold text-[15px] ">
                           <span className="mr-2 mt-1">
@@ -118,15 +114,15 @@ function List() {
                     </ul>
                   </div>
                 ))}
-              </div>
             </div>
-          :
-          <NoResultFound />
+            </div>
+      :
+      <NoResultFound />
           }
-          </>
+    </>
         }
         
-    </AuthLayout>
+    </AuthLayout >
   )
 }
 

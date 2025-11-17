@@ -31,7 +31,7 @@ function Importance() {
 
   return (
     <section className="bg-[#4B9B711A] py-[40px]  lg:py-[60px]  ">
-      <div className="mx-auto container sm:container md:container lg:container xl:max-w-[1230px]  px-4 text-center">
+      <div className="mx-auto container  px-4 text-center">
         <Heading
           className="heading text-center poppins text-black tracking-tighter leading-tight font-bold text-4xl md:text-5xl lg:text-5xl mb-3"
           heading1={"Why Families Choose"}

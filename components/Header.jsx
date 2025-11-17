@@ -8,9 +8,12 @@ import CommingSoonBookButton from "./CommingSoonBookButton";
 import { useRouter } from "next/router";
 import DropDown from "./DropDown";
 import { RiArrowDropDownLine } from "react-icons/ri";
+import RoutesLists from "@/pages/api/RoutesLists";
 
 function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [ageGroupsLists, setAgeGroupsLists] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   const navLinks = [
     // { name: "Home", href: "/" },
@@ -31,6 +34,22 @@ function Header() {
     }
   }, [query]);
 
+
+  const fetchGroups = async () => {
+    const lists = new RoutesLists();
+    const data = lists.getAgeGroups();
+    data.then((res) => {
+      setAgeGroupsLists(res?.data?.ageGroupList || []);
+      setLoading(false)
+    }).catch((err) => {
+      setAgeGroupsLists([]);
+      console.log("err", err)
+      setLoading(false)
+    });
+  }
+  useEffect(() => {
+    fetchGroups();
+  }, []);
   return (
     <header className="bg-[#F7F4F0] sticky top-0 z-50  " >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -49,36 +68,54 @@ function Header() {
               onSelect={(item) => console.log('selected', item)}
               align="left"
             >
-              <div className="p-2  ">
+              {ageGroupsLists && ageGroupsLists?.map((group, idx) => (
+                <div className="p-2 grid grid-cols-1 space-y-2 relative group">
+                  <Link href={`/service?agegroup=${group?._id}`} >
+                    <p className="font-bold py-1 text-sm border-b border-gray-200">{group?.title}</p>
+                  </Link>
 
-                <p className="font-bold text-sm">Autism & Developmental Therapy</p>
+                  <div className="absolute left-75 top-0 hidden group-hover:block bg-white shadow-lg p-3  min-w-[200px] rounded-md z-50">
+                    {group.services?.map((srv) => (
+                      <Link key={srv._id} href={`/service/detail/${srv?._id}`}>
+                        <p className="text-sm border-b border-gray-200 py-2 hover:text-blue-500 cursor-pointer">
+                          {srv.name}
+                        </p>
+                      </Link>
+                    ))}
+                  </div>
+
+
+                </div>
+              ))}
+
+
+            </DropDown>
+            {/* <p className="font-bold text-sm">Autism & Developmental Therapy</p>
                 <ul className="mb-2 border-b mt-1 border-gray-200 pb-3">
-                  <Link href='/service?agegroup=68f098aae07796e988820b2b'> <li className="text-sm text-gray-500">0-6 Early Years</li></Link>                   
-                  <Link href='/service?agegroup=68f098aae07796e988820b2b'><li className="text-sm text-gray-500">6-12 School Age</li></Link>                
+                  <Link href='/service?agegroup=68f098aae07796e988820b2b'> <li className="text-sm text-gray-500">0-6 Early Years</li></Link>
+                  <Link href='/service?agegroup=68f098aae07796e988820b2b'><li className="text-sm text-gray-500">6-12 School Age</li></Link>
                   <Link href='/service?agegroup=68f098aae07796e988820b2b'> <li className="text-sm text-gray-500">13-17 Adolescents</li></Link>
                 </ul>
                 <p className="font-bold text-sm">Neurodevelopmental</p>
                 <ul className="mb-2 border-b mt-1 border-gray-200 pb-3">
-                  <Link href='/service?agegroup=68f098aae07796e988820b2b'> <li className="text-sm text-gray-500">0-6 Early Years</li></Link>                   
-                  <Link href='/service?agegroup=68f098aae07796e988820b2b'><li className="text-sm text-gray-500">6-12 School Age</li></Link>                 
+                  <Link href='/service?agegroup=68f098aae07796e988820b2b'> <li className="text-sm text-gray-500">0-6 Early Years</li></Link>
+                  <Link href='/service?agegroup=68f098aae07796e988820b2b'><li className="text-sm text-gray-500">6-12 School Age</li></Link>
                   <Link href='/service?agegroup=68f098aae07796e988820b2b'> <li className="text-sm text-gray-500">13-17 Adolescents</li></Link>
                 </ul>
                 <p className="font-bold text-sm"> Mental Health & Behaviour Health Counselling </p>
                 <ul className="mb-2 border-b mt-1 border-gray-200 pb-3">
-                  <Link href='/service?agegroup=68f098aae07796e988820b2b'> <li className="text-sm text-gray-500">0-6 Early Years</li></Link>                  
-                  <Link href='/service?agegroup=68f098aae07796e988820b2b'> <li className="text-sm text-gray-500">6-12 School Age</li></Link>                  
+                  <Link href='/service?agegroup=68f098aae07796e988820b2b'> <li className="text-sm text-gray-500">0-6 Early Years</li></Link>
+                  <Link href='/service?agegroup=68f098aae07796e988820b2b'> <li className="text-sm text-gray-500">6-12 School Age</li></Link>
                   <Link href='/service?agegroup=68f098aae07796e988820b2b'> <li className="text-sm text-gray-500">13-17 Adolescents</li></Link>
                 </ul>
                 <p className="font-bold text-sm">Psychiatry, Medication Management,</p>
                 <ul className="mb-2  mt-1 border-gray-200 pb-3">
-                  <Link href='/service?agegroup=68f098aae07796e988820b2b'> <li className="text-sm text-gray-500">0-6 Early Years</li></Link>                  
-                  <Link href='/service?agegroup=68f098aae07796e988820b2b'> <li className="text-sm text-gray-500">6-12 School Age</li></Link>                  
+                  <Link href='/service?agegroup=68f098aae07796e988820b2b'> <li className="text-sm text-gray-500">0-6 Early Years</li></Link>
+                  <Link href='/service?agegroup=68f098aae07796e988820b2b'> <li className="text-sm text-gray-500">6-12 School Age</li></Link>
                   <Link href='/service?agegroup=68f098aae07796e988820b2b'> <li className="text-sm text-gray-500">13-17 Adolescents</li></Link>
-                </ul>
+                </ul> */}
 
-              </div>
 
-            </DropDown>
             {navLinks.map((link) => (
               <Link
                 key={link.name}
@@ -121,7 +158,7 @@ function Header() {
                 Patient Portal
                 </Link> */}
             <CommingSoonBookButton classes={`bg-white border !border-[#009C4A]  text-center  text-black  rounded-lg font-semibold 
-              hover:bg-green-50 transition inline-block text-[15px] px-5 py-2`}
+              hover:bg-green-50 transition inline-block text-[15px] px-5 py-2 cursor-pointer`}
               // content={`Patient Portal`} 
               btnText={`Patient Portal`} />
           </div>
@@ -183,7 +220,7 @@ function Header() {
                 >
                 Patient Portal
                 </Link> */}
-              <CommingSoonBookButton classes={`text-center w-full border border-green-600 text-green-600  rounded-lg font-semibold   hover:bg-green-50 transition inline-block text-[14px] px-4 py-2`}
+              <CommingSoonBookButton classes={`text-center cursor-pointer w-full border border-green-600 text-green-600  rounded-lg font-semibold   hover:bg-green-50 transition inline-block text-[14px] px-4 py-2`}
                 // content={`Patient Portal`} 
                 btnText={`Patient Portal`} />
 

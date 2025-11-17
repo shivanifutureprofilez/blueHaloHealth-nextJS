@@ -29,7 +29,7 @@ function Mission() {
   ];
   return (
     <div className=" py-[20px] md:py-[40px] lg:py-[60px]  ">
-      <div className="mx-auto container sm:container md:container lg:container xl:max-w-[1230px]  px-4 text-center">
+      <div className="mx-auto container  px-4 text-center">
         {/* <div className='grid grid-cols-1 md:grid-cols-2'> */}
         <div className='p-5'  data-aos="zoom-in-left">
           <Heading

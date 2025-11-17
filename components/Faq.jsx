@@ -50,7 +50,7 @@ function Faq() {
 
   return (
     <section className="bg-[#F7F8F9] py-[20px] md:py-[40px] lg:py-[60px]  ">
-      <div className="mx-auto container sm:container md:container lg:container xl:max-w-[1230px]  px-4 text-center">
+      <div className="mx-auto container  px-4 text-center">
         <div className="flex flex-wrap justify-between md:flex-nowrap">
           <div className="max-w-sm">
             <Heading

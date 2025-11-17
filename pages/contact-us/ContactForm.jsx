@@ -93,7 +93,7 @@ function ContactForm() {
 
   return (
     <div className="bg-[#F7F4F0] py-[20px] md:py-[40px] lg:py-[60px]  ">
-      <div className="mx-auto container sm:container md:container lg:container xl:max-w-[1230px]  px-4 text-center">
+      <div className="mx-auto container  px-4 text-center">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {/* Contact Info Card */}
           <div className=' md:p-4 '>

@@ -61,7 +61,7 @@ function index() {
             <div className='bg-[#F7F4F0]'>
                 <SectionBanner title={"Events"} />
                 <section className="bg-[#F7F8F9] py-[20px] md:py-[40px] lg:py-[60px]  ">
-                    <div className="mx-auto container sm:container md:container lg:container xl:max-w-[1230px]  px-4 text-center">
+                    <div className="mx-auto container  px-4 text-center">
                            <div className='p-2 md:p-4'>
                             <Heading
                                 className="heading text-center poppins !text-black tracking-tighter leading-tight font-bold text-[25px] md:text-[35px] mb-3"

@@ -81,11 +81,11 @@ export default function Index() {
         {totalAgeGroups?.length === 0 ? (
           <>
           </>
-        ) : <div  className="flex justify-center items-center flex-wrap gap-2">
+        ) : <div  className=" grid grid-cols-1 md:grid-cols-3 items-center  gap-2">
           {totalAgeGroups && totalAgeGroups?.map((item, index) => (
             <button
               key={index}
-              className={`button-white !rounded-2xl md:w-[200px] border cursor-pointer ${ageGroup === item?._id ? 'bg-[#009C4A] border-[#009C4A] text-white transition-[1s]' : ''}`}
+              className={`text-normal w-full px-4 py-2 mb-1 !rounded-2xl border cursor-pointer ${ageGroup === item?._id ? 'bg-[#009C4A] border-[#009C4A] text-white transition-[1s]' : ''}`}
               onClick={() => { updateAgeGroup(item?._id) }} 
              >
               <span className="pl-2 pr-2">{item?.title} </span>
@@ -116,7 +116,7 @@ export default function Index() {
         <link rel="canonical" href="https://bluehalohealth.com/service" />
       </Head>
       <Layout>
-        <SectionBanner title={"Autism & Developmental Therapy"} />
+        <SectionBanner title={totalAgeGroups?.ageGroupList?.title || "Autism & Developmental Therapy Services" || "Service"} />
         <div className="bg-[#F7F4F0] py-[20px] md:py-[40px] lg:py-[60px]">
           <div className="mx-auto container    text-center">
 
@@ -127,7 +127,7 @@ export default function Index() {
               <>
               {serviceList && serviceList.length ? (
                 <>
-                  <div className="grid grid-cols-1  lg:grid-cols-3 gap-4 py-[15px] md:py-[30px] ">
+                  <div className="grid grid-cols-1  lg:grid-cols-4 gap-4 py-[15px] md:py-[30px] ">
                     {serviceList.map((item, index) => (
                       <ServiceCard key={item?._id || index} item={item} ageGroup={ageGroup} idx={index} />
                     ))}

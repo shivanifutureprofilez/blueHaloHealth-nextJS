@@ -33,7 +33,7 @@ function FeaturedServices() {
     return (
         <>
             {featured && featured.length ? <div className='bg-[#F7F4F0] '>
-                <div className="mx-auto container sm:container md:container lg:container xl:max-w-[1230px] mt-[18] md:mt-2 mb-6 md:mb-6 px-4 text-center">
+                <div className="mx-auto container mt-[18] md:mt-2 mb-6 md:mb-6 px-4 text-center">
 
                     <section className="overflow-hidden w-full relative  flex items-center justify-center ">
                         {/* mt-24 remove */}

@@ -13,7 +13,7 @@ import { motion } from "motion/react";
 function VirtualTherapy2() {
   return (
     <div className='bg-[#F7F4F0] py-[40px]  lg:py-[60px] overflow-hidden '>
-      <div className='mx-auto container sm:container md:container lg:container xl:max-w-[1230px]  px-4 text-center'>
+      <div className='mx-auto container  px-4 text-center'>
         <div className="grid grid-cols-1 lg:grid-cols-2 items-center gap-4 lg:gap-8">
 
           <div className="text-center lg:text-left">

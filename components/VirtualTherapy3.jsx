@@ -36,7 +36,7 @@ function VirtualTherapy3() {
     
   return (
     <div className='bg-[#F7F4F0] md:bg-white py-[40px]  lg:py-[60px] '>
-      <div className='mx-auto container sm:container md:container lg:container xl:max-w-[1230px]  px-4 text-center'>
+      <div className='mx-auto container  px-4 text-center'>
         <Heading className="heading text-center md:text-left poppins text-black tracking-tighter leading-tight font-bold text-4xl md:text-5xl lg:text-5xl mb-3" heading1={"Virtual"} heading2={" Therapy"} />
                     <p className="font-medium text-[15px] text-center mb-6 md:mb-2 text-gray-700  max-w-[600px] mx-auto">
 Bringing expert care home - through secure, personalized virtual sessions                    </p>

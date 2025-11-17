@@ -6,28 +6,31 @@ import AdminRoutes from '@/pages/api/AdminRoutes';
 import { CiEdit } from "react-icons/ci";
 
 function AddAgeGroup({ id, fetchGroups, isEdit, group }) {
+    const [icons, setIcons] = useState(null);
     const router = useRouter();
     const [items, setItems] = useState({
         title: group?.title || "",
         description: group?.description || "",
-        image: group?.image || "",
-        minAge: group?.minAge || "",
+        icon: group?.icon || "",
+        // image: group?.image || "",
+        // minAge: group?.minAge || "",
         _id: group?._id || "",
-        maxAge: group?.maxAge || "",
+        // maxAge: group?.maxAge || "",
     })
     useEffect(() => {
         setItems({
             title: group?.title || "",
             description: group?.description || "",
-            image: group?.image || "",
-            minAge: group?.minAge || "",
+            icon: group?.icon || "",
+            // image: group?.image || "",
+            // minAge: group?.minAge || "",
             _id: group?._id || "",
-            maxAge: group?.maxAge || "",
+            // maxAge: group?.maxAge || "",
         })
     }, [group])
 
     const [action, setAction] = useState();
-    
+
     const handleChange = (e) => {
         const name = e.target.name;
         const value = e.target.value;
@@ -38,7 +41,7 @@ function AddAgeGroup({ id, fetchGroups, isEdit, group }) {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            if (!items.title || !items.description || !items.image || !items.minAge || !items.maxAge) {
+            if (!items.title || !items.description || !items.icon) {
                 toast.error("All fields are required");
                 return false;
             }
@@ -50,9 +53,10 @@ function AddAgeGroup({ id, fetchGroups, isEdit, group }) {
             setItems({
                 title: "",
                 description: "",
-                image: "",
-                minAge: "",
-                maxAge: "",
+                icon: ""
+                // image: "",
+                // minAge: "",
+                // maxAge: "",
             });
             fetchGroups && fetchGroups();
             setAction("close")
@@ -67,21 +71,22 @@ function AddAgeGroup({ id, fetchGroups, isEdit, group }) {
     const handleEdit = async (e) => {
         e.preventDefault();
         try {
-            if (!items.title || !items.description || !items.image || !items.minAge || !items.maxAge) {
+            if (!items.title || !items.description || !items.icon) {
                 toast.error("All fields are required");
                 return false;
             }
             setLoading(true);
             const lists = new AdminRoutes();
             const data = await lists.editAge(items);
-            toast.success("Age Group added successfully!");
+            toast.success("Mega Service added successfully!");
             router.push("/admin/agegroups/list");
             setItems({
                 title: "",
                 description: "",
-                image: "",
-                minAge: "",
-                maxAge: "",
+                icon: ""
+                // image: "",
+                // minAge: "",
+                // maxAge: "",
             });
             fetchGroups && fetchGroups();
             setAction("close")
@@ -106,37 +111,52 @@ function AddAgeGroup({ id, fetchGroups, isEdit, group }) {
                                     onChange={handleChange}
                                     value={items?.title}
                                     name='title'
-                                    placeholder="Enter Age Group Title"
+                                    placeholder="Enter Mega Service Title"
                                     className=" w-full bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg 
                             focus:ring-blue-500 focus:border-blue-500 py-3 px-4"
                                 />
                             </div>
-                            <div >
-                                <label className="font-medium text-base block mb-2">Description</label>
-                                <input
-                                    type="text"
-                                    onChange={handleChange}
-                                    value={items?.description}
-                                    name='description'
-                                    placeholder="Enter Age Group Description"
-                                    className=" w-full bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg 
-                            focus:ring-blue-500 focus:border-blue-500 py-3 px-4"
-                                />
-                            </div>
+
                             <div>
-                                <label className="font-medium text-base block mb-2">Image Url</label>
+                                <label className="font-medium text-base block mb-2">Icon</label>
                                 <input
                                     type="text"
                                     onChange={handleChange}
-                                    value={items?.image}
-                                    name='image'
-                                    placeholder="Type Image URL for Age Group Banner"
+                                    value={items?.icon}
+                                    name='icon'
+                                    placeholder="Type Icon URL Mega Service"
                                     className=" w-full bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg 
                             focus:ring-blue-500 focus:border-blue-500 py-3 px-4"
                                 />
                             </div>
-                            <div >
-                                <label className="font-medium text-base block mb-2">Minimum Age</label>
+                        </div>
+                        <div>
+                            <label className="font-medium text-base block mb-2">
+                                Description
+                            </label>
+                            <textarea
+                                onChange={handleChange}
+                                value={items?.description}
+                                name="description"
+                                placeholder="Enter Mega Service Description"
+                                rows={3}
+                                className="w-full bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg 
+                            focus:ring-blue-500 focus:border-blue-500 py-3 px-4"
+                            />
+                        </div>
+                        {/* <div>
+                    <select onChange={(e) => setSelectedService(e.target.value)} className='bg-white rounded-lg border border-gray-300 px-4 py-3 w-full outline-none'>
+                      <option  className='text-gray-400' value="" >Choose a Service</option>
+                      {ageGroupsLists && ageGroupsLists.map((age, i) => {
+                        return <>
+                          {age && age?.services.map((s, i) => {
+                            return <option value={`${s.name} - (${age.title})`} >{s.name} - ({age.title})</option>
+                          })}
+                        </>
+                      })}
+                    </select>
+                            <div > */}
+                        {/* <label className="font-medium text-base block mb-2">Minimum Age</label>
                                 <input
                                     type="number"
                                     onChange={handleChange}
@@ -158,8 +178,8 @@ function AddAgeGroup({ id, fetchGroups, isEdit, group }) {
                                     className=" w-full bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg 
                             focus:ring-blue-500 focus:border-blue-500 py-3 px-4"
                                 />
-                            </div>
-                        </div>
+                            </div> */}
+
                     </form>
                     <button
                         onClick={isEdit ? handleEdit : handleSubmit}
