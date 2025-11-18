@@ -8,6 +8,8 @@ import { AiOutlineSchedule } from 'react-icons/ai';
 import CommingSoonBookButton from './CommingSoonBookButton';
 // import { TbWorldHeart } from "react-icons/tb";
 import { motion } from "motion/react";
+import Popup from './Popup';
+import Popup1 from './Popup1';
 
 
 function VirtualTherapy2() {
@@ -89,7 +91,7 @@ function VirtualTherapy2() {
               whileHover={{ scale: 1.04 }}
               whileTap={{ scale: 0.95 }}
               transition={{ duration: 0.3 }}> */}
-       <CommingSoonBookButton  btnText={"Start Virtual Therapy"} classes={`border border-green-600 text-green-600 px-8 py-3 rounded-lg font-semibold hover:bg-green-50 transition inline-block mt-7`} content={`Thankyou so much but we are not available right now`} />
+       <Popup1  btnText={"Start Virtual Therapy"} classes={`border border-green-600 text-green-600 px-8 py-3 rounded-lg font-semibold hover:bg-green-50 transition inline-block mt-7`} content={`Thankyou so much but we are not available right now`} />
        {/* </motion.div> */}
 
       </div>

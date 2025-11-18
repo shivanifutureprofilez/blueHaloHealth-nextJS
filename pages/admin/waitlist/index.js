@@ -68,8 +68,14 @@ export default function index() {
                     <th className="border-b border-[#ffffff]  text-[14px] text-[#ffffff] uppercase text-left p-[10px] ">
                       Date
                     </th>
+                     <th className="border-b border-[#ffffff]  text-[14px] text-[#ffffff] uppercase text-left   p-[10px]">
+                      Name - (age)
+                    </th>
                     <th className="border-b border-[#ffffff]  text-[14px] text-[#ffffff] uppercase text-left   p-[10px]">
-                      Email
+                      Contact Info 
+                    </th>
+                     <th className="border-b border-[#ffffff]  text-[14px] text-[#ffffff] uppercase text-left   p-[10px]">
+                      Service
                     </th>
                     <th className="border-b border-[#ffffff]  text-[14px] text-[#ffffff] uppercase text-left   p-[10px]">
                       Actions
@@ -87,7 +93,17 @@ export default function index() {
                         <FormattedDate date={waitlist?.createdAt} />
                       </td>
                       <td className="  text-white text-[16px]  px-[10px] py-[16px]  border-b border-[#ffffff1a] text-left   ">
-                        {waitlist?.email}
+                        {waitlist?.fullName} - ({waitlist?.age} yrs)
+                      </td>
+                      <td className="  text-white text-[16px]  px-[10px] py-[16px]  border-b border-[#ffffff1a] text-left   ">
+                        {waitlist?.email} <br/> {waitlist?.phone}
+                      </td>
+                        <td className=" capitalize  text-white text-[16px] px-[10px] py-[16px]  border-b border-[#ffffff1a] text-left   ">
+                        <Tooltip content={waitlist?.service}>
+                          <span className=" max-w-[300px] block overflow-hidden underline cursor-pointer text-white">
+                            {waitlist?.service}
+                          </span>
+                        </Tooltip>
                       </td>
                       <td className="  text-left  text-white text-[16px] px-[10px] py-[16px] center  ">
                         {/* {contacts?.smsCheckbox === true ? "Agree" : "Disagree"} */}

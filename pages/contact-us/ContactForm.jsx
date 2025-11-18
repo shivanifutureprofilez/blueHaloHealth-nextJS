@@ -4,6 +4,7 @@ import { CiPhone } from "react-icons/ci";
 import { FaPaperPlane } from "react-icons/fa";
 import RoutesLists from '../api/RoutesLists';
 import toast from 'react-hot-toast';
+import ContactInfo from './ContactInfo';
 
 function ContactForm() {
   const [items, setItems] = useState({
@@ -92,41 +93,8 @@ function ContactForm() {
 
 
   return (
-    <div className="bg-[#F7F4F0] py-[20px] md:py-[40px] lg:py-[60px]  ">
-      <div className="mx-auto container  px-4 text-center">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {/* Contact Info Card */}
-          <div className=' md:p-4 '>
-            <div className='bg-white p-4 rounded-[20px]'>
-
-              <h2 className="font-bold text-xl md:text-2xl mb-4 text-left text-black">Contact us</h2>
-              <ul className="space-y-6 text-base">
-                <li className="flex items-center text-left gap-3 text-gray-700">
-                  <span className="bg-green-100 rounded-full p-2">
-                    <IoLocationOutline size={22} className="text-green-600" />
-                  </span>
-                  123 Therapy Lane, Toronto, ON M5V 3A8
-                </li>
-                <li className="flex items-center gap-3 text-gray-700">
-                  <span className="bg-green-100 rounded-full p-2">
-                    <CiPhone size={22} className="text-green-600" />
-                  </span>
-                  <a href="tel:9876543218" className=" text-gray-700 hover:underline">
-                    (416) 555-BLUE
-                  </a>
-                </li>
-                <li className="flex items-center gap-3">
-                  <span className="bg-green-100 rounded-full p-2">
-                    <IoMailOpenOutline size={22} className="text-green-600" />
-                  </span>
-                  <a href="mailto:hello@blueHaloHealth.com" className=" text-gray-700 hover:underline">
-                    hello@bluehalohealth.com
-                  </a>
-                </li>
-              </ul>
-            </div>
-          </div>
-          {/* Message Form */}
+   
+        
           <div className="bg-[#E6EBE3] p-4 rounded-[20px] shadow md:p-8">
             {messageSent ?
               <div className='thankyou-wrap min-h-[300px] flex items-center justify-center'>
@@ -221,9 +189,7 @@ function ContactForm() {
               </>
             }
           </div>
-        </div>
-      </div>
-    </div>
+     
   )
 }
 

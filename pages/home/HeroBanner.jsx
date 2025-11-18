@@ -6,6 +6,8 @@ import "swiper/css";
 import { Swiper, SwiperSlide } from "swiper/react";
 import Link from 'next/link';
 import CommingSoonBookButton from '@/components/CommingSoonBookButton';
+import Popup from '@/components/Popup';
+import Popup1 from '@/components/Popup1';
 
 function HeroBanner() {
   const slides = [
@@ -67,7 +69,7 @@ function HeroBanner() {
 
           {/* <button className='button bg-[#009C4A] cursor-pointer w-full md:w-[230px]'>Book Free Consultation</button> */}
 
-          <CommingSoonBookButton classes={`button bg-[#009C4A] cursor-pointer w-full md:w-[230px] `} content={`Thankyou so much but we are not available right now`} />
+          <Popup1 classes={`button bg-[#009C4A] cursor-pointer w-full md:w-[230px] `} content={`Thankyou so much but we are not available right now`} />
 
           {/* <Link
                     href="/"
@@ -75,7 +77,7 @@ function HeroBanner() {
                   >
                     Patient Portal
                   </Link> */}
-          <CommingSoonBookButton classes={`bg-white transition-[1s] cursor-pointer w-full md:w-[230px] text-center  text-black px-3 py-3 rounded-lg font-semibold  hover:bg-green-50  inline-block`} content={`Thankyou so much but we are not available right now`} btnText={`Patient Portal`} />
+          <Popup1 classes={`bg-white transition-[1s] cursor-pointer w-full md:w-[230px] text-center  text-black px-3 py-3 rounded-lg font-semibold  hover:bg-green-50  inline-block`} content={`Thankyou so much but we are not available right now`} btnText={`Patient Portal`} />
         </div>
       </div>
       {/* </div> */}

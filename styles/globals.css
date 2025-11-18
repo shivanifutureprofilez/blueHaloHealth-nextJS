@@ -336,3 +336,7 @@ body {
 .mytable tbody tr:hover {
   background-color: #ffffff75;
 }
+.disabled { 
+  pointer-events: none;
+  opacity: 0.5;
+}

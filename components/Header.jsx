@@ -9,6 +9,7 @@ import { useRouter } from "next/router";
 import DropDown from "./DropDown";
 import { RiArrowDropDownLine } from "react-icons/ri";
 import RoutesLists from "@/pages/api/RoutesLists";
+import Popup1 from "./Popup1";
 
 function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -62,6 +63,12 @@ function Header() {
             BlueHaloHealth
           </Link>
           <nav className="hidden lg:flex items-center space-x-8 lg:space-x-7">
+            <Link
+              href='/'
+              className="text-gray-800 hover:text-[#00D967] font-medium transition"
+            >
+              Home
+            </Link>
             <DropDown menuwidth="min-w-[300px]"
               btnclasses={'   focus:outline-none '}
               label="Services"
@@ -69,9 +76,9 @@ function Header() {
               align="left"
             >
               {ageGroupsLists && ageGroupsLists?.map((group, idx) => (
-                <div className="p-2 grid grid-cols-1 space-y-2 relative group">
+                <div className="px-4 py-2 grid grid-cols-1 space-y-2 relative group">
                   <Link href={`/service?agegroup=${group?._id}`} >
-                    <p className="font-bold py-1 text-sm border-b border-gray-200">{group?.title}</p>
+                    <p className="font-bold py-1 hover:bg-[#F7F4F0] text-sm border-b border-gray-200">{group?.title}</p>
                   </Link>
 
                   <div className="absolute left-75 top-0 hidden group-hover:block bg-white shadow-lg p-3  min-w-[200px] rounded-md z-50">
@@ -142,7 +149,7 @@ function Header() {
               title="Book Free Consultation"
               className="button bg-green-dark text-[15px] px-5 py-2"
             /> */}
-            <CommingSoonBookButton action={action} />
+            <Popup1 action={action} />
             {/* <Button
               title="Patient Portal"
               className="button bg-green-dark text-[15px] px-5 py-2"
@@ -157,7 +164,7 @@ function Header() {
                 >
                 Patient Portal
                 </Link> */}
-            <CommingSoonBookButton classes={`bg-white border !border-[#009C4A]  text-center  text-black  rounded-lg font-semibold 
+            <Popup1 classes={`bg-white border !border-[#009C4A]  text-center  text-black  rounded-lg font-semibold 
               hover:bg-green-50 transition inline-block text-[15px] px-5 py-2 cursor-pointer`}
               // content={`Patient Portal`} 
               btnText={`Patient Portal`} />
@@ -185,6 +192,12 @@ function Header() {
         <div className="p-6 fixed md:relative top-[50px] w-full md:block">
           <div className=" rounded-2xl  w-full max-w-[100%]  lg:hidden bg-white shadow-lg border-t border-gray-100">
             <ul className="flex flex-col space-y-4 px-6 py-4 text-gray-800 font-medium">
+              <Link
+                href='/'
+                className="block hover:text-[#00D967] transition"
+              >
+                Home
+              </Link>
               {navLinks.map((link) => (
                 <li key={link.name}>
                   <Link
@@ -210,7 +223,7 @@ function Header() {
                   className="button w-full bg-green-dark text-[14px] px-4 py-2"
                   onClick={() => setIsMobileMenuOpen(false)}
                 /> */}
-              <CommingSoonBookButton action={action} classes={`button w-full bg-green-dark text-[14px] px-4 py-2`} />
+              <Popup1 action={action} classes={`button w-full bg-green-dark text-[14px] px-4 py-2`} />
               {/* <Link
                   // title="Patient Portal"
                   href="/"
@@ -220,7 +233,7 @@ function Header() {
                 >
                 Patient Portal
                 </Link> */}
-              <CommingSoonBookButton classes={`text-center cursor-pointer w-full border border-green-600 text-green-600  rounded-lg font-semibold   hover:bg-green-50 transition inline-block text-[14px] px-4 py-2`}
+              <Popup1 classes={`text-center cursor-pointer w-full border border-green-600 text-green-600  rounded-lg font-semibold   hover:bg-green-50 transition inline-block text-[14px] px-4 py-2`}
                 // content={`Patient Portal`} 
                 btnText={`Patient Portal`} />
 
