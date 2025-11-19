@@ -10,6 +10,8 @@ import Head from "next/head";
 import Mission2 from './Mission2'
 import AnnimationTry from './AnnimationTry'
 import Values from './Values'
+import Starting from './Starting'
+import Differentiator from './Differentiator'
 export default function AboutPageIndex() {
   return (
     <>
@@ -32,6 +34,8 @@ export default function AboutPageIndex() {
         {/* <Founder /> */}
         {/* <Mission /> */}
         {/* <AnnimationTry/> */}
+        <Starting/>
+        <Differentiator/>
         <Mission2/>
         <Values/>
         {/* <VirtualTherapy/> */}

@@ -24,13 +24,13 @@ export default function Main() {
         <HeroBanner/>
         <AgeMatrix/>
         {/* <Categories /> */}
-        <FeaturedServices/>
+        {/* <FeaturedServices/> */}
         <About/>
         <VirtualTherapy2/>
         <Importance/>
         {/* <Feedback/> */}
-        <Resource/>
-        <Event/>
+        {/* <Resource/>
+        <Event/> */}
         <BookingTab/>
         {/* 
          */}

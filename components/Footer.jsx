@@ -43,7 +43,7 @@ function Footer() {
                                 <IoLocationOutline size={20}  />
                               </span>
                               <span className="text-gray-300">
-                              123 Therapy Lane
+                              320 Bay Street Toronto, ON M5H 4A6
                               </span>
                             </li>
                             <li className="flex items-center gap-3 text-gray-300">
@@ -59,7 +59,7 @@ function Footer() {
                                 <IoMailOpenOutline size={20}  className="text-gray-300"/>
                               </span>
                               <a href="mailto:hello@bluehalohealth.com" className="text-gray-300">
-                                hello@bluehalohealth.ca
+                                hello@bluehalohealth.com
                               </a>
                             </li>
                           </ul> 

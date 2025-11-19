@@ -10,6 +10,7 @@ import NoResultFound from "@/components/NoResult";
 import Head from "next/head";
 import { useParams, useSearchParams } from "next/navigation";
 import HowItWorks from "@/components/HowItWorks";
+import { motion } from "motion/react";
 
 export default function Index() {
   
@@ -67,6 +68,7 @@ export default function Index() {
     if (totalAgeGroups && totalAgeGroups.length > 0) {
       const firstGroupId = totalAgeGroups[0]._id;
       setAgeGroup(activeAgeGroup || firstGroupId);
+      // console.log("activeagegroup : ",activeAgeGroup.description);
       fetchServices(activeAgeGroup || firstGroupId);
     }
   }, [totalAgeGroups]);
@@ -78,6 +80,7 @@ export default function Index() {
   const Filter = () => {
     return (
       <>
+      
         {totalAgeGroups?.length === 0 ? (
           <>
           </>
@@ -119,8 +122,20 @@ export default function Index() {
         <SectionBanner title={"Services"} />
         <div className="bg-[#F7F4F0] py-[20px] md:py-[40px] lg:py-[60px]">
           <div className="mx-auto container    text-center">
-
             <Filter />
+            <div  
+            // data-aos="fade-right"  
+            className="bg-green-50 p-6 rounded-2xl mt-4 shadow-sm  mx-auto">
+              {/* <motion.div
+                      initial={{ opacity: 0, x: -100 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      transition={{ duration: 0.4, delay: 1 * 0.05 }}
+                      viewport={{ once: true, amount: 0.2 }} // triggers when 20% is visible
+                    > */}
+              <h2 className="heading poppins text-black tracking-tighter leading-tight font-bold text-2xl md:text-3xl  mb-3">{serviceList && serviceList[0] && serviceList[0].agegroup?.title}</h2>
+              <p className="mt-4 text-gray-600 font-medium mx-auto text-[17px] mb-2 lg:mb-4 leading-re text-center">{serviceList && serviceList[0] && serviceList[0].agegroup?.description}</p>
+              {/* </motion.div> */}
+              </div>
               { loading ? 
               <Loading />
               :

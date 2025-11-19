@@ -1,342 +1,76 @@
-@import "tailwindcss";
-@tailwind components;
-@tailwind base;
-@tailwind utilities;
-
-@font-face {
-  font-family: 'Poppins';
-  src: url('/fonts/Poppins-Light.woff2') format('woff2'), url('/fonts/Poppins-Light.woff') format('woff');
-  font-weight: 300;
-  font-style: normal;
-  font-display: swap;
+@import "tailwindcss";@tailwind components;@tailwind base;@tailwind utilities;@font-face{font-family:'Poppins';src:url('/fonts/Poppins-Light.woff2') format('woff2'),url('/fonts/Poppins-Light.woff') format('woff');font-weight:300;font-style:normal;font-display:swap;}
+@font-face{font-family:'Poppins';src:url('/fonts/Poppins-ExtraBold.woff2') format('woff2'),url('/fonts/Poppins-ExtraBold.woff') format('woff');font-weight:bold;font-style:normal;font-display:swap;}
+@font-face{font-family:'Poppins';src:url('/fonts/Poppins-ExtraLight.woff2') format('woff2'),url('/fonts/Poppins-ExtraLight.woff') format('woff');font-weight:200;font-style:normal;font-display:swap;}
+@font-face{font-family:'Poppins';src:url('/fonts/Poppins-Regular.woff2') format('woff2'),url('/fonts/Poppins-Regular.woff') format('woff');font-weight:normal;font-style:normal;font-display:swap;}
+@font-face{font-family:'Poppins';src:url('/fonts/Poppins-Black.woff2') format('woff2'),url('/fonts/Poppins-Black.woff') format('woff');font-weight:900;font-style:normal;font-display:swap;}
+@font-face{font-family:'Poppins';src:url('/fonts/Poppins-SemiBold.woff2') format('woff2'),url('/fonts/Poppins-SemiBold.woff') format('woff');font-weight:600;font-style:normal;font-display:swap;}
+@font-face{font-family:'Poppins';src:url('/fonts/Poppins-Medium.woff2') format('woff2'),url('/fonts/Poppins-Medium.woff') format('woff');font-weight:500;font-style:normal;font-display:swap;}
+@font-face{font-family:'Poppins';src:url('/fonts/Poppins-Bold.woff2') format('woff2'),url('/fonts/Poppins-Bold.woff') format('woff');font-weight:bold;font-style:normal;font-display:swap;}
+@font-face{font-family:'Poppins';src:url('/fonts/Poppins-Thin.woff2') format('woff2'),url('/fonts/Poppins-Thin.woff') format('woff');font-weight:100;font-style:normal;font-display:swap;}
+:root{--primary:#00D967;--secondary:#009C4A;--font:'Poppins';}
+.container{padding-right:20px;padding-left:20px;}
+/* .team .teamactions{opacity:0;transition:opacity 0.5s ease;}
+.team:hover .teamactions{opacity:1;}
+*/
+.poppins{font-family:'Poppins',sans-serif;}
+body{font-family:'Poppins',sans-serif;}
+.font-inter{font-family:"Inter",sans-serif;}
+.bg-green-dark{background:var(--secondary);}
+.bg-green{background:var(--primary);}
+.text-green{color:var(--primary);}
+.text-green-dark{color:var(--secondary);}
+@layer components{.button{@apply text-white px-[20px] py-[12px] rounded-lg bg-[var(--secondary)] hover:border-[var(--secondary)] transition-[1s];}
+.button-white{@apply bg-white text-black border-2 border-black px-4 py-2 rounded-lg font-bold hover:bg-[var(--secondary)] hover:border-[var(--secondary)] hover:text-white transition-[1s];}
+.button-transparent{@apply bg-transparent border-[var(--secondary)] border-2 text-[var(--secondary)] px-4 py-2 rounded-lg font-bold transition-[1s];}
+.heading{@apply font-bold text-[#1E1E1E] text-[22px] md:text-[28px] lg:text-[35px] xl:text-[42px];}
 }
-
-@font-face {
-  font-family: 'Poppins';
-  src: url('/fonts/Poppins-ExtraBold.woff2') format('woff2'), url('/fonts/Poppins-ExtraBold.woff') format('woff');
-  font-weight: bold;
-  font-style: normal;
-  font-display: swap;
+.wrapper-class .rdw-dropdown-wrapper .rdw-dropdown-selectedtext{color:#f9fafb;/* text-gray-100 */
 }
-
-@font-face {
-  font-family: 'Poppins';
-  src: url('/fonts/Poppins-ExtraLight.woff2') format('woff2'), url('/fonts/Poppins-ExtraLight.woff') format('woff');
-  font-weight: 200;
-  font-style: normal;
-  font-display: swap;
+.wrapper-class .rdw-dropdown-wrapper .rdw-dropdown-optionwrapper{background-color:#374151;/* gray-700 */
+ color:#f9fafb;/* text-gray-100 */
 }
-
-@font-face {
-  font-family: 'Poppins';
-  src: url('/fonts/Poppins-Regular.woff2') format('woff2'), url('/fonts/Poppins-Regular.woff') format('woff');
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
+.wrapper-class .rdw-dropdown-wrapper .rdw-dropdownoption-default:hover{background-color:#4b5563;/* gray-600 */
 }
-
-@font-face {
-  font-family: 'Poppins';
-  src: url('/fonts/Poppins-Black.woff2') format('woff2'), url('/fonts/Poppins-Black.woff') format('woff');
-  font-weight: 900;
-  font-style: normal;
-  font-display: swap;
+#nprogress .bar{background:var(--primary);/* Tailwind blue-600 */
+ height:4px;}
+#nprogress .peg{box-shadow:0 0 10px var(--primary),0 0 5px var(--primary);}
+.services h1{ color:#000 !important;font-family:"Inter",sans-serif;font-size:38px;font-style:normal;font-weight:600;line-height:42px;text-transform:uppercase;margin:0 0 15px;padding-bottom:5px;padding-top:5px;}
+.services h2{text-align:left; color:#000 !important;font-family:"Inter",sans-serif;font-size:32px;font-style:normal;font-weight:600;line-height:38px;text-transform:uppercase;padding-bottom:15px;}
+.services h3{text-align:left; color:#000 !important;font-family:"Inter",sans-serif;font-size:22px;font-style:normal;font-weight:600;text-transform:uppercase;/* margin:30px 0 3px;*/
+ padding-top:20px;}
+.services h4{text-align:left; color:#000 !important;font-size:19px;font-style:normal;font-weight:600;/* margin:24px 0 3px;*/
 }
-
-@font-face {
-  font-family: 'Poppins';
-  src: url('/fonts/Poppins-SemiBold.woff2') format('woff2'), url('/fonts/Poppins-SemiBold.woff') format('woff');
-  font-weight: 600;
-  font-style: normal;
-  font-display: swap;
+.services h5{text-align:left; color:#000 !important;font-size:17px;font-style:normal;font-weight:600;/* margin:24px 0 3px;*/
 }
-
-@font-face {
-  font-family: 'Poppins';
-  src: url('/fonts/Poppins-Medium.woff2') format('woff2'), url('/fonts/Poppins-Medium.woff') format('woff');
-  font-weight: 500;
-  font-style: normal;
-  font-display: swap;
+.services h6{text-align:left; color:#000 !important;font-size:15px;font-style:normal;font-weight:600;/* margin:24px 0 3px;*/
 }
-
-@font-face {
-  font-family: 'Poppins';
-  src: url('/fonts/Poppins-Bold.woff2') format('woff2'), url('/fonts/Poppins-Bold.woff') format('woff');
-  font-weight: bold;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Poppins';
-  src: url('/fonts/Poppins-Thin.woff2') format('woff2'), url('/fonts/Poppins-Thin.woff') format('woff');
-  font-weight: 100;
-  font-style: normal;
-  font-display: swap;
-}
-
-:root {
-  --primary: #00D967;
-  --secondary: #009C4A;
-  --font: 'Poppins';
-
-}
-
-.container {
-  padding-right: 20px;
-  padding-left: 20px;
-}
-
-/* .team .teamactions {
-  opacity: 0;
-  transition: opacity 0.5s ease;
-}
-
-.team:hover .teamactions {
-  opacity: 1;
-} */
-.poppins {
-  font-family: 'Poppins', sans-serif;
-}
-
-body {
-  font-family: 'Poppins', sans-serif;
-}
-
-.font-inter {
-  font-family: "Inter", sans-serif;
-}
-
-
-
-
-.bg-green-dark {
-  background: var(--secondary);
-}
-
-.bg-green {
-  background: var(--primary);
-}
-
-.text-green {
-  color: var(--primary);
-}
-
-.text-green-dark {
-  color: var(--secondary);
-}
-
-@layer components {
-  .button {
-    @apply text-white px-[20px] py-[12px] rounded-lg bg-[var(--secondary)] hover:border-[var(--secondary)] transition-[1s];
-  }
-
-  .button-white {
-    @apply bg-white text-black border-2 border-black px-4 py-2 rounded-lg font-bold hover:bg-[var(--secondary)] hover:border-[var(--secondary)] hover:text-white transition-[1s];
-  }
-
-  .button-transparent {
-    @apply bg-transparent border-[var(--secondary)] border-2 text-[var(--secondary)] px-4 py-2 rounded-lg font-bold transition-[1s];
-  }
-
-  .heading {
-    @apply font-bold text-[#1E1E1E] text-[22px] md:text-[28px] lg:text-[35px] xl:text-[42px];
-  }
-}
-
-.wrapper-class .rdw-dropdown-wrapper .rdw-dropdown-selectedtext {
-  color: #f9fafb;
-  /* text-gray-100 */
-}
-
-.wrapper-class .rdw-dropdown-wrapper .rdw-dropdown-optionwrapper {
-  background-color: #374151;
-  /* gray-700 */
-  color: #f9fafb;
-  /* text-gray-100 */
-}
-
-.wrapper-class .rdw-dropdown-wrapper .rdw-dropdownoption-default:hover {
-  background-color: #4b5563;
-  /* gray-600 */
-}
-
-#nprogress .bar {
-  background: var(--primary);
-  /* Tailwind blue-600 */
-  height: 4px;
-}
-
-#nprogress .peg {
-  box-shadow: 0 0 10px var(--primary), 0 0 5px var(--primary);
-}
-
-
-
-
-.services h1 {
-  color: #000 !important;
-  font-family: "Inter", sans-serif;
-  font-size: 38px;
-  font-style: normal;
-  font-weight: 600;
-  line-height: 42px;
-  text-transform: uppercase;
-  margin: 0 0 15px;
-  padding-bottom: 5px;
-  padding-top: 5px;
-}
-
-.services h2 {
-  color: #000 !important;
-  font-family: "Inter", sans-serif;
-  font-size: 32px;
-  font-style: normal;
-  font-weight: 600;
-  line-height: 38px;
-  text-transform: uppercase;
-  padding-bottom: 15px;
-}
-
-.services h3 {
-  color: #000 !important;
-  font-family: "Inter", sans-serif;
-  font-size: 22px;
-  font-style: normal;
-  font-weight: 600;
-  text-transform: uppercase;
-  /* margin: 30px 0 3px; */
-  padding-top: 20px;
-}
-
-.services h4 {
-  color: #000 !important;
-  font-size: 19px;
-  font-style: normal;
-  font-weight: 600;
-  /* margin: 24px 0 3px; */
-}
-
-
-.services h5 {
-  color: #000 !important;
-  font-size: 17px;
-  font-style: normal;
-  font-weight: 600;
-  /* margin: 24px 0 3px; */
-}
-
-.services h6 {
-  color: #000 !important;
-  font-size: 15px;
-  font-style: normal;
-  font-weight: 600;
-  /* margin: 24px 0 3px; */
-}
-
-
-.services p {
-  color: #000 !important;
-  font-size: 18px;
-  font-family: "Poppins", sans-serif;
-  font-style: normal;
-  line-height: 29px;
-}
-
-.services p a {
-  color: #000 !important;
-  font-weight: 300;
-  line-height: normal;
-  text-decoration: underline;
-  margin: 0 0 5px;
-  word-break: break-word;
-}
-
-.services ul {
-  list-style-type: disc;
-  padding-left: 20px;
-  padding-top: 10px;
-  padding-bottom: 20px;
-}
-
-.services ul li {
-  color: #000 !important;
-  margin-bottom: 10px;
-  text-align: left !important;
-}
-.services ol li {
-    list-style-type: decimal;
-    color: #000 !important;
-    margin-bottom: 10px;
-    text-align: left !important;
-    list-style-position: inside;
-}
-
-.services img {
-      align-items: center;
-    justify-content: center;
-    display: flex;
-    width:100%;
-}
+.services p{text-align : left; color:#000 !important;font-size:18px;font-family:"Poppins",sans-serif;font-style:normal;line-height:29px;}
+.services p a{color:#000 !important;font-weight:300;line-height:normal;text-decoration:underline;margin:0 0 5px;word-break:break-word;}
+.services ul{padding-left:20px;padding-top:10px;padding-bottom:20px;}
+.services ul li{list-style-type:disc; color:#000 !important;margin-bottom:10px;text-align:left !important;}
+.services ol li{list-style-type:decimal;color:#000 !important;margin-bottom:10px;text-align:left !important;list-style-position:inside;}
+.services img{align-items:center;justify-content:center;display:flex;width:100%;}
+.tagline{background:linear-gradient(to right,white,green);-webkit-background-clip:text;background-clip:text;color:transparent;}
+.tagline2{background:linear-gradient(to right,white,black);-webkit-background-clip:text;background-clip:text;color:transparent;}
+.mytable tr:nth-child(even){background:#25354c;}
+.mytable{max-width:100%;overflow:auto;}
+.mytable thead tr{background:#444444;}
+.mytable tbody tr:hover{background-color:#ffffff75;}
+.disabled{pointer-events:none;opacity:0.5;}
 
 /* Tablet styles */
-@media (max-width: 991px) {
-  .services h1 {
-    font-size: 34px;
-    line-height: 38px;
-  }
-
-  .services h2 {
-    font-size: 32px;
-    line-height: 38px;
-  }
+@media (max-width:991px){.services h1{font-size:34px;line-height:38px;}
+.services h2{font-size:32px;line-height:38px;}
 }
-
-
 /* Mobile styles */
-@media (max-width: 767px) {
-  .services h1 {
-    font-size: 24px;
-  }
-
-  .services h2 {
-    font-size: 22px;
-  }
-
-
-  .services p {
-    font-size: 14px;
-  }
+@media (max-width:767px){.services h1{font-size:24px;}
+    .services h2{font-size:22px;}
+    .services p{font-size:14px;}
+    .banner-image  { 
+        object-position: center center;
+    }
 }
-.tagline { 
-  background: linear-gradient(to right, white, green);
-  -webkit-background-clip: text;
-  background-clip: text;                color: transparent;
-
-}
-
-.tagline2 { 
-  background: linear-gradient(to right, white, black);
-  -webkit-background-clip: text;
-  background-clip: text;                color: transparent;
-
-}
-.mytable tr:nth-child(even) {
-    background: #25354c;
-    
-}
-
-.mytable { 
-  max-width: 100%;
- overflow: auto;
-}
-.mytable thead tr { 
-  background: #444444; 
-}
-.mytable tbody tr:hover {
-  background-color: #ffffff75;
-}
-.disabled { 
-  pointer-events: none;
-  opacity: 0.5;
+.our-values-slides    .swiper-pagination {
+top: auto !important;
+bottom: -4px !important;
 }

@@ -11,12 +11,16 @@ import Popup1 from '@/components/Popup1';
 
 function HeroBanner() {
   const slides = [
-    "/heroBanner2.jpg",
-    "/swiperhero.png",
+    "/hero.png",
+    "/hero2.png",
+    "/hero3.png",
+    "/hero4.png"
+    // "/heroBanner2.jpg",
+    // "/swiperhero.png",
     //  "/heroBanner3.jpg",
-    "/heroBanner4.jpg",
+    // "/heroBanner4.jpg",
     // "/heroBanner5.jpg",
-    "/heroBanner6.jpg"
+    // "/heroBanner6.jpg"
 
   ]
   return (
@@ -45,24 +49,29 @@ function HeroBanner() {
               <img
                 src={slide}
                 alt="Slide"
-                className=" w-full h-[690px] md:h-[750px] object-cover"
+                className="banner-image w-full h-[600px] md:h-[93vh] object-cover"
               />
               <div className="absolute inset-0 bg-black/40"></div>
             </div>
 
           </SwiperSlide>
+
+
+
         ))}
       </Swiper>
       <div className='absolute left-[0] right-[0] bottom-[50px] md:bottom-[200px] w-full max-w-[1320px] m-auto  px-8 md:px-[15px]  z-10'>
         <div className='leading-snug max-w-[1000px] mx-auto'>
           <h2 data-aos="fade-up"
-            data-aos-anchor-placement="bottom-bottom" className={`heading text-center  pt-12 md:pt-0 poppins text-white tracking-tighter leading-tight font-bold text-4xl md:text-5xl lg:text-5xl mb-3`} >Empowering Families Through <span className='text-white'>Expert Therapy </span>  & Support</h2>
+            data-aos-anchor-placement="bottom-bottom" className={`heading text-center  pt-12 md:pt-0 poppins text-white tracking-tighter leading-tight font-bold text-4xl md:text-5xl lg:text-5xl mb-3`} >Expert Care for  <span className='text-white'>Every Stage of Development </span> and Well-Being</h2>
           <p data-aos="fade-up"
-            data-aos-anchor-placement="bottom-bottom" className={` text-white text-center   text-[15px]`}>Individualized programs for children, teens, and adults with developmental or behavioral challenges.</p>
-          <div className="flex justify-center flex-wrap pt-4 rounded-lg   ">
+            data-aos-anchor-placement="bottom-bottom" className={` text-white text-center   text-[15px]`}>A multidisciplinary, virtual-first care model serving all of Ontario — combining
+            speech therapy, behavioural therapy, psychology, neurodevelopmental expertise,
+            and mental-health support, with in-home options when needed.</p>
+          {/* <div className="flex justify-center flex-wrap pt-4 rounded-lg   ">
             <p data-aos="fade-up"
               data-aos-anchor-placement="bottom-bottom" className="uppercase tagline rounded-lg font-bold text-2xl  p-3 text-center ">15 Min Consultation On Us.</p>
-          </div>
+          </div> */}
         </div>
         <div className="flex justify-center flex-wrap gap-4 mt-6" data-aos="fade-up"
           data-aos-anchor-placement="bottom-bottom">

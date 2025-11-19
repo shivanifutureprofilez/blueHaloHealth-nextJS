@@ -8,23 +8,23 @@ import Heading from '@/components/Heading';
 function Importance() {
   const features = [
     {
-      title: "Experience certified Therapists",
-      description: "Evidence-based behavioral interventions for skill development",
+      title: "Integrated System of Care",
+      description: "One record, one coordinated team - our clinicians communicate behind the scenes as required, so you never have to manage multiple providers.",
       icon: <GrCertificate className="text-green-dark text-4xl" />
     },
     {
-      title: "Age specific, individualized Care",
-      description: "Evidence-based behavioral interventions for skill development",
+      title: "Expert, Regulated Clinicians",
+      description: "Psychologists (C.Psych), Social Workers (RSW), Psychotherapists (RP), NPs, Psychiatrists, OTs, SLPs, and BCBAs working together for your child.",
       icon: <TiSpiral className="text-green-dark text-4xl" />
     },
     {
-      title: "School & Healthcare Partnerships",
-      description: "Evidence-based behavioral interventions for skill development",
+      title: "Age-Specific Programs, and Truly Personalized Care",
+      description: "Your goals drive the plan. No one-size-fits-all therapy. Therapy at your pace. Developmentally tailored pathways for all ages.",
       icon: <FaRegHandshake className="text-green-dark text-4xl " />
     },
     {
-      title: "PHIP-Compliant Privacy",
-      description: "Evidence-based behavioral interventions for skill development",
+      title: "Private, Secure, PHIPA-Compliant",
+      description: "Your information is protected through a fully encrypted, secure virtual system.",
       icon: <TbBadge className="text-green-dark text-4xl " />
     }
   ];

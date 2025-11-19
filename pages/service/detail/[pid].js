@@ -5,6 +5,7 @@ import Faq from '@/components/Faq';
 import HowItWorks from '@/components/HowItWorks';
 import Layout from '@/components/Layout';
 import Loading from '@/components/Loading';
+import Popup1 from '@/components/Popup1';
 import SectionBanner from '@/components/SectionBanner';
 import RoutesLists from '@/pages/api/RoutesLists';
 import Head from 'next/head';
@@ -68,12 +69,15 @@ export default function ServiceDetails() {
             <div className="bg-[#F7F4F0]s py-[20px] md:py-[40px] lg:py-[60px]">
               <div className="mx-auto container  px-4 text-center">
              <div
-                  className="  services mb-4  max-w-[900px] mx-auto"
+                  className="  services mb-4  max-w-[1100px] mx-auto"
                   dangerouslySetInnerHTML={{ __html: service?.content }}
                 />
               </div>
+              
             </div>
-            
+            <div className='flex item-center justify-center'>
+               <Popup1 classes={`button bg-[#009C4A] flex justify-center cursor-pointer mt-4 mb-16 w-full md:w-[230px] `} content={`Thankyou so much but we are not available right now`} />
+            </div>
             {service?.benefits && service?.benefits.length > 0 
             && service?.benefits && service?.benefits[0]?.title !== '' && service?.benefits[0]?.description !== ''
             ? 
@@ -95,7 +99,7 @@ export default function ServiceDetails() {
             </div> 
             
             : ''}
-
+            {/* <Popup1 classes={`button bg-[#009C4A] cursor-pointer w-full md:w-[230px] `} content={`Thankyou so much but we are not available right now`} /> */}
             <HowItWorks />
             <Faq />
             <BookingTab />

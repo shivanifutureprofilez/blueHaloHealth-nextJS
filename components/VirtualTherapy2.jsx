@@ -23,9 +23,15 @@ function VirtualTherapy2() {
               <h2 data-aos="zoom-out-left" className="heading poppins text-black tracking-tighter leading-tight font-bold text-3xl md:text-5xl lg:text-5xl mb-3">
                 Virtual <span className="text-[#009C4A]">Therapy</span>
               </h2>
-              <p className="text-black font-lg text-[16px] mb-5 lg:mb-4" data-aos="zoom-out-left">
+             
+              <p className="text-black font-lg !text-[16px] mb-5 lg:mb-4" data-aos="zoom-out-left">At Blue Halo Health, we’re revolutionizing Ontario’s healthcare landscape with a bold vision: a seamless, province-spanning ecosystem where healing happens on your terms.</p>
+               <p className="text-black font-lg text-[16px] mb-5 lg:mb-4" data-aos="zoom-out-left">
                 Bringing expert care home - through secure, personalized virtual sessions
               </p>
+        {/* <p className='mt-4 text-gray-600  mx-auto max-w-[1000px] text-[18px] mb-2 lg:mb-4 text-left pt-2 leading-snug'>Forget traditional clinics—we’re crafting an intelligent, virtual-first
+          network that orbits around a single guiding star: <span className='font-bold'>delivering care
+            precisely when and where it’s needed most.</span></p> */}
+       
               {/* <p className="text-gray-500 font-medium text-[15px] mb-2 lg:mb-4">
                Our team of certified, compassionate therapists provides evidence-based virtual therapy designed to support children, adolescents, and adults at every stage of growth. Through personalized digital sessions, we help clients build resilience, improve communication, and strengthen relationships—all from the comfort and privacy of home.
 </p>
@@ -77,7 +83,7 @@ function VirtualTherapy2() {
            
           </div>
           <Image
-            src="/vt4.png"
+            src="/virtual.png"
             data-aos="flip-up"
             alt="About"
             className="w-full lg:max-w-[580px] object-cover hidden md:block"

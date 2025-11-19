@@ -25,7 +25,7 @@ function ServiceCard({ item, idx, isAdmin = false, fetchServices }) {
     <div
       key={idx}
       className="bg-white  group rounded-[25px] shadow overflow-hidden flex flex-col items-center relative"
-      data-aos="zoom-in-up" 
+      // data-aos="zoom-in-up" 
     >
       {isAdmin && (
         <Link

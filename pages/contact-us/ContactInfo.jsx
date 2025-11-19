@@ -14,7 +14,7 @@ function ContactInfo() {
                           <span className="bg-green-100 rounded-full p-2">
                             <IoLocationOutline size={22} className="text-green-600" />
                           </span>
-                          123 Therapy Lane, Toronto, ON M5V 3A8
+                          320 Bay Street Toronto, ON M5H 4A6
                         </li>
                         <li className="flex items-center gap-3 text-gray-700">
                           <span className="bg-green-100 rounded-full p-2">

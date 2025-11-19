@@ -3,7 +3,7 @@ import React from 'react'
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
-import { Autoplay, Navigation } from "swiper/modules";
+import { Autoplay, Navigation, Pagination } from "swiper/modules";
 import FeedbackCard from '@/components/FeedbackCard';
 import features from "../../public/feedback.json";
 import { TbEyeStar, TbHeartCheck } from 'react-icons/tb';
@@ -58,7 +58,7 @@ function Values() {
     ];
     return (
         <div>
-            <div className='  '>
+            <div className='our-values-slides'>
                 <div  className="mx-auto container  px-4 text-center">
                     {/* <Heading  className="heading text-center md:text-left poppins text-black tracking-tighter leading-tight font-bold text-3xl md:text-5xl lg:text-5xl mb-3" heading1={"Our"} heading2={" Values"} />
                     <p className="text-center pt-2 leading-snug   max-w-[600px] mx-auto">
@@ -67,26 +67,26 @@ function Values() {
                     <div className=' text-3xl md:text-5xl lg:text-5xl' 
                     // data-aos="fade-right"
                     >
-          <Heading
-            className="text-black "
-            pClass="text-center pt-2 leading-snug max-w-[600px] mx-auto"
-            heading1={"Our"}
-            heading2={" Values"}
-            content={"Blue Halo Health’s core values are at the heart of its mission: Passion fuels efforts to help children with autism and their families, quality is reflected in every standard they uphold, and transparency is shown through honest, open communication with clients, caregivers, and the team."}
-          />
-        </div>
+                        <Heading
+                            className="text-black "
+                            pClass="text-center pt-2 leading-snug max-w-[600px] mx-auto"
+                            heading1={"Our"}
+                            heading2={" Values"}
+                            content={"Blue Halo Health’s core values are at the heart of its mission: Passion fuels efforts to help children with autism and their families, quality is reflected in every standard they uphold, and transparency is shown through honest, open communication with clients, caregivers, and the team."}
+                        />
+                        </div>
                     <div className='py-[15px] md:py-[30px] text-black flex  items-center text-center justify-center '>
                         <Swiper
                             spaceBetween={20}
                             loop={true}
                             autoplay={{
-                                delay: 2500,
+                                delay: 1500,
                                 disableOnInteraction: false,
                             }}
                             pagination={{
                                 clickable: true,
                             }}
-                            modules={[Autoplay, Navigation]}
+                            modules={[Autoplay, Navigation, Pagination]}
                             className="mySwiper"
                             breakpoints={
                                 {
@@ -97,7 +97,7 @@ function Values() {
                                         slidesPerView: 2,
                                     },
                                     1024: {
-                                        slidesPerView: 3,
+                                        slidesPerView: 4,
                                     },
                                 }
                             }
@@ -109,7 +109,7 @@ function Values() {
                                 <SwiperSlide key={idx}>
                                     <div
                                         // data-aos="fade-right" 
-                                        className="bg-white rounded-2xl h-full md:h-[300px] shadow flex flex-col items-center px-3 py-3 md:px-9 md:py-9  text-center"
+                                        className="mb-[30px] bg-white rounded-2xl h-full md:h-[300px] shadow flex flex-col items-center px-3 py-3 md:px-9 md:py-9  text-center"
                                     >
                                         <div className="flex  justify-center items-center  rounded-full bg-[#E6F4EA] mb-4 p-3">
                                             {feature?.icon}
