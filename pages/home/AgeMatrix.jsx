@@ -6,6 +6,7 @@ import { Api } from "../api/Api";
 import Link from "next/link";
 import Loading from "@/components/Loading";
 import { motion } from "motion/react";
+import Image from "next/image";
 
 
 
@@ -49,24 +50,28 @@ export default function AgeMatrix({ admin }) {
         {loading ? <Loading /> :
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4  py-[15px] md:py-[30px] ">
             {ageGroupsLists && ageGroupsLists?.map((group, idx) => (
-              <div key={idx}  className="bg-white group   border-[#009C4A] rounded-[25px] shadow overflow-hidden flex flex-col items-center">
+              <div key={idx} className="bg-white group   border-[#009C4A] rounded-[25px] shadow overflow-hidden flex flex-col items-center">
                 <div className="h-[150px] w-[150px]  p-6 pb-0 flex justify-center items-center relative">
                   <Link href={`/service?agegroup=${group?._id}`} >
-                    <img
+                    <Image
                       src={group?.image || group?.icon || 'https://thumbs.dreamstime.com/b/elderly-man-medical-insurance-health-plan-older-people-pixel-perfect-editable-stroke-line-design-icon-elderly-man-medical-273635532.jpg'}
                       alt={group.title}
+                      width={100}
+                      height={100}
                       className="object-contain   transform transition-transform duration-500 group-hover:scale-110"
+                      placeholder="blur"
+                      blurDataURL={`${group?.icon}?amp;q=5`} // small 10–20px image or base64
                     /></Link>
                 </div>
                 <ul className="text-gray-800 p-4 w-full ">
-                                    <h3 className="mb-3  text-start text-black text-md font-semibold capitalize w-full  ">{group.title}</h3>
+                  <h3 className="mb-3  text-start text-black text-md font-semibold capitalize w-full  ">{group.title}</h3>
 
                   {group && group.services && group.services.map((service, i) => (
                     <motion.div
                       initial={{ opacity: 0, x: -100 }}
                       whileInView={{ opacity: 1, x: 0 }}
                       transition={{ duration: 0.4, delay: i * 0.05 }}
-                      // viewport={{ once: true, amount: 0.2 }} // triggers when 20% is visible
+                    // viewport={{ once: true, amount: 0.2 }} // triggers when 20% is visible
                     >
                       <li key={i} className="mb-2 text-[#626262]  flex items-start hover:text-green-700 hover:underline font-semibold text-[15px] text-start ">
                         <span className="mr-2 mt-1">

@@ -71,6 +71,8 @@ function VirtualTherapy2() {
                     </p>
                   </li>
                 </ul>
+                       <Popup1  btnText={"Start Virtual Therapy"} classes={`border border-green-600 text-green-600 px-8 py-3 rounded-lg font-semibold hover:bg-green-50 transition inline-block mt-7`} content={`Thankyou so much but we are not available right now`} />
+
               </div>
             </div>
 
@@ -85,10 +87,12 @@ function VirtualTherapy2() {
           <Image
             src="/virtual.png"
             data-aos="flip-up"
-            alt="About"
+            alt="Explore holistic health services including functional medicine, nutrition, and personalized wellness programs from Blue Halo Health."
             className="w-full lg:max-w-[580px] object-cover hidden md:block"
             width={400}
             height={300}
+            placeholder="blur"
+            blurDataURL={`/virtual.png?w=400&q=5`}
           />
         </div>
                 {/* <motion.div
@@ -97,7 +101,7 @@ function VirtualTherapy2() {
               whileHover={{ scale: 1.04 }}
               whileTap={{ scale: 0.95 }}
               transition={{ duration: 0.3 }}> */}
-       <Popup1  btnText={"Start Virtual Therapy"} classes={`border border-green-600 text-green-600 px-8 py-3 rounded-lg font-semibold hover:bg-green-50 transition inline-block mt-7`} content={`Thankyou so much but we are not available right now`} />
+       {/* <Popup1  btnText={"Start Virtual Therapy"} classes={`border border-green-600 text-green-600 px-8 py-3 rounded-lg font-semibold hover:bg-green-50 transition inline-block mt-7`} content={`Thankyou so much but we are not available right now`} /> */}
        {/* </motion.div> */}
 
       </div>

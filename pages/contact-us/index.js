@@ -29,10 +29,12 @@ function index() {
         <SectionBanner title={"Contact Us"} />
         <div className="bg-[#F7F4F0] py-[20px] md:py-[40px] lg:py-[60px]  ">
           <div className="mx-auto container  px-4 text-center">
-             <Notice/>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-
+             {/* <Notice/> */}
+            <div className="grid grid-cols-1 md:grid-cols-[2fr_1fr] gap-8">
+              <div>
+              <Notice/>
               <ContactInfo/>
+              </div>
               <ContactForm />
 
             </div>

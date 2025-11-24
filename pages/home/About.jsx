@@ -14,13 +14,16 @@ function About() {
         <div className="grid grid-cols-1 lg:grid-cols-2 items-center gap-4 lg:gap-8">
           {/* Left Image */}
           <Image
-            src="/about2.png"
-            alt="About"
+            src="/about3.png"
+            alt="Learn about Blue Halo Health’s mission, values, and our expert team dedicated to holistic health and wellness."
             data-aos="flip-up"
             className="w-full lg:max-w-[580px] object-cover hidden md:block"
             width={400}
             height={300}
+            placeholder="blur"
+            blurDataURL={`/about3.png?w=400&q=5`}
           />
+           
           {/* Right Text */}
           <div className="text-center lg:text-left" >
             <div className="leading-snug">
