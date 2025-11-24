@@ -5,6 +5,7 @@ import { FaPaperPlane } from "react-icons/fa";
 import RoutesLists from '../api/RoutesLists';
 import toast from 'react-hot-toast';
 import ContactInfo from './ContactInfo';
+import Captcha from '@/components/Captcha';
 
 function ContactForm() {
   const [items, setItems] = useState({
@@ -27,6 +28,12 @@ function ContactForm() {
 
   const [selectedService, setSelectedService] = useState(null);
 
+  const [CaptchaVerified, setCatchaVerified] = useState(false)
+  const onVerify = (e) => { 
+    if(e){ 
+      setCatchaVerified(true)
+    }
+  }
   const [loading, setLoading] = useState(false);
   const [messageSent, setMessageSent] = useState(false);
   const handleSubmit = async (e) => {
@@ -46,6 +53,10 @@ function ContactForm() {
     }
     if (items.message.length < 20) {
       toast.error("Message can not be too short. Type at least 20 characters.");
+      return;
+    }
+    if (Number(items.age) < 0) {
+      toast.error("Age is invalid.");
       return;
     }
 
@@ -121,7 +132,9 @@ function ContactForm() {
                   <input onChange={handleChange}
                     value={items?.age}
                     name='age'
-                    type="number" placeholder="Age" required className="bg-white rounded-lg border border-gray-300 px-4 py-3 w-full outline-none" />
+                    type="number" placeholder="Age" required className="bg-white rounded-lg border border-gray-300 px-4 py-3 w-full outline-none" 
+                    min={0}
+                    />
                   {/* <div className="grid grid-cols-2 gap-4"> */}
                     <input
                       onChange={(e) => {
@@ -178,11 +191,12 @@ function ContactForm() {
                     />
                     <label className="text-gray-700 text-sm text-left">I agree to receive SMS / Text communication</label>
                   </div>
+ 
 
-
+                <Captcha onVerify={onVerify} CaptchaVerified={CaptchaVerified} />
                   <button
                     type="submit"
-                    disabled={loading} className="bg-green-dark text-white font-semibold px-6 py-3 rounded-lg hover:bg-green-700 transition w-full mt-2">
+                    disabled={loading} className={`${CaptchaVerified ? '' : 'disabled'} bg-green-dark text-white font-semibold px-6 py-3 rounded-lg hover:bg-green-700 transition w-full mt-2`}>
                     {loading ? "Loading..." : "Submit Enquiry"}
                   </button>
                 </form>

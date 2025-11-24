@@ -84,10 +84,10 @@ function Footer() {
               </Link>
             </div>
             <div className="grid grid-cols-1 space-y-2">
-              <Link href="/privacy-policy" className=" text-gray-300 hover:text-white">
+              <Link href="/privacy/policy" className=" text-gray-300 hover:text-white">
                 Privacy Policy
               </Link>
-              <Link href="/terms-of-service" className=" text-gray-300 hover:text-white">
+              <Link href="/privacy/policy" className=" text-gray-300 hover:text-white">
                 Terms of Service
               </Link>
             </div>
@@ -97,7 +97,7 @@ function Footer() {
       
         <div className="border-t border-gray-700 mt-4 pt-4 md:flex justify-center md:justify-center gap-10 lg:justify-between  md:items-center text-sm text-white">
           <p className="">©2025 BlueHaloHealth. All rights reserved.</p>
-          <p className="italic pt-2 md:pt-0 ">Designed By FutureProfilez Pvt. Ltd.</p>
+          <p className="italic pt-2 md:pt-0 ">Developed By <a href="https://futureprofilez.com/" target="_blank">FutureProfilez Pvt. Ltd.</a></p>
         </div>
       </div>
     </div>

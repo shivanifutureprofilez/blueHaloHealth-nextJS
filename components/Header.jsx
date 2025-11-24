@@ -70,7 +70,7 @@ function Header() {
               Home
             </Link>
             <DropDown menuwidth="min-w-[300px]"
-              btnclasses={'   focus:outline-none '}
+              btnclasses={' hover:text-[#00D967] cursor-pointer focus:outline-none '}
               label="Services"
               onSelect={(item) => console.log('selected', item)}
               align="left"
@@ -78,15 +78,17 @@ function Header() {
               {ageGroupsLists && ageGroupsLists?.map((group, idx) => (
                 <div className="px-4 py-2 grid grid-cols-1 space-y-2 relative group">
                   <Link href={`/service?agegroup=${group?._id}`} >
-                    <p className="font-bold py-1 hover:bg-[#F7F4F0] text-sm border-b border-gray-200">{group?.title}</p>
+                    <p className="font-bold py-1 hover:bg-[#F7F4F0] hover:bg-gray-100 text-sm ">{group?.title}</p>
+                    <hr className="text-gray-200 mt-2"/>
                   </Link>
 
-                  <div className="absolute left-75 top-0 hidden group-hover:block bg-white shadow-lg p-3  min-w-[200px] rounded-md z-50">
+                  <div className="absolute left-75 top-0 hidden group-hover:block bg-white shadow-lg p-3  min-w-[300px] rounded-md z-50">
                     {group.services?.map((srv) => (
                       <Link key={srv._id} href={`/service/detail/${srv?._id}`}>
-                        <p className="text-sm border-b border-gray-200 py-2 hover:text-blue-500 cursor-pointer">
+                        <p className="text-sm  py-2 hover:text-blue-500 cursor-pointer">
                           {srv.name}
                         </p>
+                        <hr className="text-gray-200 mt-2"/>
                       </Link>
                     ))}
                   </div>

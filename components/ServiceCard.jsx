@@ -5,6 +5,7 @@ import { FaTrash, FaEdit } from "react-icons/fa";
 import toast from "react-hot-toast";
 import { GoArrowUpRight } from "react-icons/go";
 import { MdOutlineArrowRightAlt } from "react-icons/md";
+import Image from "next/image";
 
 function ServiceCard({ item, idx, isAdmin = false, fetchServices }) {
   const handleDelete = (id) => {
@@ -53,10 +54,14 @@ function ServiceCard({ item, idx, isAdmin = false, fetchServices }) {
 
       <div className="w-full h-55 rounded-lg overflow-hidden  relative">
         <Link href={`/service/detail/${item?._id}`}>
-          <img
+          <Image
             src={item?.bannerImg}
             alt={item?.name}
             className="object-cover w-full h-full transform transition-transform duration-500 group-hover:scale-110"
+            width={1000}
+            height={55}
+            placeholder="blur"
+            blurDataURL={`${item?.bannerImg}?amp;q=5`}
           />
         </Link>
       </div>

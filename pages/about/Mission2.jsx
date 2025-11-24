@@ -26,7 +26,7 @@ function Mission2() {
       description: "We value transparency through honesty, ensuring open and clear communication with clients, caregivers, and our team.",
       icon: <TbEyeStar className="text-green-600 text-4xl " />
     },
-     {
+    {
       title: "Transparency",
       description: "We value transparency through honesty, ensuring open and clear communication with clients, caregivers, and our team.",
       icon: <TbEyeStar className="text-green-600 text-4xl " />
@@ -46,7 +46,7 @@ function Mission2() {
       description: "We value transparency through honesty, ensuring open and clear communication with clients, caregivers, and our team.",
       icon: <TbEyeStar className="text-green-600 text-4xl " />
     },
-     {
+    {
       title: "Transparency",
       description: "We value transparency through honesty, ensuring open and clear communication with clients, caregivers, and our team.",
       icon: <TbEyeStar className="text-green-600 text-4xl " />
@@ -57,47 +57,51 @@ function Mission2() {
     <div className=" py-[20px] md:py-[40px] lg:py-[60px]  overflow-hidden">
       <div className="mx-auto container  px-4 text-center">
         <div className='md:flex items-center justify-between'>
-            <Image
-                        src="/about.png"
-                        alt="About"
-                        className="w-full lg:max-w-[580px] object-cover hidden md:block"
-                        width={400}
-                        height={300}
-                        // data-aos="flip-up"
-                      />
-        <div className='p-5 text-3xl md:text-5xl lg:text-5xl' 
-        // data-aos="fade-left"
-        >
-          <Heading
-            className="text-black "
-            pClass="text-center pt-2 leading-snug"
-            heading1={"Our"}
-            heading2={" Vision"}
-            content={"To pioneer Ontario’s most trusted, inclusive, and innovative virtual-first healthcare ecosystem—empowering every individual, family, and community with seamless access to exceptional care, free from barriers, delays, or bias. Blue Halo Health envisions a future where premium, evidence-based support becomes the everyday reality for all Ontarians."}
+          <Image
+            src="/about.png"
+            alt="Learn about Blue Halo Health’s mission, values, and our expert team dedicated to holistic health and wellness."
+            className="w-full lg:max-w-[580px] object-cover hidden md:block"
+            width={400}
+            height={300}
+            placeholder="blur"
+            blurDataURL={`/about.png?w=400&q=5`}
+          // data-aos="flip-up"
           />
-        </div>
+          <div className='p-5 text-3xl md:text-5xl lg:text-5xl'
+          // data-aos="fade-left"
+          >
+            <Heading
+              className="text-black "
+              pClass="text-center pt-2 leading-snug"
+              heading1={"Our"}
+              heading2={" Vision"}
+              content={"To pioneer Ontario’s most trusted, inclusive, and innovative virtual-first healthcare ecosystem—empowering every individual, family, and community with seamless access to exceptional care, free from barriers, delays, or bias. Blue Halo Health envisions a future where premium, evidence-based support becomes the everyday reality for all Ontarians."}
+            />
+          </div>
         </div>
         <div className='md:flex items-center justify-between'>
-            
-        <div className='p-5 text-3xl md:text-5xl lg:text-5xl' 
-        // data-aos="fade-right"
-        >
-          <Heading
-            className="text-black "
-            pClass="text-center pt-2 leading-snug"
-            heading1={"Our"}
-            heading2={" Mission"}
-            content={"To provide rapid, accessible, multidisciplinary healthcare that merges clinical mastery with genuine compassion. We unite senior clinicians, cutting-edge technology, and collaborative teams to deliver lifelong support—offering transparent, tailored, and inclusive services that empower informed decisions on development, mental health, and overall wellbeing."}
+
+          <div className='p-5 text-3xl md:text-5xl lg:text-5xl'
+          // data-aos="fade-right"
+          >
+            <Heading
+              className="text-black "
+              pClass="text-center pt-2 leading-snug"
+              heading1={"Our"}
+              heading2={" Mission"}
+              content={"To provide rapid, accessible, multidisciplinary healthcare that merges clinical mastery with genuine compassion. We unite senior clinicians, cutting-edge technology, and collaborative teams to deliver lifelong support—offering transparent, tailored, and inclusive services that empower informed decisions on development, mental health, and overall wellbeing."}
+            />
+          </div>
+          <Image
+            src="/about.png"
+            alt="Learn about Blue Halo Health’s mission, values, and our expert team dedicated to holistic health and wellness."
+            className="w-full lg:max-w-[580px] object-cover hidden md:block"
+            width={400}
+            height={300}
+            placeholder="blur"
+            blurDataURL={`/about.png?w=400&q=5`}
+          // data-aos="flip-up"
           />
-        </div>
-        <Image
-                        src="/about.png"
-                        alt="About"
-                        className="w-full lg:max-w-[580px] object-cover hidden md:block"
-                        width={400}
-                        height={300}
-                        // data-aos="flip-up"
-                      />
         </div>
         {/* </div> */}
         {/* <div className='md:flex items-center text-3xl md:text-5xl lg:text-5xl justify-between'>
@@ -133,7 +137,7 @@ function Mission2() {
               <p className="text-gray-600 text-sm">{feature?.description}</p>
             </div>
           ))}
-        </div> */} 
+        </div> */}
       </div>
     </div>
   )

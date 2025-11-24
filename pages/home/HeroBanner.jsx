@@ -55,6 +55,7 @@ function HeroBanner() {
                 height={1000}
                 placeholder="blur"
                 blurDataURL={`${slide}?amp;q=1`} // small 10–20px image or base64
+                fetchpriority="high"
                 // fill={true}
               />
               <div className="absolute inset-0 bg-black/40"></div>
