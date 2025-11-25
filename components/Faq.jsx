@@ -90,7 +90,7 @@ function Faq() {
          
         </div>
          <Link
-                href="/about"
+                href="/faq"
                 className="border border-green-600 text-green-600 px-8 py-3 rounded-lg font-semibold hover:bg-green-50 transition inline-block mt-7"
                 // data-aos="zoom-out-right"
               >

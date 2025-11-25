@@ -1,7 +1,11 @@
-import React from 'react'
+"use client";
+import Heading from "@/components/Heading";
+import Layout from "@/components/Layout";
+import SectionBanner from "@/components/SectionBanner";
+import { useState } from "react";
 
-function index() {
-    [
+// Your JSON (paste the array here)
+const faqs = [
   {
     "section": "About Blue Halo",
     "question": "What is Blue Halo and how does your multidisciplinary model work?",
@@ -128,11 +132,87 @@ function index() {
     "question": "How do you support accessibility (AODA)?",
     "answer": "Blue Halo follows the Accessibility for Ontarians with Disabilities Act. If you need assistance with booking, payment, portal access, communication, or documents, we will provide accessible alternatives on request."
   }
-]
+];
 
-  return (
-    <div>index</div>
-  )
+
+export default function index() {
+    const [openIndex, setOpenIndex] = useState(null);
+
+    const toggle = (i) => {
+        setOpenIndex(openIndex === i ? null : i);
+    };
+
+    return (
+        <Layout>
+            <div className='bg-[#F7F4F0]'>
+                <SectionBanner title={"FAQ"} />
+                <div className="max-w-5xl mx-auto py-16 px-6 text-gray-900">
+                    <h2 className="text-4xl font-bold text-center mb-10 text-[#00A859]">
+                        Frequently Asked Questions
+                    </h2>
+                    {/* <Heading
+              className="text-black text-center md:text-left"
+              heading1={"Frequently asked "}
+              heading2={" questions"}
+            //   content={"You have got questions? We've got answers!!"}
+            //   pClass={"font-medium text-[15px] mt-1 text-center  md:mb-2  text-gray-700  px-4 md:p-0 max-w-[600px] mx-auto"}
+            /> */}
+             {/* <Heading
+          className="heading text-center poppins text-black tracking-tighter leading-tight font-bold text-4xl md:text-5xl lg:text-5xl mb-3"
+          heading1={"Frequently asked "}
+          heading2={" questions"}
+        //content={"Trusted expertise, personalized care, and proven results for every stage of development."}
+        />
+        <p className="mb-6 md:mb-2 font-medium text-[15px] text-center  text-gray-700 max-w-[600px] mx-auto">
+          You have got questions? We've got answers!!
+        </p> */}
+
+                    {/* Group by sections */}
+                    {Object.entries(
+                        faqs.reduce((acc, faq) => {
+                            acc[faq.section] = acc[faq.section] || [];
+                            acc[faq.section].push(faq);
+                            return acc;
+                        }, {})
+                    ).map(([section, items]) => (
+                        <div key={section} className="mb-12">
+                            <h2 className="text-2xl font-semibold text-green-600 mb-4">
+                                {section}
+                            </h2>
+
+                            <div className="space-y-4">
+                                {items.map((faq, index) => {
+                                    const globalIndex = `${section}-${index}`;
+                                    const isOpen = openIndex === globalIndex;
+
+                                    return (
+                                        <div
+                                            key={index}
+                                            className="border border-gray-300 rounded-lg shadow-sm"
+                                        >
+                                            <button
+                                                onClick={() => toggle(globalIndex)}
+                                                className="w-full flex justify-between items-center p-4 text-left font-medium bg-white hover:bg-gray-50"
+                                            >
+                                                <span>{faq.question}</span>
+                                                <span className="text-green-600 text-xl">
+                                                    {isOpen ? "−" : "+"}
+                                                </span>
+                                            </button>
+
+                                            {isOpen && (
+                                                <div className="p-4 border-t bg-gray-50 text-gray-700">
+                                                    {faq.answer}
+                                                </div>
+                                            )}
+                                        </div>
+                                    );
+                                })}
+                            </div>
+                        </div>
+                    ))}
+                </div>
+            </div>
+            </Layout >
+            );
 }
-
-export default index;
