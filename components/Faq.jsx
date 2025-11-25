@@ -2,43 +2,41 @@
 import { useState } from "react";
 import { FiPlus, FiMinus } from "react-icons/fi";
 import Heading from "./Heading";
+import Link from "next/link";
 
 const faqs = [
   {
-    question: "What is Autism Spectrum Disorder (ASD)?",
-    answer:
-      "Autism Spectrum Disorder is a developmental condition that affects how a person learns, behaves, and interacts with others. Each individual with autism experiences the world in their own unique way.",
-  },
-  {
-    question: "What is ABA Therapy?",
-    answer:
-      "ABA Therapy (Applied Behavior Analysis) is a therapy based on the science of learning and behavior. It helps improve social, communication, and learning skills through positive reinforcement.",
-  },
-  {
-    question: "How do I get started with ABA therapy at Action Behavior Centers?",
-    answer:
-      "You can start by scheduling an initial consultation, where our professionals will evaluate your needs and guide you through the onboarding process.",
-  },
-  {
-    question: "What age range do you serve?",
-    answer:
-      "We provide services for children between 2 to 18 years old, depending on their individual needs and goals.",
-  },
-  {
-    question: "Do you offer one-on-one therapy?",
-    answer:
-      "Yes, we provide personalized one-on-one therapy sessions to ensure every child receives focused and effective support.",
-  },
-  {
-    question: "Does my child need an autism diagnosis before starting therapy?",
-    answer:
-      "An initial evaluation helps determine whether therapy is the right fit. A formal diagnosis is preferred but not always mandatory to begin services.",
-  },
-  {
-    question: "Do you offer summer programs?",
-    answer:
-      "Yes, we offer engaging summer programs designed to support learning and growth through fun, structured activities.",
-  },
+        "question": "What is Blue Halo and how does your multidisciplinary model work?",
+        "answer": "Blue Halo provides access to Speech-Language Pathologists, Occupational Therapists, Psychologists, BCBAs, Registered Psychotherapists, and Social Workers. Each clinician practices independently under their regulatory college. With your consent, clinicians may collaborate when clinically appropriate. You choose which services to use."
+      },
+      {
+        "question": "Do clinicians collaborate with each other?",
+        "answer": "Clinicians may collaborate with your consent when it is clinically appropriate. Collaboration is provider-led, optional, and based on your family’s goals."
+      },
+      {
+        "question": "Do I need a referral to start services?",
+        "answer": "No. Families can self-refer to all services at Blue Halo."
+      },
+      {
+        "question": "Do you offer virtual and in-person care?",
+        "answer": "Yes. Most services are available virtually across Ontario. In-person options depend on clinician availability and location. To receive any services, including virtual care, the patient or caregiver must be a resident of Ontario, as clinicians are licensed only within the province."
+      },
+      {
+        "question": "How is my privacy protected?",
+        "answer": "We follow PHIPA standards and use secure systems for scheduling, charting, and communication. Information is only shared with your consent."
+      },
+      {
+        "question": "Do you assess for autism (ASD), ADHD, and neurodevelopmental conditions?",
+        "answer": "Yes. Licensed psychologists complete diagnostic assessments for ASD, ADHD, learning, cognitive, and other neurodevelopmental conditions. All assessments follow Ontario diagnostic standards."
+      },
+      {
+        "question": "What does early intervention look like?",
+        "answer": "Our early-years intervention is play-based, developmental, naturalistic, and parent-involved. We do not offer high-intensity ABA programs for toddlers. Instead, we use gentle, evidence-based approaches that support communication, play, emotional regulation, and daily routines."
+      },
+      {
+        "question": "My child is autistic—what services are available?",
+        "answer": "Children may benefit from speech therapy, occupational therapy, behaviour consultation, parent coaching, mental-health therapy, medication support, or psychological assessment. With your consent, clinicians may recommend options. You make the final decisions, and services are combined only when clinically appropriate."
+      }
 ];
 
 function Faq() {
@@ -57,6 +55,8 @@ function Faq() {
               className="text-black text-center md:text-left"
               heading1={"Frequently asked "}
               heading2={" questions"}
+              // content={"You have got questions? We've got answers!!"}
+              // pClass={"font-medium text-[15px] mt-1 text-center  md:mb-2  text-gray-700  px-4 md:p-0 max-w-[600px] mx-auto"}
             />
           </div>
           <div className="space-y-4 mt-4">
@@ -87,7 +87,15 @@ function Faq() {
               </div>
             ))}
           </div>
+         
         </div>
+         <Link
+                href="/about"
+                className="border border-green-600 text-green-600 px-8 py-3 rounded-lg font-semibold hover:bg-green-50 transition inline-block mt-7"
+                // data-aos="zoom-out-right"
+              >
+                Read More
+              </Link>
       </div>
     </section>
   );

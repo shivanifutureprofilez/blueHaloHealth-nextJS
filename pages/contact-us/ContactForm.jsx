@@ -177,7 +177,7 @@ function ContactForm() {
                   <textarea onChange={handleChange}
                     value={items?.message}
                     name='message'
-                    placeholder="Message" rows={4} className="bg-white rounded-lg border border-gray-300 px-4 py-3 w-full outline-none" />
+                    placeholder="Message" rows={2} className="bg-white rounded-lg border border-gray-300 px-4 py-3 w-full outline-none" />
 
 
                   <div className="flex items-center gap-2">
