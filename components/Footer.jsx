@@ -90,6 +90,9 @@ function Footer() {
               <Link href="/privacy/policy" className=" text-gray-300 hover:text-white">
                 Terms of Service
               </Link>
+              <Link href="/aoda" className=" text-gray-300 hover:text-white">
+                AODA
+              </Link>
             </div>
           </div>
         </div>
