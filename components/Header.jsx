@@ -76,7 +76,7 @@ function Header() {
               About
             </Link>
             <DropDown menuwidth="min-w-[300px]"
-              btnclasses={' hover:text-[#00D967] cursor-pointer focus:outline-none '}
+              btnclasses={'hover:text-[#00D967] text-gray-800 cursor-pointer font-medium transition focus:outline-none'}
               label="Services"
               onSelect={(item) => console.log('selected', item)}
               align="left"
@@ -88,7 +88,7 @@ function Header() {
                     <hr className="text-gray-200 mt-2"/>
                   </Link>
 
-                  <div className="absolute left-75 top-0 hidden group-hover:block bg-white shadow-lg p-3  min-w-[300px] rounded-md z-50">
+                  <div className="absolute left-75  hidden group-hover:block bg-white shadow-lg p-3  min-w-[300px] rounded-md z-50">
                     {group.services?.map((srv) => (
                       <Link key={srv._id} href={`/service/detail/${srv?._id}`}>
                         <p className="text-sm  py-2 hover:text-blue-500 cursor-pointer">
@@ -206,6 +206,47 @@ function Header() {
               >
                 Home
               </Link>
+              <Link
+                href='/about'
+                className="block hover:text-[#00D967] transition"
+              >
+                About
+              </Link>
+             <DropDown
+  menuwidth="w-full sm:min-w-[300px]"
+  btnclasses="hover:text-[#00D967] text-gray-800 cursor-pointer font-medium transition focus:outline-none"
+  label="Services"
+  onSelect={(item) => console.log('selected', item)}
+  align="left"
+>
+  <div className="w-full">
+    {ageGroupsLists?.map((group, idx) => (
+      <div key={idx} className="border-b border-gray-200">
+
+        {/* Parent Item */}
+        <details className="group w-full">
+          <summary className="px-4 py-3 flex justify-between items-center cursor-pointer select-none text-sm font-semibold hover:bg-gray-100">
+            {group?.title}
+            <span className="transition group-open:rotate-90">
+              ▶
+            </span>
+          </summary>
+
+          {/* Sub Menus */}
+          <div className="bg-white px-4 pb-3 space-y-1">
+            {group.services?.map((srv) => (
+              <Link key={srv._id} href={`/service/detail/${srv?._id}`}>
+                <p className="text-sm py-2 hover:text-blue-500">{srv.name}</p>
+              </Link>
+            ))}
+          </div>
+        </details>
+
+      </div>
+    ))}
+  </div>
+</DropDown>
+
               {navLinks.map((link) => (
                 <li key={link.name}>
                   <Link

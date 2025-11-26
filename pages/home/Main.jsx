@@ -14,6 +14,7 @@ import VirtualTherapy from '@/components/VirtualTherapy'
 import VirtualTherapy2 from '@/components/VirtualTherapy2'
 import VirtualTherapy3 from '@/components/VirtualTherapy3'
 import Categories from './Categories'
+import HowItWorks from '@/components/HowItWorks'
 // import About from './About'
 
 export default function Main() {
@@ -23,6 +24,7 @@ export default function Main() {
         {/* <Banner/> */}
         <HeroBanner/>
         <AgeMatrix/>
+        <HowItWorks/>
         {/* <Categories /> */}
         {/* <FeaturedServices/> */}
         <About/>

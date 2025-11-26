@@ -39,10 +39,10 @@ export default function AgeMatrix({ admin }) {
         <Heading
           className="heading mb-0 text-center  poppins text-black tracking-tighter leading-tight font-bold text-3xl md:text-5xl lg:text-5xl "
           heading1={"Comprehensive"}
-          heading2={" Therapy Services"}
+          heading2={" Care Pathways"}
         />
         <p className="font-medium text-[15px] mt-1 text-center  md:mb-2  text-gray-700  px-4 md:p-0 max-w-[600px] mx-auto">
-          Our certified therapists provide individualized care across all developmental stages
+          Like life, we aren't meant to do everything alone - and care shouldn't be either.
         </p>
 
 

@@ -2,13 +2,7 @@ import React, { useEffect, useRef, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { RiArrowDropDownLine } from "react-icons/ri";
 
-// Accessible, keyboard-friendly dropdown component using TailwindCSS + Framer Motion
-// Props:
-// - label: string | node shown on the button
-// - items: array of { id, label, description? }
-// - onSelect: function(item) => void
-// - className: additional classes for container
-// - align: "left" | "right"
+
 
 export default function DropDown({
   label = "Select",
@@ -78,12 +72,15 @@ export default function DropDown({
   const menuAlignClasses = align === "right" ? "right-0 origin-top-right" : "left-0 origin-top-left";
 
   return (
-    <div className={`relative inline-block text-left ${className}`} ref={containerRef}>
+    <div className={`relative inline-block text-left ${className}`} ref={containerRef} onMouseEnter={() => setOpen(true)}
+        onMouseLeave={() => setOpen(false)}>
       <button
         type="button"
         aria-haspopup="true"
         aria-expanded={open}
-        onClick={toggleOpen}
+        // onClick={toggleOpen}
+        
+        
         className={`flex items-center ${btnclasses}`}
       > <span className="truncate">{label}</span>
         <RiArrowDropDownLine size={30} />

@@ -56,9 +56,6 @@ function HeroBanner() {
                 placeholder="blur"
                 // blurDataURL={`${slide}?amp;q=1`} // small 10–20px image or base64
                 blurDataURL={`${slide}?q=1&blur=100`}
-
-
-                
                 fetchpriority="high"
                 // fill={true}
               />
@@ -66,13 +63,10 @@ function HeroBanner() {
             </div>
 
           </SwiperSlide>
-
-
-
         ))}
       </Swiper>
-      <div className='absolute left-[0] right-[0] bottom-[50px] md:bottom-[380px] w-full max-w-[1320px] m-auto  px-8 md:px-[15px]  z-10'>
-        <div className='leading-snug max-w-[1000px] mx-auto'>
+      <div className='homecontent md:mt-[20px] absolute   w-full max-w-[1320px] m-auto  px-8 md:px-[15px]  z-10'>
+        <div className='leading-snug max-w-[500px] lg:max-w-[1000px] mx-auto '>
           <h1 data-aos="fade-up"
             data-aos-anchor-placement="bottom-bottom" className={`heading text-center  pt-12 md:pt-0 poppins text-white tracking-tighter leading-tight font-bold text-4xl md:text-5xl lg:text-5xl mb-3`} >Expert Care for  <span className='text-white'>Every Stage of Development </span> and Well-Being</h1>
           <p data-aos="fade-up"
@@ -83,21 +77,21 @@ function HeroBanner() {
             <p data-aos="fade-up"
               data-aos-anchor-placement="bottom-bottom" className="uppercase tagline rounded-lg font-bold text-2xl  p-3 text-center ">15 Min Consultation On Us.</p>
           </div> */}
-        </div>
-        <div className="flex justify-center flex-wrap gap-4 mt-6" data-aos="fade-up"
-          data-aos-anchor-placement="bottom-bottom">
+          <div className="flex justify-center flex-wrap gap-4 mt-6" data-aos="fade-up"
+            data-aos-anchor-placement="bottom-bottom">
 
-          {/* <button className='button bg-[#009C4A] cursor-pointer w-full md:w-[230px]'>Book Free Consultation</button> */}
+            {/* <button className='button bg-[#009C4A] cursor-pointer w-full md:w-[230px]'>Book Free Consultation</button> */}
 
-          <Popup1 classes={`button bg-[#009C4A] cursor-pointer w-full md:w-[230px] `} content={`Thankyou so much but we are not available right now`} />
+            <Popup1 classes={`button bg-[#009C4A] cursor-pointer w-full md:w-[230px] `} content={`Thankyou so much but we are not available right now`} />
 
-          {/* <Link
-                    href="/"
-                    className="bg-white transition-[1s] w-full md:w-[230px] text-center  text-black px-3 py-3 rounded-lg font-semibold  hover:bg-green-50  inline-block"
-                  >
-                    Patient Portal
-                  </Link> */}
-          <Popup1 classes={`bg-white transition-[1s] cursor-pointer w-full md:w-[230px] text-center  text-black px-3 py-3 rounded-lg font-semibold  hover:bg-green-50  inline-block`} content={`Thankyou so much but we are not available right now`} btnText={`Patient Portal`} />
+            {/* <Link
+                      href="/"
+                      className="bg-white transition-[1s] w-full md:w-[230px] text-center  text-black px-3 py-3 rounded-lg font-semibold  hover:bg-green-50  inline-block"
+                    >
+                      Patient Portal
+                    </Link> */}
+            <Popup1 classes={`bg-white transition-[1s] cursor-pointer w-full md:w-[230px] text-center  text-black px-3 py-3 rounded-lg font-semibold  hover:bg-green-50  inline-block`} content={`Thankyou so much but we are not available right now`} btnText={`Patient Portal`} />
+          </div>
         </div>
       </div>
       {/* </div> */}

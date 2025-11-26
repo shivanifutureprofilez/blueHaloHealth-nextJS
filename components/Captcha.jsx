@@ -163,7 +163,7 @@ export default function Captcha({
     {!CaptchaVerified ? <div className={`w-full max-w-sm ${className}`}>
       <label className="block text-sm font-medium text-gray-700 mb-2">Enter the 2-digit code</label>
 
-      <div className="flex items-center gap-3">
+      <div className="grid grid-cols-3 ">
         <div className="select-none" aria-hidden>
           {CaptchaSVG}
         </div>
@@ -184,13 +184,7 @@ export default function Captcha({
               inputMode="numeric"
             />
 
-            <button
-              onClick={handleVerify}
-              disabled={lockedUntil && Date.now() < lockedUntil}
-              className="px-3 py-2 rounded-md bg-green-600 text-white text-sm disabled:opacity-50"
-            >
-              Verify
-            </button>
+            
 
             <button
               type="button"
@@ -200,8 +194,15 @@ export default function Captcha({
             >
               ↻
             </button>
+            <button
+              onClick={handleVerify}
+              disabled={lockedUntil && Date.now() < lockedUntil}
+              className="px-3 py-2 rounded-md bg-green-600 text-white text-sm disabled:opacity-50"
+            >
+              Verify
+            </button>
           </div>
-
+         
           <div className="mt-2 text-sm">
             {status === "success" && <span className="text-green-600">Verified ✓</span>}
             {status === "error" && <span className="text-red-600">Wrong code — try again</span>}
@@ -215,7 +216,17 @@ export default function Captcha({
             )}
           </div>
         </div>
+     
       </div>
+          {/* <div className="flex "> */}
+               {/* <button
+              onClick={handleVerify}
+              disabled={lockedUntil && Date.now() < lockedUntil}
+              className="px-3 py-2 rounded-md bg-green-600 text-white text-sm disabled:opacity-50"
+            >
+              Verify
+            </button> */}
+            {/* </div> */}
     </div>  : <p className="text-green-600">Captcha Verified Successfully !!</p>}
     </>
   );
