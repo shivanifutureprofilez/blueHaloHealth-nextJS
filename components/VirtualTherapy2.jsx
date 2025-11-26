@@ -36,7 +36,7 @@ function VirtualTherapy2() {
                Our team of certified, compassionate therapists provides evidence-based virtual therapy designed to support children, adolescents, and adults at every stage of growth. Through personalized digital sessions, we help clients build resilience, improve communication, and strengthen relationships—all from the comfort and privacy of home.
 </p>
 <p className='text-gray-500 font-medium text-[15px]'>From developmental milestones to life’s most complex challenges, BlueHaloHealth delivers the guidance, connection, and care needed to help individuals and families thrive—virtually, together.              </p> */}
-              <div className='flex item-center justify-center md:block'>
+              <div className='flex item-center justify-center md:block flex-wrap'>
                 <ul className="space-y-4 text-base" data-aos="zoom-out-left">
                   <li className="flex items-center gap-6 md:gap-3 text-black">
                     <span className="">
