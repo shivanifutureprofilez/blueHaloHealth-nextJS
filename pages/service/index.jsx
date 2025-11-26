@@ -44,7 +44,7 @@ export default function Index() {
 
   useEffect(() => {
     fetchData();
-  }, []);
+  }, [activeAgeGroup]);
 
 
   const [serviceList, setServiceList] = useState([]);

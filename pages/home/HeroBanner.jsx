@@ -54,7 +54,11 @@ function HeroBanner() {
                 width={1000}
                 height={1000}
                 placeholder="blur"
-                blurDataURL={`${slide}?amp;q=1`} // small 10–20px image or base64
+                // blurDataURL={`${slide}?amp;q=1`} // small 10–20px image or base64
+                blurDataURL={`${slide}?q=1&blur=100`}
+
+
+                
                 fetchpriority="high"
                 // fill={true}
               />
