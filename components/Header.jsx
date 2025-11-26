@@ -19,7 +19,7 @@ function Header() {
   const navLinks = [
     // { name: "Home", href: "/" },
     // { name: "Core Services ", href: "/service" },
-    { name: "About", href: "/about" },
+    // { name: "About", href: "/about" },
     { name: "Resources", href: "/resources" },
     { name: "Events", href: "/events" },
     // { name: "Blogs", href: "/https://phpdemo.futureprofilez.com/wp/blue-halo-health-blog/" },
@@ -68,6 +68,12 @@ function Header() {
               className="text-gray-800 hover:text-[#00D967] font-medium transition"
             >
               Home
+            </Link>
+            <Link
+              href='/about'
+              className="text-gray-800 hover:text-[#00D967] font-medium transition"
+            >
+              About
             </Link>
             <DropDown menuwidth="min-w-[300px]"
               btnclasses={' hover:text-[#00D967] cursor-pointer focus:outline-none '}

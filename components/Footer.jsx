@@ -26,10 +26,11 @@ function Footer() {
            
               <ul className="space-y-2 text-gray-300">
                 <li><Link href="/service" className="">Services</Link></li>
-                <li><Link href="/agegroups" className="">Ages</Link></li>
+                {/* <li><Link href="/agegroups" className="">Ages</Link></li> */}
                 <li><Link href="/resources" className="">Resources</Link></li>
                 <li><Link href="/about" className="">About Us</Link></li>
                 <li><Link href="/contact-us" className="">Contact</Link></li>
+                <li><Link href="https://phpdemo.futureprofilez.com/wp/blue-halo-health-blog/" className="">Blogs</Link></li>
               </ul>
             
           </div>

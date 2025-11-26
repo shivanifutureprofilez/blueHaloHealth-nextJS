@@ -13,8 +13,8 @@ import { RiArrowDropDownLine } from "react-icons/ri";
 export default function DropDown({
   label = "Select",
   items = [],
-  children, btnclasses,menuwidth,
-  onSelect = () => {},
+  children, btnclasses, menuwidth,
+  onSelect = () => { },
   className = "",
   align = "left",
 }) {
@@ -110,4 +110,3 @@ export default function DropDown({
   );
 }
 
- 
