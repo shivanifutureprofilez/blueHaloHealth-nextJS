@@ -75,20 +75,20 @@ function Header() {
             >
               About
             </Link>
-            <DropDown menuwidth="min-w-[300px]"
+            <DropDown menuwidth="min-w-[250px]"
               btnclasses={'hover:text-[#00D967] text-gray-800 cursor-pointer font-medium transition focus:outline-none'}
               label="Services"
               onSelect={(item) => console.log('selected', item)}
               align="left"
             >
               {ageGroupsLists && ageGroupsLists?.map((group, idx) => (
-                <div className="px-4 py-2 grid grid-cols-1 space-y-2 relative group">
+                <div className="   grid grid-cols-1 space-y-2   group">
                   <Link href={`/service?agegroup=${group?._id}`} >
-                    <p className="font-bold py-1 hover:bg-[#F7F4F0] hover:bg-gray-100 text-sm ">{group?.title}</p>
-                    <hr className="text-gray-200 mt-2"/>
+                    <p className="px-4 py-3 hover:bg-[#F7F4F0] hover:bg-gray-100 text-sm ">{group?.title}</p>
+                    <hr className="text-gray-200 "/>
                   </Link>
 
-                  <div className="absolute left-75  hidden group-hover:block bg-white shadow-lg p-3  min-w-[300px] rounded-md z-50">
+                  <div className="  absolute left-full top-0 h-full  hidden group-hover:block bg-white shadow-lg p-3  min-w-[300px] rounded-md z-50">
                     {group.services?.map((srv) => (
                       <Link key={srv._id} href={`/service/detail/${srv?._id}`}>
                         <p className="text-sm  py-2 hover:text-blue-500 cursor-pointer">
@@ -98,8 +98,6 @@ function Header() {
                       </Link>
                     ))}
                   </div>
-
-
                 </div>
               ))}
 
@@ -197,9 +195,9 @@ function Header() {
 
       {/* Mobile Dropdown */}
       {isMobileMenuOpen && (
-        <div className="p-6 fixed md:relative top-[50px] w-full md:block">
+        <div className="p-6 fixed md:relative top-[50px]  w-full md:block">
           <div className=" rounded-2xl  w-full max-w-[100%]  lg:hidden bg-white shadow-lg border-t border-gray-100">
-            <ul className="flex flex-col space-y-4 px-6 py-4 text-gray-800 font-medium">
+            <ul className="max-h-[70vh] overflow-auto flex flex-col space-y-4 px-6 py-4 text-gray-800 font-medium">
               <Link
                 href='/'
                 className="block hover:text-[#00D967] transition"
@@ -213,12 +211,12 @@ function Header() {
                 About
               </Link>
              <DropDown
-  menuwidth="w-full sm:min-w-[300px]"
-  btnclasses="hover:text-[#00D967] text-gray-800 cursor-pointer font-medium transition focus:outline-none"
-  label="Services"
-  onSelect={(item) => console.log('selected', item)}
-  align="left"
->
+          menuwidth="w-full sm:min-w-[300px]"
+          btnclasses="hover:text-[#00D967] text-gray-800 cursor-pointer font-medium transition focus:outline-none"
+          label="Services"
+          onSelect={(item) => console.log('selected', item)}
+          align="left"
+        >
   <div className="w-full">
     {ageGroupsLists?.map((group, idx) => (
       <div key={idx} className="border-b border-gray-200">

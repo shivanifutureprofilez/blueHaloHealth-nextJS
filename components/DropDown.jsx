@@ -71,15 +71,22 @@ export default function DropDown({
 
   const menuAlignClasses = align === "right" ? "right-0 origin-top-right" : "left-0 origin-top-left";
 
+
+  const onMLeave = () => {
+    if(window.innerWidth > 1024) { 
+      setOpen(false)
+    }
+  }
   return (
     <div className={`relative inline-block text-left ${className}`} ref={containerRef} onMouseEnter={() => setOpen(true)}
-        onMouseLeave={() => setOpen(false)}>
+        onMouseLeave={(e)=>onMLeave(e) }
+        
+        >
       <button
         type="button"
         aria-haspopup="true"
         aria-expanded={open}
         // onClick={toggleOpen}
-        
         
         className={`flex items-center ${btnclasses}`}
       > <span className="truncate">{label}</span>
@@ -93,7 +100,7 @@ export default function DropDown({
             animate={{ opacity: 1, scale: 1 }}
             exit={{ opacity: 0, scale: 0.98 }}
             transition={{ duration: 0.12 }}
-            className={`absolute z-50 mt-2 ${menuwidth || "w-56"} rounded-xl bg-white ring-1 ring-black/5 shadow-lg ${menuAlignClasses}`}
+            className={` lg:absolute z-50 mt-2 ${menuwidth || "w-56"} rounded-xl bg-white ring-1 ring-black/5 lg:shadow-lg ${menuAlignClasses}`}
             role="menu"
             aria-orientation="vertical"
           >
