@@ -43,7 +43,7 @@ function BookingTab() {
                                     href="mailto:hello@blueHaloHealth.com"
                                     className="flex items-center gap-2 font-semibold md:font-bold text-white hover:text-[#00D967] transition"
                                 >
-                                    <IoMailOpenOutline size={24} /> hello@blueHaloHealth.com
+                                    <IoMailOpenOutline size={24} /> info@bluehalohealth.com 
                                 </Link>
                             </div>
                             <div className="flex mt-4 flex-wrap bg-[#0000001A] items-center justify-center gap-x-6 gap-y-2  rounded-lg py-3 md:py-0 md:px-3 mx-auto max-w-[600px]">

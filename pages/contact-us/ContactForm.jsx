@@ -29,8 +29,8 @@ function ContactForm() {
   const [selectedService, setSelectedService] = useState(null);
 
   const [CaptchaVerified, setCatchaVerified] = useState(false)
-  const onVerify = (e) => { 
-    if(e){ 
+  const onVerify = (e) => {
+    if (e) {
       setCatchaVerified(true)
     }
   }
@@ -104,106 +104,129 @@ function ContactForm() {
 
 
   return (
-   
-        
-          <div className="bg-[#E6EBE3] p-4 rounded-[20px] shadow md:p-8">
-            {messageSent ?
-              <div className='thankyou-wrap min-h-[300px] flex items-center justify-center'>
-                <div className="flex flex-col items-center justify-center text-center p-6 bg-green-50 rounded-2xl shadow-md max-w-md mx-auto">
-                  <h2 className="text-2xl font-extrabold text-green-600 mb-3">Thank You!</h2>
-                  <p className="text-gray-700 leading-relaxed">
-                    We appreciate your interest in <span className="font-semibold text-green-700">Blue Halo Health</span>.
-                    Our team has received your enquiry and will get back to you shortly with the information you need.
-                  </p>
-                </div>
-              </div>
-              :
-              <>
-                <h2 className="font-bold text-xl md:text-2xl mb-3 md:mb-6 text-black flex items-center gap-2">
-                  <FaPaperPlane className="text-green-600" /> Send Us a Message
-                </h2>
-                <form className="space-y-4" onSubmit={handleSubmit}>
-                  <input onChange={handleChange}
-                    value={items?.fullName}
-                    name='fullName'
-                    required
-                    type="text" placeholder="Full Name" className="bg-white rounded-lg border border-gray-300 px-4 py-3 w-full outline-none" />
-
-                  <input onChange={handleChange}
-                    value={items?.age}
-                    name='age'
-                    type="number" placeholder="Age" required className="bg-white rounded-lg border border-gray-300 px-4 py-3 w-full outline-none" 
-                    min={0}
-                    />
-                  {/* <div className="grid grid-cols-2 gap-4"> */}
-                    <input
-                      onChange={(e) => {
-                        const value = e.target.value.replace(/\D/g, "");
-                        if (value.length <= 10) {
-                          handleChange({
-                            target: { name: "phone", value },
-                          });
-                        }
-                      }}
-                      value={items.phone}
-                      name="phone"
-                      maxLength={10}
-                      minLength={10}
-                      type="text"
-                      placeholder="Phone number"
-                      className="bg-white rounded-lg border border-gray-300 px-4 py-3 w-full outline-none"
-                    />
-
-                    <input onChange={handleChange}
-                      value={items?.email}
-                      name='email'
-                      type="Email"
-                      placeholder="Email"
-                      required
-                      className="bg-white rounded-lg border border-gray-300 px-4 py-3 w-full outline-none" />
-                  {/* </div> */}
-                  <div>
-                    <select onChange={(e) => setSelectedService(e.target.value)} className='bg-white rounded-lg border border-gray-300 px-4 py-3 w-full outline-none'>
-                      <option  className='text-gray-400' value="" >Choose a Service</option>
-                      {ageGroupsLists && ageGroupsLists.map((age, i) => {
-                        return <>
-                          {age && age?.services.map((s, i) => {
-                            return <option value={`${s.name} - (${age.title})`} >{s.name} - ({age.title})</option>
-                          })}
-                        </>
-                      })}
-                    </select>
-                  </div>
-                  <textarea onChange={handleChange}
-                    value={items?.message}
-                    name='message'
-                    placeholder="Message" rows={2} className="bg-white rounded-lg border border-gray-300 px-4 py-3 w-full outline-none" />
 
 
-                  <div className="flex items-center gap-2">
-                    <input
-                      onChange={handleChange}
-                      checked={items.smsCheckbox} // ✅ use "checked" not "value"
-                      name="smsCheckbox"
-                      type="checkbox"
-                      id="sms"
-                      className="accent-green-600"
-                    />
-                    <label className="text-gray-700 text-sm text-left">I agree to receive SMS / Text communication</label>
-                  </div>
- 
-
-                <Captcha onVerify={onVerify} CaptchaVerified={CaptchaVerified} />
-                  <button
-                    type="submit"
-                    disabled={loading} className={`${CaptchaVerified ? '' : 'disabled'} bg-green-dark text-white font-semibold px-6 py-3 rounded-lg hover:bg-green-700 transition w-full mt-2`}>
-                    {loading ? "Loading..." : "Submit Enquiry"}
-                  </button>
-                </form>
-              </>
-            }
+    <div className="bg-[#E6EBE3] p-4 rounded-[20px] shadow md:p-8">
+      {messageSent ?
+        <div className='thankyou-wrap min-h-[300px] flex items-center justify-center'>
+          <div className="flex flex-col items-center justify-center text-center p-6 bg-green-50 rounded-2xl shadow-md max-w-md mx-auto">
+            <h2 className="text-2xl font-extrabold text-green-600 mb-3">Thank You!</h2>
+            <p className="text-gray-700 leading-relaxed">
+              We appreciate your interest in <span className="font-semibold text-green-700">Blue Halo Health</span>.
+              Our team has received your enquiry and will get back to you shortly with the information you need.
+            </p>
           </div>
-     
+        </div>
+        :
+        <>
+          <h2 className="font-bold text-xl md:text-2xl justify-center mb-3 md:mb-2 text-black flex items-center gap-2">
+            <FaPaperPlane className="text-green-600" /> Send Us a Message
+          </h2>
+          <p className="mb-6 md:mb-4 font-medium text-[15px] text-center  text-gray-700 max-w-[600px] mx-auto">
+            We can accommodate your communication needs, including: Email, Text/SMS, Interpreter-supported options, Accessibility accommodations
+          </p>
+          <form className="space-y-4" onSubmit={handleSubmit}>
+            <input onChange={handleChange}
+              value={items?.fullName}
+              name='fullName'
+              required
+              type="text" placeholder="Full Name" className="bg-white rounded-lg border border-gray-300 px-4 py-3 w-full outline-none" />
+
+            {/* <input
+              onChange={(e) => {
+                const value = e.target.value.replace(/\D/g, "");
+                if (value.length <= 2) {
+                  handleChange({
+                    target: { name: "age", value },
+                  });
+                }
+              }}
+
+              value={items?.age}
+              name='age'
+              type="number" placeholder="Age" required className="bg-white rounded-lg border border-gray-300 px-4 py-3 w-full outline-none"
+              min={0}
+            /> */}
+            <input
+              type="number"
+              name="age"
+              value={items?.age}
+              onChange={(e) => {
+                const value = e.target.value.replace(/\D/g, "").slice(0, 2);
+                handleChange({ target: { name: "age", value } });
+              }}
+              placeholder="Age" required className="bg-white rounded-lg border border-gray-300 px-4 py-3 w-full outline-none"
+              min={0}
+            />
+            {/* <div className="grid grid-cols-2 gap-4"> */}
+            <input
+              onChange={(e) => {
+                const value = e.target.value.replace(/\D/g, "");
+                if (value.length <= 10) {
+                  handleChange({
+                    target: { name: "phone", value },
+                  });
+                }
+              }}
+              value={items.phone}
+              name="phone"
+              maxLength={10}
+              minLength={10}
+              type="text"
+              placeholder="Phone number"
+              className="bg-white rounded-lg border border-gray-300 px-4 py-3 w-full outline-none"
+            />
+
+            <input onChange={handleChange}
+              value={items?.email}
+              name='email'
+              type="Email"
+              placeholder="Email"
+              required
+              className="bg-white rounded-lg border border-gray-300 px-4 py-3 w-full outline-none" />
+            {/* </div> */}
+            <div>
+              <select onChange={(e) => setSelectedService(e.target.value)} className='bg-white rounded-lg border border-gray-300 px-4 py-3 w-full outline-none'>
+                <option className='text-gray-400' value="" >Choose a Service</option>
+                {ageGroupsLists && ageGroupsLists.map((age, i) => {
+                  return <>
+                    {age && age?.services.map((s, i) => {
+                      return <option value={`${s.name} - (${age.title})`} >{s.name} - ({age.title})</option>
+                    })}
+                  </>
+                })}
+              </select>
+            </div>
+            <textarea onChange={handleChange}
+              value={items?.message}
+              name='message'
+              placeholder="Message" rows={2} className="bg-white rounded-lg border border-gray-300 px-4 py-3 w-full outline-none" />
+
+
+            <div className="flex items-center gap-2">
+              <input
+                onChange={handleChange}
+                checked={items.smsCheckbox} // ✅ use "checked" not "value"
+                name="smsCheckbox"
+                type="checkbox"
+                id="sms"
+                className="accent-green-600"
+              />
+              <label className="text-gray-700 text-sm text-left">I agree to receive SMS / Text communication</label>
+            </div>
+
+
+            <Captcha onVerify={onVerify} CaptchaVerified={CaptchaVerified} />
+            <button
+              type="submit"
+              disabled={loading} className={`${CaptchaVerified ? '' : 'disabled'} bg-green-dark text-white font-semibold px-6 py-3 rounded-lg hover:bg-green-700 transition w-full mt-2`}>
+              {loading ? "Loading..." : "Submit Enquiry"}
+            </button>
+          </form>
+        </>
+      }
+    </div>
+
   )
 }
 

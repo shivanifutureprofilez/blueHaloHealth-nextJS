@@ -21,7 +21,7 @@ function Footer() {
           </div>
 
          
-          <div className="">
+          <div className="pl-0 lg:pl-18">
             <h4 className="text-lg font-semibold mb-4">Quick Links</h4>
            
               <ul className="space-y-2 text-gray-300">
@@ -60,7 +60,7 @@ function Footer() {
                                 <IoMailOpenOutline size={20}  className="text-gray-300"/>
                               </span>
                               <a href="mailto:hello@bluehalohealth.com" className="text-gray-300">
-                                hello@bluehalohealth.com
+                                info@bluehalohealth.com 
                               </a>
                             </li>
                           </ul> 

@@ -77,7 +77,7 @@ function ServiceCardSmall({ item, idx, isAdmin = false, fetchServices }) {
         <p className="mb-4 text-[15px] font-medium line-clamp-3 text-gray-600">
           {item?.description}
         </p>
-       {isAdmin && (
+       {/* {isAdmin && (
         <button
           onClick={markAsFeatured}
           className={`
@@ -89,7 +89,7 @@ function ServiceCardSmall({ item, idx, isAdmin = false, fetchServices }) {
         >
          {item?.featured ? "Remove From Featured" :" Mark As Featured"}
         </button>
-      )}
+      )} */}
       </div>
     </div>
   );

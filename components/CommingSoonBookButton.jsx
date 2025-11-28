@@ -44,7 +44,7 @@ export default function CommingSoonBookButton({ classes, action, btnText }) {
 
     const handleSubmit = (e) => {
         try {
-            e.preventDefault();  
+            e.preventDefault();
             if (!items.fullName || !items.email || !items.phone || !items.age || !consent1 || !consent2) {
                 toast.error("All fields are required");
                 return false;
@@ -175,7 +175,7 @@ export default function CommingSoonBookButton({ classes, action, btnText }) {
                                     className=" w-full  bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg 
                             focus:ring-blue-500 focus:border-blue-500 py-3 px-4"
                                 />
-                                <input
+                                {/* <input
                                     type="number"
                                     onChange={handleChange}
                                     value={items?.age}
@@ -183,6 +183,18 @@ export default function CommingSoonBookButton({ classes, action, btnText }) {
                                     placeholder="Enter Your Age"
                                     className=" w-full  bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg 
                             focus:ring-blue-500 focus:border-blue-500 py-3 px-4"
+                                /> */}
+                                <input
+                                    type="number"
+                                    name="age"
+                                    value={items?.age}
+                                    onChange={(e) => {
+                                        const value = e.target.value.replace(/\D/g, "").slice(0, 2);
+                                        handleChange({ target: { name: "age", value } });
+                                    }}
+                                    placeholder="Enter Your Age" required className="w-full  bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg 
+                            focus:ring-blue-500 focus:border-blue-500 py-3 px-4"
+                                    min={0}
                                 />
                             </div>
                             <div>
@@ -200,7 +212,7 @@ export default function CommingSoonBookButton({ classes, action, btnText }) {
                             <div className="flex items-center pt-4 gap-2">
                                 <input
                                     onChange={handleChange}
-                                    checked={items.consent1} 
+                                    checked={items.consent1}
                                     name="consent1" ref={check1}
                                     type="checkbox"
                                     id="consent1"
@@ -211,7 +223,7 @@ export default function CommingSoonBookButton({ classes, action, btnText }) {
                             <div className="flex items-center pt-2 gap-2">
                                 <input
                                     onChange={handleChange}
-                                    checked={items.consent2} 
+                                    checked={items.consent2}
                                     name="consent2" ref={check2}
                                     type="checkbox"
                                     id="consent2"
@@ -219,7 +231,7 @@ export default function CommingSoonBookButton({ classes, action, btnText }) {
                                 />
                                 <label className="text-gray-700 text-sm text-left">I consent to being contacted when appointments open.</label>
                             </div>
-                            <button 
+                            <button
                                 onClick={handleSubmit}
                                 type="submit"
                                 disabled={loading}

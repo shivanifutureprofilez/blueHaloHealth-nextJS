@@ -29,7 +29,7 @@ function ContactInfo() {
                             <IoMailOpenOutline size={22} className="text-green-600" />
                           </span>
                           <a href="mailto:hello@blueHaloHealth.com" className=" text-gray-700 hover:underline">
-                            hello@bluehalohealth.com
+                            info@bluehalohealth.com 
                           </a>
                         </li>
                       </ul>

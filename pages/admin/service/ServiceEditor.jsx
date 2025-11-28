@@ -30,6 +30,7 @@ const ReactQuillEditor = ({ label, desc, handleBioChange }) => {
     "bullet",
     "link",
     "image",
+    
   ];
 
   return (

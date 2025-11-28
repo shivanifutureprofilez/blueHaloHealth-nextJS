@@ -15,7 +15,8 @@ function HeroBanner() {
     "/hero.png",
     "/hero2.png",
     "/hero3.png",
-    "/hero4.png"
+    "/hero4.png",
+    // "/banner4.png"
     // "/heroBanner2.jpg",
     // "/swiperhero.png",
     //  "/heroBanner3.jpg",
@@ -73,10 +74,13 @@ function HeroBanner() {
             data-aos-anchor-placement="bottom-bottom" className={` text-white text-center   text-[15px]`}>A multidisciplinary, virtual-first care model serving all of Ontario — combining
             speech therapy, behavioural therapy, psychology, neurodevelopmental expertise,
             and mental-health support, with in-home options when needed.</p>
-          {/* <div className="flex justify-center flex-wrap pt-4 rounded-lg   ">
+             {/* <p data-aos="fade-up"
+            data-aos-anchor-placement="bottom-bottom" className={` text-green-dark text-center mt-3  text-[17px]`}>Personalized Care | At your pace | Safe & Secure | Delivered by OAP Approved Experts
+</p> */}
+          <div className="flex justify-center flex-wrap pt-4 rounded-lg   ">
             <p data-aos="fade-up"
-              data-aos-anchor-placement="bottom-bottom" className="uppercase tagline rounded-lg font-bold text-2xl  p-3 text-center ">15 Min Consultation On Us.</p>
-          </div> */}
+              data-aos-anchor-placement="bottom-bottom" className="uppercase tagline rounded-lg font-bold text-[17px]  p-3 text-center ">Virtual-first • Ontario-wide • In-home where needed • PHIPA-compliant</p>
+          </div>
           <div className="flex justify-center flex-wrap gap-4 mt-6" data-aos="fade-up"
             data-aos-anchor-placement="bottom-bottom">
 

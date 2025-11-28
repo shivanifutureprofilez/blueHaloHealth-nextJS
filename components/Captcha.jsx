@@ -163,12 +163,20 @@ export default function Captcha({
     {!CaptchaVerified ? <div className={`w-full max-w-sm ${className}`}>
       <label className="block text-sm font-medium text-gray-700 mb-2">Enter the 2-digit code</label>
 
-      <div className="grid grid-cols-3 ">
-        <div className="select-none" aria-hidden>
+      <div className="flex justify-center gap-3 items-center ">
+        <div className="select-none relative" aria-hidden>
           {CaptchaSVG}
+           <button
+              type="button"
+              onClick={refreshCaptcha}
+              className="p-3 rounded-md text-green-500 cursor-pointer  text-md   absolute top-0 right-[10px]"
+              title="Refresh captcha"
+            >
+              ↻
+            </button>
         </div>
 
-        <div className="flex-1">
+        <div className="flex">
           <div  className="flex gap-2 items-center">
             <input
               aria-label="captcha-input"
@@ -179,30 +187,24 @@ export default function Captcha({
                 setInput(v);
                 setStatus(null);
               }}
-              className="px-3 py-2 border rounded-md w-28 text-lg text-center placeholder:text-gray-400"
+              className="px-3 py-2 border rounded-md w-28 text-lg text-center placeholder:text-gray-400  "
               placeholder={"__"}
               inputMode="numeric"
             />
 
-            
-
-            <button
-              type="button"
-              onClick={refreshCaptcha}
-              className="px-2 py-2 rounded-md border text-sm text-gray-700"
-              title="Refresh captcha"
-            >
-              ↻
-            </button>
+           
             <button
               onClick={handleVerify}
               disabled={lockedUntil && Date.now() < lockedUntil}
-              className="px-3 py-2 rounded-md bg-green-600 text-white text-sm disabled:opacity-50"
+              className="px-6 py-3 rounded-md bg-green-600 text-white text-sm disabled:opacity-50"
             >
               Verify
             </button>
           </div>
          
+        </div>
+     
+      </div>
           <div className="mt-2 text-sm">
             {status === "success" && <span className="text-green-600">Verified ✓</span>}
             {status === "error" && <span className="text-red-600">Wrong code — try again</span>}
@@ -215,9 +217,6 @@ export default function Captcha({
               <div className="text-xs text-red-600 mt-1">Too many attempts. Try again in 30s.</div>
             )}
           </div>
-        </div>
-     
-      </div>
           {/* <div className="flex "> */}
                {/* <button
               onClick={handleVerify}
