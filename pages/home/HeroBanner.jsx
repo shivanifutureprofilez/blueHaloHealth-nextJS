@@ -16,6 +16,7 @@ function HeroBanner() {
     "/hero2.png",
     "/hero3.png",
     "/hero4.png",
+    // "/hero5.png"
     // "/banner4.png"
     // "/heroBanner2.jpg",
     // "/swiperhero.png",
@@ -23,7 +24,6 @@ function HeroBanner() {
     // "/heroBanner4.jpg",
     // "/heroBanner5.jpg",
     // "/heroBanner6.jpg"
-
   ]
   return (
     <div className="relative ">

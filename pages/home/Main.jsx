@@ -24,7 +24,7 @@ export default function Main() {
         {/* <Banner/> */}
         <HeroBanner/>
         <AgeMatrix/>
-        <HowItWorks/>
+        {/* <HowItWorks/> */}
         {/* <Categories /> */}
         {/* <FeaturedServices/> */}
         <About/>
