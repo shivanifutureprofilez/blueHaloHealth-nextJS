@@ -12,10 +12,16 @@ import Image from 'next/image';
 
 function HeroBanner() {
   const slides = [
-    "/hero.png",
-    "/hero2.png",
-    "/hero3.png",
-    "/hero4.png",
+    "/banner5.jpg",
+    "/banner7.jpg",
+    // "/banner9.jpg",
+    "/banner10.jpg"
+    // "/banner8.jpg"
+    // "/hero.png",
+    // "/hero2.png",
+    // "/hero3.png",
+    // "/hero4.png",
+
     // "/hero5.png"
     // "/banner4.png"
     // "/heroBanner2.jpg",
@@ -51,7 +57,9 @@ function HeroBanner() {
               <Image
                 src={`${slide}`}
                 alt="Expert Care for Every Stage of Development and Well-Being"
-                className="banner-image w-full h-[600px] md:h-[93vh] object-cover"
+                className="banner-image w-full h-[600px] 
+                md:h-[93vh] 
+                object-cover"
                 width={1000}
                 height={1000}
                 placeholder="blur"
@@ -60,7 +68,7 @@ function HeroBanner() {
                 fetchpriority="high"
                 // fill={true}
               />
-              <div className="absolute inset-0 bg-black/40"></div>
+              <div className="absolute inset-0 bg-black/50"></div>
             </div>
 
           </SwiperSlide>
