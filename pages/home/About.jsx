@@ -27,7 +27,7 @@ function About() {
           {/* Right Text */}
           <div className="text-center lg:text-left" >
             <div className="leading-snug">
-              <h2 className="heading poppins text-black tracking-tighter leading-tight font-bold text-3xl md:text-5xl lg:text-5xl mb-3" data-aos="zoom-out-right">
+              <h2 className="heading poppins text-black tracking-tighter leading-tight font-bold text-2xl md:text-4xl  mb-3" data-aos="zoom-out-right">
                 About <span className="text-[#009C4A]">BlueHaloHealth</span>
               </h2>
               <p className="text-gray-500 font-medium text-[15px] mb-2 lg:mb-4" data-aos="zoom-out-right">

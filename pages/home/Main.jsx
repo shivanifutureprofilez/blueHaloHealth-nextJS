@@ -25,7 +25,7 @@ export default function Main() {
       <div className='bg-[#F7F4F0]'>
         {/* <Banner/> */}
         <HeroBanner/>
-        {/* <AgeMatrix/> */}
+        <AgeMatrix/>
         {/* <AgeMatrix2/> */}
         <AgeMatrix3/>
         {/* <HowItWorks/> */}

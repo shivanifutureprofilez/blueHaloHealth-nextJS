@@ -20,7 +20,7 @@ function VirtualTherapy2() {
 
           <div className="text-center lg:text-left">
             <div className="leading-snug px-6">
-              <h2 data-aos="zoom-out-left" className="heading poppins text-black tracking-tighter leading-tight font-bold text-3xl md:text-5xl lg:text-5xl mb-3">
+              <h2 data-aos="zoom-out-left" className="heading poppins text-black tracking-tighter leading-tight font-bold text-2xl md:text-4xl xl mb-3">
                 Virtual <span className="text-[#009C4A]">Therapy</span>
               </h2>
              

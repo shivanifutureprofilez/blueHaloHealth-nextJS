@@ -28,7 +28,7 @@ body{font-family:'Poppins',sans-serif;}
 @layer components{.button{@apply text-white px-[20px] py-[12px] rounded-lg bg-[var(--secondary)] hover:border-[var(--secondary)] transition-[1s];}
 .button-white{@apply bg-white text-black border-2 border-black px-4 py-2 rounded-lg font-bold hover:bg-[var(--secondary)] hover:border-[var(--secondary)] hover:text-white transition-[1s];}
 .button-transparent{@apply bg-transparent border-[var(--secondary)] border-2 text-[var(--secondary)] px-4 py-2 rounded-lg font-bold transition-[1s];}
-.heading{@apply font-bold text-[#1E1E1E] text-[22px] md:text-[28px] lg:text-[35px] xl:text-[42px];}
+.heading{@apply font-bold text-[#1E1E1E] text-[22px] md:text-[26px] ;}
 }
 .wrapper-class .rdw-dropdown-wrapper .rdw-dropdown-selectedtext{color:#f9fafb;/* text-gray-100 */
 }

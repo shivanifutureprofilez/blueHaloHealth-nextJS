@@ -14,8 +14,8 @@ function HeroBanner() {
   const slides = [
     "/banner5.jpg",
     "/banner7.jpg",
+    // "/banner10.jpg"
     // "/banner9.jpg",
-    "/banner10.jpg"
     // "/banner8.jpg"
     // "/hero.png",
     // "/hero2.png",

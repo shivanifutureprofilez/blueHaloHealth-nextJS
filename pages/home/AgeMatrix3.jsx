@@ -47,7 +47,7 @@ export default function AgeMatrix3({ admin }) {
     <section className="bg-[#E6EBE3] md:bg-[#F7F4F0] py-[30px] md:py-[40px] lg:py-[60px]">
       <div className="mx-auto container px-4">
         <Heading
-          className="heading mb-0 text-center poppins text-black tracking-tighter leading-tight font-bold text-3xl md:text-5xl lg:text-5xl"
+          className="heading mb-0 text-center poppins text-black tracking-tighter leading-tight font-bold text-2xl md:text-4xl "
           heading1={"Comprehensive"}
           heading2={" Care Pathways"}
         />
@@ -105,7 +105,7 @@ export default function AgeMatrix3({ admin }) {
                     </div>
 
                     {/* Navigation Buttons */}
-                    <div className="flex gap-2">
+                    <div className=" gap-2 hidden md:flex">
                       <button
                         onClick={() => scroll(idx, "left")}
                         className="p-2 md:p-3 rounded-full bg-white hover:bg-[#009C4A] hover:text-white transition-all duration-200 shadow-md hover:shadow-lg"
