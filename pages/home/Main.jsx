@@ -15,6 +15,8 @@ import VirtualTherapy2 from '@/components/VirtualTherapy2'
 import VirtualTherapy3 from '@/components/VirtualTherapy3'
 import Categories from './Categories'
 import HowItWorks from '@/components/HowItWorks'
+import AgeMatrix2 from './AgeMatrix2'
+import AgeMatrix3 from './AgeMatrix3'
 // import About from './About'
 
 export default function Main() {
@@ -23,7 +25,9 @@ export default function Main() {
       <div className='bg-[#F7F4F0]'>
         {/* <Banner/> */}
         <HeroBanner/>
-        <AgeMatrix/>
+        {/* <AgeMatrix/> */}
+        {/* <AgeMatrix2/> */}
+        <AgeMatrix3/>
         {/* <HowItWorks/> */}
         {/* <Categories /> */}
         {/* <FeaturedServices/> */}

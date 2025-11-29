@@ -57,7 +57,7 @@ function HeroBanner() {
               <Image
                 src={`${slide}`}
                 alt="Expert Care for Every Stage of Development and Well-Being"
-                className="banner-image w-full h-[600px] 
+                className="banner-image w-full h-[80vh]
                 md:h-[93vh] 
                 object-cover"
                 width={1000}
@@ -95,8 +95,10 @@ function HeroBanner() {
             //   data-aos-anchor-placement="bottom-bottom"
                className="uppercase tagline rounded-lg font-bold text-[17px]  p-3 text-center ">Virtual-first • Ontario-wide • In-home where needed • PHIPA-compliant</p>
           </div>
-          <div className="flex justify-center flex-wrap gap-4 mt-6" data-aos="fade-up"
-            data-aos-anchor-placement="bottom-bottom">
+          <div className="flex justify-center flex-wrap gap-4 mt-6" 
+          // data-aos="fade-up"
+          //   data-aos-anchor-placement="bottom-bottom"
+            >
 
             {/* <button className='button bg-[#009C4A] cursor-pointer w-full md:w-[230px]'>Book Free Consultation</button> */}
 
