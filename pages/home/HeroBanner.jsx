@@ -76,18 +76,24 @@ function HeroBanner() {
       </Swiper>
       <div className='homecontent md:mt-[20px] absolute   w-full max-w-[1320px] m-auto  px-8 md:px-[15px]  z-10'>
         <div className='leading-snug max-w-[500px] lg:max-w-[1000px] mx-auto '>
-          <h1 data-aos="fade-up"
-            data-aos-anchor-placement="bottom-bottom" className={`heading text-center  pt-12 md:pt-0 poppins text-white tracking-tighter leading-tight font-bold text-4xl md:text-5xl lg:text-5xl mb-3`} >Expert Care for  <span className='text-white'>Every Stage of Development </span> and Well-Being</h1>
-          <p data-aos="fade-up"
-            data-aos-anchor-placement="bottom-bottom" className={` text-white text-center   text-[15px]`}>A multidisciplinary, virtual-first care model serving all of Ontario — combining
+          <h1 
+          // data-aos="fade-up"
+          //   data-aos-anchor-placement="bottom-bottom" 
+            className={`heading text-center  pt-12 md:pt-0 poppins text-white tracking-tighter leading-tight font-bold text-4xl md:text-5xl lg:text-5xl mb-3`} >Expert Care for  <span className='text-white'>Every Stage of Development </span> and Well-Being</h1>
+          <p 
+          // data-aos="fade-up"
+          //   data-aos-anchor-placement="bottom-bottom" 
+            className={` text-white text-center   text-[15px]`}>A multidisciplinary, virtual-first care model serving all of Ontario — combining
             speech therapy, behavioural therapy, psychology, neurodevelopmental expertise,
             and mental-health support, with in-home options when needed.</p>
              {/* <p data-aos="fade-up"
             data-aos-anchor-placement="bottom-bottom" className={` text-green-dark text-center mt-3  text-[17px]`}>Personalized Care | At your pace | Safe & Secure | Delivered by OAP Approved Experts
 </p> */}
           <div className="flex justify-center flex-wrap pt-4 rounded-lg   ">
-            <p data-aos="fade-up"
-              data-aos-anchor-placement="bottom-bottom" className="uppercase tagline rounded-lg font-bold text-[17px]  p-3 text-center ">Virtual-first • Ontario-wide • In-home where needed • PHIPA-compliant</p>
+            <p 
+            // data-aos="fade-up"
+            //   data-aos-anchor-placement="bottom-bottom"
+               className="uppercase tagline rounded-lg font-bold text-[17px]  p-3 text-center ">Virtual-first • Ontario-wide • In-home where needed • PHIPA-compliant</p>
           </div>
           <div className="flex justify-center flex-wrap gap-4 mt-6" data-aos="fade-up"
             data-aos-anchor-placement="bottom-bottom">
