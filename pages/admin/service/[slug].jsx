@@ -5,12 +5,13 @@ import toast from "react-hot-toast";
 import AdminRoutes from "@/pages/api/AdminRoutes";
 import dynamic from "next/dynamic";
 import RoutesLists from "@/pages/api/RoutesLists";
+import Loading from "@/components/Loading";
 const ServiceEditor = dynamic(() => import("./ServiceEditor"), { ssr: false });
 
 export default function Index() {
-    const router = useRouter();
+  const router = useRouter();
   const { slug } = router.query;
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
   const [ageGroupBenefits, setageGroupBenefits] = useState([{ name: "", benefits: "" }]);
   const [items, setItems] = useState({
     title: "",
@@ -29,7 +30,6 @@ export default function Index() {
         setData(response.data.ageGroupList);
       }
     } catch (error) {
-
       console.log("error", error);
     }
   };
@@ -48,6 +48,7 @@ export default function Index() {
           description: service?.description || "",
           content: service?.content || "",
         });
+        setLoading(false);
         // setageGroupBenefits(service?.benefits || [{ name: "", benefits: "" }]);
         setageGroupBenefits(
           (service?.benefits || [{ title: "", description: "" }]).map(b => ({
@@ -58,6 +59,7 @@ export default function Index() {
       }
     } catch (error) {
       console.log("error", error);
+      setLoading(false);
     }
   };
   console.log("items", items);
@@ -133,7 +135,11 @@ export default function Index() {
           <h5 className="text-2xl font-semibold text-gray-100 mt-2">
             Update Service
           </h5>
-
+          {loading ? (
+                  <Loading />
+                ) : (
+                  <>
+                  
           <form className="mt-6 space-y-6" onSubmit={handleUpdate}>
             {/* Name and Image URL */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
@@ -287,7 +293,6 @@ export default function Index() {
               </button>
             </div>
           </form>
-
           <div className="mt-6">
             <ServiceEditor label="content"
                desc={items.content}
@@ -307,6 +312,9 @@ export default function Index() {
           >
             {loading ? "Loading..." : "Submit"}
           </button>
+                  </>)}
+
+          
         </div>
       </div>
     </AuthLayout>

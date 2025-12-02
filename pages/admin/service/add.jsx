@@ -10,6 +10,7 @@ const ServiceEditor = dynamic(() => import("./ServiceEditor"), { ssr: false });
 export default function add() {
   const router = useRouter();
   const [editorHtmlContent, setEditorHtmlContent] = useState(null);
+  const [imgFormat,setImgFormat] = useState('url')
   const [loading, setLoading] = useState(false);
   const [ageGroupBenefits, setageGroupBenefits] = useState([{ name: "", benefits: "" }]);
   const [items, setItems] = useState({
@@ -46,27 +47,28 @@ export default function add() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-   
+
     try {
       setLoading(true);
       const lists = new AdminRoutes();
-      const response = await lists.addservice({
-        title: items.title, 
-        name: items.name, 
-        bannerImg: items.bannerImg, 
-        description: items.description, 
-        content: items.content, 
-        benefits: ageGroupBenefits,
-      });
+      const formdata = new FormData();
+      formdata.append( "title", items?.title);
+      formdata.append( "name", items?.name);
+      formdata.append( "bannerImg", items?.bannerImg);
+      formdata.append( "description", items?.description);
+      formdata.append( "content",  items?.content);
+      formdata.append( "benefits",  items?.ageGroupBenefits || []);
+
+      const response = await lists.addservice(formdata);
       if (response?.data?.status) {
         toast.success("Service added successfully!");
         router.push("/admin/service/list");
         setItems({
-            title: "",
-            name: "",
-            bannerImg: "",
-            description: "",
-            content: "",
+          title: "",
+          name: "",
+          bannerImg: "",
+          description: "",
+          content: "",
         });
       } else {
         toast.error(response.data.message);
@@ -95,6 +97,11 @@ export default function add() {
     toast.error("Please fill out all fields before adding another age group");
   };
 
+  const handleFile = (e) => { 
+    const file = e.target.files[0]
+    setItems((prev) => ({...prev,bannerImg: file}))
+  }
+
   return (
     <AuthLayout>
       <div className="w-full flex flex-wrap md:flex-nowrap text-gray-100">
@@ -103,23 +110,23 @@ export default function add() {
             Add Service
           </h5>
 
-          <form className="mt-6 space-y-6" onSubmit={handleSubmit}>
+          <div className="mt-6 space-y-6" >
             {/* Name and Image URL */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
-                <div>
-              <label className="font-medium text-sm text-gray-300 block mb-2">
-                Title
-              </label>
-              <input
-                onChange={handleChange}
-                value={items?.title}
-                name="title"
-                placeholder="Enter title"
-                className="w-full bg-gray-700 border border-gray-600 text-gray-100 text-sm rounded-lg 
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+              <div>
+                <label className="font-medium text-sm text-gray-300 block mb-2">
+                  Title
+                </label>
+                <input
+                  onChange={handleChange}
+                  value={items?.title}
+                  name="title"
+                  placeholder="Enter title"
+                  className="w-full bg-gray-700 border border-gray-600 text-gray-100 text-sm rounded-lg 
                      focus:ring-2 focus:ring-blue-500 focus:border-blue-500 py-3 px-4 
                      placeholder-gray-400 outline-none transition-all duration-200"
-              />
-            </div>
+                />
+              </div>
               <div>
                 <label className="font-medium text-sm text-gray-300 block mb-2">
                   Select Age Group
@@ -166,27 +173,53 @@ export default function add() {
                   </p>
                 )}
               </div> */}
-              <div>
+              
+            </div>
+            <div className="flex gap-3">
+              <button className={`w-full md:w-40 mt-6 py-2 rounded-lg ${imgFormat =='url' ? 'bg-blue-600 hover:bg-blue-700' : "bg-gray-600 hover:bg-gray-700"} cursor-pointer
+                 text-white text-sm transition-all duration-300 shadow-md
+                 `}
+                onClick={() => setImgFormat('url')}>Thumbnail URL </button>
+              <button className={` w-full md:w-40 mt-6 py-2 rounded-lg ${imgFormat =='file' ? 'bg-blue-600 hover:bg-blue-700' : "bg-gray-600 hover:bg-gray-700"} cursor-pointer
+                 text-white text-sm transition-all duration-300 shadow-md
+                `}
+                onClick={() => setImgFormat('file')}>Thumbnail File</button>
+            </div>
+            {imgFormat=='url' ?  <div>
+                <p className="text-gray-400 text-sm mb-3">Please add a image file url for the thumbnail of this service.</p>
                 <label className="font-medium text-sm text-gray-300 block mb-2">
-                    Banner Image URL
+                  Banner Image URL
                 </label>
                 <input
-                    type="text"
-                    placeholder="Enter image URL"
-                    value={items.bannerImg || ""}
-                    onChange={(e) =>
+                  type="text"
+                  placeholder="Enter image URL"
+                  value={items.bannerImg || ""}
+                  onChange={(e) =>
                     setItems((prev) => ({
-                        ...prev,
-                        bannerImg: e.target.value,
+                      ...prev,
+                      bannerImg: e.target.value,
                     }))
-                    }
-                    className="w-full bg-gray-700 border border-gray-600 text-gray-100 text-sm rounded-lg 
+                  }
+                  className="w-full bg-gray-700 border border-gray-600 text-gray-100 text-sm rounded-lg 
                     focus:ring-2 focus:ring-blue-500 focus:border-blue-500 py-2 px-3 
                     placeholder-gray-400 outline-none transition-all duration-200"
                 />
-              </div>
-            </div>
-
+              </div>: 
+              <div>
+                <p className="text-gray-400 text-sm mb-3">Please chhose file from the system for the thumbnail of this service.</p>
+                <label className="font-medium text-sm text-gray-300 block mb-2">
+                  Banner File
+                </label>
+                <input
+                  type="file"
+                  placeholder="Enter image URL"
+                  onChange={handleFile}
+                  className="w-full bg-gray-700 border border-gray-600 text-gray-100 text-sm rounded-lg 
+                    focus:ring-2 focus:ring-blue-500 focus:border-blue-500 py-2 px-3 
+                    placeholder-gray-400 outline-none transition-all duration-200"
+                />
+              </div>}
+           
             {/* Description */}
             <div>
               <label className="font-medium text-sm text-gray-300 block mb-2">
@@ -255,22 +288,22 @@ export default function add() {
                 + Add More
               </button>
             </div>
-          </form>
+          </div>
 
           <div className="mt-6">
             <ServiceEditor label="content"
-               desc={items.content}
-               handleBioChange={(val) => {
+              desc={items.content}
+              handleBioChange={(val) => {
                 setItems((values) => ({ ...values, content: val }));
-               }}
+              }}
             />
           </div>
 
           <button
             onClick={handleSubmit}
-            type="submit"
-            disabled={loading}
-            className="w-full md:w-40 mt-6 py-3 rounded-lg bg-blue-600 hover:bg-blue-700 cursor-pointer
+            
+            // disabled={loading}
+            className="w-full md:w-40 mt-6 py-3 rounded-lg bg-green-600 hover:bg-green-700 cursor-pointer
                  text-white font-medium transition-all duration-300 shadow-md
                  disabled:opacity-60 disabled:cursor-not-allowed"
           >

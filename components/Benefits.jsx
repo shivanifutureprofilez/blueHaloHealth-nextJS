@@ -1,31 +1,32 @@
-import React from 'react'
-import { FaChild } from "react-icons/fa";
+import React from 'react';
+import { FaChild, FaChevronDown } from "react-icons/fa";
 
-function Benefits({ title, description }) {
+function Benefits({ title, description, isOpen, onClick }) {
+  if (!title || !description) return null;
+  
   return (
-    <>
-    {title !== '' &&  description !== '' && 
-    <div className="flex items-start bg-white rounded-[20px] p-5 shadow-sm hover:shadow-md transition-all duration-300 max-h-[150px]">
-      {/* Icon */}
-      <div className="flex items-center justify-center w-[55px] h-[55px] bg-green-100 rounded-full flex-shrink-0 hover:bg-green-200 transition">
-        <FaChild size={22} className="text-green-dark" />
+    <div className="border-b border-gray-200 mb-5">
+      <button
+        onClick={onClick}
+        className="w-full flex items-center justify-between gap-2 py-4 cursor-pointer transition-colors" >
+        <div className="flex items-center gap-3">
+          <h3 className="text-left text-lg font-bold text-black">{title}</h3>
+        </div>
+        <FaChevronDown 
+          className={`flex-shrink-0 transition-transform duration-300 ${
+            isOpen ? 'rotate-180' : ''
+          }`}
+        />
+      </button>
+      
+      <div
+        className={`text-start text-lg overflow-hidden transition-all duration-300 ease-in-out ${
+          isOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
+        }`} >
+        <p className=" pb-4 text-gray-600">{description}</p>
       </div>
-
-      {/* Text */}
-      <div className="ml-4 flex flex-col justify-center overflow-hidden">
-        <h2 className="text-[18px] md:text-[20px] font-bold text-gray-900 leading-tight mb-1 text-left">
-          {title}
-        </h2>
-        {description && (
-          <p className="text-[#373737] text-[14px] md:text-[15px] leading-snug line-clamp-2">
-            {description}
-          </p>
-        )}
-      </div>
-    </div>}
-    </>
-
-  )
+    </div>
+  );
 }
 
 export default Benefits;

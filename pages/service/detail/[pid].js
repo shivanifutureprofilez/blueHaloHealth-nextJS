@@ -12,13 +12,12 @@ import Head from 'next/head';
 import { useParams } from 'next/navigation';
 import React, { useEffect, useState } from 'react'
 import toast from 'react-hot-toast';
+import BenefitsLists from './BenifitsLists';
 
 export default function ServiceDetails() {
   const pid = useParams();
   const [service, setService] = useState([]);
-
   const [loading, setLoading] = useState(true);
-
   const ShowServiceDetails = () => {
     const lists = new RoutesLists();
     const data = lists.getServiceDetail(pid);
@@ -72,23 +71,24 @@ export default function ServiceDetails() {
                   className="  services mb-4  max-w-[1100px] mx-auto"
                   dangerouslySetInnerHTML={{ __html: service?.content }}
                 />
+
+                <BenefitsLists service={service} />
+
+                
               </div>
               
             </div>
             <div className='flex item-center justify-center'>
                <Popup1 classes={`button bg-[#009C4A] flex justify-center cursor-pointer mt-4 mb-16 w-full md:w-[230px] `} content={`Thankyou so much but we are not available right now`} />
             </div>
-            {service?.benefits && service?.benefits.length > 0 
+
+            
+            {/* {service?.benefits && service?.benefits.length > 0 
             && service?.benefits && service?.benefits[0]?.title !== '' && service?.benefits[0]?.description !== ''
             ? 
-            
             <div className=" ">
               <div className="mx-auto container  px-4 text-center">
-                <div className=" grid grid-cols-1 sm:grid-cols-2 gap-4">
-                  {service?.benefits?.map((item) => (
-                    <Benefits title={item?.title} description={item?.description} />
-                  ))}
-                </div>
+                
                 <div className="flex justify-center px-4 py-14">
                   <Button
                     title="Book Consultation"
@@ -98,7 +98,10 @@ export default function ServiceDetails() {
               </div>
             </div> 
             
-            : ''}
+            : ''} */}
+
+
+
             {/* <Popup1 classes={`button bg-[#009C4A] cursor-pointer w-full md:w-[230px] `} content={`Thankyou so much but we are not available right now`} /> */}
             <HowItWorks />
             <Faq />

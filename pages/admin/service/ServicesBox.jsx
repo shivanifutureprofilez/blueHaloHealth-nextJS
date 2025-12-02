@@ -76,7 +76,7 @@ const [ageGroup, setAgeGroup] = useState("");
         <div className=" ">
           <div className="lg:flex justify-between items-center flex-wrap ">
             <div className="w-full  py-3 ">
-              <div className="flex  flex-wrap items-center   gap-2">
+              <div className="flex flex-wrap items-center gap-2">
                 {/* <button
                   className={`w-full sm:w-auto button-white   border cursor-pointer ${ageGroup === "" ? 'bg-[#009C4A] border-[#009C4A] text-white transition-[1s]' : ''}`}
                   onClick={() => {

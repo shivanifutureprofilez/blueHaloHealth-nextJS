@@ -57,7 +57,7 @@ function HeroBanner() {
               <Image
                 src={`${slide}`}
                 alt="Expert Care for Every Stage of Development and Well-Being"
-                className="banner-image w-full h-[80vh]
+                className="banner-image w-full h-[70vh]
                 md:h-[93vh] 
                 object-cover"
                 width={1000}
@@ -79,7 +79,7 @@ function HeroBanner() {
           <h1 
           // data-aos="fade-up"
           //   data-aos-anchor-placement="bottom-bottom" 
-            className={`heading text-center  pt-12 md:pt-0 poppins text-white tracking-tighter leading-tight font-bold text-4xl md:text-5xl lg:text-5xl mb-3`} >Expert Care for  <span className='text-white'>Every Stage of Development </span> and Well-Being</h1>
+            className={`heading text-center  pt-12 md:pt-0 poppins text-white tracking-tighter leading-tight font-bold text-3xl md:text-5xl lg:text-5xl mb-3`} >Expert Care for  <span className='text-white'>Every Stage of Development </span> and Well-Being</h1>
           <p 
           // data-aos="fade-up"
           //   data-aos-anchor-placement="bottom-bottom" 

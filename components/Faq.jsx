@@ -49,8 +49,8 @@ function Faq() {
   return (
     <section className="bg-[#F7F8F9] py-[20px] md:py-[40px] lg:py-[60px]  ">
       <div className="mx-auto container  px-4 text-center">
-        <div className="flex flex-wrap justify-between md:flex-nowrap">
-          <div className="max-w-sm">
+        <div className="max-w-[1000px] mx-auto">
+          <div className="">
             <Heading
               className="text-black text-center md:text-left"
               heading1={"Frequently asked "}
@@ -59,11 +59,11 @@ function Faq() {
               // pClass={"font-medium text-[15px] mt-1 text-center  md:mb-2  text-gray-700  px-4 md:p-0 max-w-[600px] mx-auto"}
             />
           </div>
-          <div className="space-y-4 mt-4">
+          <div className="space-y-4 mt-4 w-full">
             {faqs && faqs?.map((faq, index) => (
               <div
                 key={index}
-                className="bg-white !max-w-[600px]  rounded-lg shadow-sm border border-gray-100 p-5 transition-all duration-900 ease-in-out hover:shadow-md "
+                className="w-full bg-white  rounded-lg shadow-sm border border-gray-100 p-5 transition-all duration-900 ease-in-out hover:shadow-md "
               >
                 <button
                   className="flex justify-between items-center cursor-pointer w-full text-left"
