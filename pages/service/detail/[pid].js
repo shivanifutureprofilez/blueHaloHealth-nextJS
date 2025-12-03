@@ -13,14 +13,16 @@ import { useParams } from 'next/navigation';
 import React, { useEffect, useState } from 'react'
 import toast from 'react-hot-toast';
 import BenefitsLists from './BenifitsLists';
+import SubLists from '@/pages/admin/service/sub/SubLists';
 
 export default function ServiceDetails() {
-  const pid = useParams();
+  const idObject = useParams();
+  const {pid} = useParams();
   const [service, setService] = useState([]);
   const [loading, setLoading] = useState(true);
   const ShowServiceDetails = () => {
     const lists = new RoutesLists();
-    const data = lists.getServiceDetail(pid);
+    const data = lists.getServiceDetail(idObject);
     data.then((res) => {
       console.log("res", res)
       setService(res?.data?.serviceData || null);
@@ -72,9 +74,12 @@ export default function ServiceDetails() {
                   dangerouslySetInnerHTML={{ __html: service?.content }}
                 />
 
-                <BenefitsLists service={service} />
-
-                
+                {/* <BenefitsLists service={service} /> */}
+                <div
+                  className="  max-w-[1100px] mx-auto"
+                >
+                 <SubLists serviceid={pid} />
+              </div>
               </div>
               
             </div>
@@ -100,7 +105,7 @@ export default function ServiceDetails() {
             
             : ''} */}
 
-
+           
 
             {/* <Popup1 classes={`button bg-[#009C4A] cursor-pointer w-full md:w-[230px] `} content={`Thankyou so much but we are not available right now`} /> */}
             <HowItWorks />

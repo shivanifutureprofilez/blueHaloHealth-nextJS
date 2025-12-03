@@ -63,7 +63,9 @@ const [ageGroup, setAgeGroup] = useState("");
     }, [totalAgeGroups]);
   
     useEffect(() => {
+      if(ageGroup){
         fetchServices(ageGroup);
+      }
     }, [ageGroup]);
 
   // useEffect(() => {

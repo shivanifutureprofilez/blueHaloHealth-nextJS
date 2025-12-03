@@ -8,6 +8,9 @@ import RoutesLists from "@/pages/api/RoutesLists";
 const ServiceEditor = dynamic(() => import("./ServiceEditor"), { ssr: false });
 
 export default function add() {
+
+   const { slug } = router.query;
+   
   const router = useRouter();
   const [editorHtmlContent, setEditorHtmlContent] = useState(null);
   const [imgFormat,setImgFormat] = useState('url')
@@ -298,10 +301,11 @@ export default function add() {
               }}
             />
           </div>
+               
+
 
           <button
             onClick={handleSubmit}
-            
             // disabled={loading}
             className="w-full md:w-40 mt-6 py-3 rounded-lg bg-green-600 hover:bg-green-700 cursor-pointer
                  text-white font-medium transition-all duration-300 shadow-md
