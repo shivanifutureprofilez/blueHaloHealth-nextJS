@@ -12,8 +12,8 @@ import Head from 'next/head';
 import { useParams } from 'next/navigation';
 import React, { useEffect, useState } from 'react'
 import toast from 'react-hot-toast';
-import BenefitsLists from './BenifitsLists';
-import SubLists from '@/pages/admin/service/sub/SubLists';
+
+
 import ServiceEnding from '../ServiceEnding';
 import Importance from '@/pages/home/Importance';
 
