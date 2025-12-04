@@ -1,56 +1,47 @@
-// 
-
-// import Benefits from '@/components/Benefits';
-import BookingTab from '@/components/BookingTab';
-import Button from '@/components/Button';
-import Faq from '@/components/Faq';
-import HowItWorks from '@/components/HowItWorks';
-import Layout from '@/components/Layout';
-import Loading from '@/components/Loading';
-import Popup1 from '@/components/Popup1';
-import SectionBanner from '@/components/SectionBanner';
-import RoutesLists from '@/pages/api/RoutesLists';
-import Head from 'next/head';
-import { useParams } from 'next/navigation';
+import { useParams } from 'next/navigation'
 import React, { useEffect, useState } from 'react'
-import toast from 'react-hot-toast';
-import BenefitsLists from './BenifitsLists';
-import SubLists from '@/pages/admin/service/sub/SubLists';
-import ServiceEnding from '../ServiceEnding';
-import Importance from '@/pages/home/Importance';
+import RoutesLists from '../api/RoutesLists';
+import BookingTab from '@/components/BookingTab';
+import Faq from '@/components/Faq';
+import Importance from '../home/Importance';
+import Loading from '@/components/Loading';
+import SectionBanner from '@/components/SectionBanner';
+import Layout from '@/components/Layout';
+import Head from 'next/head';
+import ServiceEnding from './ServiceEnding';
+import HowItWorks from '@/components/HowItWorks';
+import SubLists from '../admin/service/sub/SubLists';
 
-export default function ServiceDetails() {
-  const pid = useParams();
- 
-  const [service, setService] = useState([]);
-  const [loading, setLoading] = useState(true);
-  
-  const ShowServiceDetails = () => {
-    const lists = new RoutesLists();
-    const data = lists.getServiceDetail(pid);
-    data.then((res) => {
-      console.log("res", res)
-      setService(res?.data?.serviceData || null);
-      setTimeout(() => {
-        setLoading(false)
-      }, 1000)
-    }).catch((error) => {
-      setTimeout(() => {
-        setLoading(false)
-      }), 1000
-    });
-  };
-  
-  useEffect(() => {
-    if (pid) {
-      ShowServiceDetails();
-    }
-  }, [pid]);
-  
-  console.log("service : ", service);
-  
-  return (
-    <Layout>
+export default function SubSericeDetailsPage() {
+    const router = useParams();
+    const pidArray = router?.pid;
+    const subserviceId = router?.pid?.at(-1);
+
+    const [service, setService] = useState([]);
+    const [loading, setLoading] = useState(true);
+    
+    const ShowSubServiceDetails = () => {
+      const lists = new RoutesLists();
+      lists.singleSubServiceDetail(subserviceId)
+        .then((res) => {
+          setService(res?.data?.subServiceData || null);
+          setLoading(false);
+        })
+        .catch(() => {
+          setLoading(false);
+        });
+    };
+    
+    useEffect(() => {
+      if (subserviceId) {
+          setLoading(true);
+          setService(null);
+          ShowSubServiceDetails();
+      }
+  }, [subserviceId]);
+
+    return (
+      <Layout key={subserviceId}>
       <Head>
         <title>{service?.name || 'Service'} | Blue Halo Health</title>
         <meta name="description" content={service?.description|| "Explore holistic health services including functional medicine, nutrition, and personalized wellness programs from Blue Halo Health."} />
@@ -77,37 +68,26 @@ export default function ServiceDetails() {
                     className="services mb-12"
                     dangerouslySetInnerHTML={{ __html: service?.content }}
                   />
-                  
-                  <SubLists service={service} serviceid={pid?.pid || null} />
                   <ServiceEnding/>
+
+                  <h2 className='mt-6 border-gray-500/40 border-t pt-6 text-2xl font-bold text-black mb-4 text-start'>Some More Similar Services</h2>
+                  <SubLists pageID={subserviceId} serviceid={service?.service?._id} service={service?.service}  />
                 </div>
               </div>
             </div>
             
-            {/* One Pathway Section - Uniform spacing */}
-            {/* <ServiceEnding/> */}
-            
-            {/* How It Works - Uniform spacing */}
-            {/* <div className="py-16"> */}
-              <HowItWorks />
-            {/* </div> */}
-            
-            {/* Importance - Uniform spacing */}
+     
+              <HowItWorks /> 
             <div className="py-16">
               <Importance/>
             </div>
-            
-            {/* FAQ - Uniform spacing */}
             <div className="py-16">
               <Faq />
             </div>
-            
-            {/* Service Ending and Booking Tab */}
-            
             <BookingTab />
           </>
         }
       </div>
     </Layout>
-  )
+    )
 }

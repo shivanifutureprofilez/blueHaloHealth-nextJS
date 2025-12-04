@@ -1,6 +1,6 @@
 import Popup1 from "@/components/Popup1";
 
-export default function UnifiedCareSection() {
+export default function ServiceEnding() {
   return (
     <section className=" pt-4 ">
    

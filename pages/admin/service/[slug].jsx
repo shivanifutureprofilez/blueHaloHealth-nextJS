@@ -324,7 +324,7 @@ export default function Index() {
                 </Link>
               </div>
               
-              <SubLists serviceid={slug} />
+              <SubLists serviceid={slug} isAdmin={true}/>
              
               <button
                 onClick={handleUpdate}

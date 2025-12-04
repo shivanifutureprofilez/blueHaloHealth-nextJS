@@ -1,5 +1,3 @@
-// 
-
 // import Benefits from '@/components/Benefits';
 import BookingTab from '@/components/BookingTab';
 import Button from '@/components/Button';
@@ -25,12 +23,12 @@ export default function ServiceDetails() {
   const [service, setService] = useState([]);
   const [loading, setLoading] = useState(true);
   
-  const ShowServiceDetails = () => {
+  const ShowSubServiceDetails = () => {
     const lists = new RoutesLists();
-    const data = lists.getServiceDetail(pid);
+    const data = lists.singleSubServiceDetail(pid);
     data.then((res) => {
       console.log("res", res)
-      setService(res?.data?.serviceData || null);
+      setService(res?.data?.subServiceData || null);
       setTimeout(() => {
         setLoading(false)
       }, 1000)
@@ -43,7 +41,7 @@ export default function ServiceDetails() {
   
   useEffect(() => {
     if (pid) {
-      ShowServiceDetails();
+     ShowSubServiceDetails();
     }
   }, [pid]);
   
@@ -78,7 +76,7 @@ export default function ServiceDetails() {
                     dangerouslySetInnerHTML={{ __html: service?.content }}
                   />
                   
-                  <SubLists service={service} serviceid={pid?.pid || null} />
+                  {/* <SubLists serviceid={pid?.pid || null} /> */}
                   <ServiceEnding/>
                 </div>
               </div>

@@ -42,7 +42,7 @@ import Image from 'next/image';
 import Popup1 from "@/components/Popup1";
 import Heading from '@/components/Heading';
 
-export default function UnifiedCareAndHowItWorks() {
+export default function HowItWorks() {
   const steps = [
     {
       image: '/step1.png',

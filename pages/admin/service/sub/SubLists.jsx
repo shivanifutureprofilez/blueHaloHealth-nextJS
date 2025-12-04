@@ -4,7 +4,7 @@ import Link from 'next/link';
 import React, { useEffect, useState } from 'react'
 import { MdOutlineArrowRightAlt } from 'react-icons/md';
 
-function SubLists({ serviceid }) {
+function SubLists({ serviceid, service, pageID, isAdmin }) {
   const [loading, setLoading] = useState(true);
   const [list, setLists] = useState([]);
   const fetchSubServices = async () => {
@@ -13,7 +13,15 @@ function SubLists({ serviceid }) {
     const data = lists.allSubServices(serviceid);
     data
       .then((res) => {
-        setLists(res?.data?.subServiceList || []);
+        const data = res?.data?.subServiceList || [];
+        if(pageID){
+          const temp = data.filter((i)=>i._id !==pageID);
+          console.log("temp",temp)
+          setLists(temp);
+        } else { 
+          setLists(data);
+        }
+
         setLoading(false)
       })
       .catch((err) => {
@@ -21,6 +29,21 @@ function SubLists({ serviceid }) {
         setLoading(false)
         console.log("err ", err);
       });
+  };
+
+
+  const toSlug = (str) => {
+    if(str){
+      return str
+        .toLowerCase()
+        .trim()
+        .normalize("NFD")                 // split accented letters
+        .replace(/[\u0300-\u036f]/g, "")  // remove accents
+        .replace(/[^a-z0-9]+/g, "-")      // remove non-alphanumerics
+        .replace(/^-+|-+$/g, "");         // trim hyphens
+    }else { 
+      return ''
+    }
   };
 
 
@@ -44,10 +67,9 @@ function SubLists({ serviceid }) {
         </Link>
       )} */}
       {/* <div className="grid grid-cols-1 md:grid-cols-3  gap-6 md:mt-4 md:mb-8"> */}
-
       <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5  gap-4 md:mt-4 md:mb-8">
         {list && list.map((item, i) => {
-          return <Link href={`/service/detail/${item?._id}`} className=' transition-[1s] bg-[#e5dfd73d] rounded-xl hover:scale-[1.02]' >
+          return <Link href={`/service/${toSlug(service?.name)}/${toSlug(item?.name)}/${item?._id}`} className={`${isAdmin ? 'bg-white' : 'bg-[#e5dfd73d]'} transition-[1s] rounded-xl hover:scale-[1.02]`}>
             <div className=" w-full h-[200px] rounded-lg overflow-hidden  relative">
               <img
                 src={item?.bannerImg}
@@ -62,7 +84,7 @@ function SubLists({ serviceid }) {
               <p className="mb-4 text-[14px] font-medium line-clamp-3 text-gray-600">
                 {item?.description}
               </p>
-              <Link href={`/service/detail/${item?._id}`}>
+               
                 <div className="flex items-center space-x-1 group">
                   <button className="text-green-dark cursor-pointer group-hover:underline transition-all duration-300">
                     Read More
@@ -72,7 +94,7 @@ function SubLists({ serviceid }) {
                     className="text-green-dark cursor-pointer transform transition-transform duration-300 group-hover:translate-x-1"
                   />
                 </div>
-              </Link>
+               
             </div>
           </Link>
         })}

@@ -46,6 +46,10 @@ class RoutesLists extends Component {
     async getTeamMembers(){
         return Api.get('/team/list');
     }
+    async singleSubServiceDetail(pid) {
+        return Api.get(`/subservice/${pid}`);
+    }
+    
     render() {
         return (
             <div>
