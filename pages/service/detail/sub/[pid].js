@@ -12,10 +12,8 @@ import Head from 'next/head';
 import { useParams } from 'next/navigation';
 import React, { useEffect, useState } from 'react'
 import toast from 'react-hot-toast';
-
-
-import ServiceEnding from '../ServiceEnding';
 import Importance from '@/pages/home/Importance';
+import ServiceEnding from '../../ServiceEnding';
 
 export default function ServiceDetails() {
   const pid = useParams();
