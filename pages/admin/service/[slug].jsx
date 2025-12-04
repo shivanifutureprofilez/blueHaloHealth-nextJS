@@ -9,7 +9,7 @@ import Link from "next/link";
 import AuthLayout from "../layout/AuthLayout";
 import SubLists from "./sub/SubLists";
 
-// const ServiceEditor = dynamic(() => import("../../ServiceEditor"), { ssr: false });
+const ServiceEditor = dynamic(() => import("./ServiceEditor"), { ssr: false });
 
 export default function Index() {
   const router = useRouter();
@@ -22,7 +22,10 @@ export default function Index() {
     bannerImg: "",
     description: "",
     content: "",
+    additionalContent: ""
   });
+
+  console.log("items",items)
 
   const [data, setData] = useState([]);
   const fetchData = async () => {
@@ -50,6 +53,7 @@ export default function Index() {
           bannerImg: service?.bannerImg || "",
           description: service?.description || "",
           content: service?.content || "",
+          additionalContent: service?.content || ""
         });
         setLoading(false);
         // setageGroupBenefits(service?.benefits || [{ name: "", benefits: "" }]);
@@ -65,8 +69,7 @@ export default function Index() {
       setLoading(false);
     }
   };
-  console.log("items", items);
-
+ 
   useEffect(() => {
     if (slug) {
       fetchData();
@@ -74,7 +77,6 @@ export default function Index() {
     }
   }, [slug]);
 
-  // console.log("items ", items);
   const handleChange = (e) => {
     const name = e.target.name;
     const value = e.target.value;
@@ -92,6 +94,7 @@ export default function Index() {
         bannerImg: items.bannerImg,
         description: items.description,
         content: items.content,
+        additionalContent: items.additionalContent,
         benefits: ageGroupBenefits,
       });
       if (response?.data?.status) {
@@ -103,6 +106,7 @@ export default function Index() {
           bannerImg: "",
           description: "",
           content: "",
+          additionalContent: ""
         });
       } else {
         toast.error(response.data.message);
@@ -296,9 +300,17 @@ export default function Index() {
                 </div>
               </form>
               <div className="mt-6">
-                {/* <ServiceEditor label="content"
+                <ServiceEditor label="content"
                   desc={items.content}
                   handleBioChange={(val) => {
+                    setItems((values) => ({ ...values, content: val }));
+                  }}
+                />
+              </div>
+              <div className="mt-6">
+                {/* <ServiceEditor label="content"
+                  desc={items.additionalContent}
+                  handleBioChange={(val) => { 
                     setItems((values) => ({ ...values, content: val }));
                   }}
                 /> */}

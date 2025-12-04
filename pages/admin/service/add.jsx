@@ -9,9 +9,8 @@ const ServiceEditor = dynamic(() => import("./ServiceEditor"), { ssr: false });
 
 export default function add() {
 
-   const { slug } = router.query;
-   
   const router = useRouter();
+  const { slug } = router.query;
   const [editorHtmlContent, setEditorHtmlContent] = useState(null);
   const [imgFormat,setImgFormat] = useState('url')
   const [loading, setLoading] = useState(false);
@@ -60,6 +59,7 @@ export default function add() {
       formdata.append( "bannerImg", items?.bannerImg);
       formdata.append( "description", items?.description);
       formdata.append( "content",  items?.content);
+      formdata.append( "additionalContent",  items?.additionalContent);   
       formdata.append( "benefits",  items?.ageGroupBenefits || []);
 
       const response = await lists.addservice(formdata);
@@ -72,6 +72,7 @@ export default function add() {
           bannerImg: "",
           description: "",
           content: "",
+          additionalContent: ""
         });
       } else {
         toast.error(response.data.message);
@@ -301,6 +302,15 @@ export default function add() {
               }}
             />
           </div>
+               
+           {/* <div className="mt-6">
+            <ServiceEditor label="additionalContent"
+              desc={items.additionalContent}
+              handleBioChange={(val) => {
+                setItems((values) => ({ ...values, additonalContent: val }));
+              }}
+            />
+          </div> */}
                
 
 

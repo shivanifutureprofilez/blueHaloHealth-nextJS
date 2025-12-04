@@ -1,3 +1,5 @@
+// 
+
 import Benefits from '@/components/Benefits';
 import BookingTab from '@/components/BookingTab';
 import Button from '@/components/Button';
@@ -14,15 +16,18 @@ import React, { useEffect, useState } from 'react'
 import toast from 'react-hot-toast';
 import BenefitsLists from './BenifitsLists';
 import SubLists from '@/pages/admin/service/sub/SubLists';
+import ServiceEnding from '../ServiceEnding';
+import Importance from '@/pages/home/Importance';
 
 export default function ServiceDetails() {
-  const idObject = useParams();
-  const {pid} = useParams();
+  const pid = useParams();
+ 
   const [service, setService] = useState([]);
   const [loading, setLoading] = useState(true);
+  
   const ShowServiceDetails = () => {
     const lists = new RoutesLists();
-    const data = lists.getServiceDetail(idObject);
+    const data = lists.getServiceDetail(pid);
     data.then((res) => {
       console.log("res", res)
       setService(res?.data?.serviceData || null);
@@ -30,91 +35,79 @@ export default function ServiceDetails() {
         setLoading(false)
       }, 1000)
     }).catch((error) => {
-      //console.log("error",error);
       setTimeout(() => {
         setLoading(false)
-      }), 1000        // toast.error("Unable To Fetch Service Details. Please Try Again Later");
+      }), 1000
     });
   };
-
+  
   useEffect(() => {
     if (pid) {
-      ShowServiceDetails(pid);
+      ShowServiceDetails();
     }
   }, [pid]);
-
+  
   console.log("service : ", service);
+  
   return (
     <Layout>
       <Head>
         <title>{service?.name || 'Service'} | Blue Halo Health</title>
         <meta name="description" content={service?.description|| "Explore holistic health services including functional medicine, nutrition, and personalized wellness programs from Blue Halo Health."} />
         <meta name="keywords" content="wellness services, holistic therapy, nutrition, functional medicine, Blue Halo Health services" />
-
-        {/* <meta property="og:url" content={window &&window.location.href} /> */}
         <meta property="og:title" content={`${service?.name || 'Service'} | Blue Halo Health`} />
         <meta property="og:description" content="Transform your health with our personalized wellness services and functional medicine solutions." />
         <meta property="og:image" content={service?.bannerImg || `/summary.png`} />
         <meta name="twitter:title" content={service?.name || "Our Services | Blue Halo Health"} />
         <meta name="twitter:description" content={service?.description|| "Discover holistic wellness services designed for your total well-being."} />
         <meta name="twitter:image" content={service?.bannerImg || `/summary.png`} />
-        {/* <link rel="canonical" href={window && window.location.href} /> */}
       </Head>
-      
       
       <div className='bg-[#F7F4F0]'>
         {loading ? <Loading />
           :
           <>
             <SectionBanner title={service?.name || 'Service Detail'} />
-            <div className="bg-[#F7F4F0]s py-[20px] md:py-[40px] lg:py-[60px]">
-              <div className="mx-auto container  px-4 text-center">
-             <div
-                  className="  services mb-4  max-w-[1100px] mx-auto"
-                  dangerouslySetInnerHTML={{ __html: service?.content }}
-                />
-
-                {/* <BenefitsLists service={service} /> */}
-                <div
-                  className="  max-w-[1100px] mx-auto"
-                >
-                 <SubLists serviceid={pid} />
-              </div>
-              </div>
-              
-            </div>
-            <div className='flex item-center justify-center'>
-               <Popup1 classes={`button bg-[#009C4A] flex justify-center cursor-pointer mt-4 mb-16 w-full md:w-[230px] `} content={`Thankyou so much but we are not available right now`} />
-            </div>
-
             
-            {/* {service?.benefits && service?.benefits.length > 0 
-            && service?.benefits && service?.benefits[0]?.title !== '' && service?.benefits[0]?.description !== ''
-            ? 
-            <div className=" ">
-              <div className="mx-auto container  px-4 text-center">
-                
-                <div className="flex justify-center px-4 py-14">
-                  <Button
-                    title="Book Consultation"
-                    className="button bg-green-dark text-[14px] "
+            {/* Main Content Section - Uniform spacing */}
+            <div className="py-16">
+              <div className="mx-auto container px-4">
+                <div className=" mx-auto">
+                  <div
+                    className="services mb-12"
+                    dangerouslySetInnerHTML={{ __html: service?.content }}
                   />
+                  
+                  <SubLists serviceid={pid?.pid || null} />
+                  <ServiceEnding/>
                 </div>
               </div>
-            </div> 
+            </div>
             
-            : ''} */}
-
-           
-
-            {/* <Popup1 classes={`button bg-[#009C4A] cursor-pointer w-full md:w-[230px] `} content={`Thankyou so much but we are not available right now`} /> */}
-            <HowItWorks />
-            <Faq />
+            {/* One Pathway Section - Uniform spacing */}
+            {/* <ServiceEnding/> */}
+            
+            {/* How It Works - Uniform spacing */}
+            {/* <div className="py-16"> */}
+              <HowItWorks />
+            {/* </div> */}
+            
+            {/* Importance - Uniform spacing */}
+            <div className="py-16">
+              <Importance/>
+            </div>
+            
+            {/* FAQ - Uniform spacing */}
+            <div className="py-16">
+              <Faq />
+            </div>
+            
+            {/* Service Ending and Booking Tab */}
+            
             <BookingTab />
-          </>}
-
+          </>
+        }
       </div>
     </Layout>
   )
 }
-
