@@ -122,7 +122,7 @@ const [ageGroup, setAgeGroup] = useState("");
           {serviceList && serviceList.length ? (
             <>
               <div className="  mx-auto">
-                <div className="grid grid-cols-1 md:grid-cols-3  gap-6 md:mt-4 md:mb-8">
+                <div className="grid grid-cols-1 md:grid-cols-4  gap-6 md:mt-4 md:mb-8">
                   {serviceList && serviceList?.map((item, index) => (
                     <ServiceCardSmall key={item._id || index} item={item} idx={index} isAdmin={true} fetchServices={fetchServices} />
                   ))}

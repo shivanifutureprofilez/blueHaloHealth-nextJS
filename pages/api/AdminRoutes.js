@@ -75,7 +75,12 @@ class AdminRoutes extends Component {
     async allSubServices(id) {
         return Api.get(`/subservice/list/${id}`);
     }
-
+    async updateSubService(id, data) {
+        return Api.post(`/subservice/update/${id}`, data);
+    }
+    async DeleteSubService(id) {
+        return Api.get(`/subservice/delete/${id}`);
+    }
     render() {
         return (
             <div>
