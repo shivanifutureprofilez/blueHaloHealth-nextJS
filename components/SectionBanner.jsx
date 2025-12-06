@@ -16,11 +16,11 @@ export default function SectionBanner({ title = "Blue Halo Health" , img = "/sec
       <div className="absolute inset-0 bg-[#F7F4F0]/60 mix-blend-multiply"></div>
 
       <div className="relative text-center z-10 px-4">
-        <h1 className="text-[#00A859] font-bold text-3xl md:text-4xl lg:text-5xl tracking-tight mb-3">
+        <h1 className="text-[#00A859] font-bold text-2xl md:text-4xl  tracking-tight mb-3">
           {title}
         </h1>
 
-        <div className="flex justify-center items-center space-x-2 text-[15px] md:text-[16px] font-medium">
+        <div className="hidden md:flex justify-center items-center space-x-2 text-[15px] md:text-[16px] font-medium">
           <Link
             href="/"
             className="text-gray-700 hover:text-[#00A859] transition-colors"
