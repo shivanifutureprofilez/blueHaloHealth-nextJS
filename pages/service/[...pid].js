@@ -64,12 +64,13 @@ export default function SubSericeDetailsPage() {
             <div className="py-16">
               <div className="mx-auto container px-4">
                 <div className=" mx-auto">
+                  <img src={service?.bannerImg} className='rounded-xl max-h-[500px] w-full object-cover mb-[30px]' />
+
                   <div
                     className="services mb-12"
                     dangerouslySetInnerHTML={{ __html: service?.content }}
                   />
                   <ServiceEnding/>
-
                   <h2 className='mt-6 border-gray-500/40 border-t pt-6 text-2xl font-bold text-black mb-4 text-start'>Some More Similar Services</h2>
                   <SubLists pageID={subserviceId} serviceid={service?.service?._id} service={service?.service}  />
                 </div>

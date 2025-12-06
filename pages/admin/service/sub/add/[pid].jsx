@@ -1,16 +1,16 @@
 import AdminRoutes from '@/pages/api/AdminRoutes';
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 
 import { useRouter } from 'next/router';
 import dynamic from "next/dynamic";
 import toast from 'react-hot-toast';
 import AuthLayout from '@/pages/admin/layout/AuthLayout';
+import RoutesLists from '@/pages/api/RoutesLists';
 const ServiceEditor = dynamic(() => import("../.././ServiceEditor"), { ssr: false });
 
 function add() {
     const router = useRouter();
     const { pid } = router.query;
-    console.log("pid",pid);
     const [imgFormat, setImgFormat] = useState('url')
     const [loading, setLoading] = useState(false);
     const [items, setItems] = useState({
@@ -20,6 +20,73 @@ function add() {
         service: pid,
         content: "",
     });
+
+    const [existingData, setExistingData ] = useState();
+    // First fetchin exixting data of this service
+    const fetchSubServiceDetails = async () => {
+        const main = new RoutesLists();
+        const response = main.singleSubServiceDetail(pid);
+        response.then((res)=>{ 
+            const s = res?.data?.subServiceData;
+            if(s){
+                setExistingData(s)
+            } else {
+                setExistingData(null)
+            }
+            setLoading(false);
+            // setageGroupBenefits(service?.benefits || [{ name: "", benefits: "" }]);
+        }).catch((err)=>{ 
+            if (response.data) {
+                console.log("error", err);
+                setLoading(false);
+            }
+        })
+    };
+
+    const handleUpdate = async () => {
+        setLoading(true);
+        const lists = new AdminRoutes();
+        const formdata = new FormData();
+        formdata.append("name", items?.name);
+        formdata.append("bannerImg", items?.bannerImg);
+        formdata.append("description", items?.description);
+        formdata.append("content", items?.content);
+        formdata.append("service", pid);
+        const response =  lists.updateSubService(pid, formdata);
+        response.then((res)=>{ 
+            if(res.data.status){
+                toast.success(res.data.message || "Service updated successfully!");
+                router.back();
+            } else { 
+                toast.error(res.data.message || "Service unable to update.");
+            }
+        }).catch((err)=>{ 
+            toast.error("Something went wrong");
+            console.log(err)
+            setLoading(false);
+        })
+    };
+
+
+    useEffect(()=>{ 
+        if(pid){
+            fetchSubServiceDetails()
+        }
+    },[pid]);
+
+
+    useEffect(()=>{ 
+        if(existingData){
+            setItems({
+               name: existingData?.name || "",
+               bannerImg: existingData?.bannerImg || "",
+               description: existingData?.description || "",
+               content: existingData?.content || "", 
+           });
+        }
+    },[existingData])
+
+
     const handleChange = (e) => {
         const name = e.target.name;
         const value = e.target.value;
@@ -60,6 +127,7 @@ function add() {
             setLoading(false);
         }
     };
+
     return (
         <AuthLayout>
             <div className="w-full flex flex-wrap md:flex-nowrap text-gray-100">
@@ -80,8 +148,8 @@ function add() {
                                     name="name"
                                     placeholder="Enter title"
                                     className="w-full bg-gray-700 border border-gray-600 text-gray-100 text-sm rounded-lg 
-                         focus:ring-2 focus:ring-blue-500 focus:border-blue-500 py-3 px-4 
-                         placeholder-gray-400 outline-none transition-all duration-200"
+                                    focus:ring-2 focus:ring-blue-500 focus:border-blue-500 py-3 px-4 
+                                    placeholder-gray-400 outline-none transition-all duration-200"
                                 />
                             </div>
 
@@ -155,9 +223,8 @@ function add() {
                         />
                     </div>
                     <button
-                        onClick={handleSubmit}
-
-                        // disabled={loading}
+                        onClick={existingData ? handleUpdate : handleSubmit}
+                        disabled={loading}
                         className="w-full md:w-40 mt-6 py-3 rounded-lg bg-green-600 hover:bg-green-700 cursor-pointer
                      text-white font-medium transition-all duration-300 shadow-md
                      disabled:opacity-60 disabled:cursor-not-allowed"

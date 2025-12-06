@@ -73,6 +73,7 @@ export default function ServiceDetails() {
             <div className="py-16">
               <div className="mx-auto container px-4">
                 <div className=" mx-auto">
+                  <img src={service?.bannerImg} className='rounded-xl max-h-[500px] w-full object-cover mb-[30px]' />
                   <div
                     className="services mb-12"
                     dangerouslySetInnerHTML={{ __html: service?.content }}
