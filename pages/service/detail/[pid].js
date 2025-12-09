@@ -21,8 +21,8 @@ import Importance from '@/pages/home/Importance';
 import SimilarService from './SimilarService';
 
 export default function ServiceDetails() {
+
   const pid = useParams();
- 
   const [service, setService] = useState([]);
   const [loading, setLoading] = useState(true);
   
@@ -30,28 +30,26 @@ export default function ServiceDetails() {
     const lists = new RoutesLists();
     const data = lists.getServiceDetail(pid);
     data.then((res) => {
-      console.log("res", res)
-      setService(res?.data?.serviceData || null);
-      setTimeout(() => {
-        setLoading(false)
-      }, 1000)
+        console.log("res", res);
+        setService(res?.data?.serviceData || null);
+        setLoading(false);
     }).catch((error) => {
-      setTimeout(() => {
-        setLoading(false)
-      }), 1000
+        setLoading(false);
     });
   };
   
   useEffect(() => {
-    if (pid) {
+    if(pid){
+      setLoading(true);
+      setService(null);
       ShowServiceDetails();
     }
   }, [pid]);
   
-  console.log("service : ", service);
+  console.log("loadng  : ", loading);
   
   return (
-    <Layout key={pid}>
+    <Layout key={pid} >
       <Head>
         <title>{service?.name || 'Service'} | Blue Halo Health</title>
         <meta name="description" content={service?.description|| "Explore holistic health services including functional medicine, nutrition, and personalized wellness programs from Blue Halo Health."} />
