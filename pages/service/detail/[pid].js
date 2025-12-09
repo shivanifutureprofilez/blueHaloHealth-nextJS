@@ -68,7 +68,7 @@ export default function ServiceDetails() {
         {loading ? <Loading />
           :
           <>
-            <SectionBanner title={service?.name || 'Service Detail'} />
+            <SectionBanner title={service?.name || "Service Detail"} />
             
             {/* Main Content Section - Uniform spacing */}
             <div className="py-16">
