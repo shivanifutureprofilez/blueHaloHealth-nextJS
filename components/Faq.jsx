@@ -52,7 +52,7 @@ function Faq() {
         <div className="max-w-[1000px] mx-auto">
           <div className="">
             <Heading
-              className="text-black text-center md:text-left"
+              className="text-black text-center md:text-left text-2xl md:text-3xl"
               heading1={"Frequently asked "}
               heading2={" questions"}
               // content={"You have got questions? We've got answers!!"}

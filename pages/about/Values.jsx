@@ -64,11 +64,11 @@ function Values() {
                     <p className="text-center pt-2 leading-snug   max-w-[600px] mx-auto">
                         Blue Halo Health’s core values are at the heart of its mission: Passion fuels efforts to help children with autism and their families, quality is reflected in every standard they uphold, and transparency is shown through honest, open communication with clients, caregivers, and the team.
                     </p> */}
-                    <div className=' text-3xl md:text-5xl lg:text-5xl' 
+                    <div className=' text-2xl md:text-3xl ' 
                     // data-aos="fade-right"
                     >
                         <Heading
-                            className="text-black "
+                            className="text-black text-2xl md:text-3xl"
                             pClass="text-center pt-2 leading-snug max-w-[600px] mx-auto"
                             heading1={"Our"}
                             heading2={" Values"}

@@ -4,7 +4,7 @@ import { useSearchParams } from 'next/navigation';
 import { MdOutlineArrowRightAlt } from 'react-icons/md';
 import RoutesLists from '@/pages/api/RoutesLists';
 
-function SimilarService({ pageID, ageId }) {
+function SimilarService({ pageID, ageId, categoryTitle }) {
     const [list, setLists] = useState([]);
     const searchParams = useSearchParams();
     const activeAgeGroup = searchParams.get('agegroup');
@@ -55,23 +55,23 @@ function SimilarService({ pageID, ageId }) {
     
     return (
         <div>
-            <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-4 md:mt-4 md:mb-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:mt-4 md:mb-8">
                 {serviceList && serviceList.map((item, i) => {
                     return (
                         <div 
                             key={i}
-                            className="bg-[#e5dfd73d] shadow-sm hover:shadow-md hover:bg-[#F7F4F0] transition-shadow duration-200 rounded-xl overflow-hidden border border-gray-300"
+                            className="bg-[#e5dfd73d] shadow-sm hover:shadow-md hover:bg-[#F7F4F0] transition-shadow duration-200 rounded-xl overflow-hidden  "
                         >
                             <Link href={`/service/detail/${toSlug(item?._id)}`}>
                                 <div className="flex p-3 gap-2">
-                                    <div className="rounded-lg w-20 h-20 flex-shrink-0 overflow-hidden bg-gray-50">
+                                    <div className="rounded-lg w-[60px] h-[60px] flex-shrink-0 overflow-hidden bg-gray-50">
                                         <img
                                             src={item?.bannerImg}
                                             alt={item?.name}
                                             className="object-cover w-full h-full"
                                         />
                                     </div>
-                                    <h2 className="font-semibold text-sm text-gray-800 flex items-center">
+                                    <h2 className="font-semibold text-[17px] ps-3 text-gray-800 flex items-center">
                                         {item?.name}
                                     </h2>
                                 </div>

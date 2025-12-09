@@ -41,8 +41,8 @@ body{font-family:'Poppins',sans-serif;}
  height:4px;}
 #nprogress .peg{box-shadow:0 0 10px var(--primary),0 0 5px var(--primary);}
 .services h1{ color:#000 !important;font-family:"Inter",sans-serif;font-size:38px;font-style:normal;font-weight:600;line-height:42px;text-transform:uppercase;margin:0 0 15px;padding-bottom:5px;padding-top:5px;}
-.services h2{text-align:left; color:#000 !important;font-family:"Inter",sans-serif;font-size:32px;font-style:normal;font-weight:600;line-height:38px;text-transform:uppercase;padding-bottom:15px;}
-.services h3{text-align:left; color:#000 !important;font-family:"Inter",sans-serif;font-size:22px;font-style:normal;font-weight:600;text-transform:uppercase;/* margin:30px 0 3px;*/
+.services h2{text-align:left; color:#000 !important;font-family:"Inter",sans-serif;font-size:24px;font-style:normal;font-weight:600;line-height:38px;text-transform:uppercase;padding-bottom:15px;}
+.services h3{text-align:left; color:#000 !important;font-family:"Inter",sans-serif;font-size:20px;font-style:normal;font-weight:600;text-transform:uppercase;/* margin:30px 0 3px;*/
  padding-top:20px;}
 .services h4{text-align:left; color:#000 !important;font-size:19px;font-style:normal;font-weight:600;/* margin:24px 0 3px;*/
 }

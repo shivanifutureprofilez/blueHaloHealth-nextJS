@@ -79,12 +79,12 @@ export default function ServiceDetails() {
                     className="services mb-12"
                     dangerouslySetInnerHTML={{ __html: service?.content }}
                   />
-                  
                   <SubLists service={service} serviceid={pid?.pid || null} />
                   <ServiceEnding/>
-                  <h2 className='mt-6 border-gray-500/40 border-t pt-6 text-2xl font-bold text-black mb-4 text-start'>Some More Similar Services</h2>
+                  <h2 className='text-[24px]  font-semibold text-gray-900  nb-2 mt-6 border-gray-500/40 border-t pt-6 text-2xl   text-start'>Similar Programs</h2>
+                  <p className='mb-4'>Some other programs of {service?.agegroup?.title} that you might be interested in</p>
                   {/* <SubLists pageID={subserviceId} serviceid={service?.service?._id} service={service?.service}  /> */}
-                  <SimilarService ageId={service?.agegroup} pageID={pid?.pid || null} />
+                  <SimilarService  categoryTitle={service?.agegroup?.title || null} ageId={service?.agegroup?._id} pageID={pid?.pid || null} />
                 </div>
               </div>
             </div>

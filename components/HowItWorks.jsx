@@ -75,7 +75,7 @@ export default function HowItWorks() {
             {/* How It Works Section */}
             <div>
               <Heading
-                className="text-black text-center text-2xl md:text-4xl mb-10"
+                className="text-black text-center text-2xl md:text-3xl mb-10"
                 heading1={"How It"}
                 heading2={" Works"}
               />

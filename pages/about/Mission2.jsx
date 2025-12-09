@@ -67,11 +67,11 @@ function Mission2() {
             blurDataURL={`/about.png?w=400&q=5`}
           // data-aos="flip-up"
           />
-          <div className='p-5 text-3xl md:text-5xl lg:text-5xl'
+          <div className='p-5 text-2xl md:text-3xl'
           // data-aos="fade-left"
           >
             <Heading
-              className="text-black "
+              className="text-black text-2xl md:text-3xl"
               pClass="text-center pt-2 leading-snug"
               heading1={"Our"}
               heading2={" Vision"}
@@ -81,11 +81,11 @@ function Mission2() {
         </div>
         <div className='md:flex items-center justify-between'>
 
-          <div className='p-5 text-3xl md:text-5xl lg:text-5xl'
+          <div className='p-5 text-2xl md:text-3xl '
           // data-aos="fade-right"
-          >
+>
             <Heading
-              className="text-black "
+              className="text-black text-2xl md:text-3xl"
               pClass="text-center pt-2 leading-snug"
               heading1={"Our"}
               heading2={" Mission"}

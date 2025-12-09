@@ -33,7 +33,7 @@ function Importance() {
     <section className="bg-[#4B9B711A] py-[40px]  lg:py-[60px]  ">
       <div className="mx-auto container  px-4 text-center">
         <Heading
-          className="heading text-center poppins text-black tracking-tighter leading-tight font-bold text-2xl md:text-4xl  mb-3"
+          className="heading text-center poppins text-black tracking-tighter leading-tight font-bold text-2xl md:text-3xl  mb-3"
           heading1={"Why Families Choose"}
           heading2={" BlueHaloHealth"}
         //content={"Trusted expertise, personalized care, and proven results for every stage of development."}

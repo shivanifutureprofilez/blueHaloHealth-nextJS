@@ -37,7 +37,7 @@ export default function AgeMatrix({ admin }) {
     <section className="bg-[#E6EBE3] md:bg-[#F7F4F0] py-[30px] md:py-[40px] lg:py-[60px]  ">
       <div className="mx-auto container  px-4 text-center">
         <Heading
-          className="heading mb-0 text-center  poppins text-black tracking-tighter leading-tight font-bold text-3xl md:text-5xl lg:text-5xl "
+          className="heading mb-0 text-center  poppins text-black tracking-tighter leading-tight font-bold text-2xl md:text-3xl "
           heading1={"Comprehensive"}
           heading2={" Care Pathways"}
         />

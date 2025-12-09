@@ -5,7 +5,7 @@ export default function ServiceEnding() {
     <section className=" pt-4 border-gray-500/40 border-t">
    
           
-          <h3 className="text-3xl  font-semibold text-gray-900 mb-4">
+          <h3 className="text-[24px]  font-semibold text-gray-900 mb-4">
             One Pathway — Many Supports
           </h3>
 

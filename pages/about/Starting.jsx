@@ -6,7 +6,7 @@ function Starting() {
     <div className='bg-[#F7F4F0] p-3'>
       <div className='container mx-auto px-8 py-8 md:py-16 md:px-16 '>
         <Heading
-          className="text-black text-center"
+          className="text-black text-center text-2xl md:text-3xl"
           heading1={"Discover Blue Halo Health: "}
           heading2={"Pioneering Tomorrow’s Care Today"}
           pClass="text-center"

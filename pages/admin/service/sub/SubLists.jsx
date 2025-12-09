@@ -107,7 +107,7 @@ function SubLists({ serviceid, service, pageID, isAdmin }) {
         </button>
       )} */}
       {/* <div className="grid grid-cols-1 md:grid-cols-3  gap-6 md:mt-4 md:mb-8"> */}
-      <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5  gap-4 md:mt-4 md:mb-8">
+      <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5  gap-4  md:mb-8">
         {list && list.map((item, i) => {
           return <div className={`${isAdmin ? 'bg-white' : 'bg-[#e5dfd73d]'} transition-[1s] rounded-xl hover:scale-[1.02] relative`}>
               {isAdmin && (

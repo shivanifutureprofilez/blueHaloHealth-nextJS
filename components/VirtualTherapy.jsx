@@ -36,7 +36,7 @@ function VirtualTherapy() {
     <section className="bg-[#4B9B711A] py-[40px]  lg:py-[60px]  overflow-hidden">
       <div className="mx-auto container  px-4 text-center">
         <Heading
-          className="heading text-center poppins text-black tracking-tighter leading-tight font-bold  mb-3"
+          className="heading text-center text-2xl md:text-3xl poppins text-black tracking-tighter leading-tight font-bold  mb-3"
           heading1={"Virtual "}
         heading2={" Therapy"}
         content={"At BlueHaloHealth, we understand that not every family can visit a clinic easily. Our Virtual Therapy sessions bring expert care directly to your home making therapy more flexible, convenient, and consistent. Whether it’s speech therapy, occupational therapy, or behavioral support, our licensed professionals provide the same quality of care through secure online sessions."}
