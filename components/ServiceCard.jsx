@@ -25,7 +25,7 @@ function ServiceCard({ item, idx, isAdmin = false, fetchServices }) {
   return (
     <div
       key={idx}
-      className="bg-white  group rounded-[25px] shadow overflow-hidden flex flex-col items-center relative"
+      className="bg-[#e5dfd73d]  group rounded-[25px] shadow overflow-hidden flex flex-col items-center relative"
       // data-aos="zoom-in-up" 
     >
       {isAdmin && (
@@ -67,10 +67,10 @@ function ServiceCard({ item, idx, isAdmin = false, fetchServices }) {
       </div>
 
       <div className="p-6 text-left">
-        <h2 className="font-bold text-xl text-black mb-2 line-clamp-2">
+        <h2 className="font-bold text-xl text-black mb-2 line-clamp-1">
           {item?.name}
         </h2>
-        <p className="mb-4 text-[15px] font-medium line-clamp-3 text-gray-600">
+        <p className="mb-4 text-[15px] font-medium line-clamp-2 text-gray-600">
           {item?.description}
         </p>
         <Link href={`/service/detail/${item?._id}`}>

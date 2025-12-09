@@ -20,8 +20,8 @@ export default function DropDown({
   useEffect(() => {
     function onDocumentClick(e) {
       if (containerRef.current && !containerRef.current.contains(e.target)) {
-        setOpen(false);
-        setActiveIndex(-1);
+        // setOpen(false);
+        // setActiveIndex(-1);
       }
     }
     function onKeyDown(e) {
@@ -80,14 +80,12 @@ export default function DropDown({
   return (
     <div className={`relative inline-block text-left ${className}`} ref={containerRef} onMouseEnter={() => setOpen(true)}
         onMouseLeave={(e)=>onMLeave(e) }
-        
         >
       <button
         type="button"
         aria-haspopup="true"
         aria-expanded={open}
         // onClick={toggleOpen}
-        
         className={`flex items-center ${btnclasses}`}
       > <span className="truncate">{label}</span>
         <RiArrowDropDownLine size={30} />

@@ -61,7 +61,7 @@ function SubLists({ serviceid, service, pageID, isAdmin }) {
 
   useEffect(() => {
     fetchSubServices();
-  }, [])
+  }, [serviceid])
 
   
 

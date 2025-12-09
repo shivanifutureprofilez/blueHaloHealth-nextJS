@@ -39,8 +39,8 @@ function ServiceCardSmall({ item, idx, isAdmin = false, fetchServices }) {
     >
       {isAdmin && (
         <Link
-        //   onClick={() => handleEdit(item?._id)}
-        href={`/admin/service/${item?._id}`}
+          //   onClick={() => handleEdit(item?._id)}
+          href={`/admin/service/${item?._id}`}
           className="absolute top-3 left-3 bg-blue-500 hover:bg-blue-600 text-white p-2 rounded-full shadow-md transition-colors duration-200 z-10 cursor-pointer
                flex items-center justify-center"
           title="Edit service"
@@ -48,7 +48,7 @@ function ServiceCardSmall({ item, idx, isAdmin = false, fetchServices }) {
           <FaEdit size={18} />
         </Link>
       )}
-      
+
       {isAdmin && (
         <button
           onClick={() => {
@@ -60,7 +60,7 @@ function ServiceCardSmall({ item, idx, isAdmin = false, fetchServices }) {
           <FaTrash size={18} />
         </button>
       )}
-    <div className="w-full h-70 rounded-lg overflow-hidden  relative">
+      <div className="w-full h-70 rounded-lg overflow-hidden  relative">
         <Link href={`/service/detail/${item?._id}`}>
           <img
             src={item?.bannerImg}
@@ -77,7 +77,7 @@ function ServiceCardSmall({ item, idx, isAdmin = false, fetchServices }) {
         <p className="mb-4 text-[15px] font-medium line-clamp-3 text-gray-600">
           {item?.description}
         </p>
-       {/* {isAdmin && (
+        {/* {isAdmin && (
         <button
           onClick={markAsFeatured}
           className={`

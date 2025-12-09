@@ -84,21 +84,23 @@ function Header() {
               align="left"
             >
               {ageGroupsLists && ageGroupsLists?.map((group, idx) => (
-                <div className="   grid grid-cols-1 space-y-2   group">
+                <div className="grid grid-cols-1 space-y-2   group">
                   <Link href={`/service?agegroup=${group?._id}`} >
                     <p className="px-4 py-5 hover:bg-[#F7F4F0] hover:bg-gray-100 text-sm ">{group?.title}</p>
                     <hr className="text-gray-200 "/>
                   </Link>
 
-                  <div className="  absolute left-full top-0   hidden group-hover:block bg-white shadow-lg p-3  min-w-[300px] rounded-md z-50">
-                    {group.services?.map((srv) => (
-                      <Link key={srv._id} href={`/service/detail/${srv?._id}`}>
-                        <p className="text-sm  py-2 hover:text-blue-500 cursor-pointer">
-                          {srv.name}
-                        </p>
-                        <hr className="text-gray-200 mt-2"/>
-                      </Link>
-                    ))}
+                  <div className="absolute left-full top-0 h-full  hidden group-hover:block    min-w-[300px] rounded-md z-50">
+                    <div className="  bg-white shadow-lg p-3  min-w-[300px] rounded-md z-50">
+                      {group.services?.map((srv) => (
+                        <Link key={srv._id} href={`/service/detail/${srv?._id}`}>
+                          <p className="text-sm  py-2 hover:text-blue-500 cursor-pointer">
+                            {srv.name}
+                          </p>
+                          <hr className="text-gray-200 mt-2"/>
+                        </Link>
+                      ))}
+                    </div>
                   </div>
                 </div>
               ))}

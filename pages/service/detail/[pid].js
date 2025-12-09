@@ -18,6 +18,7 @@ import BenefitsLists from './BenifitsLists';
 import SubLists from '@/pages/admin/service/sub/SubLists';
 import ServiceEnding from '../ServiceEnding';
 import Importance from '@/pages/home/Importance';
+import SimilarService from './SimilarService';
 
 export default function ServiceDetails() {
   const pid = useParams();
@@ -50,7 +51,7 @@ export default function ServiceDetails() {
   console.log("service : ", service);
   
   return (
-    <Layout>
+    <Layout key={pid}>
       <Head>
         <title>{service?.name || 'Service'} | Blue Halo Health</title>
         <meta name="description" content={service?.description|| "Explore holistic health services including functional medicine, nutrition, and personalized wellness programs from Blue Halo Health."} />
@@ -81,6 +82,9 @@ export default function ServiceDetails() {
                   
                   <SubLists service={service} serviceid={pid?.pid || null} />
                   <ServiceEnding/>
+                  <h2 className='mt-6 border-gray-500/40 border-t pt-6 text-2xl font-bold text-black mb-4 text-start'>Some More Similar Services</h2>
+                  {/* <SubLists pageID={subserviceId} serviceid={service?.service?._id} service={service?.service}  /> */}
+                  <SimilarService ageId={service?.agegroup} pageID={pid?.pid || null} />
                 </div>
               </div>
             </div>
@@ -90,6 +94,7 @@ export default function ServiceDetails() {
             
             {/* How It Works - Uniform spacing */}
             {/* <div className="py-16"> */}
+            
               <HowItWorks />
             {/* </div> */}
             
