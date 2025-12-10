@@ -34,3 +34,5 @@ export default function SectionBanner({ title = "Blue Halo Health" , img = "/sec
     </section>
   );
 }
+
+

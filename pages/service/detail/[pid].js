@@ -114,6 +114,7 @@ import ServiceEnding from '../ServiceEnding';
 import Importance from '@/pages/home/Importance';
 import SimilarService from './SimilarService';
 import { LuHandHelping } from "react-icons/lu";
+import Popup1 from '@/components/Popup1';
 
 export default function ServiceDetails() {
   const pid = useParams();
@@ -202,9 +203,9 @@ export default function ServiceDetails() {
                         </div>
                       )}
 
-                      <button className="w-full mt-6 bg-green-dark  text-white font-semibold py-3 px-6 rounded-lg hover:from-emerald-700 hover:to-teal-700 transition duration-300 shadow-md">
+                      <Popup1 classes={`button w-full mt-6 bg-green-dark text-white font-semibold py-3 px-6 rounded-lg hover:from-emerald-700 hover:to-teal-700 transition duration-300 shadow-md`}>
                         Book Now
-                      </button>
+                      </Popup1>
                     </div>
                   </div>
 
@@ -217,12 +218,12 @@ export default function ServiceDetails() {
                   </div>
                 </div>
                 {subListsCounts && subListsCounts?.length > 0 && service && pid?.pid && (
-                    <div className="">
-                      <h2 className="text-[24px] font-semibold text-gray-900 mb-2 mt-6  pt-6 text-start">
-                        Our {service?.name} Services
-                      </h2>
-                      <p className="mb-4">All services below are available for this age group.</p>
-                    </div>
+                  <div className="">
+                    <h2 className="text-[24px] font-semibold text-gray-900 mb-2 mt-6  pt-6 text-start">
+                      Our {service?.name} Services
+                    </h2>
+                    <p className="mb-4">All services below are available for this age group.</p>
+                  </div>
                 )}
                 <SubLists
                   setSubListsCounts={setSubListsCounts}
@@ -272,9 +273,9 @@ export default function ServiceDetails() {
               <Importance />
             </div>
 
-            <div className="py-16 bg-white">
-              <Faq />
-            </div>
+            {/* <div className="py-16 bg-white"> */}
+            <Faq />
+            {/* </div> */}
 
             <BookingTab />
           </>
