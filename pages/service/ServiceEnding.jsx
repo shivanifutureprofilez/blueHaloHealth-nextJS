@@ -2,7 +2,7 @@ import Popup1 from "@/components/Popup1";
 
 export default function ServiceEnding() {
   return (
-    <section className=" pt-4 border-gray-500/40 border-t">
+    <section className=" pt-4 ">
    
           
           <h3 className="text-[24px]  font-semibold text-gray-900 mb-4">

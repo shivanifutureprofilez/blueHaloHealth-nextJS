@@ -7,9 +7,10 @@ import toast from 'react-hot-toast';
 import { FaEdit, FaTrash } from 'react-icons/fa';
 import { MdOutlineArrowRightAlt } from 'react-icons/md';
 
-function SubLists({ serviceid, service, pageID, isAdmin }) {
+function SubLists({ serviceid, service, pageID, isAdmin, setSubListsCounts }) {
   const router = useRouter();
   const { pid } = router.query;
+
   const [items, setItems] = useState({
     name: "",
     description: "",
@@ -17,6 +18,7 @@ function SubLists({ serviceid, service, pageID, isAdmin }) {
     service: pid,
     content: "",
   });
+
   const [loading, setLoading] = useState(true);
   const [list, setLists] = useState([]);
    
@@ -31,6 +33,7 @@ function SubLists({ serviceid, service, pageID, isAdmin }) {
           const temp = data.filter((i) => i._id !== pageID);
           console.log("temp", temp)
           setLists(temp);
+          
         } else {
           setLists(data);
         }
@@ -43,7 +46,9 @@ function SubLists({ serviceid, service, pageID, isAdmin }) {
         console.log("err ", err);
       });
   };
-
+  useEffect(()=>{ 
+    setSubListsCounts && setSubListsCounts(list);
+  },[list]);
 
   const toSlug = (str) => {
     if (str) {
