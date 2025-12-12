@@ -8,6 +8,7 @@ import { CiEdit } from "react-icons/ci";
 function AddAgeGroup({ id, fetchGroups, isEdit, group }) {
     const [icons, setIcons] = useState(null);
     const router = useRouter();
+    const [imgFormat, setImgFormat] = useState('url')
     const [items, setItems] = useState({
         title: group?.title || "",
         description: group?.description || "",
@@ -16,6 +17,7 @@ function AddAgeGroup({ id, fetchGroups, isEdit, group }) {
         // minAge: group?.minAge || "",
         _id: group?._id || "",
         // maxAge: group?.maxAge || "",
+        coverImg: group?.coverImg || ""
     })
     useEffect(() => {
         setItems({
@@ -26,6 +28,7 @@ function AddAgeGroup({ id, fetchGroups, isEdit, group }) {
             // minAge: group?.minAge || "",
             _id: group?._id || "",
             // maxAge: group?.maxAge || "",
+            coverImg: group?.coverImg || ""
         })
     }, [group])
 
@@ -35,6 +38,11 @@ function AddAgeGroup({ id, fetchGroups, isEdit, group }) {
         const name = e.target.name;
         const value = e.target.value;
         setItems(values => ({ ...values, [name]: value }));
+    }
+
+    const handleFile = (e) => {
+        const file = e.target.files[0]
+        setItems((prev) => ({ ...prev, coverImg: file }))
     }
     const [loading, setLoading] = useState(false);
 
@@ -47,20 +55,28 @@ function AddAgeGroup({ id, fetchGroups, isEdit, group }) {
             }
             setLoading(true);
             const lists = new AdminRoutes();
-            const data = await lists.addagegroup(items);
-            toast.success("Age Group added successfully!");
-            router.push("/admin/agegroups/list");
-            setItems({
-                title: "",
-                description: "",
-                icon: ""
-                // image: "",
-                // minAge: "",
-                // maxAge: "",
-            });
-            fetchGroups && fetchGroups();
-            setAction("close")
-            setLoading(false);
+            const formdata = new FormData();
+            formdata.append("title", items?.title);
+            formdata.append("icon", items?.icon);
+            formdata.append("description", items?.description);
+            formdata.append("coverImg", items?.coverImg);
+            const data = lists.addagegroup(formdata);
+            data.then((res) => {
+                if (res.data.status) {
+                    toast.success(res.data.message || "Age Group added successfully!");
+                    router.push("/admin/agegroups/list");
+                    fetchGroups && fetchGroups();
+                    setAction("close")
+                }
+                else {
+                    toast.error(res.data.message || "Unable to add age group")
+                }
+                setLoading(false);
+            })
+                .catch((err => {
+                    console.log("error ", err);
+                }));
+
         } catch (error) {
             console.error("Error:", error);
             toast.error("Something went wrong");
@@ -77,19 +93,27 @@ function AddAgeGroup({ id, fetchGroups, isEdit, group }) {
             }
             setLoading(true);
             const lists = new AdminRoutes();
-            const data = await lists.editAge(items);
-            toast.success("Mega Service added successfully!");
-            router.push("/admin/agegroups/list");
-            setItems({
-                title: "",
-                description: "",
-                icon: ""
-                // image: "",
-                // minAge: "",
-                // maxAge: "",
-            });
-            fetchGroups && fetchGroups();
-            setAction("close")
+            const formdata = new FormData();
+            formdata.append("_id", items?._id);
+            formdata.append("title", items?.title);
+            formdata.append("icon", items?.icon);
+            formdata.append("description", items?.description);
+            formdata.append("coverImg", items?.coverImg);
+            const data = lists.editAge(formdata);
+            data.then((res) => {
+                if (res.data.status) {
+                    toast.success(res.data.message || "Mega Service updated successfully!");
+                    // router.push("/admin/agegroups/list");
+                    // fetchGroups && fetchGroups();
+                    // setAction("close")
+                    window.location.reload(false)
+                } else {
+                    toast.error(res.data.message || "Mega Service updated successfully!");
+                }
+            }).catch((err => {
+                console.log("error ", err);
+            }));
+
             setLoading(false);
         } catch (error) {
             console.error("Error:", error);
@@ -102,7 +126,9 @@ function AddAgeGroup({ id, fetchGroups, isEdit, group }) {
             <div className=" w-full  flex flex-wrap md:flex-nowrap ">
                 <div className="w-full relative ">
                     <h5 className="text-xl font-medium text-gray-800 mt-2">{isEdit ? "Edit " : "Add Age Group"}</h5>
-                    <form className="mt-6" onSubmit={handleSubmit}>
+                    <form className="mt-6"
+                    // onSubmit={isEdit ? handleEdit : handleSubmit}
+                    >
                         <div className='grid grid-cols-2 gap-4 mb-4 mt-3'>
                             <div >
                                 <label className="font-medium text-base block mb-2">Title</label>
@@ -130,7 +156,47 @@ function AddAgeGroup({ id, fetchGroups, isEdit, group }) {
                                 />
                             </div>
                         </div>
-                        <div>
+                        <div className="flex gap-3 mb-3 ">
+                            <button type="button" className={`w-full md:w-40 mt-6 py-2 rounded-lg ${imgFormat == 'url' ? 'bg-blue-600 hover:bg-blue-700' : "bg-gray-600 hover:bg-gray-700"} cursor-pointer
+                 text-white text-sm transition-all duration-300 shadow-md
+                 `}
+                                onClick={() => setImgFormat('url')}>Cover Image URL </button>
+                            <button type="button" className={` w-full md:w-40 mt-6 py-2 rounded-lg ${imgFormat == 'file' ? 'bg-blue-600 hover:bg-blue-700' : "bg-gray-600 hover:bg-gray-700"} cursor-pointer
+                 text-white text-sm transition-all duration-300 shadow-md
+                `}
+                                onClick={() => setImgFormat('file')}>Cover Image File</button>
+                        </div>
+                        {imgFormat == 'url' ? <div>
+                            <p className="text-gray-400 text-sm mb-3">Please add a image file url for the cover Image of this category.</p>
+                             
+                            <input
+                                type="text"
+                                placeholder="Enter image URL"
+                                defaultValue={items.coverImg || ""}
+                                value={items.coverImg || ""}
+                                name="coverImg"
+                                onChange={(e) =>
+                                    setItems((prev) => ({
+                                        ...prev,
+                                        coverImg: e.target.value,
+                                    }))
+                                }
+                                className=" w-full bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg 
+                            focus:ring-blue-500 focus:border-blue-500 py-3 px-4"
+                            />
+                        </div> :
+                            <div>
+                                <p className="text-gray-400 text-sm mb-3">Please chhose file from the system for the thumbnail of this category.</p>
+                                 
+                                <input
+                                    type="file"
+                                    placeholder="Enter image URL"
+                                    onChange={handleFile}
+                                    className=" w-full bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg 
+                            focus:ring-blue-500 focus:border-blue-500 py-3 px-4"
+                                />
+                            </div>}
+                        <div className='mt-6'>
                             <label className="font-medium text-base block mb-2">
                                 Description
                             </label>
@@ -185,7 +251,7 @@ function AddAgeGroup({ id, fetchGroups, isEdit, group }) {
                         onClick={isEdit ? handleEdit : handleSubmit}
                         type="submit"
                         disabled={loading}
-                        className="button w-full  mt-6  md:w-32  py-3"
+                        className="button w-full  mt-6 cursor-pointer md:w-32  py-3"
                     >
                         {loading ? "Loading..." : "Submit"}
                     </button>

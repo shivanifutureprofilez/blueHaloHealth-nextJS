@@ -24,7 +24,7 @@ export default function BookingConsentPage() {
                 {/* Section 1 */}
                 <div className="mb-6">
                     <h2 className="text-lg md:text-xl font-bold text-green-700 mb-2">
-                        1️⃣ Third-Party Platform Consent
+                        Third-Party Platform Consent
                     </h2>
                     <ul className="list-disc list-inside text-gray-700 space-y-2">
                         <li>I understand that I will be redirected to Jane, a secure third-party health platform.</li>
@@ -35,7 +35,7 @@ export default function BookingConsentPage() {
                 {/* Section 2 */}
                 <div className="mb-6">
                     <h2 className="text-lg md:text-xl font-bold text-green-700 mb-2">
-                        2️⃣ Privacy & Data Collection Notice
+                        Privacy & Data Collection Notice
                     </h2>
                     <ul className="list-disc list-inside text-gray-700 space-y-2">
                         <li>I understand that Jane will collect my basic personal information (name, email, phone, date of birth) in order to create my profile.</li>
@@ -47,7 +47,7 @@ export default function BookingConsentPage() {
                 {/* Section 3 */}
                 <div className="mb-6">
                     <h2 className="text-lg md:text-xl font-bold text-green-700 mb-2">
-                        3️⃣ Communication Consent
+                        Communication Consent
                     </h2>
                     <ul className="list-disc list-inside text-gray-700 space-y-2">
                         <li>I consent to Blue Halo Health contacting me by:</li>

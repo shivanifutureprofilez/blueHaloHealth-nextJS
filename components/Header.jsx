@@ -1,6 +1,6 @@
 
 import { FiMenu, FiX } from "react-icons/fi";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import Link from "next/link";
 import Button from "./Button";
 import Popup from "./Popup";
@@ -10,12 +10,13 @@ import DropDown from "./DropDown";
 import { RiArrowDropDownLine } from "react-icons/ri";
 import RoutesLists from "@/pages/api/RoutesLists";
 import Popup1 from "./Popup1";
+import { MyContext } from "@/pages/context/UserContext";
 
 function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [ageGroupsLists, setAgeGroupsLists] = useState([]);
   const [loading, setLoading] = useState(true);
-
+  const {categories, setCategories} = useContext(MyContext);
   const navLinks = [
     // { name: "Home", href: "/" },
     // { name: "Core Services ", href: "/service" },
@@ -37,12 +38,12 @@ function Header() {
     }
   }, [query]);
 
-
   const fetchGroups = async () => {
     const lists = new RoutesLists();
     const data = lists.getAgeGroups();
     data.then((res) => {
       setAgeGroupsLists(res?.data?.ageGroupList || []);
+      setCategories(res?.data?.ageGroupList);
       setLoading(false)
     }).catch((err) => {
       setAgeGroupsLists([]);
@@ -50,6 +51,7 @@ function Header() {
       setLoading(false)
     });
   }
+
   useEffect(() => {
     fetchGroups();
   }, []);

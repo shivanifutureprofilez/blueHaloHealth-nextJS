@@ -26,7 +26,7 @@ function index() {
         <link rel="canonical" href="https://bluehalohealth.com/contact-us" />
       </Head>
       <Layout>
-        <SectionBanner title={"Contact Us"} />
+        <SectionBanner title={"Contact"} />
         <div className="bg-[#F7F4F0] py-[20px] md:py-[40px] lg:py-[60px]  ">
           <div className="mx-auto container  px-4 text-center">
              {/* <Notice/> */}

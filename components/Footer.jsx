@@ -11,11 +11,11 @@ function Footer() {
          
           <div className="max-w-[700px]">
             <h3 className="text-2xl font-bold mb-4">BlueHaloHealth</h3>
-            <p className="text-gray-300 mb-4">
+            <p className="text-base text-gray-300 mb-4">
               Comprehensive therapy and support for children, teens, and adults with autism,
               speech delays, and developmental challenges.
             </p>
-            <p className="text-sm text-white">
+            <p className="text-sm text-white hover:text-white">
               PHIPA Compliant | Funding Options Available
             </p>
           </div>
@@ -25,12 +25,12 @@ function Footer() {
             <h4 className="text-lg font-semibold mb-4">Quick Links</h4>
            
               <ul className="space-y-2 text-gray-300">
-                <li><Link href="/service" className="">Services</Link></li>
+                <li><Link href="/service" className=" hover:text-white">Services</Link></li>
                 {/* <li><Link href="/agegroups" className="">Ages</Link></li> */}
-                <li><Link href="/resources" className="">Resources</Link></li>
-                <li><Link href="/about" className="">About Us</Link></li>
-                <li><Link href="/contact-us" className="">Contact</Link></li>
-                <li><Link href="https://phpdemo.futureprofilez.com/wp/blue-halo-health-blog/" className="">Blogs</Link></li>
+                {/* <li><Link href="/resources" className="">Resources</Link></li> */}
+                <li><Link href="/about" className=" hover:text-white">About</Link></li>
+                <li><Link href="/contact-us" className=" hover:text-white">Contact</Link></li>
+                <li><Link href="https://phpdemo.futureprofilez.com/wp/blue-halo-health-blog/" className=" hover:text-white">Blogs</Link></li>
               </ul>
             
           </div>
@@ -41,25 +41,25 @@ function Footer() {
               <ul className="space-y-2 text-base">
                             <li className="flex items-center gap-3 text-gray-300">
                               <span className="">
-                                <IoLocationOutline size={20}  />
+                                <IoLocationOutline size={20}  className="hover:text-white"/>
                               </span>
-                              <span className="text-gray-300">
+                              <span className="text-gray-300 hover:text-white">
                               320 Bay Street Toronto, ON M5H 4A6
                               </span>
                             </li>
-                            <li className="flex items-center gap-3 text-gray-300">
+                            <li className="flex items-center gap-3 text-gray-300 ">
                               <span className="">
-                                <CiPhone size={20}  />
+                                <CiPhone size={20}  className="hover:text-white"/>
                               </span>
-                              <a href="tel:9876543218" className="text-gray-300">
+                              <a href="tel:9876543218" className="text-gray-300  hover:text-white">
                               (416) 555-BLUE
                               </a>
                             </li>
-                            <li className="flex items-center hover:cursor-default gap-3">
+                            <li className="flex items-center hover:cursor-default gap-3 hover:text-white">
                               <span className="">
-                                <IoMailOpenOutline size={20}  className="text-gray-300"/>
+                                <IoMailOpenOutline size={20}  className="text-gray-300 hover:text-white"/>
                               </span>
-                              <a href="mailto:hello@bluehalohealth.com" className="text-gray-300">
+                              <a href="mailto:hello@bluehalohealth.com" className="text-gray-300 hover:text-white">
                                 info@bluehalohealth.com 
                               </a>
                             </li>
@@ -101,7 +101,7 @@ function Footer() {
       
         <div className="border-t border-gray-700 mt-4 pt-4 md:flex justify-center md:justify-center gap-10 lg:justify-between  md:items-center text-sm text-white">
           <p className="">©2025 BlueHaloHealth. All rights reserved.</p>
-          <p className="italic pt-2 md:pt-0 ">Developed By <a href="https://futureprofilez.com/" target="_blank">FutureProfilez Pvt. Ltd.</a></p>
+          <p className=" pt-2 md:pt-0 ">Developed By <a href="https://futureprofilez.com/" target="_blank">FutureProfilez Pvt. Ltd.</a></p>
         </div>
       </div>
     </div>

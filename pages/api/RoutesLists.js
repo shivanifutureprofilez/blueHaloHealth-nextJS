@@ -49,7 +49,9 @@ class RoutesLists extends Component {
     async singleSubServiceDetail(pid) {
         return Api.get(`/subservice/${pid}`);
     }
-    
+    async getCategoryDetail(pid) {
+        return Api.get(`/categoryDetails/${pid}`);
+    }
     render() {
         return (
             <div>
