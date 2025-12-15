@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { useSearchParams } from 'next/navigation';
 import { MdOutlineArrowRightAlt } from 'react-icons/md';
 import RoutesLists from '@/pages/api/RoutesLists';
+import { toSlug } from '@/pages/utils/toSlug';
 
 function SimilarService({ pageID, ageId, categoryTitle }) {
     const [list, setLists] = useState([]);
@@ -11,19 +12,7 @@ function SimilarService({ pageID, ageId, categoryTitle }) {
     const [ageGroup, setAgeGroup] = useState(activeAgeGroup);
     const [loading, setLoading] = useState(true);
     
-    const toSlug = (str) => {
-        if (str) {
-            return str
-                .toLowerCase()
-                .trim()
-                .normalize("NFD")
-                .replace(/[\u0300-\u036f]/g, "")
-                .replace(/[^a-z0-9]+/g, "-")
-                .replace(/^-+|-+$/g, "");
-        } else {
-            return ''
-        }
-    };
+  
     
     const [serviceList, setServiceList] = useState([]);
     
@@ -33,7 +22,7 @@ function SimilarService({ pageID, ageId, categoryTitle }) {
         data
             .then((res) => {
                 if (pageID) {
-                    const temp = res?.data?.allServices.filter((i) => i._id !== pageID);
+                    const temp = res?.data?.allServices.filter((i) => i.slug !== pageID);
                     setServiceList(temp);
                 } else {
                     setServiceList(res?.data?.allServices || []);
@@ -62,7 +51,7 @@ function SimilarService({ pageID, ageId, categoryTitle }) {
                             key={i}
                             className="bg-[#e5dfd73d] shadow-sm hover:shadow-md hover:bg-[#F7F4F0] transition-shadow duration-200 rounded-xl overflow-hidden  "
                         >
-                            <Link href={`/service/detail/${toSlug(item?._id)}`}>
+                            <Link href={`/service/detail/${toSlug(item?.name)}`}>
                                 <div className="flex p-3 gap-2">
                                     <div className="rounded-lg w-[60px] h-[60px] flex-shrink-0 overflow-hidden bg-gray-50">
                                         <img

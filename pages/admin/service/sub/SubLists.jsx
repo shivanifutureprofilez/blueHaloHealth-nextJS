@@ -30,7 +30,7 @@ function SubLists({ serviceid, service, pageID, isAdmin, setSubListsCounts }) {
       .then((res) => {
         const data = res?.data?.subServiceList || [];
         if (pageID) {
-          const temp = data.filter((i) => i._id !== pageID);
+          const temp = data.filter((i) => i.slug !== pageID);
           console.log("temp", temp)
           setLists(temp);
           
@@ -46,6 +46,8 @@ function SubLists({ serviceid, service, pageID, isAdmin, setSubListsCounts }) {
         console.log("err ", err);
       });
   };
+
+
   useEffect(()=>{ 
     setSubListsCounts && setSubListsCounts(list);
   },[list]);
@@ -137,7 +139,8 @@ function SubLists({ serviceid, service, pageID, isAdmin, setSubListsCounts }) {
                   <FaTrash size={18} />
                 </button>
               )}
-            <Link href={`/service/${toSlug(service?.name)}/${toSlug(item?.name)}/${item?._id}`} className={``}>
+            <Link href={`/service/${toSlug(service?.name)}/${toSlug(item?.name)}`} className={``}>
+            {/* <Link href={`/service/${toSlug(service?.name)}/${toSlug(item?.name)}/${item?._id}`} className={``}></Link> */}
               <div className=" w-full h-[200px] rounded-lg overflow-hidden relative">
                 <img
                   src={item?.bannerImg}

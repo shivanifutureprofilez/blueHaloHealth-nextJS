@@ -7,6 +7,9 @@ import Link from "next/link";
 import Loading from "@/components/Loading";
 import { motion } from "motion/react";
 import Image from "next/image";
+import { toSlug } from "../utils/toSlug";
+// import Slug from "@/components/Slug";
+// import { toSlug } from "@/utils/toSlug";
 
 
 
@@ -32,6 +35,7 @@ export default function AgeMatrix({ admin }) {
     fetchGroups();
   }, []);
 
+
   return (
 
     <section className="bg-[#E6EBE3] md:bg-[#F7F4F0] py-[30px] md:py-[40px] lg:py-[60px]  ">
@@ -52,7 +56,10 @@ export default function AgeMatrix({ admin }) {
             {ageGroupsLists && ageGroupsLists?.map((group, idx) => (
               <div key={idx} className="bg-white group   border-[#009C4A] rounded-[25px] shadow overflow-hidden flex flex-col items-center">
                 <div className="h-[150px] w-[150px]  p-6 pb-0 flex justify-center items-center relative">
-                  <Link href={`/service?agegroup=${group?._id}`} >
+                  {/* {toSlug(group?.title)} */}
+                  
+                  <Link href={`/service/${toSlug(group?.title)}`} >
+                   {/* <Link href={`/service?agegroup=${group?._id}`} ></Link> */}
                     <Image
                       src={group?.image || group?.icon || 'https://thumbs.dreamstime.com/b/elderly-man-medical-insurance-health-plan-older-people-pixel-perfect-editable-stroke-line-design-icon-elderly-man-medical-273635532.jpg'}
                       alt={group.title}
@@ -77,7 +84,8 @@ export default function AgeMatrix({ admin }) {
                         <span className="mr-2 mt-1">
                           <FaCircleCheck className="text-green-500 rounded-xl" />
                         </span>
-                        <Link href={`/service/detail/${service?._id}`} className='capitalize'>{service?.name}</Link>
+                        <Link href={`/service/detail/${toSlug(service?.name)}`} className='capitalize'>{service?.name}</Link>
+                        {/* <Link href={`/service/detail/${service?._id}`} className='capitalize'>{service?.name}</Link> */}
                       </li>
                     </motion.div>
                   )) || ''}

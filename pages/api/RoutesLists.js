@@ -14,7 +14,7 @@ class RoutesLists extends Component {
         return Api.get(`/service/featured/list`);
     }
 
-    async getServiceDetail({pid}) {
+    async getServiceDetail(pid) {
         return Api.get(`/service/${pid}`);
     }
 

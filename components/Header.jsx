@@ -11,6 +11,7 @@ import { RiArrowDropDownLine } from "react-icons/ri";
 import RoutesLists from "@/pages/api/RoutesLists";
 import Popup1 from "./Popup1";
 import { MyContext } from "@/pages/context/UserContext";
+import { toSlug } from "@/pages/utils/toSlug";
 
 function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -87,7 +88,7 @@ function Header() {
             >
               {ageGroupsLists && ageGroupsLists?.map((group, idx) => (
                 <div className="grid grid-cols-1 space-y-2   group">
-                  <Link href={`/service?agegroup=${group?._id}`} >
+                  <Link href={`/service/${toSlug(group?.title)}`} >
                     <p className="px-4 py-5 hover:bg-[#F7F4F0] hover:bg-gray-100 text-sm ">{group?.title}</p>
                     <hr className="text-gray-200 "/>
                   </Link>
@@ -95,7 +96,7 @@ function Header() {
                   <div className="absolute left-full top-0 h-full  hidden group-hover:block    min-w-[300px] rounded-md z-50">
                     <div className="  bg-white shadow-lg p-3  min-w-[300px] rounded-md z-50">
                       {group.services?.map((srv) => (
-                        <Link key={srv._id} href={`/service/detail/${srv?._id}`}>
+                        <Link key={srv._id} href={`/service/detail/${toSlug(srv?.name)}`}>
                           <p className="text-sm  py-2 hover:text-blue-500 cursor-pointer">
                             {srv.name}
                           </p>

@@ -1,103 +1,3 @@
-// import BookingTab from '@/components/BookingTab';
-// import Button from '@/components/Button';
-// import Faq from '@/components/Faq';
-// import HowItWorks from '@/components/HowItWorks';
-// import Layout from '@/components/Layout';
-// import Loading from '@/components/Loading';
-// import Popup1 from '@/components/Popup1';
-// import SectionBanner from '@/components/SectionBanner';
-// import RoutesLists from '@/pages/api/RoutesLists';
-// import Head from 'next/head';
-// import { useParams } from 'next/navigation';
-// import React, { useEffect, useState } from 'react'
-// import toast from 'react-hot-toast';
-// import BenefitsLists from './BenifitsLists';
-// import SubLists from '@/pages/admin/service/sub/SubLists';
-// import ServiceEnding from '../ServiceEnding';
-// import Importance from '@/pages/home/Importance';
-// import SimilarService from './SimilarService';
-
-// export default function ServiceDetails() {
-
-//   const pid = useParams();
-//   const [service, setService] = useState([]);
-//   const [loading, setLoading] = useState(true);
-
-//   const ShowServiceDetails = () => {
-//     const lists = new RoutesLists();
-//     const data = lists.getServiceDetail(pid);
-//     data.then((res) => {
-//         console.log("res", res);
-//         setService(res?.data?.serviceData || null);
-//         setLoading(false);
-//     }).catch((error) => {
-//         setLoading(false);
-//     });
-//   };
-
-//   useEffect(() => {
-//     if(pid){
-//       setLoading(true);
-//       setService(null);
-//       ShowServiceDetails();
-//     }
-//   }, [pid]);
-
-//   console.log("loadng  : ", loading);
-
-//   return (
-//     <Layout key={pid} >
-//       <Head>
-//         <title>{service?.name || 'Service'} | Blue Halo Health</title>
-//         <meta name="description" content={service?.description|| "Explore holistic health services including functional medicine, nutrition, and personalized wellness programs from Blue Halo Health."} />
-//         <meta name="keywords" content="wellness services, holistic therapy, nutrition, functional medicine, Blue Halo Health services" />
-//         <meta property="og:title" content={`${service?.name || 'Service'} | Blue Halo Health`} />
-//         <meta property="og:description" content="Transform your health with our personalized wellness services and functional medicine solutions." />
-//         <meta property="og:image" content={service?.bannerImg || `/summary.png`} />
-//         <meta name="twitter:title" content={service?.name || "Our Services | Blue Halo Health"} />
-//         <meta name="twitter:description" content={service?.description|| "Discover holistic wellness services designed for your total well-being."} />
-//         <meta name="twitter:image" content={service?.bannerImg || `/summary.png`} />
-//       </Head>
-
-//       <div className='bg-[#F7F4F0]'>
-//         {loading ? <Loading />
-//           :
-//           <>
-//             <SectionBanner title={service?.name || "Service Detail"} />
-//             {/* Main Content Section - Uniform spacing */}
-//             <div className="py-16">
-//               <div className="mx-auto container px-4">
-//                 <div className=" mx-auto">
-//                   <img src={service?.bannerImg} className='rounded-xl max-h-[500px] w-full object-cover mb-[30px]' />
-//                   <div
-//                     className="services mb-12"
-//                     dangerouslySetInnerHTML={{ __html: service?.content }}
-//                   />
-//                   <SubLists service={service} serviceid={pid?.pid || null} />
-//                   <ServiceEnding/>
-//                   <h2 className='text-[24px]  font-semibold text-gray-900  nb-2 mt-6 border-gray-500/40 border-t pt-6 text-2xl   text-start'>Similar Programs</h2>
-//                   <p className='mb-4'>Some other programs of {service?.agegroup?.title} that you might be interested in</p>
-//                   {/* <SubLists pageID={subserviceId} serviceid={service?.service?._id} service={service?.service}  /> */}
-//                   <SimilarService  categoryTitle={service?.agegroup?.title || null} ageId={service?.agegroup?._id} pageID={pid?.pid || null} />
-//                 </div>
-//               </div>
-//             </div>
-//               <HowItWorks />
-//             <div className="py-16">
-//               <Importance/>
-//             </div>
-//             <div className="py-16">
-//               <Faq />
-//             </div>
-//             <BookingTab />
-//           </>
-//         }
-//       </div>
-//     </Layout>
-//   )
-// }
-
-
 import BookingTab from '@/components/BookingTab';
 import Button from '@/components/Button';
 import Faq from '@/components/Faq';
@@ -107,7 +7,7 @@ import Loading from '@/components/Loading';
 import SectionBanner from '@/components/SectionBanner';
 import RoutesLists from '@/pages/api/RoutesLists';
 import Head from 'next/head';
-import { useParams } from 'next/navigation';
+import { useParams, useSearchParams } from 'next/navigation';
 import React, { useEffect, useState } from 'react'
 import SubLists from '@/pages/admin/service/sub/SubLists';
 import ServiceEnding from '../ServiceEnding';
@@ -115,18 +15,23 @@ import Importance from '@/pages/home/Importance';
 import SimilarService from './SimilarService';
 import { LuHandHelping } from "react-icons/lu";
 import Popup1 from '@/components/Popup1';
+import { useRouter } from 'next/router';
 
 export default function ServiceDetails() {
-  const pid = useParams();
+  const router = useRouter();
+  // const pid = useParams();
+  const pid = router?.query?.pid || null
+  console.log("service pid : ",pid);
   const [service, setService] = useState([]);
   const [loading, setLoading] = useState(true);
   const [subListsCounts, setSubListsCounts] = useState();
-  console.log("subListsCounts", subListsCounts);
+  console.log("pidpidpidpid", pid);
 
 
   const ShowServiceDetails = () => {
     const lists = new RoutesLists();
     const data = lists.getServiceDetail(pid);
+    console.log("data : ",data);
     data.then((res) => {
       setService(res?.data?.serviceData || null);
       setLoading(false);
@@ -217,7 +122,8 @@ export default function ServiceDetails() {
                     />
                   </div>
                 </div>
-                {subListsCounts && subListsCounts?.length > 0 && service && pid?.pid && (
+                
+                {subListsCounts && subListsCounts?.length > 0 && service && pid && (
                   <div className="">
                     <h2 className="text-[24px] font-semibold text-gray-900 mb-2 mt-6  pt-6 text-start">
                       Our {service?.name} Services
@@ -225,10 +131,13 @@ export default function ServiceDetails() {
                     <p className="mb-4">All services below are available for this age group.</p>
                   </div>
                 )}
-                <SubLists
+
+               
+                <SubLists 
                   setSubListsCounts={setSubListsCounts}
                   service={service}
-                  serviceid={pid.pid}
+                  serviceid={pid}
+                  pageID={pid}
                 />
 
 
@@ -237,7 +146,8 @@ export default function ServiceDetails() {
                 <h2 className='text-[24px]  font-semibold text-gray-900  nb-2 mt-6  pt-6 text-2xl   text-start'>Similar Programs</h2>
                 <p className='mb-4'>Some other programs of {service?.agegroup?.title} that you might be interested in</p>
                 {/* <SubLists pageID={subserviceId} serviceid={service?.service?._id} service={service?.service}  /> */}
-                <SimilarService categoryTitle={service?.agegroup?.title || null} ageId={service?.agegroup?._id} pageID={pid?.pid || null} />
+                
+                <SimilarService categoryTitle={service?.agegroup?.title || null} ageId={service?.agegroup?._id} pageID={pid || null} />
 
               </div>
             </div>
