@@ -12,7 +12,8 @@ import AnnimationTry from './AnnimationTry'
 import Values from './Values'
 import Starting from './Starting'
 import Differentiator from './Differentiator'
-export default function AboutPageIndex() {
+export default function AboutPageIndex(props) {
+  console.log("props",props)
   return (
     <>
      <Head>
@@ -46,3 +47,6 @@ export default function AboutPageIndex() {
     </>
   )
 }
+
+
+

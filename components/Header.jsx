@@ -1,4 +1,3 @@
-
 import { FiMenu, FiX } from "react-icons/fi";
 import { useContext, useEffect, useState } from "react";
 import Link from "next/link";
@@ -14,11 +13,19 @@ import { MyContext } from "@/pages/context/UserContext";
 // import { toSlug } from "@/pages/utils/toSlug";
 import { toSlug } from "@/components/utils/toSlug";
 
-function Header() {
+function Header(props) {
+
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [ageGroupsLists, setAgeGroupsLists] = useState([]);
   const [loading, setLoading] = useState(true);
   const {categories, setCategories} = useContext(MyContext);
+
+  useEffect(()=>{
+    const ageitems = localStorage && localStorage.getItem("menu");
+    const items = JSON.parse(ageitems);
+    setAgeGroupsLists(items);
+  },[props]);
+
   const navLinks = [
     // { name: "Home", href: "/" },
     // { name: "Core Services ", href: "/service" },
@@ -30,7 +37,6 @@ function Header() {
     // { name: "Blogs", href: "/https://phpdemo.futureprofilez.com/wp/blue-halo-health-blog/" },
     // { name: "Contact", href: "/contact-us" },
   ];
-
 
   const [action, setAction] = useState();
   const { query } = useRouter();
@@ -301,3 +307,4 @@ function Header() {
 }
 
 export default Header;
+

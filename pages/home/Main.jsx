@@ -17,9 +17,11 @@ import Categories from './Categories'
 import HowItWorks from '@/components/HowItWorks'
 import AgeMatrix2 from './AgeMatrix2'
 import AgeMatrix3 from './AgeMatrix3'
-// import About from './About'
+ 
+export default function Main(props) {
+  
+  console.log("props",props)
 
-export default function Main() {
   return (
     <Layout>
       <div className='bg-[#F7F4F0]'>
@@ -44,3 +46,7 @@ export default function Main() {
    </Layout>
   )
 }
+
+
+
+

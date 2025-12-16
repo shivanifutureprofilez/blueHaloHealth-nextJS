@@ -1,3 +1,4 @@
+"use client";
 import Heading from "@/components/Heading";
 import React, { useEffect, useState } from "react";
 import { FaCircleCheck } from "react-icons/fa6";
@@ -12,10 +13,6 @@ import Image from "next/image";
 // import { toSlug } from "@/utils/toSlug";
 // import {toSlug} from "../../@"
 import { toSlug } from "@/components/utils/toSlug";
-
-
-
-
 
 export default function AgeMatrix({ admin }) {
 
