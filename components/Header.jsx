@@ -212,7 +212,9 @@ function Header(props) {
         {/* Parent Item */}
         <details className="group w-full">
           <summary className="px-4 py-3 flex justify-between items-center cursor-pointer select-none text-sm font-semibold hover:bg-gray-100">
+            <Link href={`/service/${toSlug(group?.title)}`}>
             {group?.title}
+            </Link>
             <span className="transition group-open:rotate-90">
               ▶
             </span>
