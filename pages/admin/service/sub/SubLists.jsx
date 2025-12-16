@@ -154,7 +154,7 @@ function SubLists({ serviceid, service, pageID, isAdmin, setSubListsCounts }) {
                 />
               </div>
               <div className="p-6">
-                <h2 className="font-bold text-normal text-black mb-2 line-clamp-1">
+                <h2 className="font-bold text-normal text-black mb-2 line-clamp-2">
                   {item?.name}
                 </h2>
                 <p className="mb-4 text-[14px] font-medium line-clamp-3 text-gray-600">
