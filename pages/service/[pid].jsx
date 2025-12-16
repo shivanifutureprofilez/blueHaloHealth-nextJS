@@ -82,15 +82,15 @@ export default function Index() {
         <title>Our Services | Blue Halo Health</title>
         <meta name="description" content="Explore holistic health services including functional medicine, nutrition, and personalized wellness programs from Blue Halo Health." />
         <meta name="keywords" content="wellness services, holistic therapy, nutrition, functional medicine, Blue Halo Health services" />
-        <meta property="og:url" content="https://bluehalohealth.com/service" />
+        {/* <meta property="og:url" content="https://bluehalohealth.com/service" /> */}
         <meta property="og:title" content="Our Services | Blue Halo Health" />
         <meta property="og:description" content="Transform your health with our personalized wellness services and functional medicine solutions." />
         <meta property="og:image" content="/summary.png" />
         <meta name="twitter:title" content="Our Services | Blue Halo Health" />
         <meta name="twitter:description" content="Discover holistic wellness services designed for your total well-being." />
-        <meta property="og:image" content="/summary.png" />
+        <meta property="og:image" content={ageGroup?.coverImg || '/summary.png'} />
         <meta name="twitter:card" content="summary_large_image" />
-        <link rel="canonical" href="https://bluehalohealth.com/service" />
+        
       </Head>
       <Layout>
         <SectionBanner title={ageGroup?.title || "Services"} />
