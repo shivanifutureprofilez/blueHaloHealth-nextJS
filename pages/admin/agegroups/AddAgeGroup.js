@@ -122,10 +122,10 @@ function AddAgeGroup({ id, fetchGroups, isEdit, group }) {
         }
     };
     return (
-        <Popup action={action} size='md:max-w-[700px]' bg="" space={isEdit ? 'p-6 md:p-4' : "p-6 md:p-8"} btnclasses={isEdit ? "bg-green-dark p-1.5 rounded-xl cursor-pointer" : "button cursor-pointer"} btntext={isEdit ? <CiEdit /> : "+ Add Age Group"} >
+        <Popup action={action} size='md:max-w-[700px]' bg="" space={isEdit ? 'p-6 md:p-4' : "p-6 md:p-8"} btnclasses={isEdit ? "bg-green-dark p-1.5 rounded-xl cursor-pointer" : "button cursor-pointer"} btntext={isEdit ? <CiEdit /> : "+ Add Categories"} >
             <div className=" w-full  flex flex-wrap md:flex-nowrap ">
                 <div className="w-full relative ">
-                    <h5 className="text-xl font-medium text-gray-800 mt-2">{isEdit ? "Edit " : "Add Age Group"}</h5>
+                    <h5 className="text-xl font-medium text-gray-800 mt-2">{isEdit ? "Edit " : "Add Categories"}</h5>
                     <form className="mt-6"
                     // onSubmit={isEdit ? handleEdit : handleSubmit}
                     >

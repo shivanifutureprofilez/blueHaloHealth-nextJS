@@ -182,13 +182,14 @@ export default function Index() {
               <div className="container mx-auto">
                 <ServiceEnding />
               </div>
+              <BookingTab />
             </>
           ) : (
             <NoResultFound />
           )}
         </div>
 
-        <BookingTab />
+        
       </Layout>
     </>
   );

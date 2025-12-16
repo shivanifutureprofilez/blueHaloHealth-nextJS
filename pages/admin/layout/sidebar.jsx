@@ -47,7 +47,7 @@ export default function Sidebar({ toggle, handleLogout }) {
               href={"/admin/agegroups/list"}
             >
               <MdOutlineSpaceDashboard className="me-2" size={"1.4rem"} />{" "}
-              Mega Menu
+              Categories
             </Link>
           </li>
            <li>
