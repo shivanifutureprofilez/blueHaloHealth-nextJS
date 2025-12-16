@@ -21,11 +21,9 @@ export default function ServiceDetails() {
   const router = useRouter();
   // const pid = useParams();
   const pid = router?.query?.pid || null
-  console.log("service pid : ",pid);
   const [service, setService] = useState([]);
   const [loading, setLoading] = useState(true);
   const [subListsCounts, setSubListsCounts] = useState();
-  console.log("pidpidpidpid", pid);
 
 
   const ShowServiceDetails = () => {
@@ -76,10 +74,6 @@ export default function ServiceDetails() {
     }
   />
 
-  <meta name="robots" content="index, follow" />
-
-  {/* Open Graph */}
-  <meta property="og:type" content="website" />
   <meta
     property="og:title"
     content={
@@ -101,16 +95,11 @@ export default function ServiceDetails() {
     content={
       service?.bannerImg
         ? service.bannerImg
-        : "https://blue-halo-health-next-js.vercel.app/summary.png"
+        : "/summary.png"
     }
   />
-  <meta
-    property="og:url"
-    content={`https://blue-halo-health-next-js.vercel.app/service/${pid || ""}`}
-  />
+ 
 
-  {/* Twitter */}
-  <meta name="twitter:card" content="summary_large_image" />
   <meta
     name="twitter:title"
     content={
@@ -131,12 +120,9 @@ export default function ServiceDetails() {
     content={
       service?.bannerImg
         ? service.bannerImg
-        : "https://blue-halo-health-next-js.vercel.app/summary.png"
+        : "/summary.png"
     }
   />
-
-  {/* Branding */}
-  <meta name="theme-color" content="#009C4A" />
 </Head>
 
 

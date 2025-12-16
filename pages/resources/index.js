@@ -129,14 +129,12 @@ function index() {
         <title>Resources & Guides | Blue Halo Health</title>
         <meta name="description" content="Access health tips, wellness guides, and science-backed resources from Blue Halo Health experts." />
         <meta name="keywords" content="health guides, wellness resources, holistic health tips, Blue Halo Health resources" />
-        <meta property="og:url" content="https://bluehalohealth.com/resources" />
         <meta property="og:title" content="Resources & Guides | Blue Halo Health" />
         <meta property="og:description" content="Explore expert-curated health and wellness resources from Blue Halo Health." />
         <meta property="og:image" content="https://bluehalohealth.com/images/resources.jpg" />
         <meta name="twitter:title" content="Resources & Guides | Blue Halo Health" />
         <meta name="twitter:description" content="Discover expert health tips and wellness resources." />
         <meta name="twitter:image" content="https://bluehalohealth.com/images/resources.jpg" />
-        <link rel="canonical" href="https://bluehalohealth.com/resources" />
       </Head>
       <Layout>
         <SectionBanner title={"Resources"} />

@@ -99,12 +99,8 @@ export default function SubServiceDetailsPage() {
           content={
             service?.bannerImg
               ? service.bannerImg
-              : "https://blue-halo-health-next-js.vercel.app/summary.png"
+              : "/summary.png"
           }
-        />
-        <meta
-          property="og:url"
-          content={`https://blue-halo-health-next-js.vercel.app/service/${pidArray?.join("/") || ""}`}
         />
 
         {/* Twitter */}
@@ -129,7 +125,7 @@ export default function SubServiceDetailsPage() {
           content={
             service?.bannerImg
               ? service.bannerImg
-              : "https://blue-halo-health-next-js.vercel.app/summary.png"
+              : "/summary.png"
           }
         />
 

@@ -47,15 +47,9 @@ export default function AboutPageIndex(props) {
         />
         <meta
           property="og:image"
-          content="https://blue-halo-health-next-js.vercel.app/summary.png"
+          content="/summary.png"
         />
-        <meta
-          property="og:url"
-          content="https://blue-halo-health-next-js.vercel.app/about"
-        />
-
-        {/* Twitter */}
-        <meta name="twitter:card" content="summary_large_image" />
+        
         <meta
           name="twitter:title"
           content="About Blue Halo Health | Ontario Virtual Healthcare Leaders"
@@ -66,7 +60,7 @@ export default function AboutPageIndex(props) {
         />
         <meta
           name="twitter:image"
-          content="https://blue-halo-health-next-js.vercel.app/summary.png"
+          content="/summary.png"
         />
 
         {/* UX */}

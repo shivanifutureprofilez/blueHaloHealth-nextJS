@@ -81,16 +81,14 @@ export default function Index() {
      <Head>
   {/* Primary SEO */}
   <title>
-    {ageGroup?.title
-      ? `${ageGroup.title} Services in Ontario | Blue Halo Health`
-      : "Our Services | Blue Halo Health"}
+    {ageGroup?.title? `${ageGroup.title} Services in Ontario | Blue Halo Health`: "Our Services | Blue Halo Health"}
   </title>
 
   <meta
     name="description"
     content={
       ageGroup?.description
-        ? ageGroup.description.slice(0, 155)
+        ? ageGroup.description 
         : "Explore expert-led, virtual-first mental and developmental healthcare services available across Ontario."
     }
   />
@@ -103,11 +101,6 @@ export default function Index() {
         : "virtual healthcare Ontario, mental health services, Blue Halo Health"
     }
   />
-
-  <meta name="robots" content="index, follow" />
-
-  {/* Open Graph */}
-  <meta property="og:type" content="website" />
   <meta
     property="og:title"
     content={
@@ -129,16 +122,11 @@ export default function Index() {
     content={
       ageGroup?.coverImg
         ? ageGroup.coverImg
-        : "https://blue-halo-health-next-js.vercel.app/summary.png"
+        :  "/summary.png"
     }
   />
-  <meta
-    property="og:url"
-    content={`https://blue-halo-health-next-js.vercel.app/service/${activeAgeGroup || ""}`}
-  />
+ 
 
-  {/* Twitter */}
-  <meta name="twitter:card" content="summary_large_image" />
   <meta
     name="twitter:title"
     content={
@@ -160,12 +148,9 @@ export default function Index() {
     content={
       ageGroup?.coverImg
         ? ageGroup.coverImg
-        : "https://blue-halo-health-next-js.vercel.app/summary.png"
+        : "/summary.png"
     }
   />
-
-  {/* Branding */}
-  <meta name="theme-color" content="#009C4A" />
 </Head>
 
       <Layout>
