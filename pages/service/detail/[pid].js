@@ -51,10 +51,94 @@ export default function ServiceDetails() {
   return (
     <Layout key={pid}>
       <Head>
-        <title>{service?.name || 'Service'} | Blue Halo Health</title>
-        <meta name="description" content={service?.description || "Explore holistic health services"} />
-        <meta property="og:image" content={service?.bannerImg || `/summary.png`} />
-      </Head>
+  {/* Primary SEO */}
+  <title>
+    {service?.name
+      ? `${service.name} in Ontario | Virtual Care – Blue Halo Health`
+      : "Service Details | Blue Halo Health"}
+  </title>
+
+  <meta
+    name="description"
+    content={
+      service?.description
+        ? service.description.slice(0, 155)
+        : "Expert-led, virtual-first mental and developmental health services across Ontario."
+    }
+  />
+
+  <meta
+    name="keywords"
+    content={
+      service?.name
+        ? `${service.name}, virtual healthcare Ontario, mental health services, developmental care, Blue Halo Health`
+        : "virtual healthcare Ontario, mental health services, Blue Halo Health"
+    }
+  />
+
+  <meta name="robots" content="index, follow" />
+
+  {/* Open Graph */}
+  <meta property="og:type" content="website" />
+  <meta
+    property="og:title"
+    content={
+      service?.name
+        ? `${service.name} | Virtual Care in Ontario`
+        : "Service | Blue Halo Health"
+    }
+  />
+  <meta
+    property="og:description"
+    content={
+      service?.shortDescription ||
+      service?.description ||
+      "Ontario-wide virtual mental and developmental care led by experienced clinicians."
+    }
+  />
+  <meta
+    property="og:image"
+    content={
+      service?.bannerImg
+        ? service.bannerImg
+        : "https://blue-halo-health-next-js.vercel.app/summary.png"
+    }
+  />
+  <meta
+    property="og:url"
+    content={`https://blue-halo-health-next-js.vercel.app/service/${pid || ""}`}
+  />
+
+  {/* Twitter */}
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta
+    name="twitter:title"
+    content={
+      service?.name
+        ? `${service.name} | Ontario Virtual Care`
+        : "Blue Halo Health Services"
+    }
+  />
+  <meta
+    name="twitter:description"
+    content={
+      service?.shortDescription ||
+      "Access expert-led virtual mental and developmental healthcare across Ontario."
+    }
+  />
+  <meta
+    name="twitter:image"
+    content={
+      service?.bannerImg
+        ? service.bannerImg
+        : "https://blue-halo-health-next-js.vercel.app/summary.png"
+    }
+  />
+
+  {/* Branding */}
+  <meta name="theme-color" content="#009C4A" />
+</Head>
+
 
       <div className='bg-[#F7F4F0]'>
         {loading ? <Loading />

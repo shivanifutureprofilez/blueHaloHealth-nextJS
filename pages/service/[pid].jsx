@@ -78,20 +78,96 @@ export default function Index() {
 
   return (
     <>
-      <Head>
-        <title>Our Services | Blue Halo Health</title>
-        <meta name="description" content="Explore holistic health services including functional medicine, nutrition, and personalized wellness programs from Blue Halo Health." />
-        <meta name="keywords" content="wellness services, holistic therapy, nutrition, functional medicine, Blue Halo Health services" />
-        {/* <meta property="og:url" content="https://bluehalohealth.com/service" /> */}
-        <meta property="og:title" content="Our Services | Blue Halo Health" />
-        <meta property="og:description" content="Transform your health with our personalized wellness services and functional medicine solutions." />
-        <meta property="og:image" content="/summary.png" />
-        <meta name="twitter:title" content="Our Services | Blue Halo Health" />
-        <meta name="twitter:description" content="Discover holistic wellness services designed for your total well-being." />
-        <meta property="og:image" content={ageGroup?.coverImg || '/summary.png'} />
-        <meta name="twitter:card" content="summary_large_image" />
-        
-      </Head>
+     <Head>
+  {/* Primary SEO */}
+  <title>
+    {ageGroup?.title
+      ? `${ageGroup.title} Services in Ontario | Blue Halo Health`
+      : "Our Services | Blue Halo Health"}
+  </title>
+
+  <meta
+    name="description"
+    content={
+      ageGroup?.description
+        ? ageGroup.description.slice(0, 155)
+        : "Explore expert-led, virtual-first mental and developmental healthcare services available across Ontario."
+    }
+  />
+
+  <meta
+    name="keywords"
+    content={
+      ageGroup?.title
+        ? `${ageGroup.title} services, virtual healthcare Ontario, mental health services, developmental care, Blue Halo Health`
+        : "virtual healthcare Ontario, mental health services, Blue Halo Health"
+    }
+  />
+
+  <meta name="robots" content="index, follow" />
+
+  {/* Open Graph */}
+  <meta property="og:type" content="website" />
+  <meta
+    property="og:title"
+    content={
+      ageGroup?.title
+        ? `${ageGroup.title} Services | Virtual Care in Ontario`
+        : "Our Services | Blue Halo Health"
+    }
+  />
+  <meta
+    property="og:description"
+    content={
+      ageGroup?.description
+        ? ageGroup.description.slice(0, 200)
+        : "Ontario-wide virtual mental and developmental care delivered by licensed clinicians."
+    }
+  />
+  <meta
+    property="og:image"
+    content={
+      ageGroup?.coverImg
+        ? ageGroup.coverImg
+        : "https://blue-halo-health-next-js.vercel.app/summary.png"
+    }
+  />
+  <meta
+    property="og:url"
+    content={`https://blue-halo-health-next-js.vercel.app/service/${activeAgeGroup || ""}`}
+  />
+
+  {/* Twitter */}
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta
+    name="twitter:title"
+    content={
+      ageGroup?.title
+        ? `${ageGroup.title} Services | Ontario Virtual Care`
+        : "Blue Halo Health Services"
+    }
+  />
+  <meta
+    name="twitter:description"
+    content={
+      ageGroup?.description
+        ? ageGroup.description.slice(0, 200)
+        : "Access virtual-first mental and developmental healthcare services across Ontario."
+    }
+  />
+  <meta
+    name="twitter:image"
+    content={
+      ageGroup?.coverImg
+        ? ageGroup.coverImg
+        : "https://blue-halo-health-next-js.vercel.app/summary.png"
+    }
+  />
+
+  {/* Branding */}
+  <meta name="theme-color" content="#009C4A" />
+</Head>
+
       <Layout>
         <SectionBanner title={ageGroup?.title || "Services"} />
         <div className="bg-[#F7F4F0] py-[20px] md:py-[40px] lg:py-[60px]">
