@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { useSearchParams } from 'next/navigation';
 import { MdOutlineArrowRightAlt } from 'react-icons/md';
 import RoutesLists from '@/pages/api/RoutesLists';
-import { toSlug } from '@/pages/utils/toSlug';
+import { toSlug } from '@/components/utils/toSlug';
 
 function SimilarService({ pageID, ageId, categoryTitle }) {
     const [list, setLists] = useState([]);
