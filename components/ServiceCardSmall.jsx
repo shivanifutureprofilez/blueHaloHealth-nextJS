@@ -61,7 +61,7 @@ function ServiceCardSmall({ item, idx, isAdmin = false, fetchServices }) {
         </button>
       )}
       <div className="w-full h-70 rounded-lg overflow-hidden  relative">
-        <Link href={`/service/detail/${item?._id}`}>
+        <Link href={`/service/detail/${item?.slug}`}>
           <img
             src={item?.bannerImg}
             alt={item?.name}

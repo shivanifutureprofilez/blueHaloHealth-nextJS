@@ -21,7 +21,7 @@ function SubLists({ serviceid, service, pageID, isAdmin, setSubListsCounts }) {
 
   const [loading, setLoading] = useState(true);
   const [list, setLists] = useState([]);
-   
+
   const fetchSubServices = async () => {
     setLoading(true)
     const lists = new AdminRoutes();
@@ -33,7 +33,7 @@ function SubLists({ serviceid, service, pageID, isAdmin, setSubListsCounts }) {
           const temp = data.filter((i) => i.slug !== pageID);
           console.log("temp", temp)
           setLists(temp);
-          
+
         } else {
           setLists(data);
         }
@@ -48,9 +48,9 @@ function SubLists({ serviceid, service, pageID, isAdmin, setSubListsCounts }) {
   };
 
 
-  useEffect(()=>{ 
+  useEffect(() => {
     setSubListsCounts && setSubListsCounts(list);
-  },[list]);
+  }, [list]);
 
   const toSlug = (str) => {
     if (str) {
@@ -70,15 +70,15 @@ function SubLists({ serviceid, service, pageID, isAdmin, setSubListsCounts }) {
     fetchSubServices();
   }, [serviceid])
 
-  
 
- const handleDelete = (id) => {
+
+  const handleDelete = (id) => {
     const main = new AdminRoutes();
     main
       .DeleteSubService(id)
       .then((r) => {
         toast.success(r?.data?.message);
-        fetchSubServices(); 
+        fetchSubServices();
       })
       .catch((err) => {
         console.log("error", err);
@@ -117,30 +117,35 @@ function SubLists({ serviceid, service, pageID, isAdmin, setSubListsCounts }) {
       <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5  gap-4  md:mb-8">
         {list && list.map((item, i) => {
           return <div className={`${isAdmin ? 'bg-white' : 'bg-[#e5dfd73d]'} transition-[1s] rounded-xl hover:scale-[1.02] relative`}>
-              {isAdmin && (
-                <Link
-                  // onClick={(e) => handleUpdate(e, item?._id)}
-                  href={`/admin/service/sub/add/${item?._id}`}
-                  className="absolute top-3 left-3 bg-blue-500 hover:bg-blue-600 text-white p-2 rounded-full shadow-md transition-colors duration-200 z-10 cursor-pointer
+            {isAdmin && (
+              <Link
+                // onClick={(e) => handleUpdate(e, item?._id)}
+                href={`/admin/service/sub/add/${item?._id}`}
+                className="absolute top-3 left-3 bg-blue-500 hover:bg-blue-600 text-white p-2 rounded-full shadow-md transition-colors duration-200 z-10 cursor-pointer
                flex items-center justify-center"
-                  title="Edit service"
-                >
-                  <FaEdit size={18} />
-                </Link>
-              )}
-              {isAdmin && (
-                <button
-                  onClick={() => {
-                    handleDelete(item?._id);
-                  }}
-                  className="absolute top-3 right-3 bg-red-600 hover:bg-red-600 text-white p-2 rounded-full shadow-md transition-colors duration-200 z-2 cursor-pointer"
-                  title="Delete service"
-                >
-                  <FaTrash size={18} />
-                </button>
-              )}
-            <Link href={`/service/${toSlug(service?.name)}/${toSlug(item?.name)}`} className={``}>
-            {/* <Link href={`/service/${toSlug(service?.name)}/${toSlug(item?.name)}/${item?._id}`} className={``}></Link> */}
+                title="Edit service"
+              >
+                <FaEdit size={18} />
+              </Link>
+            )}
+            {isAdmin && (
+              <button
+                onClick={() => {
+                  handleDelete(item?._id);
+                }}
+                className="absolute top-3 right-3 bg-red-600 hover:bg-red-600 text-white p-2 rounded-full shadow-md transition-colors duration-200 z-2 cursor-pointer"
+                title="Delete service"
+              >
+                <FaTrash size={18} />
+              </button>
+            )}
+            <Link
+              href={
+                   `/service/${service?.slug}/${toSlug(item?.name)}`
+              }
+              className=""
+            >
+              {/* <Link href={`/service/${toSlug(service?.name)}/${toSlug(item?.name)}/${item?._id}`} className={``}></Link> */}
               <div className=" w-full h-[200px] rounded-lg overflow-hidden relative">
                 <img
                   src={item?.bannerImg}
