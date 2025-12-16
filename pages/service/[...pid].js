@@ -243,74 +243,88 @@ export default function SubServiceDetailsPage() {
       </div>
 
       <style jsx>{`
-          /* Enhanced editor content styles */
-          .services :global(h2) {
-            border-left: 4px solid #10b981;
-            padding-left: 1rem;
-            
-            margin-bottom: 1rem;
-          }
-          
-          .services :global(h3) {
-            color: #059669;
-            margin-top: 1.5rem;
-          }
-          
-          .services :global(ul) {
-            background: #f0fdf4;
-            padding: 1.5rem 1.5rem 1.5rem 3rem;
-            border-radius: 0.75rem;
-            margin: 1.5rem 0;
-          }
-          
-          .services :global(ul li::marker) {
-            content: '✓ ';
-            color: #10b981;
-            font-weight: bold;
-            font-size: 1.2em;
-          }
-          
-          .services :global(ol) {
-            background: #eff6ff;
-            padding: 1.5rem 1.5rem 1.5rem 3rem;
-            border-radius: 0.75rem;
-            margin: 1.5rem 0;
-          }
-          
-          .services :global(blockquote) {
-            border-left: 4px solid #10b981;
-            background: #f0fdf4;
-            padding: 1.5rem;
-            border-radius: 0.5rem;
-            margin: 2rem 0;
-            font-style: italic;
-          }
-          
-          .services :global(table) {
-            border-radius: 0.75rem;
-            overflow: hidden;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-          }
-          
-          .services :global(table thead) {
-            background: linear-gradient(135deg, #10b981, #059669);
-            color: white;
-          }
-          
-          .services :global(table th) {
-            padding: 1rem;
-            font-weight: 600;
-          }
-          
-          .services :global(table td) {
-            padding: 1rem;
-            border-bottom: 1px solid #e5e7eb;
-          }
-          
-          .services :global(table tbody tr:hover) {
-            background-color: #f9fafb;
-          }
-        `}</style>
+        /* Enhanced editor content styles */
+        .services :global(h2) {
+          border-left: 4px solid #10b981;
+          padding-left: 1rem; 
+          text-transform: capitalize;
+          margin-bottom: 1rem;
+          padding-bottom: 0;
+        }
+        
+        .services :global(h3) {
+          color: #059669;
+          margin-top: 1.5rem;
+          text-transform: capitalize;
+        }
+        
+        .services :global(ul) {
+          background: #f0fdf4;
+          padding:1rem; font-size: 15px;
+          padding-bottom:0.2rem;
+          border-radius: 0.75rem;
+          margin:  10px 0 1.5rem 0;
+        }
+
+         .services :global(ol) {
+          background: #eff6ff;
+          padding: 1rem; font-size: 15px;
+          padding-bottom:0.2rem;
+          border-radius: 0.75rem;
+          margin: 10px 0 1.5rem 0;
+        }
+
+
+        .services :global(p) {
+          text-align: left;
+          font-family: Poppins, sans-serif;
+          font-size: 15px;
+          font-style: normal;
+          line-height: 26px;
+      }
+        .services :global(ul li::marker) {
+          content: '✓ ';
+          color: #10b981;
+          font-weight: bold;
+          font-size: 1.2em;
+        }
+        
+       
+        
+        .services :global(blockquote) {
+          border-left: 4px solid #10b981;
+          background: #f0fdf4;
+          padding: 1.5rem;
+          border-radius: 0.5rem;
+          margin: 2rem 0;
+          font-style: italic;
+        }
+        
+        .services :global(table) {
+          border-radius: 0.75rem;
+          overflow: hidden;
+          box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        .services :global(table thead) {
+          background: linear-gradient(135deg, #10b981, #059669);
+          color: white;
+        }
+        
+        .services :global(table th) {
+          padding: 1rem;
+          font-weight: 600;
+        }
+        
+        .services :global(table td) {
+          padding: 1rem;
+          border-bottom: 1px solid #e5e7eb;
+        }
+        
+        .services :global(table tbody tr:hover) {
+          background-color: #f9fafb;
+        }
+      `}</style>
     </Layout>
   )
 }

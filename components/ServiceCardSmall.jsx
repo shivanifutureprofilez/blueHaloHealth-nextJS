@@ -40,7 +40,7 @@ function ServiceCardSmall({ item, idx, isAdmin = false, fetchServices }) {
       {isAdmin && (
         <Link
           //   onClick={() => handleEdit(item?._id)}
-          href={`/admin/service/${item?._id}`}
+          href={`/admin/service/${item?.slug}`}
           className="absolute top-3 left-3 bg-blue-500 hover:bg-blue-600 text-white p-2 rounded-full shadow-md transition-colors duration-200 z-10 cursor-pointer
                flex items-center justify-center"
           title="Edit service"

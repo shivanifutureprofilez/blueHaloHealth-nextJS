@@ -120,7 +120,7 @@ function SubLists({ serviceid, service, pageID, isAdmin, setSubListsCounts }) {
             {isAdmin && (
               <Link
                 // onClick={(e) => handleUpdate(e, item?._id)}
-                href={`/admin/service/sub/add/${item?._id}`}
+                href={`/admin/service/sub/add/${item?.slug}`}
                 className="absolute top-3 left-3 bg-blue-500 hover:bg-blue-600 text-white p-2 rounded-full shadow-md transition-colors duration-200 z-10 cursor-pointer
                flex items-center justify-center"
                 title="Edit service"
