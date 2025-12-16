@@ -97,7 +97,13 @@ export default function Index() {
         <div className="bg-[#F7F4F0] py-[20px] md:py-[40px] lg:py-[60px]">
           <div className="mx-auto container    text-center">
            
-            <div className="flex flex-col md:flex-row gap-12">
+            
+            
+              { loading ? 
+              <Loading />
+              :
+              <>
+              <div className="flex flex-col md:flex-row gap-12">
               {/* Image Section */}
               <div className="md:w-1/3">
                 <Image
@@ -154,12 +160,6 @@ export default function Index() {
               </div>
               
             </div>
-            
-              { loading ? 
-              <Loading />
-              :
-              <>
-
               {serviceList && serviceList.length ? (
                 <>
                 <div className="">
