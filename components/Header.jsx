@@ -11,7 +11,8 @@ import { RiArrowDropDownLine } from "react-icons/ri";
 import RoutesLists from "@/pages/api/RoutesLists";
 import Popup1 from "./Popup1";
 import { MyContext } from "@/pages/context/UserContext";
-import { toSlug } from "@/pages/utils/toSlug";
+// import { toSlug } from "@/pages/utils/toSlug";
+import { toSlug } from "@/components/utils/toSlug";
 
 function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);

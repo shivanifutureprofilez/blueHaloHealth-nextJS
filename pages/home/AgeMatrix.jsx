@@ -7,9 +7,11 @@ import Link from "next/link";
 import Loading from "@/components/Loading";
 import { motion } from "motion/react";
 import Image from "next/image";
-import { toSlug } from "../utils/toSlug";
+// import { toSlug } from "../utils/toSlug";
 // import Slug from "@/components/Slug";
 // import { toSlug } from "@/utils/toSlug";
+// import {toSlug} from "../../@"
+import { toSlug } from "@/components/utils/toSlug";
 
 
 
