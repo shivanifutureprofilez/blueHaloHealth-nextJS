@@ -66,7 +66,7 @@ function Header(props) {
   return (
     <header className="bg-[#F7F4F0] sticky top-0 z-50  " >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between py-4">
+        <div className="flex md:gap-6 items-center justify-between py-4">
           {/* Logo */}
           <Link
             href="/"
@@ -74,7 +74,7 @@ function Header(props) {
           >
             BlueHaloHealth
           </Link>
-          <nav className="hidden lg:flex items-center space-x-8 lg:space-x-7">
+          <nav className="hidden xl:flex items-center space-x-8 lg:space-x-7">
             <Link
               href='/'
               className="text-gray-800 hover:text-[#00D967] font-medium transition"
@@ -117,32 +117,6 @@ function Header(props) {
 
 
             </DropDown>
-            {/* <p className="font-bold text-sm">Autism & Developmental Therapy</p>
-                <ul className="mb-2 border-b mt-1 border-gray-200 pb-3">
-                  <Link href='/service?agegroup=68f098aae07796e988820b2b'> <li className="text-sm text-gray-500">0-6 Early Years</li></Link>
-                  <Link href='/service?agegroup=68f098aae07796e988820b2b'><li className="text-sm text-gray-500">6-12 School Age</li></Link>
-                  <Link href='/service?agegroup=68f098aae07796e988820b2b'> <li className="text-sm text-gray-500">13-17 Adolescents</li></Link>
-                </ul>
-                <p className="font-bold text-sm">Neurodevelopmental</p>
-                <ul className="mb-2 border-b mt-1 border-gray-200 pb-3">
-                  <Link href='/service?agegroup=68f098aae07796e988820b2b'> <li className="text-sm text-gray-500">0-6 Early Years</li></Link>
-                  <Link href='/service?agegroup=68f098aae07796e988820b2b'><li className="text-sm text-gray-500">6-12 School Age</li></Link>
-                  <Link href='/service?agegroup=68f098aae07796e988820b2b'> <li className="text-sm text-gray-500">13-17 Adolescents</li></Link>
-                </ul>
-                <p className="font-bold text-sm"> Mental Health & Behaviour Health Counselling </p>
-                <ul className="mb-2 border-b mt-1 border-gray-200 pb-3">
-                  <Link href='/service?agegroup=68f098aae07796e988820b2b'> <li className="text-sm text-gray-500">0-6 Early Years</li></Link>
-                  <Link href='/service?agegroup=68f098aae07796e988820b2b'> <li className="text-sm text-gray-500">6-12 School Age</li></Link>
-                  <Link href='/service?agegroup=68f098aae07796e988820b2b'> <li className="text-sm text-gray-500">13-17 Adolescents</li></Link>
-                </ul>
-                <p className="font-bold text-sm">Psychiatry, Medication Management,</p>
-                <ul className="mb-2  mt-1 border-gray-200 pb-3">
-                  <Link href='/service?agegroup=68f098aae07796e988820b2b'> <li className="text-sm text-gray-500">0-6 Early Years</li></Link>
-                  <Link href='/service?agegroup=68f098aae07796e988820b2b'> <li className="text-sm text-gray-500">6-12 School Age</li></Link>
-                  <Link href='/service?agegroup=68f098aae07796e988820b2b'> <li className="text-sm text-gray-500">13-17 Adolescents</li></Link>
-                </ul> */}
-
-
             {navLinks.map((link) => (
               <Link
                 key={link.name}
@@ -162,7 +136,7 @@ function Header(props) {
           </nav>
 
           {/* Desktop Button */}
-          <div className="hidden gap-4 lg:flex">
+          <div className="hidden gap-4 xl:flex">
 
 
             {/* <Button
@@ -184,14 +158,14 @@ function Header(props) {
                 >
                 Patient Portal
                 </Link> */}
-            <Popup1 classes={`bg-white border !border-[#009C4A]  text-center  text-black  rounded-lg font-semibold 
-              hover:bg-green-50 transition inline-block text-[15px] px-5 py-2 cursor-pointer`}
+            <Popup1 classes={`bg-white border !border-[#009C4A] text-center  text-black  rounded-lg font-semibold 
+              hover:bg-green-50 transition inline-block text-[15px] md:px-0 lg:px-5 md:py-0 lg:py-2 cursor-pointer`}
               // content={`Patient Portal`} 
               btnText={`Patient Portal`} />
           </div>
 
           {/* Mobile Menu Button */}
-          <div className="lg:hidden">
+          <div className="xl:hidden">
             {isMobileMenuOpen ? (
               <FiX
                 onClick={() => setIsMobileMenuOpen(false)}
@@ -210,7 +184,7 @@ function Header(props) {
       {/* Mobile Dropdown */}
       {isMobileMenuOpen && (
         <div className="p-6 fixed md:relative top-[50px]  w-full md:block">
-          <div className=" rounded-2xl  w-full max-w-[100%]  lg:hidden bg-white shadow-lg border-t border-gray-100">
+          <div className=" rounded-2xl  w-full max-w-[100%]  xl:hidden bg-white shadow-lg border-t border-gray-100">
             <ul className="max-h-[70vh] overflow-auto flex flex-col space-y-4 px-6 py-4 text-gray-800 font-medium">
               <Link
                 href='/'
@@ -247,7 +221,7 @@ function Header(props) {
           {/* Sub Menus */}
           <div className="bg-white px-4 pb-3 space-y-1">
             {group.services?.map((srv) => (
-              <Link key={srv._id} href={`/service/detail/${srv?._id}`}>
+              <Link key={srv._id} href={`/service/detail/${toSlug(srv?.name)}`}>
                 <p className="text-sm py-2 hover:text-blue-500">{srv.name}</p>
               </Link>
             ))}
