@@ -29,7 +29,7 @@ export default function ServiceDetails() {
   const ShowServiceDetails = () => {
     const lists = new RoutesLists();
     const data = lists.getServiceDetail(pid);
-    console.log("data : ",data);
+    console.log("data : ", data);
     data.then((res) => {
       setService(res?.data?.serviceData || null);
       setLoading(false);
@@ -49,81 +49,81 @@ export default function ServiceDetails() {
   return (
     <Layout key={pid}>
       <Head>
-  {/* Primary SEO */}
-  <title>
-    {service?.name
-      ? `${service.name} in Ontario | Virtual Care – Blue Halo Health`
-      : "Service Details | Blue Halo Health"}
-  </title>
+        {/* Primary SEO */}
+        <title>
+          {service?.name
+            ? `${service.name} in Ontario | Virtual Care – Blue Halo Health`
+            : "Service Details | Blue Halo Health"}
+        </title>
 
-  <meta
-    name="description"
-    content={
-      service?.description
-        ? service.description.slice(0, 155)
-        : "Expert-led, virtual-first mental and developmental health services across Ontario."
-    }
-  />
+        <meta
+          name="description"
+          content={
+            service?.description
+              ? service.description.slice(0, 155)
+              : "Expert-led, virtual-first mental and developmental health services across Ontario."
+          }
+        />
 
-  <meta
-    name="keywords"
-    content={
-      service?.name
-        ? `${service.name}, virtual healthcare Ontario, mental health services, developmental care, Blue Halo Health`
-        : "virtual healthcare Ontario, mental health services, Blue Halo Health"
-    }
-  />
+        <meta
+          name="keywords"
+          content={
+            service?.name
+              ? `${service.name}, virtual healthcare Ontario, mental health services, developmental care, Blue Halo Health`
+              : "virtual healthcare Ontario, mental health services, Blue Halo Health"
+          }
+        />
 
-  <meta
-    property="og:title"
-    content={
-      service?.name
-        ? `${service.name} | Virtual Care in Ontario`
-        : "Service | Blue Halo Health"
-    }
-  />
-  <meta
-    property="og:description"
-    content={
-      service?.shortDescription ||
-      service?.description ||
-      "Ontario-wide virtual mental and developmental care led by experienced clinicians."
-    }
-  />
-  <meta
-    property="og:image"
-    content={
-      service?.bannerImg
-        ? service.bannerImg
-        : "/summary.png"
-    }
-  />
- 
+        <meta
+          property="og:title"
+          content={
+            service?.name
+              ? `${service.name} | Virtual Care in Ontario`
+              : "Service | Blue Halo Health"
+          }
+        />
+        <meta
+          property="og:description"
+          content={
+            service?.shortDescription ||
+            service?.description ||
+            "Ontario-wide virtual mental and developmental care led by experienced clinicians."
+          }
+        />
+        <meta
+          property="og:image"
+          content={
+            service?.bannerImg
+              ? service.bannerImg
+              : "/summary.png"
+          }
+        />
 
-  <meta
-    name="twitter:title"
-    content={
-      service?.name
-        ? `${service.name} | Ontario Virtual Care`
-        : "Blue Halo Health Services"
-    }
-  />
-  <meta
-    name="twitter:description"
-    content={
-      service?.shortDescription ||
-      "Access expert-led virtual mental and developmental healthcare across Ontario."
-    }
-  />
-  <meta
-    name="twitter:image"
-    content={
-      service?.bannerImg
-        ? service.bannerImg
-        : "/summary.png"
-    }
-  />
-</Head>
+
+        <meta
+          name="twitter:title"
+          content={
+            service?.name
+              ? `${service.name} | Ontario Virtual Care`
+              : "Blue Halo Health Services"
+          }
+        />
+        <meta
+          name="twitter:description"
+          content={
+            service?.shortDescription ||
+            "Access expert-led virtual mental and developmental healthcare across Ontario."
+          }
+        />
+        <meta
+          name="twitter:image"
+          content={
+            service?.bannerImg
+              ? service.bannerImg
+              : "/summary.png"
+          }
+        />
+      </Head>
 
 
       <div className='bg-[#F7F4F0]'>
@@ -187,12 +187,12 @@ export default function ServiceDetails() {
                   {/* Right Side - Editor Content */}
                   <div className="w-full lg:w-3/5">
                     <div
-                      className="services bg-white rounded-2xl p-8 md:p-12 shadow-lg"
+                      className="services bg-white rounded-2xl p-6 md:p-8 "
                       dangerouslySetInnerHTML={{ __html: service?.content }}
                     />
                   </div>
                 </div>
-                
+
                 {subListsCounts && subListsCounts?.length > 0 && service && pid && (
                   <div className="">
                     <h2 className="text-[24px] font-semibold text-gray-900 mb-2 mt-6  pt-6 text-start">
@@ -202,8 +202,8 @@ export default function ServiceDetails() {
                   </div>
                 )}
 
-               
-                <SubLists 
+
+                <SubLists
                   setSubListsCounts={setSubListsCounts}
                   service={service}
                   serviceid={pid}
@@ -216,7 +216,7 @@ export default function ServiceDetails() {
                 <h2 className='text-[24px]  font-semibold text-gray-900  nb-2 mt-6  pt-6 text-2xl   text-start'>Similar Programs</h2>
                 <p className='mb-4'>Some other programs of {service?.agegroup?.title} that you might be interested in</p>
                 {/* <SubLists pageID={subserviceId} serviceid={service?.service?._id} service={service?.service}  /> */}
-                
+
                 <SimilarService categoryTitle={service?.agegroup?.title || null} ageId={service?.agegroup?._id} pageID={pid || null} />
 
               </div>
@@ -266,23 +266,43 @@ export default function ServiceDetails() {
         /* Enhanced editor content styles */
         .services :global(h2) {
           border-left: 4px solid #10b981;
-          padding-left: 1rem;
-         
+          padding-left: 1rem; 
+          text-transform: capitalize;
           margin-bottom: 1rem;
+          padding-bottom: 0;
         }
         
         .services :global(h3) {
           color: #059669;
           margin-top: 1.5rem;
+          text-transform: capitalize;
         }
         
+       
         .services :global(ul) {
           background: #f0fdf4;
-          padding: 1.5rem 1.5rem 1.5rem 3rem;
+          padding:1rem; font-size: 15px;
+          padding-bottom:0.2rem;
           border-radius: 0.75rem;
-          margin: 1.5rem 0;
+          margin:  10px 0 1.5rem 0;
         }
-        
+
+         .services :global(ol) {
+          background: #eff6ff;
+          padding: 1rem; font-size: 15px;
+          padding-bottom:0.2rem;
+          border-radius: 0.75rem;
+          margin: 10px 0 1.5rem 0;
+        }
+
+
+        .services :global(p) {
+          text-align: left;
+          font-family: Poppins, sans-serif;
+          font-size: 15px;
+          font-style: normal;
+          line-height: 26px;
+      }
         .services :global(ul li::marker) {
           content: '✓ ';
           color: #10b981;
@@ -290,12 +310,7 @@ export default function ServiceDetails() {
           font-size: 1.2em;
         }
         
-        .services :global(ol) {
-          background: #eff6ff;
-          padding: 1.5rem 1.5rem 1.5rem 3rem;
-          border-radius: 0.75rem;
-          margin: 1.5rem 0;
-        }
+       
         
         .services :global(blockquote) {
           border-left: 4px solid #10b981;
