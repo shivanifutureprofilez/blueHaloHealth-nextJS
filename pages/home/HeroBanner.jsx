@@ -54,7 +54,7 @@ function HeroBanner() {
         {slides?.map((slide, index) => (
           <SwiperSlide key={index} >
             <div className=" w-full h-full">
-              {/* <Image
+              <Image
                 src={`${slide}`}
                 alt="Expert Care for Every Stage of Development and Well-Being"
                 className="banner-image w-full h-[70vh]
@@ -67,8 +67,8 @@ function HeroBanner() {
                 blurDataURL={`${slide}?q=1&blur=100`}
                 fetchpriority="high"
                 // fill={true}
-              /> */}
-              <Image
+              />
+              {/* <Image
                 src={slide}
                 alt="Expert Care for Every Stage of Development and Well-Being"
                 priority
@@ -76,7 +76,7 @@ function HeroBanner() {
                 sizes="100vw"
                 className="banner-image w-full h-[70vh] md:h-[93vh] object-cover"
                 fill
-              />
+              /> */}
 
               <div className="absolute inset-0 bg-black/50"></div>
             </div>
