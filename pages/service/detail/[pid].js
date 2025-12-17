@@ -25,8 +25,7 @@ export default function ServiceDetails() {
   const [loading, setLoading] = useState(true);
   const [subListsCounts, setSubListsCounts] = useState();
 
-
-  const ShowServiceDetails = () => {
+  const ShowServiceDetailsRetry = () => {
     const lists = new RoutesLists();
     const data = lists.getServiceDetail(pid);
     console.log("data : ", data);
@@ -38,10 +37,25 @@ export default function ServiceDetails() {
     });
   };
 
+
+  const ShowServiceDetails = () => {
+    const lists = new RoutesLists();
+    const data = lists.getServiceDetail(pid);
+    console.log("data : ", data);
+    data.then((res) => {
+      setService(res?.data?.serviceData || null);
+      setLoading(false);
+    }).catch((error) => {
+      setLoading(false);
+      ShowServiceDetailsRetry();
+    });
+  };
+
   useEffect(() => {
     if (pid) {
       setLoading(true);
       setService(null);
+      ShowServiceDetails();
       ShowServiceDetails();
     }
   }, [pid]);
