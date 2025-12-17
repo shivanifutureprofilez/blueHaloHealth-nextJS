@@ -106,7 +106,7 @@ function ContactForm() {
   return (
 
 
-    <div className="bg-[#E6EBE3] p-4 rounded-[20px] shadow md:p-8">
+    <div className="bg-[#E6EBE3] p-4 rounded-[20px] shadow md:p-8 ">
       {messageSent ?
         <div className='thankyou-wrap min-h-[300px] flex items-center justify-center'>
           <div className="flex flex-col items-center justify-center text-center p-6 bg-green-50 rounded-2xl shadow-md max-w-md mx-auto">
@@ -185,7 +185,7 @@ function ContactForm() {
               required
               className="bg-white rounded-lg border border-gray-300 px-4 py-3 w-full outline-none" />
             {/* </div> */}
-            <div>
+            <div >
               <select onChange={(e) => setSelectedService(e.target.value)} className='bg-white rounded-lg border border-gray-300 px-4 py-3 w-full outline-none'>
                 <option className='text-gray-400' value="" >Choose a Service</option>
                 {ageGroupsLists && ageGroupsLists.map((age, i) => {
@@ -196,7 +196,7 @@ function ContactForm() {
                   </>
                 })}
               </select>
-            </div>
+            </div> 
             <textarea onChange={handleChange}
               value={items?.message}
               name='message'

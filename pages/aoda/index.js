@@ -5,8 +5,9 @@ import React from 'react'
 function index() {
     return (
         <Layout>
-            <div className='bg-[#F7F4F0]'>
-                <SectionBanner title={"FAQ"} />
+            <SectionBanner title={"AODA"} />
+            <div className='min-h-[40vh]'>
+               
 
                 <div className="  text-gray-900 px-6 py-12 container mx-auto">
                     <h2 className="text-2xl font-semibold mb-4">Blue Halo Health – AODA Accessibility Statement</h2>

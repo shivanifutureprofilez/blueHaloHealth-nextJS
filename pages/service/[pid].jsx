@@ -118,14 +118,16 @@ export default function Index() {
       </Head>
 
       <Layout>
-        <SectionBanner title={ageGroup?.title || "Services"} />
+        <div className="bg-[#F7F4F0] ">
 
-        <div className="bg-[#F7F4F0] py-[20px] md:py-[40px] lg:py-[60px]">
+        
           {loading ? (
             <Loading />
           ) : ageGroup ? (
             <>
-              <div className="mx-auto container text-center">
+            {/* <div className=" "> */}
+              <SectionBanner title={ageGroup?.title || "Services"} />
+              <div className="mx-auto container text-center py-[20px] md:py-[40px] lg:py-[60px]">
                 {/* Header Section */}
                 <div className="flex flex-col md:flex-row gap-12">
                   <div className="md:w-1/3">
@@ -172,6 +174,7 @@ export default function Index() {
                         />
                       ))}
                     </div>
+                    
                   </>
                 ) : (
                   <NoResultFound />
@@ -183,6 +186,7 @@ export default function Index() {
                 <ServiceEnding />
               </div>
               <BookingTab />
+              {/* </div> */}
             </>
           ) : (
             <NoResultFound />
