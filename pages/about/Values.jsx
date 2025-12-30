@@ -72,20 +72,22 @@ function Values() {
                             pClass="text-center pt-2 leading-snug max-w-[600px] mx-auto"
                             heading1={"Our"}
                             heading2={" Values"}
-                            content={"Blue Halo Health’s core values are at the heart of its mission: Passion fuels efforts to help children with autism and their families, quality is reflected in every standard they uphold, and transparency is shown through honest, open communication with clients, caregivers, and the team."}
+                            content={"Blue Halo Health’s core values are at the heart of its mission: Passion fuels efforts to help individuals with autism and their families, quality is reflected in every standard they uphold, and transparency is shown through honest, open communication with clients, caregivers, and the team."}
                         />
                         </div>
-                    <div className='py-[15px] md:py-[30px] text-black flex  items-center text-center justify-center '>
+                    <div className='our-values-slider py-[15px] md:py-[30px] text-black flex  items-center text-center justify-center '>
                         <Swiper
                             spaceBetween={20}
-                            loop={true}
-                            autoplay={{
-                                delay: 1500,
-                                disableOnInteraction: false,
-                            }}
+                            // loop={true}
+                            // autoplay={{
+                            //     delay: 1500,
+                            //     disableOnInteraction: false,
+                            // }}
                             pagination={{
+                                type: 'progressbar',
                                 clickable: true,
                             }}
+                            navigation={true}
                             modules={[Autoplay, Navigation, Pagination]}
                             className="mySwiper"
                             breakpoints={

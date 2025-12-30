@@ -157,7 +157,7 @@ export default function Index() {
                   <>
                     <div className="mt-6 pt-6 text-start">
                       <h2 className="text-[24px] font-semibold text-gray-900 mb-2">
-                        Our {ageGroup.title}
+                        Our {ageGroup.title} Services
                       </h2>
                       <p className="">
                         All services below are available for this program.

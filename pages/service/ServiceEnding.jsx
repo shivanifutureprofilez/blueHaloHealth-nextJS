@@ -10,7 +10,7 @@ export default function ServiceEnding() {
           </h3>
 
           <p className="text-gray-700 leading-relaxed mb-4">
-            Services are offered and billed individually, but your child's overall plan feels unified because you have access to multiple experts who can align care when appropriate and with consent.
+            Services are offered and billed individually, but your loved one's overall plan feels unified because you have access to multiple experts who can align care when appropriate and with consent.
           </p>
           
           <p className="font-semibold text-gray-900 mb-6">

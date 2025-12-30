@@ -93,7 +93,7 @@ function Mission2() {
             />
           </div>
           <Image
-            src="/about.png"
+            src="/images/about2.png"
             alt="Learn about Blue Halo Health’s mission, values, and our expert team dedicated to holistic health and wellness."
             className="w-full lg:max-w-[580px] object-cover hidden md:block"
             width={400}

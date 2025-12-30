@@ -9,7 +9,7 @@ function Importance() {
   const features = [
     {
       title: "Integrated System of Care",
-      description: "One record, one coordinated team - our clinicians communicate behind the scenes as required, so you never have to manage multiple providers.",
+      description: "One record, one coordinated team - our clinicians communicate behind the scenes, with your consent and as needed, so you never have to manage multiple providers.",
       icon: <GrCertificate className="text-green-dark text-4xl" />
     },
     {

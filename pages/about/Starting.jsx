@@ -13,9 +13,9 @@ function Starting() {
         // content={"At Blue Halo Health, we’re revolutionizing Ontario’s healthcare landscape with a bold vision: a seamless, province-spanning ecosystem where healing happens on your terms."}
         />
         <p className='mt-4 text-gray-600  mx-auto max-w-[1000px] text-[18px] mb-2 lg:mb-4 text-center pt-2 leading-snug'>At Blue Halo Health, we’re revolutionizing Ontario’s healthcare landscape with a bold vision: a seamless, province-spanning ecosystem where healing happens on your terms.</p>
-         <p className='mt-4 text-gray-600  mx-auto max-w-[1000px] text-[18px] mb-2 lg:mb-4 text-center pt-2 leading-snug'>Picture a collaborative team of Ontario’s skilled psychologists, therapists,
-          behavioral experts, and wellness professionals—led by senior clinicians
-          with 10-15+ years of supervisory experience—uniting under one
+        <p className='mt-4 text-gray-600  mx-auto max-w-[1000px] text-[18px] mb-2 lg:mb-4 text-center pt-2 leading-snug'>Picture a collaborative team of Ontario’s skilled psychologists, therapists,
+          behavioral experts, and wellness professionals led by senior
+          clinicians with extensive supervisory experience — uniting under one
           dynamic platform. This isn’t fragmented care; it’s a unified force,
           blending seasoned leadership with qualified specialists to democratize
           premium support for every Ontarian, no matter your background or
@@ -23,7 +23,7 @@ function Starting() {
         <p className='mt-4 text-gray-600  mx-auto max-w-[1000px] text-[18px] mb-2 lg:mb-4 text-center pt-2 leading-snug'>Forget traditional clinics—we’re crafting an intelligent, virtual-first
           network that orbits around a single guiding star: <span className='font-bold'>delivering care
             precisely when and where it’s needed most.</span></p>
-       
+
 
       </div>
     </div>

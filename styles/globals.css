@@ -85,3 +85,14 @@ bottom: -4px !important;
     left: 50%; transform: translate(-50%, -50%);
     top: 50%;
 }
+ 
+.our-values-slides .swiper-button-next svg path,
+.our-values-slides .swiper-button-prev svg path {
+    fill : black;
+}
+
+.our-values-slides .swiper-button-next,
+.our-values-slides .swiper-button-prev {
+    width:35px !important; height:35px !important; padding: 10px !important; border-radius: 100%;
+    background: #ffffff !important; box-shadow: 1px 1px 12px rgba(0, 0, 0, 0.1) !important;
+}
