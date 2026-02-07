@@ -16,14 +16,14 @@ function ContactInfo() {
                           </span>
                           320 Bay Street Toronto, ON M5H 4A6
                         </li>
-                        <li className="flex items-center gap-3 text-gray-700">
+                        {/* <li className="flex items-center gap-3 text-gray-700">
                           <span className="bg-green-100 rounded-full p-2">
                             <CiPhone size={22} className="text-green-600" />
                           </span>
                           <a href="tel:9876543218" className=" text-gray-700 hover:underline">
                             (416) 555-BLUE
                           </a>
-                        </li>
+                        </li> */}
                         <li className="flex items-center gap-3">
                           <span className="bg-green-100 rounded-full p-2">
                             <IoMailOpenOutline size={22} className="text-green-600" />

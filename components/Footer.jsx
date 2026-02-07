@@ -47,14 +47,14 @@ function Footer() {
                               320 Bay Street Toronto, ON M5H 4A6
                               </span>
                             </li>
-                            <li className="flex items-center gap-3 text-gray-300 ">
+                            {/* <li className="flex items-center gap-3 text-gray-300 ">
                               <span className="">
                                 <CiPhone size={20}  className="hover:text-white"/>
                               </span>
                               <a href="tel:9876543218" className="text-gray-300  hover:text-white">
                               (416) 555-BLUE
                               </a>
-                            </li>
+                            </li> */}
                             <li className="flex items-center hover:cursor-default gap-3 hover:text-white">
                               <span className="">
                                 <IoMailOpenOutline size={20}  className="text-gray-300 hover:text-white"/>

@@ -102,7 +102,7 @@
 //                                 Please choose your preferred communication method:
 //                             </p>
 
-                           
+
 //                             <div className="flex flex-col  space-y-1">
 //                                 <span className="text-base md:text-lg font-semibold text-gray-900">
 //                                      Call us at: <span className="font-bold">xxxxxxxxxxx</span>
@@ -113,7 +113,7 @@
 //                                 </button> */}
 //                             </div>
 
-                            
+
 //                             <p className="text-sm md:text-base text-gray-700">
 //                                  We accept Video Relay Service (VRS)
 //                             </p>
@@ -149,7 +149,7 @@
 //                                     {loading ? "Loading..." : "Join Waitlist"}
 //                                 </button>
 //                             </form> */} 
-                       
+
 //                     </>
 //                 }
 //             </div>
@@ -211,12 +211,12 @@ export default function Popup1({ classes, action, btnText }) {
     };
 
     return (
-        <Popup 
-            action={action} 
-            size='max-w-[550px]' 
-            bg="bg-white" 
-            space={"p-0"} 
-            btnclasses={classes || 'button cursor-pointer'} 
+        <Popup
+            action={action}
+            size='max-w-[550px]'
+            bg="bg-white"
+            space={"p-0"}
+            btnclasses={classes || 'button cursor-pointer'}
             btntext={btnText || "Book Free Consultation"}
         >
             <div className="relative">
@@ -248,13 +248,17 @@ export default function Popup1({ classes, action, btnText }) {
 
                         {/* Content Section */}
                         <div className="p-5 md:p-6">
-                            <h3 className="text-base md:text-lg font-bold text-gray-800 text-center mb-4">
+                            {/* <h3 className="text-base md:text-lg font-bold text-gray-800 text-center mb-4">
                                 Choose Your Preferred Method
-                            </h3>
+                            </h3> */}
+
+                            <h3 className='text-base md:text-lg font-bold text-gray-800 text-center mb-4'>Opening this Spring 2026. We are currently accepting expressions of interest. You will be added to our waitlist. Please use the <Link
+                                    href={'/contact-us'}
+                                    className='text-[#009C4A] font-semibold hover:underline'
+                                >Contact Us</Link> form.</h3>
 
                             {/* Contact Options Grid */}
-                            <div className="space-y-3 mb-5">
-                                {/* Phone Option */}
+                            {/* <div className="space-y-3 mb-5">
                                 <div className="group bg-gradient-to-br from-green-50 to-white border-2 border-green-100 hover:border-[#009C4A] rounded-xl p-4 transition-all duration-300 hover:shadow-lg">
                                     <div className="flex items-start gap-3">
                                         <div className="w-10 h-10 bg-[#009C4A] rounded-full flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
@@ -273,10 +277,10 @@ export default function Popup1({ classes, action, btnText }) {
                                             </p>
                                         </div>
                                     </div>
-                                </div>
+                                </div> */}
 
-                                {/* VRS Option */}
-                                <div className="group bg-gradient-to-br from-blue-50 to-white border-2 border-blue-100 hover:border-blue-500 rounded-xl p-4 transition-all duration-300 hover:shadow-lg">
+                            {/* VRS Option */}
+                            {/* <div className="group bg-gradient-to-br from-blue-50 to-white border-2 border-blue-100 hover:border-blue-500 rounded-xl p-4 transition-all duration-300 hover:shadow-lg">
                                     <div className="flex items-start gap-3">
                                         <div className="w-10 h-10 bg-blue-500 rounded-full flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
                                             <FaVideo className="text-white text-sm" />
@@ -288,10 +292,10 @@ export default function Popup1({ classes, action, btnText }) {
                                             </p>
                                         </div>
                                     </div>
-                                </div>
+                                </div> */}
 
-                                {/* Jane App Booking */}
-                                <div className="group bg-gradient-to-br from-purple-50 to-white border-2 border-purple-100 hover:border-purple-500 rounded-xl p-4 transition-all duration-300 hover:shadow-lg">
+                            {/* Jane App Booking */}
+                            {/* <div className="group bg-gradient-to-br from-purple-50 to-white border-2 border-purple-100 hover:border-purple-500 rounded-xl p-4 transition-all duration-300 hover:shadow-lg">
                                     <div className="flex items-start gap-3">
                                         <div className="w-10 h-10 bg-purple-500 rounded-full flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
                                             <FaCalendarAlt className="text-white text-sm" />
@@ -309,26 +313,38 @@ export default function Popup1({ classes, action, btnText }) {
                                             </Link>
                                         </div>
                                     </div>
-                                </div>
-                            </div>
-
-                            {/* Footer Note */}
-                            <div className="bg-gray-50 rounded-lg p-3 text-center border border-gray-200">
-                                <p className="text-xs text-gray-600">
-                                    Need alternative formats? Visit our{' '}
-                                    <Link 
-                                        href={'/contact-us'} 
-                                        className='text-[#009C4A] font-semibold hover:underline'
-                                    >
-                                        Contact Us
-                                    </Link>
-                                    {' '}page.
-                                </p>
-                            </div>
+                                </div> */}
                         </div>
-                    </>
+
+                        {/* Footer Note */}
+                        {/* <div className="bg-gray-50 rounded-lg p-3 text-center border border-gray-200">
+                            <p className="text-xs text-gray-600">
+                                Need alternative formats? Visit our{' '}
+                                <Link
+                                    href={'/contact-us'}
+                                    className='text-[#009C4A] font-semibold hover:underline'
+                                >
+                                    Contact Us
+                                </Link>
+                                {' '}page.
+                            </p>
+                        </div> */}
+                        <div className="bg-gray-50 rounded-lg p-3 text-center border border-gray-200">
+                            <p className="text-xs text-gray-600">
+                                Visit our{' '}
+                                <Link
+                                    href={'/contact-us'}
+                                    className='text-[#009C4A] font-semibold hover:underline'
+                                >
+                                    Contact Us
+                                </Link>
+                                {' '}page now.
+                            </p>
+                        </div>
+                   
+            </>
                 )}
-            </div>
-        </Popup>
+        </div>
+        </Popup >
     )
 }
