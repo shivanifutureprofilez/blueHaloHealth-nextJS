@@ -32,12 +32,12 @@ function BookingTab() {
                             <Heading className="!text-white heading text-center md:text-left poppins  tracking-tighter leading-tight font-bold text-2xl md:text-3xl md:mt-1 md:mb-1" heading1={"Ready To Get Started ?"} />
                             <p className="text-center text-[16px] text-white p-2 md:p-4 max-w-[600px] mx-auto">Take the first step towards personalized therapy and support. Our team is here to help you navigate your journey</p>
                             <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 bg-[#0000001A] rounded-lg py-3 px-3 mx-auto max-w-[600px]">
-                                <Link
+                                {/* <Link
                                     href="tel:9876543218"
                                     className="flex items-center gap-2 font-semibold md:font-bold text-white hover:text-[#00D967] transition"
                                 >
                                     <CiPhone size={24} /> 9876543218
-                                </Link>
+                                </Link> */}
 
                                 <Link
                                     href="mailto:hello@blueHaloHealth.com"
