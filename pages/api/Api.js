@@ -3,6 +3,13 @@ import axios from "axios";
 const API_URL = "http://localhost:5000/api";
 const API_URL_LIVE = "https://blue-halo-health-backend.vercel.app/api/";
 
+function getCookie() {
+  if (typeof window !== "undefined") {
+    const data = localStorage.getItem("cookie_consent");
+    return data;
+  }
+  return null;
+}
 function getToken() {
   if (typeof window !== "undefined") {
     const data = localStorage.getItem("token");
@@ -23,8 +30,9 @@ if (typeof window !== "undefined") {
 const Api = axios.create({
   baseURL,
   headers: {
-    Accept: "application/json",
+    "Accept": "application/json",
     "Access-Control-Allow-Origin": "*",
+    "x-cookie-consent": getCookie() || "none"
   },
 });
 
