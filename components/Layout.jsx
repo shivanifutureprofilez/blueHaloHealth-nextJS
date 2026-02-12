@@ -2,6 +2,7 @@ import Head from "next/head";
 import Footer from "./Footer";
 import Header from "./Header";
 import { useRouter } from "next/router";
+import CookieBanner from "./CookieBanner";
 
 function Layout({ children }) {
 
@@ -54,6 +55,7 @@ function Layout({ children }) {
             <Header />
             <main>
             {children}
+            <CookieBanner/>
             </main>
             <Footer bg={"bg-black"} text={"text-white"}/>
         </>
