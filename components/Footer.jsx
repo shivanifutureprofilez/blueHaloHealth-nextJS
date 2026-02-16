@@ -88,8 +88,8 @@ function Footer() {
               <Link href="/privacy/policy" className=" text-gray-300 hover:text-white">
                 Privacy Policy
               </Link>
-              <Link href="/privacy/policy" className=" text-gray-300 hover:text-white">
-                Terms of Service
+              <Link href="/terms-of-use" className=" text-gray-300 hover:text-white">
+                Terms of Use
               </Link>
               <Link href="/aoda" className=" text-gray-300 hover:text-white">
                 AODA

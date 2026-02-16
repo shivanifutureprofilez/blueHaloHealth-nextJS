@@ -1,9 +1,6 @@
 import Layout from "@/components/Layout";
 import React, { useEffect, useState } from "react";
 
-// Privacy & Compliance static page
-// React + Tailwind CSS component (single-file)
-// Usage: import and render <PrivacyCompliancePage /> in your app
 
 export default function PrivacyCompliancePage() {
   const [showBanner, setShowBanner] = useState(false);

@@ -111,7 +111,7 @@ function ContactForm() {
         <div className='thankyou-wrap min-h-[300px] flex items-center justify-center'>
           <div className="flex flex-col items-center justify-center text-center p-6 bg-green-50 rounded-2xl shadow-md max-w-md mx-auto">
             <h2 className="text-2xl font-extrabold text-green-600 mb-3">Thank You!</h2>
-            <p className="text-gray-700 leading-relaxed">
+            <p className="text-gray-700 leading-relaxed ">
               We appreciate your interest in <span className="font-semibold text-green-700">Blue Halo Health</span>.
               Our team has received your enquiry and will get back to you shortly with the information you need.
             </p>
@@ -125,7 +125,36 @@ function ContactForm() {
           <p className="mb-6 md:mb-4 font-medium text-[15px] text-center  text-gray-700 max-w-[600px] mx-auto">
             We can accommodate your communication needs, including: Email, Text/SMS, Interpreter-supported options, Accessibility accommodations
           </p>
+          {/* Contact Information Notice */}
+          <div className="mb-6 bg-white border text-left border-gray-200 rounded-xl p-5 text-sm text-gray-700 shadow-sm">
+            <h3 className="font-semibold text-gray-900 mb-2">
+              Appointment & Response Information
+            </h3>
+
+            <div className="space-y-2">
+              <p>
+                <span className="font-medium">Appointment Availability: </span>
+                Monday–Friday, 9:00 AM – 5:00 PM
+              </p>
+
+              <p>
+                <span className="font-medium">Office Review Hours: </span>
+                Messages are reviewed during regular office hours only.
+              </p>
+
+              <p>
+                <span className="font-medium">Typical Response Time: </span>
+                1–2 business days.
+              </p>
+
+              <p className="mt-3 text-red-600 font-medium">
+                This form is not monitored for emergencies. If you are experiencing a medical or mental health emergency, please call 911 or visit your nearest emergency department.
+              </p>
+            </div>
+          </div>
+
           <form className="space-y-4" onSubmit={handleSubmit}>
+            <div className='grid grid-cols-2 gap-3'>
             <input onChange={handleChange}
               value={items?.fullName}
               name='fullName'
@@ -158,6 +187,7 @@ function ContactForm() {
               placeholder="Age" required className="bg-white rounded-lg border border-gray-300 px-4 py-3 w-full outline-none"
               min={0}
             />
+            </div>
             {/* <div className="grid grid-cols-2 gap-4"> */}
             <input
               onChange={(e) => {
@@ -196,7 +226,7 @@ function ContactForm() {
                   </>
                 })}
               </select>
-            </div> 
+            </div>
             <textarea onChange={handleChange}
               value={items?.message}
               name='message'
@@ -215,8 +245,9 @@ function ContactForm() {
               <label className="text-gray-700 text-sm text-left">I agree to receive SMS / Text communication</label>
             </div>
 
-
+            <div className='flex justify-center items-center'>
             <Captcha onVerify={onVerify} CaptchaVerified={CaptchaVerified} />
+            </div>
             <button
               type="submit"
               disabled={loading} className={`${CaptchaVerified ? '' : 'disabled'} bg-green-dark text-white font-semibold px-6 py-3 rounded-lg hover:bg-green-700 transition w-full mt-2`}>
