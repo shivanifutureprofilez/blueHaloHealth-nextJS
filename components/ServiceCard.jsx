@@ -73,7 +73,7 @@ function ServiceCard({ item, idx, isAdmin = false, fetchServices }) {
         <p className="mb-4 text-[15px] font-medium line-clamp-2 text-gray-600">
           {item?.description}
         </p>
-        <Link href={`/service/detail/${item?._id}`}>
+        <Link href={`/service/detail/${item?.slug}`}>
           <div className="flex items-center space-x-1 group">
             <button className="text-green-dark cursor-pointer group-hover:underline transition-all duration-300">
               Read More
