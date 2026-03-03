@@ -15,7 +15,7 @@
     "dompurify": "^3.3.0",
     "draftjs-to-html": "^0.9.1",
     "framer-motion": "^12.23.24",
-    "motion": "^12.23.24",
+    "motion": "^12.34.4",
     "next": "16.0.8",
     "nprogress": "^0.2.0",
     "postcss": "^8.5.6",
