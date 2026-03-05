@@ -137,7 +137,6 @@ export default function GTAPeelYorkIndexPage({ location }) {
                                     <h3 className="text-xl font-semibold text-gray-900 mb-4">
                                         Virtual-First Therapy
                                     </h3>
-
                                     <p className="text-gray-700 leading-relaxed mb-4">
                                         We begin with a virtual-first therapy model for most families,
                                         allowing expert support to reach you directly in your home.
@@ -276,12 +275,12 @@ export default function GTAPeelYorkIndexPage({ location }) {
 
 
                             {/* Middle Section : Center Heading */}
-                            <div className="text-center max-w-[720px] mx-auto mb-8">
+                            <div className="text-center max-w-[720px] mx-auto pt-3 mb-8">
                                 <h3 className="heading text-black">
                                     Virtual Autism, Speech Therapy & Child Counselling Services Across the GTA
                                 </h3>
 
-                                <p className="text-gray-700 mt-3">
+                                <p className="text-gray-700 mt-3 pb-6">
                                     Families throughout Toronto, Peel Region, and York Region can access our
                                     full range of developmental and mental health services through secure
                                     virtual care designed to support both emotional well-being and
