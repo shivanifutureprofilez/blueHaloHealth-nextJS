@@ -237,11 +237,6 @@ export default function GTAPeelYorkIndexPage({ location }) {
 
                             {/* Top Section : Image + Content */}
                             <div className="grid md:grid-cols-2 gap-10 items-center mb-14">
-
-                                {/* Image */}
-
-
-                                {/* Content */}
                                 <div>
                                     <h2 className="heading text-green-dark mb-4">
                                         Supporting Families Across the GTA with Virtual Autism, Counselling & Speech Therapy
@@ -279,7 +274,6 @@ export default function GTAPeelYorkIndexPage({ location }) {
                                 <h3 className="heading text-black">
                                     Virtual Autism, Speech Therapy & Child Counselling Services Across the GTA
                                 </h3>
-
                                 <p className="text-gray-700 mt-3 pb-6">
                                     Families throughout Toronto, Peel Region, and York Region can access our
                                     full range of developmental and mental health services through secure
