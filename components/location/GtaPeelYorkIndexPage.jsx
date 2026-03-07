@@ -224,9 +224,10 @@ export default function GTAPeelYorkIndexPage({ location }) {
 
                                 {/* Optional CTA */}
                                 <div className="mt-6">
-                                    <a href="/contact" className="button">
-                                        Book Free Consultation
-                                    </a>
+                                    <Popup1
+                                        classes={`button bg-[#009C4A] flex justify-center cursor-pointer px-6 py-3`}
+                                        content={`Thank you so much but we are not available right now`}
+                                    />
                                 </div>
                             </div>
 

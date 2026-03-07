@@ -205,9 +205,10 @@ export default function HamiltonNiagaraIndexPage() {
 
                 {/* Optional CTA */}
                 <div className="mt-6">
-                  <a href="/contact" className="button">
-                    Book Free Consultation
-                  </a>
+                  <Popup1
+                    classes={`button bg-[#009C4A] flex justify-center cursor-pointer px-6 py-3`}
+                    content={`Thank you so much but we are not available right now`}
+                  />
                 </div>
               </div>
 
@@ -325,7 +326,7 @@ export default function HamiltonNiagaraIndexPage() {
                 </h3>
                 <p className="text-gray-600 font-medium text-[15px]">
                   Virtual care helps families begin therapy sooner while avoiding
-                  long clinic waitlists common across the GTA.
+                  long clinic waitlists common across the hamilton and Niagara region.
                 </p>
               </div>
 
@@ -359,7 +360,7 @@ export default function HamiltonNiagaraIndexPage() {
               />
 
               <p className="text-gray-700 font-medium text-[15px] leading-relaxed mb-4">
-              Families across Hamilton, Burlington, St. Catharines, Niagara Falls, and Welland connect with clinicians experienced in autism services in Hamilton, speech therapy in the Niagara region, and child and teen counselling in Hamilton–Niagara. Families can also access virtual developmental and mental health services in Ontario from home.
+                Families across Hamilton, Burlington, St. Catharines, Niagara Falls, and Welland connect with clinicians experienced in autism services in Hamilton, speech therapy in the Niagara region, and child and teen counselling in Hamilton–Niagara. Families can also access virtual developmental and mental health services in Ontario from home.
               </p>
 
               <p className="text-gray-700 font-medium text-[15px] leading-relaxed">
@@ -414,7 +415,7 @@ export default function HamiltonNiagaraIndexPage() {
                   ✓
                 </div>
                 <p className="text-gray-700 text-[15px] font-medium">
-                 Consistent virtual developmental and mental health services in Ontario
+                  Consistent virtual developmental and mental health services in Ontario
 
                 </p>
               </div>
