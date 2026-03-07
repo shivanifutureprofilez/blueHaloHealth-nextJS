@@ -17,7 +17,7 @@ export const metadata = {
 export default function GTAPeelYorkIndexPage({ location }) {
     return (
         <Layout>
-            <SectionBanner title={"Serving Families in Toronto & Across the GTA, Peel & York Region"} />
+            <SectionBanner title={"Serving Families in Toronto & Across the GTA, Peel & York Regions"} />
             <div className=" bg-[#F7F4F0]">
                 {/* INTRO */}
                 <section className="py-14 container mx-auto">
@@ -45,7 +45,7 @@ export default function GTAPeelYorkIndexPage({ location }) {
                                     Accessible Virtual Mental Health & Developmental Services <span className="text-[#009C4A]">Across the GTA</span>
                                 </h2>
                                 <p className="text-gray-500 font-medium text-[15px] mb-2 lg:mb-4" >
-                                    Blue Halo Health supports families across Toronto, Mississauga, Brampton, Vaughan, Markham, Richmond Hill, Newmarket, Aurora, and surrounding communities through accessible virtual mental health services and developmental therapy across Ontario. Our licensed clinicians provide autism & ASD services, psychological counselling, speech therapy, ADHD and executive functioning support, and parent coaching through secure online sessions across Ontario.                                </p>
+                                    Blue Halo Health supports families across Toronto, Mississauga, Brampton, Vaughan, Markham, Richmond Hill, Newmarket, Aurora, and surrounding communities through accessible virtual mental health services and developmental therapy across Ontario. Our licensed clinicians provide Autism(ASD) services, psychological counselling, speech therapy, ADHD and executive functioning support, and parent coaching through secure online sessions throughout Ontario.                                </p>
                                 <p className="text-gray-500 font-medium text-[15px] mb-2 lg:mb-4" >
                                     Families throughout the Greater Toronto Area, Peel Region, and York Region can connect with experienced clinicians without dealing with long commutes, heavy traffic, or extended clinic waitlists. Our virtual mental health and developmental care model ensures that families can begin support sooner while receiving care in a comfortable and familiar home environment.</p>
                                 {/* <p className='text-gray-500 font-medium text-[15px]' >From developmental milestones to life’s most complex challenges, BlueHaloHealth delivers the guidance, connection, and care needed to help individuals and families thrive—virtually, together.              </p> */}
@@ -144,13 +144,13 @@ export default function GTAPeelYorkIndexPage({ location }) {
 
                                     <p className="text-gray-700 leading-relaxed">
                                         For busy GTA households balancing work, school, and commuting,
-                                        virtual care removes the stress of traveling across the city while
+                                        virtual care removes the stress of travelling across the city while
                                         keeping therapy consistent and accessible.
                                     </p>
 
                                     <p className="text-gray-700 leading-relaxed mt-4">
                                         Whether you're in Mississauga, Brampton, Vaughan, Markham, or
-                                        anywhere across Peel and York Region, virtual sessions allow
+                                        anywhere across Peel and York Regions, virtual sessions allow
                                         families to focus on progress instead of logistics.
                                     </p>
                                 </div>
@@ -247,7 +247,7 @@ export default function GTAPeelYorkIndexPage({ location }) {
                                         Families from across the Greater Toronto Area connect with us every day
                                         for flexible care that fits into busy routines. Whether you are managing
                                         daily life in Mississauga, raising a family in Brampton, commuting from
-                                        Vaughan or Markham, or living in communities like Richmond Hill,
+                                        Vaughan or Markham for appointments, or living in communities like Richmond Hill,
                                         Aurora, or Newmarket, accessing specialized care should not require
                                         long drives across the city.
                                     </p>
@@ -306,7 +306,7 @@ export default function GTAPeelYorkIndexPage({ location }) {
                         <p className="mb-6 md:mb-2 font-medium text-[15px] text-center text-gray-700 max-w-[650px] mx-auto">
                             Accessible, coordinated care designed to help families across Toronto, Mississauga,
                             Brampton, Vaughan, and Markham receive expert support without the challenges of
-                            traveling across the city.
+                            travelling across the city.
                         </p>
                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 py-[15px] md:py-[30px]">
 
@@ -378,7 +378,7 @@ export default function GTAPeelYorkIndexPage({ location }) {
                             <Heading
                                 className="heading poppins text-black tracking-tighter leading-tight font-bold text-2xl md:text-3xl mb-4"
                                 heading1={"Our Clinicians Supporting Families"}
-                                heading2={" Across the GTA, Peel & York Region"}
+                                heading2={" Across the GTA, Peel & York Regions"}
                             />
 
                             <p className="text-gray-700 font-medium text-[15px] leading-relaxed mb-4">

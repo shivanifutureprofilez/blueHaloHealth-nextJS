@@ -120,7 +120,7 @@ export default function OttawaPage() {
                 </h2>
 
                 <p className="mt-3 text-gray-700 max-w-[700px] mx-auto">
-                  Our model is designed to make expert support easier to access for ottawa families.
+                  Our model is designed to make expert support easier to access for Ottawa families.
                 </p>
               </div>
 
@@ -201,7 +201,7 @@ export default function OttawaPage() {
                 <p className="text-gray-700 leading-relaxed">
                   Our virtual mental health and developmental care model helps families
                   access support sooner while reducing logistical barriers. By connecting
-                  with clinicians online, families across the ottawa can maintain consistent
+                  with clinicians online, families across the Ottawa can maintain consistent
                   therapy schedules while receiving structured, evidence-informed support
                   from home.
                 </p>
@@ -365,7 +365,7 @@ export default function OttawaPage() {
 
               <p className="text-gray-700 font-medium text-[15px] leading-relaxed">
                 Our team also offers ADHD and executive functioning support for children,
-                helping families across the hamilton access reliable developmental and mental
+                helping families across the Ottawa access reliable developmental and mental
                 health care from the comfort of their home.
               </p>
             </div>

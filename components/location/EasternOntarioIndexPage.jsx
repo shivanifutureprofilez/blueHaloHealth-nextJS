@@ -40,7 +40,7 @@ export default function EasternOntarioPage() {
               </h2>
 
               <p className="text-gray-500 font-medium text-[15px] mb-4">
-                Blue Halo Health supports families across Kingston, Belleville, Brockville, Cornwall, and surrounding communities through accessible virtual autism services, counselling, and developmental therapy in Eastern Ontario. Our clinicians provide autism and ASD services, child and teen counselling, speech therapy, ADHD support, and parent coaching through secure online sessions.
+                Blue Halo Health supports families across Kingston, Belleville, Brockville, Cornwall, and surrounding communities through accessible virtual autism services, counselling, and developmental therapy in Eastern Ontario. Our clinicians provide autism(ASD) services, child and teen counselling, speech therapy, ADHD support, and parent coaching through secure online sessions.
               </p>
 
               <p className="text-gray-500 font-medium text-[15px]">
@@ -187,7 +187,7 @@ export default function EasternOntarioPage() {
                 </h2>
 
                 <p className="text-gray-700 leading-relaxed mb-4">
-                  Even within a large metropolitan region like the Ontario,
+                  Even within a large metropolitan region like Ontario,
                   families often encounter long waitlists, scheduling conflicts, and
                   travel challenges when seeking specialized care.
                 </p>
@@ -325,7 +325,7 @@ export default function EasternOntarioPage() {
                 </h3>
                 <p className="text-gray-600 font-medium text-[15px]">
                   Virtual care helps families begin therapy sooner while avoiding
-                  long clinic waitlists common across the ontario region.
+                  long clinic waitlists common across the Ontario region.
                 </p>
               </div>
 
@@ -355,7 +355,7 @@ export default function EasternOntarioPage() {
               <Heading
                 className="heading poppins text-black tracking-tighter leading-tight font-bold text-2xl md:text-3xl mb-4"
                 heading1={"Our Clinicians Supporting Families"}
-                heading2={" Across Eastern Ontario"}
+                heading2={" Across Ontario"}
               />
 
               <p className="text-gray-700 font-medium text-[15px] leading-relaxed mb-4">

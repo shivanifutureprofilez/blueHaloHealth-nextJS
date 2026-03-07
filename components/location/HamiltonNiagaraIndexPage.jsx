@@ -42,7 +42,7 @@ export default function HamiltonNiagaraIndexPage() {
               </h2>
 
               <p className="text-gray-500 font-medium text-[15px] mb-4">
-                Blue Halo Health supports families across Hamilton, Burlington, St. Catharines, Niagara Falls, Welland, and surrounding communities with comprehensive virtual mental health and developmental care. Our licensed clinicians provide autism and ASD services, counselling for children and teens, speech therapy, ADHD and executive functioning support, and parent coaching through secure online sessions.
+                Blue Halo Health supports families across Hamilton, Burlington, St. Catharines, Niagara Falls, Welland, and surrounding communities with comprehensive virtual mental health and developmental care. Our licensed clinicians provide autism(ASD) services, counselling for children and teens, speech therapy, ADHD and executive functioning support, and parent coaching through secure online sessions.
               </p>
 
               <p className="text-gray-500 font-medium text-[15px]">
@@ -326,7 +326,7 @@ export default function HamiltonNiagaraIndexPage() {
                 </h3>
                 <p className="text-gray-600 font-medium text-[15px]">
                   Virtual care helps families begin therapy sooner while avoiding
-                  long clinic waitlists common across the hamilton and Niagara region.
+                  long clinic waitlists common across the Hamilton and Niagara region.
                 </p>
               </div>
 
