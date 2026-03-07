@@ -355,7 +355,7 @@ export default function EasternOntarioPage() {
               <Heading
                 className="heading poppins text-black tracking-tighter leading-tight font-bold text-2xl md:text-3xl mb-4"
                 heading1={"Our Clinicians Supporting Families"}
-                heading2={" Across the GTA, Peel & York Region"}
+                heading2={" Across Eastern Ontario"}
               />
 
               <p className="text-gray-700 font-medium text-[15px] leading-relaxed mb-4">

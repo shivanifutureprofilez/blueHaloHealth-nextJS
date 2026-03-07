@@ -415,8 +415,7 @@ export default function HamiltonNiagaraIndexPage() {
                   ✓
                 </div>
                 <p className="text-gray-700 text-[15px] font-medium">
-                  Consistent virtual developmental and mental health services in Ontario
-
+                  Consistent virtual developmental and mental health services in Hamilton–Niagara
                 </p>
               </div>
 
