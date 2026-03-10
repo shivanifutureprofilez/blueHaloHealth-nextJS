@@ -365,7 +365,7 @@ export default function OttawaPage() {
 
               <p className="text-gray-700 font-medium text-[15px] leading-relaxed">
                 Our team also offers ADHD and executive functioning support for children,
-                helping families across the Ottawa access reliable developmental and mental
+                helping families across Ottawa access reliable developmental and mental
                 health care from the comfort of their home.
               </p>
             </div>

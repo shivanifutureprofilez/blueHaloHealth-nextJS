@@ -254,7 +254,7 @@ export default function EasternOntarioPage() {
                   Services Available Across Eastern Ontario
                 </h3>
                 <p className="text-gray-700 mt-3 pb-6">
-                  Families throughout eastern ontario region can access our
+                  Families throughout Eastern Ontario region can access our
                   full range of developmental and mental health services through secure
                   virtual care designed to support both emotional well-being and
                   developmental progress.
@@ -364,7 +364,7 @@ export default function EasternOntarioPage() {
 
               <p className="text-gray-700 font-medium text-[15px] leading-relaxed">
                 Our team also offers ADHD and executive functioning support for children,
-                helping families across the eastern ontario access reliable developmental and mental
+                helping families across the Eastern Ontario access reliable developmental and mental
                 health care from the comfort of their home.
               </p>
             </div>
